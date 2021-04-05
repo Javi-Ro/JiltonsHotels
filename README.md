@@ -1,14 +1,13 @@
-# Members, and submission of the proposal
+# --- Members --- #
 
-Coordinator: Rodríguez Juan, Javier 77044366R
+- Coordinator: Rodríguez Juan, Javier 77044366R
+- Alcaraz Fuentes, Mario 48728219M
+- Rodríguez Lledó, Rosa María 50383873G
+- Berenguer Agulló, Adrián 74445262N
+- Slyusarchuk, Ilya X7219873N
+- Madani El Mrabet Martinez 74390833R
 
-Alcaraz Fuentes, Mario 48728219M
-Rodríguez Lledó, Rosa María 50383873G
-Berenguer Agulló, Adrián 74445262N
-Slyusarchuk, Ilya X7219873N
-Madani El Mrabet Martinez 74390833R
-
-# --- PROPOSAL OF WEBSITE ---- #
+# --- Proposal of Website ---- #
 
 ### DESCRIPTION ###
 For this project we have decided to develop a hotel’s website. In order to do this we are going to make use of different technologies such as web designing with HTML/CSS (using the ASP.NET framework) and database management with SQLServer.
