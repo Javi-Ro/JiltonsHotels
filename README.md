@@ -1,5 +1,6 @@
 # --- Members --- #
 
+GROUP : ARA GROUP
 - Coordinator: Rodríguez Juan, Javier 77044366R
 - Alcaraz Fuentes, Mario 48728219M
 - Rodríguez Lledó, Rosa María 50383873G
