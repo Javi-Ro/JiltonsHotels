@@ -1,4 +1,4 @@
-# HADA-groupal , Members of the group
+# Members, and submission of the proposal
 
 Coordinator: Rodríguez Juan, Javier 77044366R
 
@@ -8,9 +8,7 @@ Berenguer Agulló, Adrián 74445262N
 Slyusarchuk, Ilya X7219873N
 Madani El Mrabet Martinez 74390833R
 
-# ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
-# ---------------------------------------------------------------------- PROPOSAL OF WEBSITE ---------------------------------------------------------------------------------- #
-# ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
+# --- PROPOSAL OF WEBSITE ---- #
 
 ### DESCRIPTION ###
 For this project we have decided to develop a hotel’s website. In order to do this we are going to make use of different technologies such as web designing with HTML/CSS (using the ASP.NET framework) and database management with SQLServer.
