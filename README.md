@@ -24,8 +24,8 @@ For the public part we decided to implement the following functionalities:
   - Read client’s opinions of the different services.
   - Use filters to select different rooms based on the client’s preferences.
   - FAQs and contact information.
-  - Change the language of the page.
   - Registration form for website visitors.
+  - Package offers (only for registered users).
 
 ### PUBLIC EN LIST ###
   - ENRoom
@@ -35,8 +35,6 @@ For the public part we decided to implement the following functionalities:
   - ENRestaurant
   - ENUser
   - ENComment
-  - ENLanguage  
-
 
 ### PRIVATE PART 
 Once the user has been correctly registered on the website, he/she will gain access to the next private functionalities:
@@ -51,16 +49,16 @@ Once the user has been correctly registered on the website, he/she will gain acc
 ### PRIVATE EN LIST ###
   - ENDiscount
   - ENBooking
-  - ENCalendar
   - ENStaff (trainer, massage therapist...)
+  - ENPackage
 
 
 ### POSSIBLE IMPROVEMENTS ###
   - Watch the location of the hotel with Google Maps.
   - Link to social media.
-  - Package offers (only for registered users).
   - Fidelity offers (only for registered users).
   - Referral program.
+  - Change the language of the page.
 
 ### CLARIFICATIONS ###
   - In order to book a room you have to be registered on the website.
