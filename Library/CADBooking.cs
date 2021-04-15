@@ -89,5 +89,21 @@ namespace Library
         {
 
         }
+
+        // Car leasing
+        public bool addCar(ENBooking booking, ENCar car)
+        {
+
+        }
+
+        public bool deleteCar(ENBooking booking, ENDiscount discount)
+        {
+
+        }
+
+        public ENCar[] getCars(ENBooking booking)
+        {
+
+        }
     }
 }
