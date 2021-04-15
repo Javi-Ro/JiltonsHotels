@@ -8,6 +8,8 @@ namespace Library
 {
     class ENPackage
     {
+
+        
         private int _id;
         public int id
         {
@@ -36,7 +38,7 @@ namespace Library
             set { _price = value; }
         }
 
-        public ENPackage(int id, string name, string desc, int price)
+        public ENPackage(int id,ENService services, string name, string desc, int price)
         {
 
         }
@@ -51,17 +53,28 @@ namespace Library
 
         }
 
-        public bool updatePackage(string name, string desc, int price)
+        public bool searchPackage()
         {
 
         }
 
-        const public ENBooking[] getBookings()
-        {
-
-        }
-
+        //SERVICES IN THE PACKAGE
         const public ENService[] getServices()
+        {
+
+        }
+
+        public bool addService(ENService serv)
+        {
+
+        }
+
+        public bool deleteService(ENService serv)
+        {
+
+        }
+
+        public bool includes(ENService serv)
         {
 
         }
