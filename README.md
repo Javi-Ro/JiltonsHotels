@@ -5,7 +5,7 @@ GROUP : ARA GROUP
 - Alcaraz Fuentes, Mario 48728219M
 - Rodríguez Lledó, Rosa María 50383873G
 - Berenguer Agulló, Adrián 74445262N
-- Slyusarchuk, Ilya X7219873N
+- Slyusarchuk Dimitriouchkina, Ilya X7219873N
 - Madani El Mrabet Martinez 74390833R
 
 # --- Proposal of Website ---- #
