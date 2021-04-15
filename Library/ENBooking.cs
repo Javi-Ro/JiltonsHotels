@@ -25,20 +25,28 @@ namespace Library
             private set { _date = value; }
         }
 
-        private bool _breakfast;  // It can change, by the moment the attribute is reflected here
-        public bool breakfast
+        private string _board; // Here we can control the types of board
+        public string board
         {
-            get { return _breakfast; }
-            private set { _breakfast = value; }
+            get { return _board; }
+            set { _board = value; }
         }
+
+        private int _discount;  // We only are interested on keeping the percentage of the discount
+        public int discount
+        {
+            get { return _discount;; }
+            set { _discount; = value; }
+        }
+
 
         // Booking methods
-        public Booking(ENUser user, ENDate date, ENRoom rooms[], bool breakfast)
+        public Booking(ENUser user, ENDate date, ENRoom rooms[], bool board, ENDiscount discount)
         {
 
         }
 
-        public bool makeBooking()
+        public bool createBooking()
         {
 
         }
@@ -48,7 +56,7 @@ namespace Library
 
         }
 
-        public bool updateBreakfast(bool breakfast)
+        public bool searchBooking()  // Looks for a booking on the db with the same user and date that the caller
         {
 
         }
@@ -69,7 +77,7 @@ namespace Library
 
         }
 
-        public bool isRoom(ENRoom room)
+        public bool isOnTheBooking(ENRoom room)
         {
 
         }
@@ -90,6 +98,28 @@ namespace Library
 
         }
 
+
+        public bool isOnTheBooking(ENService service)
+        {
+
+        }
+
+        // Packages methods
+        public bool addPackage(ENPackage package)
+        {
+
+        }
+
+        public bool cancelPackage(ENPackage package)
+        {
+
+        }
+
+        public bool isOnTheBooking(ENPackage package)
+        {
+
+        }
+
         // Discounts
         public bool applyDiscount(ENDiscount discount)
         {
@@ -97,6 +127,27 @@ namespace Library
         }
 
         public bool quitDiscount(ENDiscount discount)
+        {
+
+        }
+
+        public bool isDiscounted()
+        {
+
+        }
+
+        // Car leasing
+        public bool addCar(ENCar car)
+        {
+
+        }
+
+        public bool deleteCar(ENDiscount discount)
+        {
+
+        }
+
+        public ENCar[] getCars()
         {
 
         }
