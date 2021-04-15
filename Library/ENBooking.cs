@@ -136,6 +136,22 @@ namespace Library
 
         }
 
+        // Car leasing
+        public bool addCar(ENCar car)
+        {
+
+        }
+
+        public bool deleteCar(ENDiscount discount)
+        {
+
+        }
+
+        public ENCar[] getCars()
+        {
+
+        }
+
         // Auxiliary methods
         const public int calculatePrice()
         {

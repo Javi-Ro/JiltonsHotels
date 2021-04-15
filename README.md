@@ -20,19 +20,16 @@ The idea is to offer different types of rooms as products, and many other comple
 For the public part we decided to implement the following functionalities:
   - Watch photos, descriptions, and prices of each room.
   - See descriptions and prices of each activity and service.
-  - Consult the menu and make reservations on the restaurant service.
-  - Read client’s opinions of the different services.
+  - Consult the menu of the restaurant.
+  - Read client’s opinions about the hotel.
   - Use filters to select different rooms based on the client’s preferences.
   - FAQs and contact information.
   - Registration form for website visitors.
-  - Package offers (only for registered users).
 
 ### PUBLIC EN LIST ###
   - ENRoom
   - ENService (include gym and spa, kids’ activities...)
-  - ENTrip
-  - ENCar
-  - ENRestaurant
+  - ENMenu
   - ENUser
   - ENComment
 
@@ -44,12 +41,14 @@ Once the user has been correctly registered on the website, he/she will gain acc
   - In extra services and when possible, choose the professional you want of our staff (For example, a personal trainer between all the trainers we have for gym                     sessions).
   - View the receipt of what the client has booked. 
   - Access to different offers/discount codes and pay.
+  - Package offers.
   - Write reviews/complaints.
 
 ### PRIVATE EN LIST ###
   - ENDiscount
   - ENBooking
   - ENStaff (trainer, massage therapist...)
+  - ENCar
   - ENPackage
 
 
