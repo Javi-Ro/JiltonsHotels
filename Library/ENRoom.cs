@@ -6,59 +6,107 @@ using System.Threading.Tasks;
 
 namespace Library
 {
-    class ENRoom
+    public class ENRoom
     {
-        private int _id;
-        public int id
+        private static int last_id = 0;
+
+        private int _id; 
+        
+        public int id { 
+            get { return _id; } 
+            set { _id = value; } 
+        }
+
+        private string _title;
+
+        public int title
         {
-            get { return _id; }
-            set { _id = value; }
+            get { return _title; }
+            set { _title = value; }
+        }
+
+        private string _description; 
+        
+        public int description { 
+            get { return _description; } 
+            set { _description = value; } 
+        }
+
+        private float _price; 
+        
+        public float price { 
+            get { return _price; } 
+            set { _price = value; } 
         }
 
         private string _type;
-        public string type
+
+        public string type          //type will be: single, double, triple, deluxe, executive or presidential
         {
             get { return _type; }
-            private set { _type = value; }
+            set { _type = value; }
         }
 
-        private int _price;
-        public int price
+        private bool _available;
+
+        public bool available
         {
-            get { return _price; }
-            set { _price = value; }
+            get { return _available; }
+            set { _available = value; }
         }
+        private int _size;
 
-        public ENRoom(int price, int type)
+        public int size
         {
-
+            get { return _size; }
+            set { _size = value; }
         }
 
-        public bool createRoom()
+        public EnRoom()
         {
-
+            id = last_id++;
+            title = "Confort room";
+            description = "Comfort room suitable for all kinds of families";
+            size = 15;
+            available = true;
+            price = 60;
+            type = "Single";
         }
 
-        public bool deleteRoom()
+        public bool showAll()
         {
-
+            CADRoom room = new CADRoom();
+            bool show = user.readByType(this);
+            return show;
         }
 
-        public bool updateType(string type)
+        public bool showByType()
         {
-
+            CADRoom room = new CADRoom();
+            bool show = user.readByType(this);
+            return show;
         }
 
-        public bool updatePrice(int price)
+        public bool showByMinSize()
         {
-
+            CADRoom room = new CADRoom();
+            bool show = user.readByMinSize(this);
+            return show;
         }
 
-        const public ENBooking[] getBookings()
+        public bool showAllOrderByPriceUp()
         {
-
+            CADRoom room = new CADRoom();
+            bool show = user.readOrderByPriceUp(this);
+            return show;
         }
 
+        public bool showAllOrderByPriceDown()
+        {
+            CADRoom room = new CADRoom();
+            bool show = user.readOrderByPriceDown(this);
+            return show;
+        }
 
     }
 }
