@@ -9,7 +9,13 @@ namespace Library
     public class ENBooking
     {
         // Attributes and properties
-        private int id;
+        private int _id;
+        public int ID
+        {
+            get { return _id; }
+            private set { _id = value; }
+        }
+
 
         private ENUser _user;
         public ENUser user
@@ -18,32 +24,35 @@ namespace Library
             private set { _user = value; }
         }
 
-        private ENDate _date;
-        public ENDate date
+        
+        private IntervalDate _date; // Start and end date of the stay on the hotel
+        public IntervalDate date
         {
             get { return _date; }
             private set { _date = value; }
         }
 
-        private string _board; // Here we can control the types of board
+        
+        private string _board; // It can have 3 types: OB (No board), HB (Half Board) and FB (Full Board)
         public string board
         {
             get { return _board; }
-            set { _board = value; }
+            set { _board = value; }  // Here will be the call to the CADBooking method, and will be controlled that the type of board is a correct type
         }
 
-        private int _discount;  // We only are interested on keeping the percentage of the discount
-        public int discount
+        private ENDiscount _discount;
+        public ENDiscount discount
         {
-            get { return _discount;; }
-            set { _discount; = value; }
+            get { return _discount; }
+            private set { _discount = value; }
         }
 
 
         // Booking methods
-        public Booking(ENUser user, ENDate date, ENRoom rooms[], bool board, ENDiscount discount)
+        public Booking(ENUser user, IntervalDate date, ENRoom rooms[], bool board, ENDiscount discount)
         {
-
+            // When you create the booking you only can add the rooms you want, the extra services will be added
+            // after the booking is created
         }
 
         public bool createBooking()
@@ -64,7 +73,7 @@ namespace Library
         // Rooms methods
         const public ENRoom[] getRooms()
         {
-
+            // Returs the rooms associated with the booking
         }
 
         public bool addRoom(ENRoom room)
@@ -76,16 +85,11 @@ namespace Library
         {
 
         }
-
-        public bool isOnTheBooking(ENRoom room)
-        {
-
-        }
         
         // Services methods
-        const public ENService[] getServices()
+        public ENService[] getServices()
         {
-
+            // Returns the services associated with the booking
         }
 
         public bool addService(ENService service)
@@ -94,12 +98,6 @@ namespace Library
         }
 
         public bool cancelService(ENService service)
-        {
-
-        }
-
-
-        public bool isOnTheBooking(ENService service)
         {
 
         }
@@ -115,9 +113,9 @@ namespace Library
 
         }
 
-        public bool isOnTheBooking(ENPackage package)
+        public ENPackage[] getPackages(ENPackage package)
         {
-
+            // Returns the packages associated with a booking
         }
 
         // Discounts
@@ -149,13 +147,13 @@ namespace Library
 
         public ENCar[] getCars()
         {
-
+            // Returns the car leasings associated with the booking
         }
 
         // Auxiliary methods
-        const public int calculatePrice()
+        public int calculatePrice()
         {
-
+            // Returns the total cost of the booking (taking in account the possible discount code)
         }
     }
 }

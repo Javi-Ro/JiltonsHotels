@@ -105,5 +105,11 @@ namespace Library
         {
 
         }
+
+        // Auxiliary
+        public bool updateBoard(ENBooking booking)
+        {
+
+        }
     }
 }

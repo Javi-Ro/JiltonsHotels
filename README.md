@@ -28,7 +28,7 @@ For the public part we decided to implement the following functionalities:
 
 ### PUBLIC EN LIST ###
   - ENRoom
-  - ENService (include gym and spa, kids’ activities...)
+  - ENService (include gym, spa, kids’ activities...)
   - ENMenu
   - ENUser
   - ENComment
@@ -38,7 +38,7 @@ Once the user has been correctly registered on the website, he/she will gain acc
   - Update user’s personal data (name, e-mail, phone number…) in settings.
   - Search for all the available rooms in a certain data.
   - Booking, watching the bookings and cancel them (referred to rooms and extra services).
-  - In extra services and when possible, choose the professional you want of our staff (For example, a personal trainer between all the trainers we have for gym                     sessions).
+  - In extra services and when possible, choose the professional you want of our staff (For example, a personal trainer between all the trainers we have for gym sessions).
   - View the receipt of what the client has booked. 
   - Access to different offers/discount codes and pay.
   - Package offers.
@@ -58,8 +58,11 @@ Once the user has been correctly registered on the website, he/she will gain acc
   - Fidelity offers (only for registered users).
   - Referral program.
   - Change the language of the page.
+  - Possibility of booking spaces to celebrate events (Already added to the database because is so likely to be finally added).
+  - Making reservations on the restaurant.
 
 ### CLARIFICATIONS ###
   - In order to book a room you have to be registered on the website.
-  - You can only make reservations for the extra services (car leasing, gym...) if you are a registered user and you have previously booked a room.
-  - Extra services which will be offered on the web are going to be: Car leasing, Gym, Spa, Guided trips,Kids’ activities, and childcare service. The restaurant service will be     treated separately from the previous services since everyone which enters on the site can make a reservation on it.
+  - You can only make reservations for the extra services (car leasing, gym...) if you are a registered user and you have previously booked a room (the restaurant is treated apart).
+  - Extra services which will be offered on the web are going to be: Car leasing, Gym, Spa, Guided trips,Kids’ activities, and childcare service. 
+  - The restaurant service will be treated separately from the previous services since is not possible from the web to make reservations, and everyone which enters on the site can see the menu.
