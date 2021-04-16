@@ -66,3 +66,4 @@ Once the user has been correctly registered on the website, he/she will gain acc
   - You can only make reservations for the extra services (car leasing, gym...) if you are a registered user and you have previously booked a room (the restaurant is treated apart).
   - Extra services which will be offered on the web are going to be: Car leasing, Gym, Spa, Guided trips,Kids’ activities, and childcare service. 
   - The restaurant service will be treated separately from the previous services since is not possible from the web to make reservations, and everyone which enters on the site can see the menu.
+  - The scheme of the Database is on the main directory.
