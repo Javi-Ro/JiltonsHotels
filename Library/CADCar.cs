@@ -14,11 +14,13 @@ namespace Library
     public class CADCar
     {
 
+        private string constring;
+
         public CADCar()
         {
 
         }
-        
+
         public bool createCar(ENCar en)
         {
         

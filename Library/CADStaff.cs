@@ -14,6 +14,8 @@ namespace Library
     public class CADStaff
     {
 
+        private string constring;
+
         public CADStaff()
         {
 

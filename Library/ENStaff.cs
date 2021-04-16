@@ -49,19 +49,19 @@ namespace Library
 
         }
 
-        public class Massagist : ENStaff()
+        public class Massagist : ENStaff
         {
 
         }
-        public class Teacher : ENStaff()
+        public class Teacher : ENStaff
         {
 
         }
-        public class TouristGuide : ENStaff()
+        public class TouristGuide : ENStaff
         {
 
         }
-        public class PersonalTrainer : ENStaff()
+        public class PersonalTrainer : ENStaff
         {
 
         }
