@@ -37,7 +37,7 @@ namespace Library
         }
 
         // Methods for rooms
-        const public ENRoom[] getRooms(ENBooking booking)
+        public ENRoom[] getRooms(ENBooking booking)
         {
 
         }
@@ -53,7 +53,7 @@ namespace Library
         }
 
         // Methods for services
-        const public ENService[] getServices(ENBooking booking)
+        public ENService[] getServices(ENBooking booking)
         {
 
         }
