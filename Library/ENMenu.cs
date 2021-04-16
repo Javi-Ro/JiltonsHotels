@@ -49,4 +49,13 @@ public class ENRestaurant
         dessert = System.String.Empty;
         starters = System.String.Empty;
     }
+
+    public bool showMenu()
+    {
+        CADMenu menu = new CADMenu();
+        bool show = menu.showToday(this);
+        return show;
+    }
+
+
 }

@@ -76,35 +76,51 @@ namespace Library
         public bool showAll()
         {
             CADRoom room = new CADRoom();
-            bool show = user.readByType(this);
+            bool show = user.selectAll(this);
             return show;
         }
 
         public bool showByType()
         {
             CADRoom room = new CADRoom();
-            bool show = user.readByType(this);
+            bool show = user.selectByType(this);
             return show;
         }
 
         public bool showByMinSize()
         {
             CADRoom room = new CADRoom();
-            bool show = user.readByMinSize(this);
+            bool show = user.selectByMinSize(this);
             return show;
         }
 
         public bool showAllOrderByPriceUp()
         {
             CADRoom room = new CADRoom();
-            bool show = user.readOrderByPriceUp(this);
+            bool show = user.selectOrderByPriceUp(this);
             return show;
         }
 
         public bool showAllOrderByPriceDown()
         {
             CADRoom room = new CADRoom();
-            bool show = user.readOrderByPriceDown(this);
+            bool show = user.selectOrderByPriceDown(this);
+            return show;
+        }
+
+        public bool setNotAvailable()
+        {
+            this.available = false;
+            CADRoom room = new CADRoom();
+            bool show = user.UpdateNotAvailable(this);
+            return show;
+        }
+
+        public bool setAvailableAgain()
+        {
+            this.available = true;
+            CADRoom room = new CADRoom();
+            bool show = user.UpdateAvailable(this);
             return show;
         }
 
