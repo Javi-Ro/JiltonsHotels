@@ -1,0 +1,9 @@
+Regarding the library project, is not ok. Some classes have the calls to the CAD classes and some not (ENCar, EnDiscount, ENPackage, ENSTaff, EnService..).
+In some classes you dont have all the CRUD operations, sometimes the READ is missing (e.g. in the ENCar class you cannot list all the cars...etc).
+ENMenu classs inside is called ENRestaurant?
+What is the Dates class? you dont have EN, CAD for this entity.
+
+Regarding the DDBB schema:
+Calendar why is an entity? didnt we say you would use the ASPnet calendar control and you would store just the date and hour?
+The relations are a mess, not correct. Moreover the relations should have a name.
+Why do you have the email separated from the user ? is that his/her identificator? can s/he have more than one? why
