@@ -7,9 +7,9 @@ namespace Library
 		private int id;
 		private int price;
 		private string description;
-
+		  
 		private int Id
-		{
+		{ //ID  of the service
 			get
 			{
 				return id;
