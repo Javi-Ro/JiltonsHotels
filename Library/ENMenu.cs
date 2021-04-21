@@ -1,6 +1,6 @@
 ﻿using System;
 
-public class ENRestaurant
+public class ENMenu
 {
 	//the idea is to show a different menu depending on the day of the week (using an asp net library)
 
@@ -41,7 +41,7 @@ public class ENRestaurant
     }
 
 
-	public ENRestaurant()
+	public ENMenu()
 	{
         price = 0.0;
         id = 0;
