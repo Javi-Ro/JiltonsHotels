@@ -8,7 +8,7 @@ namespace Library
 {
 	public class ENUser
 	{
-		// Properties esto es una prueba para ver si he creado la solucion bien
+		// Properties
 
 		public string ID { set; get; }
 
