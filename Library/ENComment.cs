@@ -10,7 +10,7 @@ namespace Library
 	{
 		// Attributes
 
-		private static UniqueID = 0;
+		private static int UniqueID = 0;
 
 		private int _id;
 
