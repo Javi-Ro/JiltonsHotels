@@ -47,7 +47,7 @@ namespace Library
         {
 			CADComment cad = new CADComment();
 
-			cad.createComment();
+			return cad.createComment(this);
         }
 
 		// Update the text of the comment
@@ -56,7 +56,7 @@ namespace Library
 		{
 			CADComment cad = new CADComment();
 
-			cad.updateComment();
+			return cad.updateComment(this);
 		}
 
 		// Delete the comment
@@ -65,7 +65,7 @@ namespace Library
 		{
 			CADComment cad = new CADComment();
 
-			cad.deleteComment();
+			return cad.deleteComment(this);
 		}
 	}
 }

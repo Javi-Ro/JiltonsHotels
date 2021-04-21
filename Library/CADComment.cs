@@ -26,18 +26,24 @@ namespace Library
         {
             // Code to check if that comment ID already exists on the database or not
             // Returns true if comment was created succesfully. False in other case
+
+            return true;
         }
 
         public bool updateComment(ENComment comment)
         {
             // Code to update the text of the comment
             // Returns true if comment was updated succesfully. False in other case
+
+            return true;
         }
 
         public bool deleteComment(ENComment comment)
         {
             // Code to delete the comment
             // Returns true if comment was deleted succesfully. False in other case
+
+            return true;
         }
     }
 }

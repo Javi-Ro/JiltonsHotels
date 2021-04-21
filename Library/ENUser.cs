@@ -46,7 +46,7 @@ namespace Library
         {
 			CADUser cad = new CADUser();
 
-			cad.createUser(this);
+			return cad.createUser(this);
         }
 
 		// Update information of the User (phone, mail or address. ID, name or age cannot be changed by obvious reasons)
@@ -55,7 +55,7 @@ namespace Library
         {
 			CADUser cad = new CADUser();
 
-			cad.updateUser(this);
+			return cad.updateUser(this);
 		}
 
 		// If we want to delete the user to create another one with the same ID for example
@@ -64,7 +64,7 @@ namespace Library
         {
 			CADUser cad = new CADUser();
 
-			cad.deleteUser(this);
+			return cad.deleteUser(this);
 		}
 	}
 }

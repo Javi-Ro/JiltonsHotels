@@ -26,18 +26,24 @@ namespace Library
         {
             // Code to check if that ID or email already exists on the database or not
             // Returns true if user was created succesfully. False in other case
+
+            return true;
         }
 
         public bool updateUser(ENUser user)
         {
             // Code to update the information of the user
             // Returns true if user was updated succesfully. False in other case
+
+            return true;
         }
 
         public bool deleteUser(ENUser user)
         {
             // Code to delete the user
             // Returns true if user was deleted succesfully. False in other case
+
+            return true;
         }
     }
 }
