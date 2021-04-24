@@ -2,6 +2,7 @@
 
 namespace Library
 {
+    // This class is used to represent and manipulate dates on an easiest way.
 	public class Date
 	{
         private int _day;
@@ -25,7 +26,7 @@ namespace Library
             private set { _year = value; }
         }
 
-        public Date(int day, int month, int year) // Here will be controlled that the date is correct
+        public Date(int day, int month, int year)
 		{
 
 		}

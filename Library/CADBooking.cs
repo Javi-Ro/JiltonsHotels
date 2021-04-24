@@ -20,7 +20,7 @@ namespace Library
 
         }
 
-        // Methods for bookings
+        // Methods for bookings (CRUD operations)
         public bool createBooking(ENBooking booking)
         {
 
@@ -31,13 +31,23 @@ namespace Library
 
         }
 
-        public bool searchBooking(ENBooking booking)  // Looks for a booking on the db with the same user and date that the caller
+        public List<ENBooking> listAllBookings()
+        {
+
+        }
+
+        public ENBooking searchBooking(ENUser user, IntervalDate interval)
+        {
+
+        }
+
+        public bool updateBooking(ENBooking booking)
         {
 
         }
 
         // Methods for rooms
-        public ENRoom[] getRooms(ENBooking booking)
+        public List<ENRoom> getRooms(ENBooking booking)
         {
 
         }
@@ -53,7 +63,7 @@ namespace Library
         }
 
         // Methods for services
-        public ENService[] getServices(ENBooking booking)
+        public List<ENService> getServices(ENBooking booking)
         {
 
         }
@@ -79,6 +89,11 @@ namespace Library
 
         }
 
+        public List<ENPackage> getPackages(ENBooking booking)
+        {
+               
+        }
+
         // Methods for discounts
         public bool applyDiscount(ENBooking booking, ENDiscount discount)
         {
@@ -96,18 +111,12 @@ namespace Library
 
         }
 
-        public bool deleteCar(ENBooking booking, ENDiscount discount)
+        public bool deleteCar(ENBooking booking, ENCar car)
         {
 
         }
 
-        public ENCar[] getCars(ENBooking booking)
-        {
-
-        }
-
-        // Auxiliary
-        public bool updateBoard(ENBooking booking)
+        public List<ENCar> getCars(ENBooking booking)
         {
 
         }

@@ -37,7 +37,17 @@ namespace Library
         public string board
         {
             get { return _board; }
-            set { _board = value; }  // Here will be the call to the CADBooking method, and will be controlled that the type of board is a correct type
+            private set 
+            { 
+                if (board == "OB" || board == "HB" || board == "FB")
+                {
+                    _board = value;
+                }
+                else
+                {
+                    Console.WriteLine("ERROR: incorrect type of board");
+                }
+            }
         }
 
         private ENDiscount _discount;
@@ -49,105 +59,140 @@ namespace Library
 
 
         // Booking methods
-        public Booking(ENUser user, IntervalDate date, ENRoom rooms[], bool board, ENDiscount discount)
+        public ENBooking() { }
+
+        public ENBooking(ENUser user, IntervalDate date, List<ENRoom> rooms, bool board)
         {
-            // When you create the booking you only can add the rooms you want, the extra services will be added
-            // after the booking is created
+            // When you declare the booking you only can add the rooms you want, the extra services and the discounts will be added
+            // after the booking is declared
         }
 
         public bool createBooking()
         {
-
+            CADBooking booking = new CADBooking();
+            return booking.createBooking(this);
         }
 
         public bool deleteBooking()
         {
-
+            CADBooking booking = new CADBooking();
+            return booking.deleteBooking(this);
         }
 
-        public bool searchBooking()  // Looks for a booking on the db with the same user and date that the caller
+        public List<ENBooking> listAllBookings()
         {
+            CADBooking booking = new CADBooking();
+            return booking.listAllBookings();
+        }
 
+        public ENBooking searchBooking(ENUser user, IntervalDate interval)
+        {
+            CADBooking booking = new CADBooking();
+            return booking.searchBooking(user, interval);
+        }
+
+        public bool updateBooking()  // Only can be updated the IntervalDate and the type of Board
+        {
+            CADBooking booking = new CADBooking();
+            return booking.updateBooking(this);
         }
 
         // Rooms methods
-        const public ENRoom[] getRooms()
+        public List<ENRoom> getRooms()
         {
-            // Returs the rooms associated with the booking
+            CADBooking booking = new CADBooking();
+            return booking.getRooms(this);
         }
 
         public bool addRoom(ENRoom room)
         {
-
+            CADBooking booking = new CADBooking();
+            return booking.addRoom(this, room);
         }
 
         public bool deleteRoom(ENRoom room)
         {
-
+            CADBooking booking = new CADBooking();
+            return booking.deleteRoom(this, room);
         }
         
         // Services methods
-        public ENService[] getServices()
+        public List<ENService> getServices()
         {
-            // Returns the services associated with the booking
+            CADBooking booking = new CADBooking();
+            return booking.getServices(this);
         }
 
         public bool addService(ENService service)
         {
-
+            CADBooking booking = new CADBooking();
+            return booking.addService(this, service);
         }
 
         public bool cancelService(ENService service)
         {
-
+            CADBooking booking = new CADBooking();
+            return booking.cancelService(this, service);
         }
 
         // Packages methods
         public bool addPackage(ENPackage package)
         {
-
+            CADBooking booking = new CADBooking();
+            return booking.addPackage(this, package);
         }
 
         public bool cancelPackage(ENPackage package)
         {
-
+            CADBooking booking = new CADBooking();
+            return booking.cancelPackage(this, package);
         }
 
-        public ENPackage[] getPackages(ENPackage package)
+        public List<ENPackage> getPackages(ENPackage package)
         {
-            // Returns the packages associated with a booking
+            CADBooking booking = new CADBooking();
+            return booking.getPackages(this);
         }
 
         // Discounts
         public bool applyDiscount(ENDiscount discount)
         {
-
+            CADBooking booking = new CADBooking();
+            return booking.applyDiscount(this, discount);
         }
 
         public bool quitDiscount(ENDiscount discount)
         {
-
+            CADBooking booking = new CADBooking();
+            return booking.quitDiscount(this, discount);
         }
 
         public bool isDiscounted()
         {
-
+            if (discount == null)
+            {
+                return false;
+            }
+            return true;
         }
 
         // Car leasing
         public bool addCar(ENCar car)
         {
-
+            CADBooking booking = new CADBooking();
+            return booking.addCar(this, car);
         }
 
-        public bool deleteCar(ENDiscount discount)
+        public bool deleteCar(ENCar car)
         {
-
+            CADBooking booking = new CADBooking();
+            return booking.deleteCar(this, car);
         }
 
-        public ENCar[] getCars()
+        public List<ENCar> getCars()
         {
-            // Returns the car leasings associated with the booking
+            CADBooking booking = new CADBooking();
+            return booking.getCars(this);
         }
 
         // Auxiliary methods
