@@ -26,12 +26,21 @@ namespace Library
 
         }
 
-        public bool updateStaff(ENStaff en)
+        public bool deleteStaff(ENStaff en)
         {
 
         }
 
-        public bool deleteStaff(ENStaff en)
+        public bool updateContactStaff(ENStaff en)
+        {
+
+        }
+
+        public bool updateTelephoneStaff(ENStaff en)
+        {
+
+        }
+        public bool updateWageStaff(ENStaff en)
         {
 
         }

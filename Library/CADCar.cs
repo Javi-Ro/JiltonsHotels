@@ -35,6 +35,11 @@ namespace Library
         {
 
         }
+        public List<ENCar> listAllCars()
+        {
+
+        }
+
 
     }
 }

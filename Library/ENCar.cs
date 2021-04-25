@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Library
 {
-    class ENCar
+    public class ENCar
     {
         private string matricula;
         private string marca;
@@ -39,25 +39,35 @@ namespace Library
 
         public ENCar(string matricula, string marca, string modelo, int precio)
         {
-
+            this.matricula = matricula;
+            this.marca = marca;
+            this.modelo = modelo;
+            this.precio = precio;
         }
 
         public bool createCar()
         {
-
+            CADCar car = new CADCar();
+            return car.createCar(this); 
         }
 
         public bool deleteCar()
         {
-
+            CADCar car = new CADCar();
+            return car.deleteCar(this);
         }
 
-        //Solo hace falta updatear el precio? Porque el modelo y marca no se puede cambiar.
         public bool updatePriceCar(int precio)
         {
-
+            CADCar car = new CADCar();
+            Price = precio;
+            return car.updatePriceCar(this);
         }
 
-
+        public List<ENCar> listAllCars()
+        {
+            CADCar car = new CADCar();
+            return car.listAllCars();
+        }
     }
 }
