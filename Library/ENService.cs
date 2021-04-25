@@ -22,7 +22,7 @@ namespace Library
 		}
 
 		public int Price
-		{
+		{ //Price of the service
 			get
 			{
 				return price;
@@ -34,7 +34,7 @@ namespace Library
 		}
 
 		public string Descritpion
-		{
+		{ //Description of the service
 			get
 			{
 				return description;
@@ -50,19 +50,19 @@ namespace Library
 
 		}
 
-		private bool createService()
+		public bool createService()
         {
 			CADService service = new CADService();
 			return service.createService(this);
 		}
 
-		private bool deleteService()
+		public bool deleteService()
         {
 			CADService service = new CADService();
 			return service.deleteService(this);
 		}
 
-		private bool updateService()
+		public bool updateService()
         {
 			CADService service = new CADService();
 			return service.updateService(this);
