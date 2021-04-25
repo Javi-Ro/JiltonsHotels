@@ -67,5 +67,12 @@ namespace Library
 
 			return cad.deleteComment(this);
 		}
+
+		public bool listComment()
+        {
+			CADComment cad = new CADComment();
+
+			return cad.listComment(this);
+		}
 	}
 }

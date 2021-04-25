@@ -45,5 +45,13 @@ namespace Library
 
             return true;
         }
+
+        public bool listComment(ENComment comment)
+        {
+            // Code to list comments
+            // Returns true if comments were listed succesfully. False in other case
+
+            return true;
+        }
     }
 }
