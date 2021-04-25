@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Library
 {
@@ -22,6 +23,16 @@ namespace Library
         }
 
         public bool updateService(ENService en)
+        {
+
+        }
+
+        public List<ENService> listAllServices()
+        {
+
+        }
+
+        public ENService searchService()
         {
 
         }

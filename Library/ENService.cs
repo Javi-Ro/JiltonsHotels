@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Library
 {
@@ -8,7 +9,7 @@ namespace Library
 		private int price;
 		private string description;
 		  
-		private int Id
+		public int Id
 		{ //ID  of the service
 			get
 			{
@@ -32,7 +33,7 @@ namespace Library
 			}
 		}
 
-		private string Descritpion
+		public string Descritpion
 		{
 			get
 			{
@@ -51,18 +52,33 @@ namespace Library
 
 		private bool createService()
         {
-
-        }
+			CADService service = new CADService();
+			return service.createService(this);
+		}
 
 		private bool deleteService()
         {
-
-        }
+			CADService service = new CADService();
+			return service.deleteService(this);
+		}
 
 		private bool updateService()
         {
+			CADService service = new CADService();
+			return service.updateService(this);
+		}
 
-        }
+		public List<ENService> listAllServices()
+		{
+			CADService service = new CADService();
+			return service.listAllServices();
+		}
+
+		/*public ENService searchService()
+		{
+			CADService service_ = new CADService();
+			return service_.searchService();
+		}*/
 
 		public class Excursion : ENService
         {
@@ -73,7 +89,7 @@ namespace Library
 
 		public class Gym : ENService
         {
-
+			//poder buscar empleados alomejor en esta y en todas
         }
 
 		public class Spa : ENService
