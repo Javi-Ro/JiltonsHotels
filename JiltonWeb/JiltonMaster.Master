@@ -5,16 +5,58 @@
 <html>
 <head runat="server">
     <title></title>
+    <link rel="stylesheet" type="text/css" href="css/master.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
     <asp:ContentPlaceHolder ID="TitlePage" runat="server"></asp:ContentPlaceHolder>
 </head>
 <body>
-    <nav class="NavigationBar">
-      <img src = "assets/JiltonLogo.png">
-      <a href="MainPage.aspx">Home</a>
-      <a href="MainPage.aspx">News</a>
-      <a href="ContactForm.aspx">Contact</a>
-      <a href="MainPage.aspx">About</a>
-    </nav>
+
+    <header>
+        <div class="TopContent">
+            <div class = "Logo">
+                <a href="MainPage.aspx">
+                    <img src = "assets/JiltonLogo.png">
+                </a>
+            </div>
+            <nav class = "NavigationBar">   <! se puede cambiar por el asp:menu>
+              <a class="nav-enlace" href = "MainPage.aspx">ROOMS</a>
+              <a class="nav-enlace" href = "MainPage.aspx">RESTAURANT</a>
+              <a class="nav-enlace" href = "MainPage.aspx">SPA&GYM</a>
+              <a class="nav-enlace" href = "MainPage.aspx">CAR LEASING</a>
+              <a class="nav-enlace" href = "ContactForm.aspx">CONTACT</a>
+              <a class="nav-enlace" href = "MainPage.aspx">ABOUT</a>
+            </nav>
+            <div class="register-part">
+                <a class="register" href="MainPage.aspx">REGISTER</a>
+            </div>
+        </div>
+        <div class="bookingSelector">       <! cambiar selects por los equivalentes en asp y terminar estilos> 
+            <label class="bookingTitle">BOOKINGS</label>
+            <form runat="server" class="booking">
+                <label>ENTRY DATE</label>
+                <asp:Calendar ID="EntryCalendar" runat="server"></asp:Calendar>
+                <label>DEPARTURE DATE</label>
+                <asp:Calendar ID="DepartureCalendar" runat="server"></asp:Calendar>
+                <label>ADULTS</label>
+                <select>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                </select>
+                <label>CHILDS</label>
+                <select>
+                    <option>0</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                </select>
+            </form>
+        </div>
+        
+
+    </header>
     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
 </body>
 </html>

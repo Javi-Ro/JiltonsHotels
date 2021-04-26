@@ -1,0 +1,100 @@
+﻿* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: 'Karla', sans-serif;
+}
+
+/* ###### LOGO + NAV BAR + REGISTRATION ###### */
+
+.TopContent {
+    display: flex;
+    height: 150px;
+    background: #CADAD5;
+}
+
+/* LOGO */
+
+.Logo {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.Logo a img {
+    height: 100%;
+}
+
+/* NAVIGATION BAR */
+
+.NavigationBar {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    border-right: solid 1px black;
+}
+
+.nav-enlace {
+    margin: 30px 15px;
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+.nav-enlace:hover{
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* REGISTER POINT (TEMPORARY EXAMPLE) */
+
+.register {
+    margin: 30px 15px;
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+.register-part {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.register:hover{
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* ##### BOOKING SELECTOR ##### */
+.bookingSelector {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.booking {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.booking label{
+    margin: 5px;
+    font-size: 16px;
+}
+
+.bookingTitle{
+    font-weight: bold;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
