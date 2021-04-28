@@ -5,8 +5,8 @@
 
 <html>
 <head runat="server">
-    <title></title>
-    <link rel="stylesheet" href="css/master.css?v=<?php echo time(); ?>" />  
+    <title>Jilton Hotel</title>
+    <link rel="stylesheet" href="../css/master.css?v=<?php echo time(); ?>" />  
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
     <asp:ContentPlaceHolder ID="TitlePage" runat="server"></asp:ContentPlaceHolder>
@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <form runat="server">
+    <form id="form1" runat="server">
         <header>
             <div class="TopContent">
                 <div class = "Logo">
@@ -61,25 +61,25 @@
                 <div class="BookingSelector">
                     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 
-                    <label>ENTRY DATE</label>
+                    <asp:Label class="BookingLabel" runat="server">ENTRY DATE</asp:Label>
 
                     <asp:TextBox ID ="TextEntry" Width ="80px" Height="20px" style="text-align:center; border-radius:3px; border-width:1px; margin-right:2px" ReadOnly="true" runat ="server" />
                     <asp:ImageButton ID="ShowEntry" Width="18px" Height="18px" ImageAlign="Middle" ImageUrl="assets/Calendar.png" BorderWidth ="1px" BackColor="White" style="border-radius:3px" AlternateText="No Image available" runat="server" />
                     <ajax:CalendarExtender ID="EntryCalendar" PopupButtonID="ShowEntry" runat="server"  TargetControlID="TextEntry" Format="dd/MM/yyyy"> </ajax:CalendarExtender>
 
-                    <label>DEPARTURE DATE</label>
+                    <asp:Label class="BookingLabel" runat="server">DEPARTURE DATE</asp:Label>
 
                     <asp:TextBox ID ="TextDeparture" Width ="80px" Height="20px" style="text-align:center; border-radius:3px; border-width:1px; margin-right:2px" ReadOnly="true" runat ="server" />
                     <asp:ImageButton ID="ShowDeparture" Width="18px" Height="18px" ImageAlign="Middle" ImageUrl="assets/Calendar.png" BorderWidth ="1px" BackColor="White" style="border-radius:3px" AlternateText="No Image available" runat="server" />
                     <ajax:CalendarExtender ID="DepartureCalendar" PopupButtonID="ShowDeparture" runat="server" TargetControlID="TextDeparture" Format="dd/MM/yyyy"> </ajax:CalendarExtender>
 
-                    <label>ADULTS</label>
+                    <asp:Label class="BookingLabel" runat="server">ADULTS</asp:Label>
                     <asp:DropDownList ID="AdultOptions" runat="server">
                         <asp:ListItem Value="0">0</asp:ListItem>
                         <asp:ListItem Value="1">1</asp:ListItem>
                         <asp:ListItem Value="2">2</asp:ListItem>
                     </asp:DropDownList>
-                    <label>CHILDS</label>
+                    <asp:Label class="BookingLabel" runat="server">CHILDS</asp:Label>
                     <asp:DropDownList ID="ChildOptions" runat="server">
                         <asp:ListItem Value="0">0</asp:ListItem>
                         <asp:ListItem Value="1">1</asp:ListItem>
@@ -87,17 +87,19 @@
                         <asp:ListItem Value="3">3</asp:ListItem>
                         <asp:ListItem Value="4">4</asp:ListItem>
                     </asp:DropDownList>
+                    <asp:Button  runat="server" CssClass="BookingButton" Text="BOOK"></asp:Button>
+                    <asp:Label CssClass="InformationLabel" runat="server">INFORMATION AND BOOKINGS +34 965 455 123</asp:Label>
                 </div>            
             </div>
         </header>
         <section class="Main">
-
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
         </section>
         <footer>
 
         </footer>
+
     </form>
     
-    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
 </body>
 </html>
