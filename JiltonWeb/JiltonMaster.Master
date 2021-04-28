@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../css/master.css?v=<?php echo time(); ?>" />  
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
-    <asp:ContentPlaceHolder ID="TitlePage" runat="server"></asp:ContentPlaceHolder>
+    <asp:ContentPlaceHolder ID="cssLink" runat="server"></asp:ContentPlaceHolder>
 
     <meta http-equiv="Expires" content="0">
     <meta http-equiv="Last-Modified" content="0">
@@ -53,7 +53,8 @@
                     </items>
                 </asp:Menu>
                 <div class="RegisterContainer">
-                    <a class="register" href="MainPage.aspx">REGISTER</a>
+                    <a class="Register" href="MainPage.aspx">REGISTER</a>
+                    <a class="Register" href="MainPage.aspx">LOGIN</a>
                 </div>
             </div>
             <div class="BookingRegister">
@@ -74,13 +75,13 @@
                     <ajax:CalendarExtender ID="DepartureCalendar" PopupButtonID="ShowDeparture" runat="server" TargetControlID="TextDeparture" Format="dd/MM/yyyy"> </ajax:CalendarExtender>
 
                     <asp:Label class="BookingLabel" runat="server">ADULTS</asp:Label>
-                    <asp:DropDownList ID="AdultOptions" runat="server">
+                    <asp:DropDownList ID="AdultOptions" CssClass="Desplegables" runat="server">
                         <asp:ListItem Value="0">0</asp:ListItem>
                         <asp:ListItem Value="1">1</asp:ListItem>
                         <asp:ListItem Value="2">2</asp:ListItem>
                     </asp:DropDownList>
                     <asp:Label class="BookingLabel" runat="server">CHILDS</asp:Label>
-                    <asp:DropDownList ID="ChildOptions" runat="server">
+                    <asp:DropDownList ID="ChildOptions" CssClass="Desplegables" runat="server">
                         <asp:ListItem Value="0">0</asp:ListItem>
                         <asp:ListItem Value="1">1</asp:ListItem>
                         <asp:ListItem Value="2">2</asp:ListItem>
@@ -92,7 +93,7 @@
                 </div>            
             </div>
         </header>
-        <section class="Main">
+        <section>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
         </section>
         <footer>

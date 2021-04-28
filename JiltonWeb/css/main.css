@@ -1,0 +1,70 @@
+﻿/* ##### MAIN ######*/
+
+.Main {
+    height: 4000px;
+    background-image: url(../assets/6.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.Main .EntryLabel{
+    position:relative;
+    font-size: 90px;
+    font-weight: normal;
+    top:300px;
+    left: 41%;  
+    color: white;
+    font-family: 'IM Fell Double Pica', serif;
+}
+
+/* 2nd PART */
+.Comments{
+    position: relative;
+    top:800px;
+    height: 1000px;
+    background: rgba(255,255,255,0.7);
+    display: flex;
+    justify-content: center;
+    
+}
+
+.CommentsLabels {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.HotelName{
+    margin-top: 25px;
+    letter-spacing: 5px;
+}
+
+.Reason {
+    font-family: 'IM Fell Double Pica', serif;
+    font-size: 34px;
+    letter-spacing: 5px;
+}
+
+.Comments img{
+    margin-top: 50px;
+    height: 80px;
+}
+
+.Comments .Separator{
+    margin: 40px 0;
+}
+
+.Comments p{
+    text-align: center;
+    font-size: 20px;
+    max-width: 80%;
+    font-weight: 600;
+}
+
+.CommentsLessOpacity {
+    width: 60%;
+    height: 1000px;
+    background: rgba(255,255,255,0.85);
+}

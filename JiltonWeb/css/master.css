@@ -4,7 +4,6 @@
     padding: 0;
 }
 
-
 body {
     font-family: 'Karla', sans-serif;
 }
@@ -45,6 +44,7 @@ body {
     text-decoration: none;
     color: black;
     font-size: 20px;
+    transition: .3s ease all;
 }
 
 .nav-enlace:hover {
@@ -56,25 +56,29 @@ body {
 }
 
 
-/* REGISTER POINT (TEMPORARY EXAMPLE) */
+/* REGISTER/LOGIN POINT */
 
-.register {
-    margin: 30px 15px;
+.Register {
+    margin: 15px 25px;
     text-decoration: none;
     color: black;
     font-size: 20px;
+    transition: .3s ease all;
 }
 
 .RegisterContainer {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column;
     justify-content: center;
     align-items: center;
+    height: 100%;
 }
 
-.register:hover {
+.Register:hover {
+    font-size: 24px;
     font-weight: bold;
     cursor: pointer;
+    transition: .3s ease all;
 }
 
 /* ##### BOOKING SELECTOR ##### */
@@ -111,16 +115,18 @@ body {
 
 .BookingButton {
     margin: 0 10px 0 10px;
-    border: 1px solid black;
+    border: 1px solid #515654;
     line-height: 21px;
     padding: 0 10px;
     background: transparent;
+    border-radius: 3px;
     font-weight: bold;
+    transition: .5s ease all;
 }
 
 .BookingButton:hover {
     cursor: pointer;
-    background: black;
+    background: #515654;
     color:white;
     transition: .5s ease all;
 }
@@ -129,3 +135,6 @@ body {
     margin: 0 25px 0 10px;
 }
 
+.Desplegables {
+    border-radius:3px;
+}
