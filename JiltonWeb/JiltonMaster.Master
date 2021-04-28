@@ -5,64 +5,88 @@
 <html>
 <head runat="server">
     <title></title>
-    <link rel="stylesheet" type="text/css" href="css/master.css" />
+    <link rel="stylesheet" href="css/master.css?v=<?php echo time(); ?>" />  
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
     <asp:ContentPlaceHolder ID="TitlePage" runat="server"></asp:ContentPlaceHolder>
+
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+    <meta http-equiv="Pragma" content="no-cache">
 </head>
+
 <body>
+    <form runat="server">
+        <header>
+            <div class="TopContent">
+                <div class = "Logo">
+                    <a href="MainPage.aspx">
+                        <img src = "assets/JiltonLogo.png">
+                    </a>
+                </div>
+                <asp:Menu class ="NavigationBar" runat="server" Orientation="Horizontal">
+                    <LevelMenuItemStyles>
+                        <asp:MenuItemStyle CssClass="nav-enlace" />
+                    </LevelMenuItemStyles>
 
-    <header>
-        <div class="TopContent">
-            <div class = "Logo">
-                <a href="MainPage.aspx">
-                    <img src = "assets/JiltonLogo.png">
-                </a>
+                    <items>
+                        <asp:MenuItem NavigateUrl="~/MainPage.aspx" Text="ROOMS" ToolTip="ROOMS">
+
+                        </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/MainPage.aspx" Text="RESTAURANT" ToolTip="RESTAURANT">
+
+                        </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/MainPage.aspx" Text="SPA&GYM" ToolTip="SPA&GYM">
+
+                        </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/MainPage.aspx" Text="CAR LEASING" ToolTip="CAR LEASING">
+
+                        </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/ContactForm.aspx" Text="CONTACT" ToolTip="CONTACT">
+
+                        </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/MainPage.aspx" Text="ABOUT" ToolTip="ABOUT">
+
+                        </asp:MenuItem>
+                    </items>
+                </asp:Menu>
+                <div class="RegisterContainer">
+                    <a class="register" href="MainPage.aspx">REGISTER</a>
+                </div>
             </div>
-            <nav class = "NavigationBar">   <! se puede cambiar por el asp:menu>
-              <a class="nav-enlace" href = "MainPage.aspx">ROOMS</a>
-              <a class="nav-enlace" href = "MainPage.aspx">RESTAURANT</a>
-              <a class="nav-enlace" href = "MainPage.aspx">SPA&GYM</a>
-              <a class="nav-enlace" href = "MainPage.aspx">CAR LEASING</a>
-              <a class="nav-enlace" href = "ContactForm.aspx">CONTACT</a>
-              <a class="nav-enlace" href = "MainPage.aspx">ABOUT</a>
-            </nav>
-            <div class="RegisterContainer">
-                <a class="register" href="MainPage.aspx">REGISTER</a>
+            <div class="BookingRegister">
+                <label class="bookingTitle">BOOKINGS</label>
+                <div class="BookingSelector">
+                    <label>ENTRY DATE</label>
+                    <asp:Calendar ID="EntryCalendar" runat="server"></asp:Calendar>
+                    <label>DEPARTURE DATE</label>
+                    <asp:Calendar ID="DepartureCalendar" runat="server"></asp:Calendar>
+                    <label>ADULTS</label>
+                    <asp:DropDownList ID="AdultOptions" runat="server">
+                        <asp:ListItem Value="0">0</asp:ListItem>
+                        <asp:ListItem Value="1">1</asp:ListItem>
+                        <asp:ListItem Value="2">2</asp:ListItem>
+                    </asp:DropDownList>
+                    <label>CHILDS</label>
+                    <asp:DropDownList ID="ChildOptions" runat="server">
+                        <asp:ListItem Value="0">0</asp:ListItem>
+                        <asp:ListItem Value="1">1</asp:ListItem>
+                        <asp:ListItem Value="2">2</asp:ListItem>
+                        <asp:ListItem Value="3">3</asp:ListItem>
+                        <asp:ListItem Value="4">4</asp:ListItem>
+                    </asp:DropDownList>
+                </div>            
             </div>
-        </div>
-        <div class="BookingSelector">
-            <label class="bookingTitle">BOOKINGS</label>
-            <form runat="server" class="booking">
-                <label>ENTRY DATE</label>
-                <asp:Calendar ID="EntryCalendar" runat="server"></asp:Calendar>
-                <label>DEPARTURE DATE</label>
-                <asp:Calendar ID="DepartureCalendar" runat="server"></asp:Calendar>
-                <label>ADULTS</label>
-                <asp:DropDownList ID="AdultOptions" runat="server">
-                    <asp:ListItem Value="0">0</asp:ListItem>
-                    <asp:ListItem Value="1">1</asp:ListItem>
-                    <asp:ListItem Value="2">2</asp:ListItem>
-                </asp:DropDownList>
-                <label>CHILDS</label>
-                <asp:DropDownList ID="ChildOptions" runat="server">
-                    <asp:ListItem Value="0">0</asp:ListItem>
-                    <asp:ListItem Value="1">1</asp:ListItem>
-                    <asp:ListItem Value="2">2</asp:ListItem>
-                    <asp:ListItem Value="3">3</asp:ListItem>
-                    <asp:ListItem Value="4">4</asp:ListItem>
-                </asp:DropDownList>
-            </form>
-        </div>
-        
+        </header>
+        <section class="Main">
 
-    </header>
-    <section class="Main">
+        </section>
+        <footer>
 
-    </section>
-    <footer>
-
-    </footer>
+        </footer>
+    </form>
+    
     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
 </body>
 </html>
