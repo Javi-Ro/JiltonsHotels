@@ -78,17 +78,20 @@ body {
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
+    height: 100px;
+    width: 100%;
 }
 
-.booking {
+.BookingForm {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
+    height: 100%
 }
 
-.booking label{
-    margin: 5px;
+.BookingForm label{
+    margin: 6px;
     font-size: 16px;
 }
 
