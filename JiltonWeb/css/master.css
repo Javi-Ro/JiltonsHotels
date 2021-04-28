@@ -45,6 +45,7 @@ body {
     text-decoration: none;
     color: black;
     font-size: 20px;
+    transition: .3s ease all;
 }
 
 .nav-enlace:hover {
@@ -52,7 +53,6 @@ body {
     font-weight: bold;
     cursor: pointer;
     transition: .3s ease all;
-    
 }
 
 
@@ -115,7 +115,9 @@ body {
     line-height: 21px;
     padding: 0 10px;
     background: transparent;
+    border-radius: 3px;
     font-weight: bold;
+    transition: .5s ease all;
 }
 
 .BookingButton:hover {
@@ -129,3 +131,6 @@ body {
     margin: 0 25px 0 10px;
 }
 
+.Desplegables {
+    border-radius: 3px;
+}

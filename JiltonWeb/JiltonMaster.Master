@@ -41,7 +41,7 @@
                         <asp:MenuItem NavigateUrl="~/MainPage.aspx" Text="SPA&GYM" ToolTip="SPA&GYM">
 
                         </asp:MenuItem>
-                        <asp:MenuItem NavigateUrl="~/MainPage.aspx" Text="CAR LEASING" ToolTip="CAR LEASING">
+                        <asp:MenuItem NavigateUrl="~/Car.aspx" Text="CAR LEASING" ToolTip="CAR LEASING">
 
                         </asp:MenuItem>
                         <asp:MenuItem NavigateUrl="~/ContactForm.aspx" Text="CONTACT" ToolTip="CONTACT">
@@ -53,7 +53,7 @@
                     </items>
                 </asp:Menu>
                 <div class="RegisterContainer">
-                    <a class="register" href="MainPage.aspx">REGISTER</a>
+                    <a class="register" href="Register.aspx">REGISTER</a>
                 </div>
             </div>
             <div class="BookingRegister">
@@ -74,13 +74,13 @@
                     <ajax:CalendarExtender ID="DepartureCalendar" PopupButtonID="ShowDeparture" runat="server" TargetControlID="TextDeparture" Format="dd/MM/yyyy"> </ajax:CalendarExtender>
 
                     <asp:Label class="BookingLabel" runat="server">ADULTS</asp:Label>
-                    <asp:DropDownList ID="AdultOptions" runat="server">
+                    <asp:DropDownList ID="AdultOptions" CssClass="Desplegables" runat="server">
                         <asp:ListItem Value="0">0</asp:ListItem>
                         <asp:ListItem Value="1">1</asp:ListItem>
                         <asp:ListItem Value="2">2</asp:ListItem>
                     </asp:DropDownList>
                     <asp:Label class="BookingLabel" runat="server">CHILDS</asp:Label>
-                    <asp:DropDownList ID="ChildOptions" runat="server">
+                    <asp:DropDownList ID="ChildOptions" CssClass="Desplegables" runat="server">
                         <asp:ListItem Value="0">0</asp:ListItem>
                         <asp:ListItem Value="1">1</asp:ListItem>
                         <asp:ListItem Value="2">2</asp:ListItem>
