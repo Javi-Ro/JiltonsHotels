@@ -1,4 +1,5 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="JiltonMaster.master.cs" Inherits="JiltonWeb.JiltonMaster" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="JiltonMaster.master.cs" Inherits="JiltonWeb.JiltonMaster"%>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
 
 <!DOCTYPE html>
 
@@ -34,10 +35,20 @@
         <div class="BookingSelector">
             <label class="bookingTitle">BOOKINGS</label>
             <form runat="server" class="booking">
+                <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
                 <label>ENTRY DATE</label>
-                <asp:Calendar ID="EntryCalendar" runat="server"></asp:Calendar>
+
+                <asp:TextBox ID ="TextEntry" Width ="80px" Height="20px" style="text-align:center; border-radius:3px; border-width:1px; margin-right:2px" ReadOnly="true" runat ="server" />
+                <asp:ImageButton ID="ShowEntry" Width="18px" Height="18px" ImageAlign="Middle" ImageUrl="assets/Calendar.png" BorderWidth ="1px" BackColor="White" style="border-radius:3px" AlternateText="No Image available" runat="server" />
+                <ajax:CalendarExtender ID="EntryCalendar" PopupButtonID="ShowEntry" runat="server"  TargetControlID="TextEntry" Format="dd/MM/yyyy"> </ajax:CalendarExtender>
+
                 <label>DEPARTURE DATE</label>
-                <asp:Calendar ID="DepartureCalendar" runat="server"></asp:Calendar>
+
+                <asp:TextBox ID ="TextDeparture" Width ="80px" Height="20px" style="text-align:center; border-radius:3px; border-width:1px; margin-right:2px" ReadOnly="true" runat ="server" />
+                <asp:ImageButton ID="ShowDeparture" Width="18px" Height="18px" ImageAlign="Middle" ImageUrl="assets/Calendar.png" BorderWidth ="1px" BackColor="White" style="border-radius:3px" AlternateText="No Image available" runat="server" />
+                <ajax:CalendarExtender ID="DepartureCalendar" PopupButtonID="ShowDeparture" runat="server" TargetControlID="TextDeparture" Format="dd/MM/yyyy"> </ajax:CalendarExtender>
+
                 <label>ADULTS</label>
                 <asp:DropDownList ID="AdultOptions" runat="server">
                     <asp:ListItem Value="0">0</asp:ListItem>
