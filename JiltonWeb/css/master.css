@@ -14,7 +14,7 @@ body {
 .TopContent {
     display: flex;
     height: 150px;
-    background: #CADAD5;
+    background: white;
 }
 
 /* LOGO */
@@ -60,20 +60,20 @@ body {
     font-size: 20px;
 }
 
-.register-part {
+.RegisterContainer {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
 }
 
-.register:hover{
+.register:hover {
     font-weight: bold;
     cursor: pointer;
 }
 
 /* ##### BOOKING SELECTOR ##### */
-.bookingSelector {
+.BookingSelector {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
