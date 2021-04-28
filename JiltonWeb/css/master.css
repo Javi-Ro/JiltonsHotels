@@ -41,15 +41,20 @@ body {
 
 .nav-enlace {
     margin: 30px 15px;
+    padding: 5px;
     text-decoration: none;
     color: black;
     font-size: 20px;
 }
 
-.nav-enlace:hover{
+.nav-enlace:hover {
+    font-size: 24px;
     font-weight: bold;
     cursor: pointer;
+    transition: .3s ease all;
+    
 }
+
 
 /* REGISTER POINT (TEMPORARY EXAMPLE) */
 
@@ -73,31 +78,54 @@ body {
 }
 
 /* ##### BOOKING SELECTOR ##### */
+
+.BookingRegister {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background: #E1F0EB;
+}
+
 .BookingSelector {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
-    height: 100px;
-    width: 100%;
+    height:100%
 }
 
-.BookingForm {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
-    height: 100%
-}
-
-.BookingForm label{
-    margin: 6px;
+.BookingSelector .BookingLabel{
+    margin: 0 5px 0 10px;
     font-size: 16px;
+    font-weight:bold;
 }
 
 .bookingTitle{
     font-weight: bold;
     font-size: 20px;
-    margin-right: 10px;
+    margin-right: 15px;
+}
+
+.BookingButton {
+    margin: 0 10px 0 10px;
+    border: 1px solid black;
+    line-height: 21px;
+    padding: 0 10px;
+    background: transparent;
+    font-weight: bold;
+}
+
+.BookingButton:hover {
+    cursor: pointer;
+    background: black;
+    color:white;
+    transition: .5s ease all;
+}
+
+.InformationLabel{
+    margin: 0 25px 0 10px;
 }
 
