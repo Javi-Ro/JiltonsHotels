@@ -67,7 +67,7 @@ body {
 
 .RegisterContainer {
     display: flex;
-    flex-flow: column;
+    flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
     height: 100%;
