@@ -11,115 +11,106 @@ namespace JiltonWeb
 {
 
 
-    public partial class JiltonMaster
+    public partial class Register
     {
 
         /// <summary>
-        /// TitlePage control.
+        /// NameText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder TitlePage;
+        protected global::System.Web.UI.WebControls.TextBox NameText;
 
         /// <summary>
-        /// form1 control.
+        /// SurnameText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.TextBox SurnameText;
 
         /// <summary>
-        /// ScriptManager1 control.
+        /// IDText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        protected global::System.Web.UI.WebControls.TextBox IDText;
 
         /// <summary>
-        /// TextEntry control.
+        /// AgeText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextEntry;
+        protected global::System.Web.UI.WebControls.TextBox AgeText;
 
         /// <summary>
-        /// ShowEntry control.
+        /// BirthCalendar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ShowEntry;
+        protected global::AjaxControlToolkit.CalendarExtender BirthCalendar;
 
         /// <summary>
-        /// EntryCalendar control.
+        /// MailText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.CalendarExtender EntryCalendar;
+        protected global::System.Web.UI.WebControls.TextBox MailText;
 
         /// <summary>
-        /// TextDeparture control.
+        /// PasswordText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextDeparture;
+        protected global::System.Web.UI.WebControls.TextBox PasswordText;
 
         /// <summary>
-        /// ShowDeparture control.
+        /// AddressText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ShowDeparture;
+        protected global::System.Web.UI.WebControls.TextBox AddressText;
 
         /// <summary>
-        /// DepartureCalendar control.
+        /// CityText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.CalendarExtender DepartureCalendar;
+        protected global::System.Web.UI.WebControls.TextBox CityText;
 
         /// <summary>
-        /// AdultOptions control.
+        /// PCText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList AdultOptions;
+        protected global::System.Web.UI.WebControls.TextBox PCText;
 
         /// <summary>
-        /// ChildOptions control.
+        /// ProvinceText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ChildOptions;
-
-        /// <summary>
-        /// ContentPlaceHolder1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.TextBox ProvinceText;
     }
 }

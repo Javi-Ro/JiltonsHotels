@@ -31,7 +31,7 @@ body {
 
 .NavigationBar {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     justify-content: flex-end;
     align-items: center;
     width: 100%;
@@ -52,7 +52,6 @@ body {
     font-weight: bold;
     cursor: pointer;
     transition: .3s ease all;
-    
 }
 
 
@@ -85,7 +84,7 @@ body {
 
 .BookingRegister {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     justify-content: flex-end;
     align-items: center;
     width: 100%;
@@ -95,7 +94,7 @@ body {
 
 .BookingSelector {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
     height:100%
@@ -136,5 +135,5 @@ body {
 }
 
 .Desplegables {
-    border-radius:3px;
+    border-radius: 3px;
 }

@@ -22,6 +22,8 @@ namespace Library
 
 		public string Address { set; get; }
 
+		public string Password { set; get; }
+
 		// ENUser constructor with parameters. (We need to fullfill all the information in the registration form in order to create the user, otherwise -> error)
 		// ID == NIE/NIF/DNI -> string type
 		// We will check in the CADUser if there is already a User with that ID or email
@@ -30,7 +32,7 @@ namespace Library
 		// but on the Registrate button's handler we will concatenate all the information
 		// We will require a date of birth, not age directly. Doing it this way we can calculate the age and update every year
 
-		public ENUser(string ID, string name, string email, string phone, int age, string address)
+		public ENUser(string ID, string name, string email, string phone, int age, string address, string password)
 		{
 			this.ID = ID;
 			this.Name = name;
@@ -38,6 +40,7 @@ namespace Library
 			this.Phone = phone;
 			this.Age = age;
 			this.Address = address;
+			this.Password = password;
 		}
 
 		// Create, update, and delete user will return a boolean to confirm or decline the operation that was executed on the database

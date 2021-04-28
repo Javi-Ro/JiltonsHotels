@@ -41,7 +41,7 @@
                         <asp:MenuItem NavigateUrl="~/MainPage.aspx" Text="SPA&GYM" ToolTip="SPA&GYM">
 
                         </asp:MenuItem>
-                        <asp:MenuItem NavigateUrl="~/MainPage.aspx" Text="CAR LEASING" ToolTip="CAR LEASING">
+                        <asp:MenuItem NavigateUrl="~/Car.aspx" Text="CAR LEASING" ToolTip="CAR LEASING">
 
                         </asp:MenuItem>
                         <asp:MenuItem NavigateUrl="~/ContactForm.aspx" Text="CONTACT" ToolTip="CONTACT">
