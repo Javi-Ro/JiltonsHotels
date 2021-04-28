@@ -25,7 +25,7 @@
                         <img src = "assets/JiltonLogo.png">
                     </a>
                 </div>
-                <asp:Menu class ="NavigationBar" runat="server" Orientation="Horizontal">
+                <asp:Menu CssClass ="NavigationBar" runat="server" Orientation="Horizontal">
                     <LevelMenuItemStyles>
                         <asp:MenuItemStyle CssClass="nav-enlace" />
                     </LevelMenuItemStyles>
