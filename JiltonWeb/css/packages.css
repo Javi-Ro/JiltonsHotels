@@ -1,2 +1,18 @@
-﻿body {
+﻿
+.PackPlace {
+    display: flex;
+    margin: 16px 0;
+}
+.PackPlace2 {
+    display: flex;
+    margin-right: -3500px;
+    margin: 16px 0;
+}
+
+.PackImage {
+    width: 20px;
+}
+
+.PackDesc {
+    flex: 1;
 }
