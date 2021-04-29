@@ -1,7 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/JiltonMaster.Master" AutoEventWireup="true" CodeBehind="Car.aspx.cs" Inherits="JiltonWeb.Car" %>
-<asp:Content ID="TitleForm" ContentPlaceHolderID="TitlePage" runat="server">
+<asp:Content ID="cssLink" ContentPlaceHolderID="csslink" runat="server">
     <title> Jilton Hotel - Cars </title>
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <h2> The best luxury cars, avaible for you! </h2>
@@ -17,7 +18,7 @@
     <h2> Rolls-Royce Phantom </h2>
         <img src="assets/coche_3.jpg" width="300" height="500" />
 
-    <h2>Maybach Maybach 6</h2>
+    <h2>Maybach Vision 6</h2>
         <img src="assets/coche_4.jpg" width="300" height="500" />
 
 </asp:Content>
