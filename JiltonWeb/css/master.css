@@ -1,7 +1,7 @@
 ﻿* {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
 }
 
 body {
@@ -23,9 +23,9 @@ body {
     cursor: pointer;
 }
 
-    .Logo a img {
-        height: 100%;
-    }
+.Logo a img {
+    height: 100%;
+}
 
 /* NAVIGATION BAR */
 
@@ -114,12 +114,13 @@ body {
 
 .BookingButton {
     margin: 0 10px 0 10px;
-    border: 1px solid #515654;
+    border: 2px solid #515654;
     line-height: 21px;
     padding: 0 10px;
     background: transparent;
     border-radius: 3px;
     font-weight: bold;
+    font-size: 14px;
     transition: .5s ease all;
 }
 
