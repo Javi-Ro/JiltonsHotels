@@ -9,25 +9,24 @@
     background-repeat: no-repeat;
 }
 
-.Main .EntryLabel{
-    position:relative;
+.Main .EntryLabel {
+    position: relative;
     font-size: 90px;
     font-weight: normal;
-    top:300px;
-    left: 41%;  
+    top: 300px;
+    left: 41%;
     color: white;
     font-family: 'IM Fell Double Pica', serif;
 }
 
 /* 2nd PART */
-.Comments{
+.Comments {
     position: relative;
-    top:800px;
+    top: 800px;
     height: 1000px;
     background: rgba(255,255,255,0.7);
     display: flex;
     justify-content: center;
-    
 }
 
 .CommentsLabels {
@@ -36,7 +35,7 @@
     align-items: center;
 }
 
-.HotelName{
+.HotelName {
     margin-top: 25px;
     letter-spacing: 5px;
 }
@@ -47,24 +46,61 @@
     letter-spacing: 5px;
 }
 
-.Comments img{
-    margin-top: 50px;
+.Comments img {
+    margin-top: 70px;
     height: 80px;
 }
 
-.Comments .Separator{
-    margin: 40px 0;
-}
-
-.Comments p{
+.Comments p {
+    font-weight: bold;
+    margin: 80px 0;
+    margin-right: -3500px;
+    line-height: 30px;
     text-align: center;
     font-size: 20px;
     max-width: 80%;
-    font-weight: 600;
+    -webkit-transition: margin-right 1.2s;
+}
+
+.Comments:hover p {
+    margin-right: 0;
+    -webkit-transition: margin-right 1.2s;
 }
 
 .CommentsLessOpacity {
-    width: 60%;
+    width: 80%;
     height: 1000px;
-    background: rgba(255,255,255,0.85);
+    background: rgba(255,255,255,0.9);
+}
+
+.ZidaneOpinion {
+    font-size: 20px;
+    background: #E1F0EB;
+    height: 200px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    padding: 0px 70px;
+    box-shadow: 0px 0px 23px 4px rgba(0,0,0,0.77);
+    margin-left: -3500px;
+    -webkit-transition: margin-left 1.2s;
+}
+
+.Comments:hover .ZidaneOpinion {
+    margin-left: 0;
+    -webkit-transition: margin-left 1.2s;
+}
+
+.OpinionLabel {
+    font-style: italic;
+}
+
+.ZidaneContainer {
+    margin-top: 15px;
+}
+
+.ZidaneLabel {
+    font-weight: bold;
 }
