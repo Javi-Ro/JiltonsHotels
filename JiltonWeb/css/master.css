@@ -140,7 +140,7 @@ body {
 }
 
 #footer-content {
-    background-color: #909090;
-    height: 80px;
-    padding: 10px;
+    background-color: #E1F0EB;
+    height: 100px;
+    white-space: pre-line;
 }

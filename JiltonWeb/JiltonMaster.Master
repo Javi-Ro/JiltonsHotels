@@ -93,7 +93,9 @@
 
         <footer class="site-footer">
             <div id="footer-content">
-            <p>Copyright 2021 @ Jilton Hotel - All Rights Reserved </p>
+                <hr />
+            <p> Aviso Legal | Política de privacidad | Cookies | Términos Legales
+                Copyright 2021 @ Jilton Hotel - All Rights Reserved  </p>              
             </div>
         </footer>
     </form>
