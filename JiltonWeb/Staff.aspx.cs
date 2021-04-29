@@ -7,12 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace JiltonWeb
 {
-    public partial class JiltonMaster : System.Web.UI.MasterPage
+    public partial class WebForm2 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            EntryCalendar.StartDate = DateTime.Now;
-            DepartureCalendar.StartDate = DateTime.Now;
+
         }
     }
 }

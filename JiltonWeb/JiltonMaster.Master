@@ -1,71 +1,106 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="JiltonMaster.master.cs" Inherits="JiltonWeb.JiltonMaster" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="JiltonMaster.master.cs" Inherits="JiltonWeb.JiltonMaster"%>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
 
 <!DOCTYPE html>
 
 <html>
 <head runat="server">
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="css/master.css" />
+    <title>Jilton Hotel</title>
+    <link rel="stylesheet" href="../css/master.css?ver=<?php echo rand(145,999)?>" />  
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
-    <asp:ContentPlaceHolder ID="TitlePage" runat="server"></asp:ContentPlaceHolder>
+    <asp:ContentPlaceHolder ID="cssLink" runat="server"></asp:ContentPlaceHolder>
+
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+    <meta http-equiv="Pragma" content="no-cache">
 </head>
+
 <body>
+    <form id="form1" runat="server">
+        <header>
+            <div class="TopContent">
+                <div class = "Logo">
+                    <a href="MainPage.aspx">
+                        <img src = "assets/JiltonLogo.png">
+                    </a>
+                </div>
+                <asp:Menu CssClass ="NavigationBar" runat="server" Orientation="Horizontal">
+                    <LevelMenuItemStyles>
+                        <asp:MenuItemStyle CssClass="nav-enlace" />
+                    </LevelMenuItemStyles>
 
-    <header>
-        <div class="TopContent">
-            <div class = "Logo">
-                <a href="MainPage.aspx">
-                    <img src = "assets/JiltonLogo.png">
-                </a>
+                    <items>
+                        <asp:MenuItem NavigateUrl="~/MainPage.aspx" Text="ROOMS" ToolTip="ROOMS">
+
+                        </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/MainPage.aspx" Text="RESTAURANT" ToolTip="RESTAURANT">
+
+                        </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/MainPage.aspx" Text="SPA&GYM" ToolTip="SPA&GYM">
+
+                        </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Car.aspx" Text="CAR LEASING" ToolTip="CAR LEASING">
+
+                        </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/ContactForm.aspx" Text="CONTACT" ToolTip="CONTACT">
+
+                        </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/MainPage.aspx" Text="ABOUT" ToolTip="ABOUT">
+
+                        </asp:MenuItem>
+                    </items>
+                </asp:Menu>
+                <div class="RegisterContainer">
+                    <a class="Register" href="MainPage.aspx">REGISTER</a>
+                    <a class="Register" href="MainPage.aspx">LOGIN</a>
+                </div>
             </div>
-            <nav class = "NavigationBar">   <! se puede cambiar por el asp:menu>
-              <a class="nav-enlace" href = "Packages.aspx">PACKAGES</a>
-              <a class="nav-enlace" href = "MainPage.aspx">ROOMS</a>
-              <a class="nav-enlace" href = "MainPage.aspx">RESTAURANT</a>
-              <a class="nav-enlace" href = "MainPage.aspx">SPA&GYM</a>
-              <a class="nav-enlace" href = "MainPage.aspx">CAR LEASING</a>
-              <a class="nav-enlace" href = "ContactForm.aspx">CONTACT</a>
-              <a class="nav-enlace" href = "MainPage.aspx">ABOUT</a>
-            </nav>
-            <div class="RegisterContainer">
-                <a class="register" href="MainPage.aspx">REGISTER</a>
+            <div class="BookingRegister">
+                <label class="bookingTitle">BOOKINGS</label>
+                <div class="BookingSelector">
+                    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
+                    <asp:Label class="BookingLabel" runat="server">ENTRY DATE</asp:Label>
+
+                    <asp:TextBox ID ="TextEntry" Width ="80px" Height="20px" style="text-align:center; border-radius:3px; border-width:1px; margin-right:2px" ReadOnly="true" runat ="server" />
+                    <asp:ImageButton ID="ShowEntry" Width="18px" Height="18px" ImageAlign="Middle" ImageUrl="assets/Calendar.png" BorderWidth ="1px" BackColor="White" style="border-radius:3px" AlternateText="No Image available" runat="server" />
+                    <ajax:CalendarExtender ID="EntryCalendar" PopupButtonID="ShowEntry" runat="server"  TargetControlID="TextEntry" Format="dd/MM/yyyy"> </ajax:CalendarExtender>
+
+                    <asp:Label class="BookingLabel" runat="server">DEPARTURE DATE</asp:Label>
+
+                    <asp:TextBox ID ="TextDeparture" Width ="80px" Height="20px" style="text-align:center; border-radius:3px; border-width:1px; margin-right:2px" ReadOnly="true" runat ="server" />
+                    <asp:ImageButton ID="ShowDeparture" Width="18px" Height="18px" ImageAlign="Middle" ImageUrl="assets/Calendar.png" BorderWidth ="1px" BackColor="White" style="border-radius:3px" AlternateText="No Image available" runat="server" />
+                    <ajax:CalendarExtender ID="DepartureCalendar" PopupButtonID="ShowDeparture" runat="server" TargetControlID="TextDeparture" Format="dd/MM/yyyy"> </ajax:CalendarExtender>
+
+                    <asp:Label class="BookingLabel" runat="server">ADULTS</asp:Label>
+                    <asp:DropDownList ID="AdultOptions" CssClass="Desplegables" runat="server">
+                        <asp:ListItem Value="0">0</asp:ListItem>
+                        <asp:ListItem Value="1">1</asp:ListItem>
+                        <asp:ListItem Value="2">2</asp:ListItem>
+                    </asp:DropDownList>
+                    <asp:Label class="BookingLabel" runat="server">CHILDS</asp:Label>
+                    <asp:DropDownList ID="ChildOptions" CssClass="Desplegables" runat="server">
+                        <asp:ListItem Value="0">0</asp:ListItem>
+                        <asp:ListItem Value="1">1</asp:ListItem>
+                        <asp:ListItem Value="2">2</asp:ListItem>
+                        <asp:ListItem Value="3">3</asp:ListItem>
+                        <asp:ListItem Value="4">4</asp:ListItem>
+                    </asp:DropDownList>
+                    <asp:Button  runat="server" CssClass="BookingButton" Text="BOOK"></asp:Button>
+                    <asp:Label CssClass="InformationLabel" runat="server">INFORMATION AND BOOKINGS +34 965 455 123</asp:Label>
+                </div>            
             </div>
-        </div>
-        <div class="BookingSelector">
-            <label class="bookingTitle">BOOKINGS</label>
-            <form runat="server" class="booking">
-                <label>ENTRY DATE</label>
-                <asp:Calendar ID="EntryCalendar" runat="server"></asp:Calendar>
-                <label>DEPARTURE DATE</label>
-                <asp:Calendar ID="DepartureCalendar" runat="server"></asp:Calendar>
-                <label>ADULTS</label>
-                <asp:DropDownList ID="AdultOptions" runat="server">
-                    <asp:ListItem Value="0">0</asp:ListItem>
-                    <asp:ListItem Value="1">1</asp:ListItem>
-                    <asp:ListItem Value="2">2</asp:ListItem>
-                </asp:DropDownList>
-                <label>CHILDS</label>
-                <asp:DropDownList ID="ChildOptions" runat="server">
-                    <asp:ListItem Value="0">0</asp:ListItem>
-                    <asp:ListItem Value="1">1</asp:ListItem>
-                    <asp:ListItem Value="2">2</asp:ListItem>
-                    <asp:ListItem Value="3">3</asp:ListItem>
-                    <asp:ListItem Value="4">4</asp:ListItem>
-                </asp:DropDownList>
-            </form>
-        </div>
-        
+        </header>
+        <section>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+        </section>
+        <footer>
 
-    </header>
-    <section class="Main">
+        </footer>
 
-    </section>
-    <footer>
-
-    </footer>
-    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        <asp:ScriptManager runat="server"></asp:ScriptManager>
-    </asp:ContentPlaceHolder>
+    </form>
+    
 </body>
 </html>

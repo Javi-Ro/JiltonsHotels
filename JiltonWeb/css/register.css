@@ -1,0 +1,23 @@
+﻿.RegisterForm {
+    margin: 5% 30% 20px 30%;
+    border-collapse: separate;
+    border-spacing: 15px 15px;
+    font-size: 16px;
+    width: 40%;
+    border: 1px solid black;
+    border-radius: 3px;
+    display: table;
+}
+
+.row {
+    display: table-row;
+    font-size: 18px;
+}
+
+.col {
+    display: table-cell;
+    padding-left: 4px;
+    padding-right: 4px;
+    width: 40%;
+    background: #ddd;
+}

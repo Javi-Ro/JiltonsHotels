@@ -4,7 +4,6 @@
     padding: 0;
 }
 
-
 body {
     font-family: 'Karla', sans-serif;
 }
@@ -24,15 +23,15 @@ body {
     cursor: pointer;
 }
 
-.Logo a img {
-    height: 100%;
-}
+    .Logo a img {
+        height: 100%;
+    }
 
 /* NAVIGATION BAR */
 
 .NavigationBar {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     justify-content: flex-end;
     align-items: center;
     width: 100%;
@@ -41,60 +40,100 @@ body {
 
 .nav-enlace {
     margin: 30px 15px;
+    padding: 5px;
     text-decoration: none;
     color: black;
     font-size: 20px;
+    transition: .3s ease all;
 }
 
-.nav-enlace:hover{
+.nav-enlace:hover {
+    font-size: 24px;
     font-weight: bold;
     cursor: pointer;
+    transition: .3s ease all;
 }
 
-/* REGISTER POINT (TEMPORARY EXAMPLE) */
 
-.register {
-    margin: 30px 15px;
+/* REGISTER/LOGIN POINT */
+
+.Register {
+    margin: 15px 25px;
     text-decoration: none;
     color: black;
     font-size: 20px;
+    transition: .3s ease all;
 }
 
 .RegisterContainer {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
+    height: 100%;
 }
 
-.register:hover {
+.Register:hover {
+    font-size: 24px;
     font-weight: bold;
     cursor: pointer;
+    transition: .3s ease all;
 }
 
 /* ##### BOOKING SELECTOR ##### */
+
+.BookingRegister {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background: #E1F0EB;
+}
+
 .BookingSelector {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
+    height: 100%
 }
 
-.booking {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
-}
+    .BookingSelector .BookingLabel {
+        margin: 0 5px 0 10px;
+        font-size: 16px;
+        font-weight: bold;
+    }
 
-.booking label{
-    margin: 5px;
-    font-size: 16px;
-}
-
-.bookingTitle{
+.bookingTitle {
     font-weight: bold;
     font-size: 20px;
-    margin-right: 10px;
+    margin-right: 15px;
 }
 
+.BookingButton {
+    margin: 0 10px 0 10px;
+    border: 1px solid #515654;
+    line-height: 21px;
+    padding: 0 10px;
+    background: transparent;
+    border-radius: 3px;
+    font-weight: bold;
+    transition: .5s ease all;
+}
+
+    .BookingButton:hover {
+        cursor: pointer;
+        background: #515654;
+        color: white;
+        transition: .5s ease all;
+    }
+
+.InformationLabel {
+    margin: 0 25px 0 10px;
+}
+
+.Desplegables {
+    border-radius: 3px;
+}
