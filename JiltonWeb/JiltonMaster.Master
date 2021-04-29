@@ -6,7 +6,7 @@
 <html>
 <head runat="server">
     <title>Jilton Hotel</title>
-    <link rel="stylesheet" href="../css/master.css?ver=<?php echo rand(145,999)?>" />  
+    <link rel="stylesheet" href="../css/master.css?ver=<?php echo rand(146,999)?>" />  
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
     <asp:ContentPlaceHolder ID="cssLink" runat="server"></asp:ContentPlaceHolder>
@@ -76,18 +76,12 @@
 
                     <asp:Label class="BookingLabel" runat="server">ADULTS</asp:Label>
                     <asp:DropDownList ID="AdultOptions" CssClass="Desplegables" runat="server">
-                        <asp:ListItem Value="0">0</asp:ListItem>
-                        <asp:ListItem Value="1">1</asp:ListItem>
-                        <asp:ListItem Value="2">2</asp:ListItem>
                     </asp:DropDownList>
+
                     <asp:Label class="BookingLabel" runat="server">CHILDS</asp:Label>
                     <asp:DropDownList ID="ChildOptions" CssClass="Desplegables" runat="server">
-                        <asp:ListItem Value="0">0</asp:ListItem>
-                        <asp:ListItem Value="1">1</asp:ListItem>
-                        <asp:ListItem Value="2">2</asp:ListItem>
-                        <asp:ListItem Value="3">3</asp:ListItem>
-                        <asp:ListItem Value="4">4</asp:ListItem>
                     </asp:DropDownList>
+
                     <asp:Button  runat="server" CssClass="BookingButton" Text="BOOK"></asp:Button>
                     <asp:Label CssClass="InformationLabel" runat="server">INFORMATION AND BOOKINGS +34 965 455 123</asp:Label>
                 </div>            
@@ -99,7 +93,9 @@
 
         <footer class="site-footer">
             <div id="footer-content">
-            <p>Copyright 2021 @ Jilton Hotel - All Rights Reserved </p>
+                <hr />
+            <p> Aviso Legal | Política de privacidad | Cookies | Términos Legales
+                Copyright 2021 @ Jilton Hotel - All Rights Reserved  </p>              
             </div>
         </footer>
     </form>
