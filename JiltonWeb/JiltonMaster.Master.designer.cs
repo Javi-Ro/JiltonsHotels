@@ -15,13 +15,13 @@ namespace JiltonWeb
     {
 
         /// <summary>
-        /// TitlePage control.
+        /// cssLink control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder TitlePage;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder cssLink;
 
         /// <summary>
         /// form1 control.

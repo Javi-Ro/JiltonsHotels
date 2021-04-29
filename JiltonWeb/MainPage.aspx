@@ -16,7 +16,7 @@
                 <img src="../assets/jiltonLogo2.png"/>
                 <h1 class="HotelName">JILTON HOTEL RESORT & SPA CENTER</h1>
                 <br />
-                <asp:Label runat="server" CssClass="Reason">¿ WHY STAYING ON JILTON HOTEL ?</asp:Label>
+                <asp:Label runat="server" CssClass="Reason">¿ WHY STAYING AT JILTON HOTEL ?</asp:Label>
                 
                 <p class="ReasonParagraph"> A lot of famous people had chosen Jilton Hotel to enjoy of a unique trip. This exclusive asiatic
                     oriented hotel is one of the best places to take pleasure of the more absolute relax and exquisit
@@ -24,7 +24,7 @@
                     its perfect restaurant service, its Gym&Spa where you can lose the notion of the time and recover your
                     energy are some of the reasons...</p>
                 <div class="ZidaneOpinion">
-                    <asp:Label runat="server" CssClass="OpinionLabel">Many thanks for your simpathy and hospitality. ¡A wondeful place in Spain!</asp:Label>
+                    <asp:Label runat="server" CssClass="OpinionLabel">Many thanks for your simpathy and hospitality. ¡A wonderful place in Spain!</asp:Label>
                     <div class="ZidaneContainer">
                         <asp:Label runat="server" CssClass="ZidaneLabel">ZINÉDINE ZIDANE</asp:Label>
                         <asp:Label runat="server" CssClass="ZidaneCoach">Football Coach</asp:Label>

@@ -22,12 +22,12 @@
     }
 }
 
-#titleRegister {
+#titleLogin {
     text-align: center;
     font-family: 'Karla', sans-serif;
 }
 
-.RegisterEntry img {
+.LoginEntry img {
     margin-top: 10px;
     width: 55px;
     height: 65px;
@@ -49,7 +49,7 @@
     animation: 1.6s ease-out 0s 1 slideInFromLeft;
 }
 
-.RegisterBack {
+.LoginBack {
     background-image: url(../assets/6.jpg);
     background-position: center;
     background-attachment: fixed;
@@ -58,7 +58,7 @@
     height: 1000px;
 }
 
-.RegisterForm {
+.LoginForm {
     margin: 0px 20% 0px 20%;
     border-collapse: separate;
     border-spacing: 15px 15px;
@@ -69,7 +69,7 @@
     margin-top: 30px;
     padding-bottom: 10px;
     border-radius: 3px;
-    background: rgb(255,255,255);
+    background: rgba(255,255,255, 0);
     display: table;
     animation: 2s ease-out 0s 1 slideInFromLeftAndBounce;
 }
@@ -83,7 +83,7 @@
     height: 110px;
 }
 
-.RegisterBttn {
+.LoginBttn {
     margin: 0 10px 0 10px;
     border: 1px solid #515654;
     line-height: 21px;
@@ -99,7 +99,7 @@
     transition: .5s ease all;
 }
 
-.RegisterBttn:hover {
+.LoginBttn:hover {
     cursor: pointer;
     background: #515654;
     color: white;
@@ -115,18 +115,18 @@
     background: white;
 }
 
-.RegisterLessOpacity {
+.LoginLessOpacity {
     width: 100%;
-    height: calc(650px + 10%);
-    background: rgba(255,255,255,0.9);
+    height: calc(295px + 10%);
+    background: rgba(255,255,255,0.8);
     animation: 1.2s ease-out 0s 1 slideInFromLeft;
 }
 
-.RegisterEntry {
+.LoginEntry {
     width: 80%;
     margin-left: 10%;
     margin-right: 10%;
-    height: calc(637px + 15%);
+    height: calc(336px + 15%);
     background: white;
     animation: 1.2s ease-out 0s 1 slideInFromLeft;
 }

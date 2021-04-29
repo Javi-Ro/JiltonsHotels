@@ -53,8 +53,8 @@
                     </items>
                 </asp:Menu>
                 <div class="RegisterContainer">
-                    <a class="Register" href="MainPage.aspx">REGISTER</a>
-                    <a class="Register" href="MainPage.aspx">LOGIN</a>
+                    <a class="Register" href="Register.aspx">REGISTER</a>
+                    <a class="Register" href="Login.aspx">LOGIN</a>
                 </div>
             </div>
             <div class="BookingRegister">
@@ -96,10 +96,12 @@
         <section>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
         </section>
-        <footer>
 
+        <footer class="site-footer">
+            <div id="footer-content">
+            <p>Copyright 2021 @ Jilton Hotel - All Rights Reserved </p>
+            </div>
         </footer>
-
     </form>
     
 </body>
