@@ -32,10 +32,10 @@
                     </LevelMenuItemStyles>
 
                     <items>
-                        <asp:MenuItem NavigateUrl="~/MainPage.aspx" Text="ROOMS" ToolTip="ROOMS">
+                        <asp:MenuItem NavigateUrl="~/Room.aspx" Text="ROOMS" ToolTip="ROOMS">
 
                         </asp:MenuItem>
-                        <asp:MenuItem NavigateUrl="~/MainPage.aspx" Text="RESTAURANT" ToolTip="RESTAURANT">
+                        <asp:MenuItem NavigateUrl="~/Restaurant.aspx" Text="RESTAURANT" ToolTip="RESTAURANT">
 
                         </asp:MenuItem>
                         <asp:MenuItem NavigateUrl="~/MainPage.aspx" Text="SPA&GYM" ToolTip="SPA&GYM">
@@ -47,7 +47,7 @@
                         <asp:MenuItem NavigateUrl="~/ContactForm.aspx" Text="CONTACT" ToolTip="CONTACT">
 
                         </asp:MenuItem>
-                        <asp:MenuItem NavigateUrl="~/MainPage.aspx" Text="ABOUT" ToolTip="ABOUT">
+                        <asp:MenuItem NavigateUrl="~/MainPage.aspx" Text="ABOUT US" ToolTip="ABOUT">
 
                         </asp:MenuItem>
                     </items>
