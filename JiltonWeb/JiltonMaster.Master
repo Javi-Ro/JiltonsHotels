@@ -6,7 +6,7 @@
 <html>
 <head runat="server">
     <title>Jilton Hotel</title>
-    <link rel="stylesheet" href="../css/master.css?ver=<?php echo rand(146,999)?>" />  
+    <link rel="stylesheet" href="../css/master.css?ver=<?php echo rand(185,999)?>" />  
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
     <asp:ContentPlaceHolder ID="cssLink" runat="server"></asp:ContentPlaceHolder>
@@ -38,7 +38,7 @@
                         <asp:MenuItem NavigateUrl="~/Restaurant.aspx" Text="RESTAURANT" ToolTip="RESTAURANT">
 
                         </asp:MenuItem>
-                        <asp:MenuItem NavigateUrl="~/MainPage.aspx" Text="SPA&GYM" ToolTip="SPA&GYM">
+                        <asp:MenuItem NavigateUrl="~/SpaGym.aspx" Text="SPA&GYM" ToolTip="SPA&GYM">
 
                         </asp:MenuItem>
                         <asp:MenuItem NavigateUrl="~/Car.aspx" Text="CAR LEASING" ToolTip="CAR LEASING">
