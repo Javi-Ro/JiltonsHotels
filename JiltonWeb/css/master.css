@@ -1,7 +1,7 @@
 ﻿* {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
 }
 
 body {
@@ -23,9 +23,9 @@ body {
     cursor: pointer;
 }
 
-    .Logo a img {
-        height: 100%;
-    }
+.Logo a img {
+    height: 100%;
+}
 
 /* NAVIGATION BAR */
 
@@ -100,11 +100,11 @@ body {
     height: 100%
 }
 
-    .BookingSelector .BookingLabel {
-        margin: 0 5px 0 10px;
-        font-size: 16px;
-        font-weight: bold;
-    }
+.BookingSelector .BookingLabel {
+    margin: 0 5px 0 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
 
 .bookingTitle {
     font-weight: bold;
@@ -113,22 +113,23 @@ body {
 }
 
 .BookingButton {
-    margin: 0 10px 0 10px;
-    border: 1px solid #515654;
+    margin: 0 15px 0 15px;
+    border: 2px solid #515654;
     line-height: 21px;
-    padding: 0 10px;
+    padding: 0 14px;
     background: transparent;
     border-radius: 3px;
     font-weight: bold;
+    font-size: 14px;
     transition: .5s ease all;
 }
 
-    .BookingButton:hover {
-        cursor: pointer;
-        background: #515654;
-        color: white;
-        transition: .5s ease all;
-    }
+.BookingButton:hover {
+    cursor: pointer;
+    background: #515654;
+    color: white;
+    transition: .5s ease all;
+}
 
 .InformationLabel {
     margin: 0 25px 0 10px;
@@ -136,4 +137,12 @@ body {
 
 .Desplegables {
     border-radius: 3px;
+}
+
+#footer-content {
+    background-color: #0e170d;
+    height: 100px;
+    white-space: pre-line;
+    color: white;
+    text-align: center;
 }

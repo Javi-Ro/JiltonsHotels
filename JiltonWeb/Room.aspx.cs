@@ -7,10 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace JiltonWeb
 {
-    public partial class MainPage : System.Web.UI.Page
+    public partial class Room : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿/* ##### MAIN ######*/
 
 .Main {
-    height: 4000px;
+    height: 3660px;
     background-image: url(../assets/6.jpg);
     background-position: center;
     background-attachment: fixed;
@@ -51,20 +51,21 @@
     height: 80px;
 }
 
-.Comments p {
+.Comments .ReasonParagraph {
+    max-width: 100%;
     font-weight: bold;
     margin: 80px 0;
-    margin-right: -3500px;
+    margin-left: -3500px;
     line-height: 30px;
     text-align: center;
     font-size: 20px;
     max-width: 80%;
-    -webkit-transition: margin-right 1.2s;
+    -webkit-transition: margin-left 1.2s;
 }
 
-.Comments:hover p {
-    margin-right: 0;
-    -webkit-transition: margin-right 1.2s;
+.Comments:hover .ReasonParagraph {
+    margin-left: 0;
+    -webkit-transition: margin-left 1.2s;
 }
 
 .CommentsLessOpacity {
@@ -90,7 +91,7 @@
 
 .Comments:hover .ZidaneOpinion {
     margin-left: 0;
-    -webkit-transition: margin-left 1.2s;
+    -webkit-transition: margin-left 1.8s;
 }
 
 .OpinionLabel {
@@ -103,4 +104,159 @@
 
 .ZidaneLabel {
     font-weight: bold;
+}
+
+/* PARADISE CONTAINTER */
+
+.ParadiseContainer {
+    height: 50px;
+    line-height: 50px;
+    font-family: 'IM Fell Double Pica', serif;
+    background: #0e170d;
+    color: white;
+    position: relative;
+    top: 800px;
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*#### BLOCKS #### */
+
+.Blocks {
+    position: relative;
+    top: 800px;
+    background: rgba(14,23,13,0.7);
+    height: 1700px;
+}
+
+.SeparatorBlocks {
+    position: relative;
+    height: 50px;
+}
+
+.Block1 {
+    height: 650px;
+    color: #0e1d0f;
+    margin-bottom: 50px;
+}
+
+.Block2 {
+    height: 650px;
+    color: white;
+}
+
+.ImageB1 {
+    float: right;
+    height: 100%;
+    width: 50%;
+    background-image: url(../assets/mainSpa.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.ImageB2 {
+    float: left;
+    height: 100%;
+    width: 50%;
+    background-image: url(../assets/mainEvents.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.TextB1 {
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    height: 100%;
+    width: 30%;
+    background: white;
+    float: right;
+}
+
+.TextB2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 30%;
+    background-image: url(../assets/fondoVerder.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    float: left;
+}
+
+.CenterText {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-flow: column nowrap;
+}
+
+.Text1{
+    margin-bottom: 10px;
+    font-size: 20px;
+    line-height: 20px;
+    letter-spacing: 5px;
+}
+
+.Text2 {
+    font-family: 'IM Fell Double Pica', serif;
+    font-size: 56px;
+    line-height: 56px;
+    letter-spacing: 5px;
+    margin-bottom: 30px;
+}
+
+.Text3 {
+    font-family: 'IM Fell Double Pica', serif;
+    font-size: 24px;
+    line-height: 24px;
+    margin-bottom: 50px;
+}
+
+.Text4 {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 60px;
+}
+
+.MainBookMassage {
+    font-size: 16px;
+    color: #0e170d;
+    border: 2px solid #0e170d;
+    line-height: 38px;
+    padding: 0px 40px;
+    background: transparent;
+    transition: .5s ease all;
+    letter-spacing: 3px;
+}
+
+.MainBookMassage2 {
+    font-size: 16px;
+    color: white;
+    border: 2px solid white;
+    line-height: 38px;
+    padding: 0px 40px;
+    background: transparent;
+    transition: .5s ease all;
+    letter-spacing: 3px;
+}
+
+.MainBookMassage:hover {
+    cursor: pointer;
+    background: #0e170d;
+    color: white;
+    transition: .5s ease all;
+}
+
+.MainBookMassage2:hover {
+    cursor: pointer;
+    background: white;
+    color: #0e170d;
+    transition: .5s ease all;
 }

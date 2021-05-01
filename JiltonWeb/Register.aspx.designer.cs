@@ -15,58 +15,13 @@ namespace JiltonWeb
     {
 
         /// <summary>
-        /// NameText control.
+        /// DataLoginText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox NameText;
-
-        /// <summary>
-        /// SurnameText control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox SurnameText;
-
-        /// <summary>
-        /// IDText control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox IDText;
-
-        /// <summary>
-        /// AgeText control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox AgeText;
-
-        /// <summary>
-        /// BirthCalendar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.CalendarExtender BirthCalendar;
-
-        /// <summary>
-        /// MailText control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox MailText;
+        protected global::System.Web.UI.WebControls.TextBox DataLoginText;
 
         /// <summary>
         /// PasswordText control.
@@ -78,39 +33,12 @@ namespace JiltonWeb
         protected global::System.Web.UI.WebControls.TextBox PasswordText;
 
         /// <summary>
-        /// AddressText control.
+        /// GoToLoginFromRegister control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox AddressText;
-
-        /// <summary>
-        /// CityText control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox CityText;
-
-        /// <summary>
-        /// PCText control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox PCText;
-
-        /// <summary>
-        /// ProvinceText control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ProvinceText;
+        protected global::System.Web.UI.WebControls.HyperLink GoToLoginFromRegister;
     }
 }

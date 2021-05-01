@@ -3,6 +3,7 @@
         <link rel="stylesheet" href="../css/car.css?ver=<?php echo rand(143,999)?>" />
 
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <div class="car">
