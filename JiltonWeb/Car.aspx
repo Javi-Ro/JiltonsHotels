@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/JiltonMaster.Master" AutoEventWireup="true" CodeBehind="Car.aspx.cs" Inherits="JiltonWeb.Car" %>
 <asp:Content ID="TitleForm" ContentPlaceHolderID="cssLink" runat="server">
-        <link rel="stylesheet" href="../css/car.css?ver=<?php echo rand(143,999)?>" />
-
+        <link rel="stylesheet" href="../css/car.css?ver=<?php echo rand(148,999)?>" />
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -15,18 +14,18 @@
         <div class ="texto">
             <h1> Mercedes S63 AMG</h1>
 
-            <br />
+            <br /><br />
 
             <p> Making use of a 4.0-liter bi-turbo V8 engine with 603 hp and 664 lb-ft of torque, the S63 will blast to 60 mph in only 3.5 seconds. 
                 A nine-speed AMG automatic transmission, 4Matic+ all-wheel-drive, and an adaptive sport suspension are standard. </p>
 
-            <br /><br />
+            <br />
 
             <p>We would be pleased of letting our guesses try this awesome german machine!</p>
 
             
             <div class="reservaBoton">
-               <p> RESERVE NOW </p>
+               <asp:Button  runat="server" CssClass="CarButton" Text="RESERVE NOW"></asp:Button>
             </div>
 
             
