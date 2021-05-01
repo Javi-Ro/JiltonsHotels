@@ -1,0 +1,128 @@
+﻿.MainContainerBooking {
+    background: #e6e2e7;
+    display: flex;
+    justify-content: center;
+    height: 650px;
+}
+
+.CenteredContainer {
+    margin: 20px 0;
+    width: 60%;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+/* MAIN CONTAINER */
+
+.BorderMainBlock {
+    border: 1px solid gray;
+    width: 65%;
+    margin-right: 5%;
+    height: 90%;
+}
+.MainBlock{
+    display: flex;
+    flex-flow: column wrap;
+    margin: 20px 20px;
+}
+
+.HeaderBlock{
+    display: flex;
+    flex-flow: row wrap;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.MethodContainer{
+    padding-left: 10px;
+    border: 1px solid gray;
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+.PaymentMethodOption {
+    font-family: 'Karla', sans-serif;
+    font-size: 20px;
+    padding: 5px 5px;
+    margin-bottom: 10px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.PaymentMethodLabel{
+    display: block;
+    margin: 10px 10px;
+    font-size: 16px;
+}
+
+.CardImages{
+    margin-bottom: 20px;
+    width: 25%;
+    display: flex;
+    flex-flow: row nowrap;
+    opacity: 0.7;
+}
+
+.cardImg{
+    width: 40px;
+    border-radius: 2px;
+    margin-right: 5px;
+}
+
+.PaymentForm{
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.PaymentTextBox {
+    font-family: 'Karla', sans-serif;
+    width: 47%;
+    font-size: 16px;
+    font-size: 16px;
+    margin-right: 3%;
+    margin-bottom: 10px;
+    padding: 10px 10px;
+}
+
+#CardNumber{
+    display: block;
+}
+
+.PaymentTextBox:hover{
+    border: 2px solid black;
+}
+
+.PaymentTextBox:focus {
+    background: transparent;
+}
+
+.PaymentButton {
+    margin-top: 100px;
+    margin-left: 37.5%;
+    width: 25%;
+    font-size: 16px;
+    color: white;
+    border: 2px solid #0e170d;
+    line-height: 38px;
+    padding: 0px 40px;
+    background: #0e170d;
+    transition: .5s ease all;
+    letter-spacing: 3px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.PaymentButton{
+    cursor: pointer;
+}
+
+
+
+/* ASIDE */
+.BookingResume{
+    width: 30%;
+    height: 90%;
+    border: 1px solid gray;
+}

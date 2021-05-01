@@ -1,0 +1,50 @@
+﻿.staff {
+    background-color: #c5ecfd;
+    background-size: cover;
+    display: flex;
+    border: black 2px solid;
+    width: 100%;
+    height: 100%;
+}
+
+
+.foto {
+    max-width: 475px;
+    max-height: 325px;
+}
+
+
+.texto {
+    margin-top: 30px;
+    margin-left: 70px;
+    margin-right: 70px;
+    text-align: center;
+    font-family: 'IM Fell Double Pica', serif;
+    font-size: 18px;
+}
+
+h1 {
+    color: darkgoldenrod;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 42px;
+    margin-bottom: 50px;
+}
+
+.reservaBoton {
+    text-align: center;
+    padding: 10px;
+    margin-top: 45px;
+    margin-bottom: -50px;
+    font-size: 16px;
+    margin-left: 200px;
+    margin-right: 200px;
+    color: #230909;
+    background-color: #fce471;
+    border-radius: 3px;
+    border: 2px solid #1883ba;
+}
+
+    .reservaBoton:hover {
+        color: #1883ba;
+        background-color: #ffffff;
+    }

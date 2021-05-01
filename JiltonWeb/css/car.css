@@ -1,0 +1,48 @@
+﻿.car {
+    background-color: #c5ecfd;
+    position: relative;
+    background-size: cover;
+    display: flex;
+    border: black 2px solid;
+    width: 100%;
+    height: 100%;
+}
+.foto {
+    max-width: 475px;
+    max-height: 375px;
+}
+
+.texto {
+    margin-top: 40px;
+    margin-left: 70px;
+    margin-right: 70px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h1 {
+    color: darkgoldenrod;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 42px;
+}
+
+.reservaBoton {
+
+    text-align: center;
+    padding: 10px;
+    margin-top: 45px;
+    margin-bottom: -50px;
+    font-size: 16px;
+    margin-left: 200px;
+    margin-right: 200px;
+    color:#230909;
+    background-color: #fce471;
+    border-radius: 3px;
+    border: 2px solid #1883ba;
+}
+
+    .reservaBoton:hover {
+        color: #1883ba;
+        background-color: #ffffff;
+    }

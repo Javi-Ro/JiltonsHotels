@@ -6,7 +6,7 @@
 <html>
 <head runat="server">
     <title>Jilton Hotel</title>
-    <link rel="stylesheet" href="../css/master.css?ver=<?php echo rand(145,999)?>" />  
+    <link rel="stylesheet" href="../css/master.css?ver=<?php echo rand(325,999)?>" />  
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
     <asp:ContentPlaceHolder ID="cssLink" runat="server"></asp:ContentPlaceHolder>
@@ -32,23 +32,17 @@
                     </LevelMenuItemStyles>
 
                     <items>
-                        <asp:MenuItem NavigateUrl="~/Room.aspx" Text="ROOMS" ToolTip="ROOMS">
-
-                        </asp:MenuItem>
                         <asp:MenuItem NavigateUrl="~/Restaurant.aspx" Text="RESTAURANT" ToolTip="RESTAURANT">
-
                         </asp:MenuItem>
-                        <asp:MenuItem NavigateUrl="~/MainPage.aspx" Text="SPA&GYM" ToolTip="SPA&GYM">
-
+                        <asp:MenuItem NavigateUrl="~/SpaGym.aspx" Text="SPA&GYM" ToolTip="SPA&GYM">
                         </asp:MenuItem>
                         <asp:MenuItem NavigateUrl="~/Car.aspx" Text="CAR LEASING" ToolTip="CAR LEASING">
-
+                        </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Packages.aspx" Text="PACKAGES" ToolTip="PACKAGES">
                         </asp:MenuItem>
                         <asp:MenuItem NavigateUrl="~/ContactForm.aspx" Text="CONTACT" ToolTip="CONTACT">
-
                         </asp:MenuItem>
                         <asp:MenuItem NavigateUrl="~/MainPage.aspx" Text="ABOUT US" ToolTip="ABOUT">
-
                         </asp:MenuItem>
                     </items>
                 </asp:Menu>
@@ -76,19 +70,13 @@
 
                     <asp:Label class="BookingLabel" runat="server">ADULTS</asp:Label>
                     <asp:DropDownList ID="AdultOptions" CssClass="Desplegables" runat="server">
-                        <asp:ListItem Value="0">0</asp:ListItem>
-                        <asp:ListItem Value="1">1</asp:ListItem>
-                        <asp:ListItem Value="2">2</asp:ListItem>
                     </asp:DropDownList>
+
                     <asp:Label class="BookingLabel" runat="server">CHILDS</asp:Label>
                     <asp:DropDownList ID="ChildOptions" CssClass="Desplegables" runat="server">
-                        <asp:ListItem Value="0">0</asp:ListItem>
-                        <asp:ListItem Value="1">1</asp:ListItem>
-                        <asp:ListItem Value="2">2</asp:ListItem>
-                        <asp:ListItem Value="3">3</asp:ListItem>
-                        <asp:ListItem Value="4">4</asp:ListItem>
                     </asp:DropDownList>
-                    <asp:Button  runat="server" CssClass="BookingButton" Text="BOOK"></asp:Button>
+
+                    <asp:Button  runat="server" CssClass="BookingButton" Text="BOOK" PostBackUrl="~/Room.aspx"></asp:Button>
                     <asp:Label CssClass="InformationLabel" runat="server">INFORMATION AND BOOKINGS +34 965 455 123</asp:Label>
                 </div>            
             </div>
