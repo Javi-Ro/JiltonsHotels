@@ -1,10 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/JiltonMaster.Master" AutoEventWireup="true" CodeBehind="Car.aspx.cs" Inherits="JiltonWeb.Car" %>
 <asp:Content ID="TitleForm" ContentPlaceHolderID="cssLink" runat="server">
-        <link rel="stylesheet" href="../css/car.css?ver=<?php echo rand(148,999)?>" />
+        <link rel="stylesheet" href="../css/car.css?ver=<?php echo rand(149,999)?>" />
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+    <div class ="carfondo">
     <div class="car">
 
         <div class="foto">
@@ -23,11 +24,7 @@
 
             <p>We would be pleased of letting our guesses try this awesome german machine!</p>
 
-            
-            <div class="reservaBoton">
-               <asp:Button  runat="server" CssClass="CarButton" Text="RESERVE NOW"></asp:Button>
-            </div>
-
+             <asp:Button  runat="server" CssClass="boton2" Text="RESERVE NOW"></asp:Button>
             
         </div>
     </div>
@@ -52,9 +49,8 @@
 
             <p>We would be pleased of letting our guesses try this exclusive new Tesla in advance!</p>
 
-            <div class="reservaBoton">
-               <p> RESERVE NOW </p>
-            </div>
+             <asp:Button  runat="server" CssClass="boton2" Text="RESERVE NOW"></asp:Button>
+
 
         </div>
         
@@ -78,9 +74,8 @@
 
             <p>We would be pleased of letting our guesses try this elegant luxury Rolls-Royce!</p>
 
-            <div class="reservaBoton">
-               <p> RESERVE NOW </p>
-            </div>
+             <asp:Button  runat="server" CssClass="boton2" Text="RESERVE NOW"></asp:Button>
+
 
         </div>
         
@@ -107,14 +102,12 @@
 
             <p>We would be pleased of letting our guesses try this Maybach, unique in the world!</p>
 
-            <div class="reservaBoton">
-               <p> RESERVE NOW </p>
-            </div>
+             <asp:Button  runat="server" CssClass="boton2" Text="RESERVE NOW"></asp:Button>
 
         </div>
         
     </div>
-
+    </div>
 
 </asp:Content>
 
