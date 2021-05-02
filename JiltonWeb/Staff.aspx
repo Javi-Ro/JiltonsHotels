@@ -1,10 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/JiltonMaster.Master" AutoEventWireup="true" CodeBehind="Staff.aspx.cs" Inherits="JiltonWeb.Staff" %>
 <asp:Content ID="TitleForm" ContentPlaceHolderID="cssLink" runat="server">
-            <link rel="stylesheet" href="../css/staff.css?ver=<?php echo rand(144,999)?>" />
+            <link rel="stylesheet" href="../css/staff.css?ver=<?php echo rand(145,999)?>" />
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+
+    <div class="stafffondo">
     <div class="staff">
 
         <div class="foto">
@@ -91,7 +93,7 @@
         </div>
         
     </div>
-
+    </div>
 
 
 

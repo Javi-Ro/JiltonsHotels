@@ -146,3 +146,11 @@ body {
     color: white;
     text-align: center;
 }
+
+.covid {
+    background-color: antiquewhite;
+    padding: 10px;
+    color: darkorange;
+    font-family:'Malgun Gothic';
+    text-align: center;
+}

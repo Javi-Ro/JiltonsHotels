@@ -6,7 +6,7 @@
 <html>
 <head runat="server">
     <title>Jilton Hotel</title>
-    <link rel="stylesheet" href="../css/master.css?ver=<?php echo rand(325,999)?>" />  
+    <link rel="stylesheet" href="../css/master.css?ver=<?php echo rand(326,999)?>" />  
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
     <asp:ContentPlaceHolder ID="cssLink" runat="server"></asp:ContentPlaceHolder>
@@ -19,6 +19,7 @@
 
 <body>
     <form id="form1" runat="server">
+        <div class="covid"> We respect the COVID-19 measurements </div>
         <header>
             <div class="TopContent">
                 <div class = "Logo">
@@ -39,6 +40,8 @@
                         <asp:MenuItem NavigateUrl="~/Car.aspx" Text="CAR LEASING" ToolTip="CAR LEASING">
                         </asp:MenuItem>
                         <asp:MenuItem NavigateUrl="~/Packages.aspx" Text="PACKAGES" ToolTip="PACKAGES">
+                        </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Staff.aspx" Text="STAFF" ToolTip="STAFF">
                         </asp:MenuItem>
                         <asp:MenuItem NavigateUrl="~/ContactForm.aspx" Text="CONTACT" ToolTip="CONTACT">
                         </asp:MenuItem>

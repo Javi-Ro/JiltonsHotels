@@ -1,12 +1,22 @@
 ﻿.car {
-    background-color: #c5ecfd;
     position: relative;
     background-size: cover;
     display: flex;
-    border: black 2px solid;
+    border: 2px solid white;
     width: 100%;
     height: 100%;
+    background-color: rgba(14,23,13,0.78);
 }
+
+.carfondo {
+    
+    background-image: url(../assets/6.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
 .foto {
     max-width: 475px;
     max-height: 375px;
@@ -18,13 +28,15 @@
     margin-right: 70px;
     margin-bottom: 40px;
     text-align: center;
+    color:aliceblue;
+    font-size: 17px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 h1 {
-    color: darkgoldenrod;
+    color: #ff8900;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 42px;
+    font-size: 43px;
 }
 
 .reservaBoton {
@@ -46,3 +58,28 @@ h1 {
         color: #1883ba;
         background-color: #ffffff;
     }
+
+.boton2 {
+    margin-top: 50px;
+    font-size: 16px;
+    color: white;
+    border: 2px solid white;
+    line-height: 38px;
+    padding: 0px 40px;
+    background: rgba(0,0,0,0.3);
+    transition: .5s ease all;
+    letter-spacing: 3px;
+}
+
+.boton2:hover {
+    cursor: pointer;
+    background: white;
+    color: #0e170d;
+    transition: .5s ease all;
+}
+
+fondo {
+    background-image: url(../assets/mainEvents.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
