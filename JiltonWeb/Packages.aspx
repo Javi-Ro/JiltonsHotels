@@ -1,11 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/JiltonMaster.Master" AutoEventWireup="true" CodeBehind="Packages.aspx.cs" Inherits="JiltonWeb.Packages" %>
 
 <asp:Content ID="cssLink" ContentPlaceHolderID="cssLink" runat="server">
-    <link rel="stylesheet" href="../css/packages.css?ver=<?php echo rand(140,999)?>" />
+    <link rel="stylesheet" href="../css/packages.css?ver=<?php echo rand(151,999)?>" />
     <link href="https://fonts.googleapis.com/css2?family=IM+Fell+Double+Pica:ital@1&display=swap" rel="stylesheet">
     <style type="text/css">
         .PackDesc {
-            height: 50px;
+            height: 4px;
             margin-left: 485px;
         }
         .Header {
@@ -14,42 +14,104 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="PackPlace">
-        <div class="PackImage">
-            <img src="assets/Placer.jpg" style="height: 362px; width: 357px" />
+    <div class="pack">
+
+        <div class="image">
+            <img src="assets/Placer.jpg" width="475" height="375" />
         </div>
-        <div class="PackDesc">
-            <h1 class="Header">Pleasure</h1>
-            1 masaje (a elegir) + 1 sesión de spa diarios
-            Con este pack será imposible no desconectar de la rutina
+        
+        <div class ="desc">
+            <h1> Placer</h1>
+
+            <br /><br />
+
+            <p> This package includes all you need to disconnect from the routine:<br />
+                Daily massage (to choose)<br />
+                Daily spa session<br />
+            </p>
+
+            <br />
+
+            <p>Perfect experience for busy people</p>
+
+            
         </div>
     </div>
-    <div class="PackPlace2">
-        <div class="PackImage">
-            <img  src="assets/Familia.jpg"/>
+
+    
+    <div class="pack">
+
+        <div class="image">
+            <img src="assets/Familia.jpg" width="475" height="375" />
         </div>
-        <div class="PackDesc">
-            <h1 class="Header">Family</h1>
-            Excursiones casi todos los días y salidas de acampada, 
-            ideal para familia con niños
+        
+        <div class ="desc">
+            <h1> Family</h1>
+
+            <br /><br />
+
+            <p> All needed to have a unique experience:<br />
+                Daily trip<br />
+                Camping trips every 2 days<br />
+            </p>
+
+            <br />
+
+            <p>Perfect for families and groups</p>
 
         </div>
     </div>
-    <div class="PackPlace">
-        <div class="PackImage">
-            <img src="assets/Para2.jpg" style="height: 328px; width: 465px; margin-right: 0px" />
+
+    <div class="pack">
+
+        <div class="image">
+            <img src="assets/Para2.jpg" width="475" height="375" />
         </div>
-        <div class="PackDesc">
-            <h1 class="Header">Couple</h1>
-            GUARRREOOO
+        
+        <div class ="desc">
+            <h1> Couple</h1>
+
+            <br /><br />
+
+            <p> This package includes a perfect couple experience:<br />
+                Daily spa session for both<br />
+                A trip to spend the night in a beautiful remote villa<br />
+                A deluxe romantic dinner in the restaurant
+            </p>
+
+            <br />
+
+            <p>Perfect experience for couples</p>
+
+            
+         
+
+            
         </div>
     </div>
-    <div class="PackPlace2">
-        <div class="PackImage">
-            <img src="assets/Placer.jpg" />
+
+    <div class="pack">
+
+        <div class="image">
+            <img src="assets/coches.jpg" width="475" height="375" />
         </div>
-        <div class="PackDesc">
-            <h1 class="Header">IDK</h1>
+        
+        <div class ="desc">
+            <h1> Car</h1>
+
+            <br /><br />
+
+            <p> Includes the best experience for in-love-with-cars people:
+                You will be able to choose the car you want from our collection every 2 days, to spend the day with it. 
+                And a special day, you will be invited to a profesional circuit with a car you choose.
+            </p>
+
+            <br />
+
+            <p>Perfect if you love cars</p>
+
+         
+            
         </div>
     </div>
 </asp:Content>
