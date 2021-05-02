@@ -40,6 +40,8 @@
                         </asp:MenuItem>
                         <asp:MenuItem NavigateUrl="~/Packages.aspx" Text="PACKAGES" ToolTip="PACKAGES">
                         </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Staff.aspx" Text="STAFF" ToolTip="STAFF">
+                        </asp:MenuItem>
                         <asp:MenuItem NavigateUrl="~/ContactForm.aspx" Text="CONTACT" ToolTip="CONTACT">
                         </asp:MenuItem>
                         <asp:MenuItem NavigateUrl="~/MainPage.aspx" Text="ABOUT US" ToolTip="ABOUT">
