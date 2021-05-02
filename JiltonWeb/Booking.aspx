@@ -25,7 +25,7 @@
                     <asp:TextBox id="CVV" CssClass="PaymentTextBox" placeholder="CVV" runat="server"></asp:TextBox>
                     <asp:TextBox id="TitularName" CssClass="PaymentTextBox" placeholder="Titular Name" runat="server"></asp:TextBox>
                 </div>
-                <asp:Button runat="server" CssClass="PaymentButton" Text="PAY NOW" Enabled="False" OnClick="Unnamed2_Click" />
+                <asp:Button runat="server" CssClass="PaymentButton" Text="PAY NOW" Enabled="False" />
             </div>
             </div>
             <aside class="BookingResume">
