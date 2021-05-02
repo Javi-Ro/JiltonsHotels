@@ -1,2 +1,117 @@
-﻿body {
+﻿
+.button {
+    width: 25%;
+    height: 7%;
+    margin-left: 10%;
+    margin-top: 10%;
+    border: 1px solid #515654;
+    line-height: 21px;
+    padding: 0 10px;
+    border-radius: 3px;
+    font-weight: bold;
+    
+    background: #515654;
+    color: white;
+    font-size: 16px;
+}
+
+.background {
+    background-image: url(../assets/6.jpg);
+    height: 4000px;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.filterBox {
+    position: fixed;
+    top: 40%;
+    left: 1%;
+    width: 18.35%;
+    background-color: white;
+    height: 50%;
+    box-shadow: 8px 8px 16px 8px rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.blurryBackground {
+    top: 40%;
+    width: 60%;
+    left: 25%;
+    right: 50%;
+    height: 3900px;
+    background: rgba(255,255,255,0.9);
+    position: absolute;
+}
+
+.room {
+    margin-top: 1%;
+    margin-left: 1%;
+    margin-right: 1%;
+    height: 6%;
+    background-color: white;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+
+.dropbtn {
+    background: #515654;
+    color:white;
+    /* PARA QUE TUVIERA EL MISMO FORMATO QUE EL BOTON BOOK DE MASTER SERIA:
+    border: 1px solid #515654;
+    line-height: 21px;
+    padding: 0 10px;
+    color: white;
+    border-radius: 3px;
+    font-weight: bold;*/
+
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: .5s ease all;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    float:left;
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+    /* Links inside the dropdown */
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+        /* Change color of dropdown links on hover */
+        .dropdown-content a:hover {
+            cursor: pointer;
+            background: #515654;
+            color: white;
+            transition: .5s ease all;
+        }
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: transparent;
+    color: #515654;
 }

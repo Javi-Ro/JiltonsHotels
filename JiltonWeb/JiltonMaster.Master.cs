@@ -11,8 +11,18 @@ namespace JiltonWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            EntryCalendar.StartDate = DateTime.Now;
-            DepartureCalendar.StartDate = DateTime.Now;
+            if (!Page.IsPostBack)
+            {
+                EntryCalendar.StartDate = DateTime.Now;
+                DepartureCalendar.StartDate = DateTime.Now;
+                ChildOptions.Items.Add(new ListItem("0", "0"));
+                ChildOptions.Items.Add(new ListItem("1", "1"));
+                ChildOptions.Items.Add(new ListItem("2", "2"));
+                ChildOptions.Items.Add(new ListItem("3", "3"));
+                AdultOptions.Items.Add(new ListItem("0", "0"));
+                AdultOptions.Items.Add(new ListItem("1", "1"));
+                AdultOptions.Items.Add(new ListItem("2", "2"));
+            }
         }
     }
 }

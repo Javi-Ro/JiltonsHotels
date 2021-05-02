@@ -1,6 +1,5 @@
-﻿.pack {
-    background-color:honeydew;
-    position: relative;
+﻿.staff {
+    background-color: #c5ecfd;
     background-size: cover;
     display: flex;
     border: black 2px solid;
@@ -8,21 +7,27 @@
     height: 100%;
 }
 
-.image {
+
+.foto {
     max-width: 475px;
-    max-height: 375px;
+    max-height: 325px;
 }
 
-.desc {
-    margin-top: 40px;
+
+.texto {
+    margin-top: 30px;
     margin-left: 70px;
     margin-right: 70px;
-    margin-bottom: 40px;
     text-align: center;
+    font-family: 'IM Fell Double Pica', serif;
+    font-size: 18px;
 }
 
 h1 {
+    color: darkgoldenrod;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 42px;
+    margin-bottom: 50px;
 }
 
 .reservaBoton {
