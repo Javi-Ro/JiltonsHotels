@@ -15,9 +15,9 @@
 }
 
 .image {
-    width: 1500px;
+    max-width: 100%;
     max-height: 100%;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 
