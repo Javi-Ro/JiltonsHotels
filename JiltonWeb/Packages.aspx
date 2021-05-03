@@ -1,55 +1,130 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/JiltonMaster.Master" AutoEventWireup="true" CodeBehind="Packages.aspx.cs" Inherits="JiltonWeb.Packages" %>
 
 <asp:Content ID="cssLink" ContentPlaceHolderID="cssLink" runat="server">
-    <link rel="stylesheet" href="../css/packages.css?ver=<?php echo rand(140,999)?>" />
+    <link rel="stylesheet" href="../css/packages.css?ver=<?php echo rand(154,999)?>" />
     <link href="https://fonts.googleapis.com/css2?family=IM+Fell+Double+Pica:ital@1&display=swap" rel="stylesheet">
     <style type="text/css">
-        .PackDesc {
-            height: 50px;
-            margin-left: 485px;
-        }
-        .Header {
-            margin-left: 576px;
-        }
+      
     </style>
+
+     <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+    <meta http-equiv="Pragma" content="no-cache">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="PackPlace">
-        <div class="PackImage">
-            <img src="assets/Placer.jpg" style="height: 362px; width: 357px" />
-        </div>
-        <div class="PackDesc">
-            <h1 class="Header">Pleasure</h1>
-            1 masaje (a elegir) + 1 sesión de spa diarios
-            Con este pack será imposible no desconectar de la rutina
-        </div>
-    </div>
-    <div class="PackPlace2">
-        <div class="PackImage">
-            <img  src="assets/Familia.jpg"/>
-        </div>
-        <div class="PackDesc">
-            <h1 class="Header">Family</h1>
-            Excursiones casi todos los días y salidas de acampada, 
-            ideal para familia con niños
 
+     
+    <div class="pack" >
+
+        <div class="image">
+            <img src="assets/spa.jpg" style="width: 100%; height: 100%; object-fit: cover;"/>
         </div>
+
+        <a href="https://www.google.com" style="color: black;">
+        <div class="overlay">
+        <div class="text">
+            <h1> Pleasure Pack</h1>
+
+            <br />
+
+            <p> This package includes all you need to disconnect from the routine:<br />
+                Daily massage (to choose)<br />
+                Daily spa session<br />
+            </p>
+
+            <br />
+
+            <p>Perfect experience for busy people</p>
+        </div>
+        </div>
+        </a>
+        
+       
     </div>
-    <div class="PackPlace">
-        <div class="PackImage">
-            <img src="assets/Para2.jpg" style="height: 328px; width: 465px; margin-right: 0px" />
+
+    
+    <div class="pack" >
+
+        <div class="image">
+            <img src="assets/couple.jpg" style="width: 100%; height: 100%; object-fit: cover;"/>
         </div>
-        <div class="PackDesc">
-            <h1 class="Header">Couple</h1>
-            GUARRREOOO
+
+        <a href="https://www.google.com" style="color: black;">
+        <div class="overlay">
+        <div class="text">
+            <h1> 
+                Couple Pack
+            </h1>
+
+            <br />
+
+            <p> This package includes a perfect couple experience:<br />
+                Daily spa session for both<br />
+                A trip to spend the night in a beautiful remote villa<br />
+                A deluxe romantic dinner in the restaurant
+            </p>
+
+            <br />
+
+            <p>Perfect experience for couples</p>
         </div>
+        </div>
+        </a>
+
+        
     </div>
-    <div class="PackPlace2">
-        <div class="PackImage">
-            <img src="assets/Placer.jpg" />
+
+    <div class="pack" >
+
+        <div class="image">
+            <img src="assets/trip.jpg" style="width: 100%; height: 100%; object-fit: cover;"/>
         </div>
-        <div class="PackDesc">
-            <h1 class="Header">IDK</h1>
+
+        <a href="https://www.google.com" style="color: black;" >
+        <div class="overlay">
+        <div class="text">
+            <h1> Adventure Pack</h1>
+
+            <br />
+
+            <p> All needed to have a unique experience:<br />
+                Daily trip<br />
+                Camping trips every 2 days<br />
+            </p>
+
+            <br />
+
+            <p>Perfect for families and groups</p>
         </div>
+        </div>
+            </a>
+       
+    </div>
+
+    <div class="pack">
+
+        <div class="image">
+            <img src="assets/cars.jpg" style="width: 100%; height: 100%; object-fit: cover;"/>
+        </div>
+
+        <a href="https://www.google.com" style="color: black;">
+        <div class="overlay">
+        <div class="text">
+            <h1> Supercar Pack</h1>
+
+            <br />
+
+            <p> Includes the best experience for in-love-with-cars people. You will be able to choose the car you want from our collection every 2 days, to spend the day with it. 
+                And a special day, you will be invited to a profesional circuit with a car you choose.
+            </p>
+
+            <br />
+
+            <p>Perfect if you love cars</p>
+        </div>
+        </div>
+        </a>
+
     </div>
 </asp:Content>

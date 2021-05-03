@@ -1,18 +1,49 @@
-﻿
-.PackPlace {
+﻿.pack {
+    background-color: rgb(225, 240, 235);
+    text-shadow: 1px 1px 14px rgb(0 0 0);
+    color: black;
+    font-size: 32px;
+    position: relative;
+    background-size: cover;
     display: flex;
-    margin: 16px 0;
-}
-.PackPlace2 {
-    display: flex;
-    margin-right: -3500px;
-    margin: 16px 0;
+   
+    object-fit: contain;
+    width: auto;
+    height: 500px;
+    text-align: center;
+    vertical-align: middle;
 }
 
-.PackImage {
-    width: 20px;
+.image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
 }
 
-.PackDesc {
-    flex: 1;
+
+
+
+
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: 0.6s ease;
+    background-color:ghostwhite;
+}
+
+.pack:hover .overlay {
+    opacity: 0.85;
+}
+
+.text {
+    text-align: center;
+    margin-top: 100px;
+    
 }

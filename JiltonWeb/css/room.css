@@ -7,13 +7,20 @@
     background-repeat: no-repeat;
 }
 
+.webBorder {
+    position: absolute;
+    height: 3939px;
+    width: 29%;
+}
+
 .filterBox {
-    position: fixed;
-    top: 40%;
-    left: 1%;
-    width: 18.35%;
+    position: sticky;
+    margin-top: 25.5%;
+    top: 10%;
+    left: 2%;
+    width: 65%;
     background-color: white;
-    height: 50%;
+    height: 12%;
     box-shadow: 8px 8px 16px 8px rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
@@ -29,10 +36,11 @@
 
 .blurryBackground {
     top: 40%;
-    /*width: 60%;*/
+    width: 60%;
     left: 25%;
-    right: 25%;
-    height: 3900px;
+    right: 50%;
+    bottom: 20%;
+    height: 3800px;
     background: rgba(255,255,255,0.9);
     position: absolute;
 }

@@ -1,49 +1,248 @@
 ﻿/*Spa & Gym page*/
 
-.infospa{
-
+.total{
+    background-color : rgba(84,200,18,0.8);
 }
 
-.PiscinaSpa{
-
+.spa {
+    background-image: url(../assets/fondospa.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 3100px;
 }
 
-.reserva {
-    margin: 0 10px 0 10px;
-    border: 1px solid #515654;
-    line-height: 21px;
-    padding: 0 10px;
+.gym {
+    background-image: url(../assets/gimnasiomaquinascorrer.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 1600px;
+}
+
+
+.reserva2 {
+    margin-top: 30px;
+    font-size: 20px;
+    color: greenyellow;
+    border: 2px solid white;
+    line-height: 38px;
+    padding: 0px 40px;
     background: transparent;
-    border-radius: 3px;
-    font-weight: bold;
     transition: .5s ease all;
+    letter-spacing: 4px;
+}
+
+    .reserva2:hover {
+        cursor: pointer;
+        background: gray;
+        color:  cadetblue;
+        transition: .5s ease all;
+    }
+
+    /*Botón bueno*/
+.reserva {
+    color: blue;
+    font-weight: bold;
+    font-size: 24px;
+    letter-spacing: 3px;
+    font-weight: 500;
+    padding: 0.5em 1.2em;
+    background: transparent;
+    position: relative;
+    border: 2px solid gray;
+    outline: 1px solid;
+    outline-color: white;
+    transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+    .reserva:hover {
+        box-shadow: inset 0 0 20px white, 0 0 20px gray;
+        outline-color: cadetblue;
+        outline-offset: 80px;
+        text-shadow: 1px 1px 6px #fff;
+        background:gray;
+    }
+
+/*Div`s*/
+.titulo1 {
+    color: azure;
+    text-decoration-color: azure;
+    font-weight: bolder;
+    font-size: 21px;
+    font-family: 'Agency FB', Britannic;
+    text-align: center;
+    border: #0DEBDE 1ex inset;
+}
+
+.spatitulo {
+    color: azure;
+    font-weight: bolder;
+    text-align: center;
+    font-family: 'Agency FB', Britannic;
+    font-size: 17px;
+}
+
+.piscina1 {
+    text-align: center;
+    font-family: 'Agency FB', Britannic;
+}
+
+.jacuzzi {
+    text-align: center;
+    font-family: 'Agency FB', Britannic;
+}
+
+.masajes {
+    text-align: center;
+    font-family: 'Agency FB', Britannic;
+}
+
+.tratamientos {
+    text-align: center;
+    font-family: 'Agency FB', Britannic;
+}
+
+.titulo2 {
+    color: green;
+    font-weight: bolder;
+    font-size:21px;
+    font-family: 'Agency FB', Britannic;
+    text-align: center;
+    border: #01F164 1ex outset;
+}
+
+.gym1 {
+    text-align: center;
+    font-family: 'Agency FB', Britannic;
+}
+
+.piscina2 {
+    text-align: center;
+    font-family: 'Agency FB', Britannic;
+}
+
+.maquinas {
+    text-align: center;
+    font-family: 'Agency FB', Britannic;
+}
+
+/*Label*/
+.infospa {
+    color: azure;
+    text-decoration-color: azure;
+    font-weight: bolder;
+    text-align: center;
+    font-family: 'Agency FB', Britannic;
+    font-size: 17px;
+}
+
+.infospa3 {
+    color: azure;
+    text-decoration-color: azure;
+    font-weight: bolder;
+    text-align: center;
+    font-family: 'Agency FB', Britannic;
+    font-size: 17px;
+}
+
+.infospa2 {
+    color: azure;
+    text-decoration-color: azure;
+    font-weight: bolder;
+    text-align: center;
+    font-family: 'Agency FB', Britannic;
+    font-size: 17px;
+}
+
+.infospa5 {
+    color: green;
+    font-weight: bolder;
+    text-align: center;
+    font-family: 'Agency FB', Britannic;
+    font-size: 17px;
+}
+
+.infospa4 {
+    color: azure;
+    text-decoration-color: azure;
+    font-weight: bolder;
+    text-align: center;
+    font-family: 'Agency FB', Britannic;
+    font-size: 17px;
+}
+
+.infospa6 {
+    color: green;
+    font-weight: bolder;
+    text-align: center;
+    font-family: 'Agency FB', Britannic;
+    font-size: 17px;
+}
+
+.infospa7 {
+    color: green;
+    font-weight: bolder;
+    text-align: center;
+    font-family: 'Agency FB', Britannic;
+    font-size: 17px;
+}
+
+/*Fotos*/
+.PiscinaSpa {
+    display: block;
+    margin: auto;
+    width: 600px;
+    height: 600px;
+    border: 1px solid #CCCCCC;
+    padding: 5px;
 }
 
 .JacSpa {
-
+    display: block;
+    margin: auto;
+    width: 600px;
+    height: 600px;
+    border: 1px solid #CCCCCC;
+    padding: 5px;
 }
 
-.SpaMas{
-
+.SpaMas {
+    display: block;
+    margin: auto;
+    width: 600px;
+    height: 600px;
+    border: 1px solid #CCCCCC;
+    padding: 5px;
 }
 
-.TratSpa{
-
+.TratSpa {
+    display: block;
+    margin: auto;
+    width: 600px;
+    height: 600px;
+    border: 1px solid #CCCCCC;
+    padding: 5px;
 }
 
-.GymOut{
-
+.GymPool {
+    display: block;
+    margin: auto;
+    width: 600px;
+    height: 600px;
+    border: 1px solid #CCCCCC;
+    padding: 5px;
 }
 
-.GymPool{
-
+.GymPesas {
+    display: block;
+    margin: auto;
+    width: 600px;
+    height: 600px;
+    border: 1px solid #CCCCCC;
+    padding: 5px;
 }
 
-.GymPesas{
-
-}
-
-.GymMaquinas{
-
-}
 
