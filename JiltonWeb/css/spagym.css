@@ -1,49 +1,91 @@
 ﻿/*Spa & Gym page*/
 
-.infospa{
-
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
+
+/*Label*/
+.infospa {
+    margin: 50px;
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    transition: .3s ease all;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+}
+
+.infospa2 {
+    margin: 10px 10px 10px 900px;
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    transition: .3s ease all;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+}
+
+/*Foto*/
 .PiscinaSpa{
-
+    width:fit-content();
+    height:fit-content();
 }
 
+/*Botón*/
 .reserva {
-    margin: 0 10px 0 10px;
-    border: 1px solid #515654;
+    margin: 10px 10px 10px 900px;
+    border: 3px solid #515654;
     line-height: 21px;
-    padding: 0 10px;
-    background: transparent;
-    border-radius: 3px;
+    padding: 10px 20px;
+    background: center;
+    border-radius: 5px;
     font-weight: bold;
-    transition: .5s ease all;
+    align-self: center;
+    align-items: center;
 }
 
+/*Labels*/
+
+/*Fotos*/
 .JacSpa {
-
+    margin: 10px 10px 10px 900px;
 }
 
-.SpaMas{
-
+.SpaMas {
+    margin: 10px 0 10px 50px;
+    width: fit-content();
+    height: fit-content();
 }
 
-.TratSpa{
-
+.TratSpa {
+    width: fit-content();
+    height: fit-content();
 }
 
-.GymOut{
-
+.GymOut {
+    width: fit-content();
+    height: fit-content();
 }
 
-.GymPool{
-
+.GymPool {
+    width: fit-content();
+    height: fit-content();
 }
 
-.GymPesas{
-
+.GymPesas {
+    width: fit-content();
+    height: fit-content();
 }
 
-.GymMaquinas{
-
+.GymMaquinas {
+    width: fit-content();
+    height: fit-content();
 }
 
