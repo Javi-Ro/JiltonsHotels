@@ -1,11 +1,12 @@
 ﻿.pack {
     background-color: rgb(225, 240, 235);
+    text-shadow: 1px 1px 14px rgb(0 0 0);
     color: black;
-    font-size: 30px;
+    font-size: 32px;
     position: relative;
     background-size: cover;
     display: flex;
-    border: white 1px solid;
+   
     object-fit: contain;
     width: auto;
     height: 500px;
@@ -15,23 +16,12 @@
 
 .image {
     width: 1500px;
-    height: 525px;
+    max-height: 100%;
     object-fit: contain;
 }
 
-.desc {
-    transition: .5s ease;
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 40px;
-    margin-left: 70px;
-    margin-right: 70px;
-    margin-bottom: 40px;
-    text-align: center;
-    width: 100%;
-}
+
+
 
 
 
@@ -44,16 +34,16 @@
     height: 100%;
     width: 100%;
     opacity: 0;
-    transition: .5s ease;
-    background-color:coral;
+    transition: 0.6s ease;
+    background-color:ghostwhite;
 }
 
 .pack:hover .overlay {
-    opacity: 0.95;
+    opacity: 0.85;
 }
 
 .text {
     text-align: center;
-    margin-top:100px;
-    font-size: 28px;
+    margin-top: 100px;
+    
 }
