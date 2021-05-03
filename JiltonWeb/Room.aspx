@@ -1,9 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/JiltonMaster.Master" AutoEventWireup="true" CodeBehind="Room.aspx.cs" Inherits="JiltonWeb.Room" %>
 
     <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <link href="css/room.css" rel="stylesheet">
+        <link href="css/room.css?ver=<?php echo rand(524,950)?>" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+       
         <div class="background" runat="server">
         <div class="webBorder">
           <div class="filterBox">
@@ -38,11 +38,10 @@
                     <a href="#">5 </a>
                   </div>
                 </div>
-          
-              <asp:Label runat="server"> 
-                  Your budget (per night)
-                  Aqui va un slider
-              </asp:Label>
+                
+              <div class="search">
+               <button class="searchButton"> Search </button>
+              </div>
 
             </div>
             </div>
@@ -59,6 +58,17 @@
                      <asp:Label runat="server">  Esto es una habitacion </asp:Label>
                 </div>
             </div>
+            <div class="webBorder2">
+            <div class="orderBox">
+               <div class="selectionLabel"> 
+                   <asp:Label runat="server"> Your selection </asp:Label>
+               </div>
+                    (Selected rooms go here)
+                <div class="Go">
+                    <button class="searchButton"> Go </button>
+                </div>
+            </div>
+           </div>
         </div>
               
     </asp:Content>

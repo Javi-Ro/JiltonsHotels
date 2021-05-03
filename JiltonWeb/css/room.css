@@ -1,20 +1,4 @@
 ﻿
-.button {
-    width: 25%;
-    height: 7%;
-    margin-left: 10%;
-    margin-top: 10%;
-    border: 1px solid #515654;
-    line-height: 21px;
-    padding: 0 10px;
-    border-radius: 3px;
-    font-weight: bold;
-    
-    background: #515654;
-    color: white;
-    font-size: 16px;
-}
-
 .background {
     background-image: url(../assets/6.jpg);
     height: 4000px;
@@ -25,26 +9,46 @@
 
 .webBorder {
     position: absolute;
-    height: 3939px;
+    height: 4090px;
+    top:0%;
+
+    width: 29%;
+}
+
+.webBorder2 {
+    top:0%;
+    right:0%;
+    position: absolute;
+    height: 4090px;
     width: 29%;
 }
 
 .filterBox {
     position: sticky;
-    margin-top: 25.5%;
+    margin-top: 88%;
     top: 10%;
-    left: 2%;
-    width: 65%;
+    left: 1%;
+    width: 63.26%;
     background-color: white;
-    height: 12%;
+    height: 8%;
+    box-shadow: 8px 8px 16px 8px rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.orderBox {
+    position: sticky;
+    margin-top: 88%;
+    top: 10%;
+    margin-left: 33%;
+    width: 63.26%;
+    background-color: white;
+    height: 8%;
     box-shadow: 8px 8px 16px 8px rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 .blurryBackground {
-    top: 40%;
-    width: 60%;
+    top: 56.5%;
     left: 25%;
-    right: 50%;
+    right: 25%;
     bottom: 20%;
     height: 3800px;
     background: rgba(255,255,255,0.9);
@@ -63,7 +67,8 @@
 
 .dropbtn {
     background: #515654;
-    color:white;
+    color: white;
+    display: inline-block;
     /* PARA QUE TUVIERA EL MISMO FORMATO QUE EL BOTON BOOK DE MASTER SERIA:
     border: 1px solid #515654;
     line-height: 21px;
@@ -71,14 +76,38 @@
     color: white;
     border-radius: 3px;
     font-weight: bold;*/
-
+    font-weight: bold;
     padding: 16px;
-    font-size: 16px;
+    font-size: 15px;
     border: none;
     cursor: pointer;
     transition: .5s ease all;
 }
 
+.search {
+    position: relative;
+    display: inline-block;
+    left:57%;
+    top: 72%;
+}
+.searchButton {
+    margin: 0 15px 0 15px;
+    border: 2px solid #515654;
+    line-height: 21px;
+    padding: 0 14px;
+    background: transparent;
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: .5s ease all;
+}
+
+.search:hover .searchButton {
+    cursor: pointer;
+    background: #515654;
+    color: white;
+    transition: .5s ease all;
+}
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
     float:left;
@@ -122,4 +151,26 @@
 .dropdown:hover .dropbtn {
     background-color: transparent;
     color: #515654;
+}
+
+.selectionLabel {
+    background: #515654;
+    color: white;
+    font-weight: bold;
+    padding: 16px;
+    font-size: 15px;
+}
+
+.Go {
+    position: relative;
+    display: inline-block;
+    left: 68%;
+    top: 66%;
+}
+
+.Go:hover .searchButton {
+    cursor: pointer;
+    background: #515654;
+    color: white;
+    transition: .5s ease all;
 }

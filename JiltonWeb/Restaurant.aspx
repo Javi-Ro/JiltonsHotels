@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/JiltonMaster.Master" AutoEventWireup="true" CodeBehind="Restaurant.aspx.cs" Inherits="JiltonWeb.Restaurant" %>
 
     <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <link href="css/restaurant.css" rel="stylesheet">
+        <link href="css/restaurant.css?ver=<?php echo rand(524,950)?>" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <div class="backgroundR" >

@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/JiltonMaster.Master" AutoEventWireup="true" CodeBehind="SpaGym.aspx.cs" Inherits="JiltonWeb.SpaGym" %>
 
 <asp:Content ID="cssLink" ContentPlaceHolderID="cssLink"  runat="server">
-    <link rel="stylesheet" href="../css/spagym.css?ver=<?php echo rand(100,999)?>" />
+    <link rel="stylesheet" href="../css/spagym.css?ver=<?php echo rand(101,999)?>" />
     <link href="https://fonts.googleapis.com/css2?family=IM+Fell+Double+Pica:ital@1&display=swap" rel="stylesheet">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server"> 
