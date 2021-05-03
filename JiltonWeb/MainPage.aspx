@@ -8,7 +8,7 @@
 <asp:Content ID="Content" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="Main">
         <div class="HomeContainer">
-            <asp:Label CssClass="EntryLabel" runat="server">Te esperamos</asp:Label>
+            <asp:Label CssClass="EntryLabel" runat="server">Welcome</asp:Label>
         </div>
         <div class="Comments">
             <div class="CommentsLessOpacity">
@@ -16,15 +16,15 @@
                     <img src="../assets/jiltonLogo2.png"/>
                     <h1 class="HotelName">JILTON HOTEL RESORT & SPA CENTER</h1>
                     <br />
-                    <asp:Label runat="server" CssClass="Reason">¿ WHY STAYING AT JILTON HOTEL ?</asp:Label>
+                    <asp:Label runat="server" CssClass="Reason"> WHY STAYING AT JILTON HOTEL ?</asp:Label>
                 
-                    <p class="ReasonParagraph"> A lot of famous people had chosen Jilton Hotel to enjoy of a unique trip. This exclusive asiatic
-                        oriented hotel is one of the best places to take pleasure of the more absolute relax and exquisit
-                        service. Its exhuberant tropical jardins, its 7 spectacular and peaceful pools 2 of them climatized,
-                        its perfect restaurant service, its Gym&Spa where you can lose the notion of the time and recover your
-                        energy are some of the reasons...</p>
+                    <p class="ReasonParagraph">Many celebrities chose Jilton Hotel to enjoy a unique retreat. This exclusive asiatic
+                        oriented hotel is one of the best places to take pleasure of absolute relax and exquisite
+                        service. Feel welcome to enjoy our exhuberant tropical gardens, along with 7 spectacular and peaceful pools 
+                        -2 of them climatized-, our luxurious restaurant service and Gym&Spa facilities where you can lose the notion of the 
+                        time and recover your energy</p>
                     <div class="ZidaneOpinion">
-                        <asp:Label runat="server" CssClass="OpinionLabel">Many thanks for your simpathy and hospitality. ¡A wonderful place in Spain!</asp:Label>
+                        <asp:Label runat="server" CssClass="OpinionLabel">Many thanks for your simpathy and hospitality. A wonderful place in Spain!</asp:Label>
                         <div class="ZidaneContainer">
                             <asp:Label runat="server" CssClass="ZidaneLabel">ZINÉDINE ZIDANE</asp:Label>
                             <asp:Label runat="server" CssClass="ZidaneCoach">Football Coach</asp:Label>
