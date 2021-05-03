@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/JiltonMaster.Master" AutoEventWireup="true" CodeBehind="SpaGym.aspx.cs" Inherits="JiltonWeb.WebForm2" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/JiltonMaster.Master" AutoEventWireup="true" CodeBehind="SpaGym.aspx.cs" Inherits="JiltonWeb.SpaGym" %>
 
 <asp:Content ID="cssLink" ContentPlaceHolderID="cssLink"  runat="server">
     <link rel="stylesheet" href="../css/spagym.css?ver=<?php echo rand(100,999)?>" />
