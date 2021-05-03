@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace JiltonWeb
 {
-    public partial class SpaGym : System.Web.UI.Page
+    public partial class SpaGym1 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
