@@ -1,91 +1,248 @@
 ﻿/*Spa & Gym page*/
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+.total{
+    background-color : rgba(84,200,18,0.8);
 }
 
+.spa {
+    background-image: url(../assets/fondospa.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 3100px;
+}
+
+.gym {
+    background-image: url(../assets/gimnasiomaquinascorrer.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 1600px;
+}
+
+
+.reserva2 {
+    margin-top: 30px;
+    font-size: 20px;
+    color: greenyellow;
+    border: 2px solid white;
+    line-height: 38px;
+    padding: 0px 40px;
+    background: transparent;
+    transition: .5s ease all;
+    letter-spacing: 4px;
+}
+
+    .reserva2:hover {
+        cursor: pointer;
+        background: gray;
+        color:  cadetblue;
+        transition: .5s ease all;
+    }
+
+    /*Botón bueno*/
+.reserva {
+    color: blue;
+    font-weight: bold;
+    font-size: 24px;
+    letter-spacing: 3px;
+    font-weight: 500;
+    padding: 0.5em 1.2em;
+    background: transparent;
+    position: relative;
+    border: 2px solid gray;
+    outline: 1px solid;
+    outline-color: white;
+    transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+    .reserva:hover {
+        box-shadow: inset 0 0 20px white, 0 0 20px gray;
+        outline-color: cadetblue;
+        outline-offset: 80px;
+        text-shadow: 1px 1px 6px #fff;
+        background:gray;
+    }
+
+/*Div`s*/
+.titulo1 {
+    color: azure;
+    text-decoration-color: azure;
+    font-weight: bolder;
+    font-size: 21px;
+    font-family: 'Agency FB', Britannic;
+    text-align: center;
+    border: #0DEBDE 1ex inset;
+}
+
+.spatitulo {
+    color: azure;
+    font-weight: bolder;
+    text-align: center;
+    font-family: 'Agency FB', Britannic;
+    font-size: 17px;
+}
+
+.piscina1 {
+    text-align: center;
+    font-family: 'Agency FB', Britannic;
+}
+
+.jacuzzi {
+    text-align: center;
+    font-family: 'Agency FB', Britannic;
+}
+
+.masajes {
+    text-align: center;
+    font-family: 'Agency FB', Britannic;
+}
+
+.tratamientos {
+    text-align: center;
+    font-family: 'Agency FB', Britannic;
+}
+
+.titulo2 {
+    color: green;
+    font-weight: bolder;
+    font-size:21px;
+    font-family: 'Agency FB', Britannic;
+    text-align: center;
+    border: #01F164 1ex outset;
+}
+
+.gym1 {
+    text-align: center;
+    font-family: 'Agency FB', Britannic;
+}
+
+.piscina2 {
+    text-align: center;
+    font-family: 'Agency FB', Britannic;
+}
+
+.maquinas {
+    text-align: center;
+    font-family: 'Agency FB', Britannic;
+}
 
 /*Label*/
 .infospa {
-    margin: 50px;
-    text-decoration: none;
-    color: black;
-    font-size: 20px;
-    transition: .3s ease all;
-    align-content: center;
-    align-items: center;
-    justify-content: center;
-    align-self: center;
+    color: azure;
+    text-decoration-color: azure;
+    font-weight: bolder;
+    text-align: center;
+    font-family: 'Agency FB', Britannic;
+    font-size: 17px;
+}
+
+.infospa3 {
+    color: azure;
+    text-decoration-color: azure;
+    font-weight: bolder;
+    text-align: center;
+    font-family: 'Agency FB', Britannic;
+    font-size: 17px;
 }
 
 .infospa2 {
-    margin: 10px 10px 10px 900px;
-    text-decoration: none;
-    color: black;
-    font-size: 20px;
-    transition: .3s ease all;
-    align-content: center;
-    align-items: center;
-    justify-content: center;
-    align-self: center;
+    color: azure;
+    text-decoration-color: azure;
+    font-weight: bolder;
+    text-align: center;
+    font-family: 'Agency FB', Britannic;
+    font-size: 17px;
 }
 
-/*Foto*/
-.PiscinaSpa{
-    width:fit-content();
-    height:fit-content();
+.infospa5 {
+    color: green;
+    font-weight: bolder;
+    text-align: center;
+    font-family: 'Agency FB', Britannic;
+    font-size: 17px;
 }
 
-/*Botón*/
-.reserva {
-    margin: 10px 10px 10px 900px;
-    border: 3px solid #515654;
-    line-height: 21px;
-    padding: 10px 20px;
-    background: center;
-    border-radius: 5px;
-    font-weight: bold;
-    align-self: center;
-    align-items: center;
+.infospa4 {
+    color: azure;
+    text-decoration-color: azure;
+    font-weight: bolder;
+    text-align: center;
+    font-family: 'Agency FB', Britannic;
+    font-size: 17px;
 }
 
-/*Labels*/
+.infospa6 {
+    color: green;
+    font-weight: bolder;
+    text-align: center;
+    font-family: 'Agency FB', Britannic;
+    font-size: 17px;
+}
+
+.infospa7 {
+    color: green;
+    font-weight: bolder;
+    text-align: center;
+    font-family: 'Agency FB', Britannic;
+    font-size: 17px;
+}
 
 /*Fotos*/
+.PiscinaSpa {
+    display: block;
+    margin: auto;
+    width: 600px;
+    height: 600px;
+    border: 1px solid #CCCCCC;
+    padding: 5px;
+}
+
 .JacSpa {
-    margin: 10px 10px 10px 900px;
+    display: block;
+    margin: auto;
+    width: 600px;
+    height: 600px;
+    border: 1px solid #CCCCCC;
+    padding: 5px;
 }
 
 .SpaMas {
-    margin: 10px 0 10px 50px;
-    width: fit-content();
-    height: fit-content();
+    display: block;
+    margin: auto;
+    width: 600px;
+    height: 600px;
+    border: 1px solid #CCCCCC;
+    padding: 5px;
 }
 
 .TratSpa {
-    width: fit-content();
-    height: fit-content();
-}
-
-.GymOut {
-    width: fit-content();
-    height: fit-content();
+    display: block;
+    margin: auto;
+    width: 600px;
+    height: 600px;
+    border: 1px solid #CCCCCC;
+    padding: 5px;
 }
 
 .GymPool {
-    width: fit-content();
-    height: fit-content();
+    display: block;
+    margin: auto;
+    width: 600px;
+    height: 600px;
+    border: 1px solid #CCCCCC;
+    padding: 5px;
 }
 
 .GymPesas {
-    width: fit-content();
-    height: fit-content();
+    display: block;
+    margin: auto;
+    width: 600px;
+    height: 600px;
+    border: 1px solid #CCCCCC;
+    padding: 5px;
 }
 
-.GymMaquinas {
-    width: fit-content();
-    height: fit-content();
-}
 
