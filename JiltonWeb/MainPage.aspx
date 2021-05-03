@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/JiltonMaster.Master" AutoEventWireup="true" CodeBehind="MainPage.aspx.cs" Inherits="JiltonWeb.MainPage" %>
 
 <asp:Content ID="cssLink" ContentPlaceHolderID="cssLink" runat="server">
-    <link rel="stylesheet" href="../css/main.css?ver=<?php echo rand(265,999)?>" />
+    <link rel="stylesheet" href="../css/main.css?ver=<?php echo rand(275,999)?>" />
     <link href="https://fonts.googleapis.com/css2?family=IM+Fell+Double+Pica:ital@1&display=swap" rel="stylesheet">
 </asp:Content>
 

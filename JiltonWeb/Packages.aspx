@@ -21,7 +21,7 @@
             <img src="assets/spa.jpg" style="width: 100%; height: 100%; object-fit: cover;"/>
         </div>
 
-        <a href="https://www.google.com" style="color: black;">
+        <a href="#" style="color: black;">
         <div class="overlay">
         <div class="text">
             <h1> Pleasure Pack</h1>
@@ -50,7 +50,7 @@
             <img src="assets/couple.jpg" style="width: 100%; height: 100%; object-fit: cover;"/>
         </div>
 
-        <a href="https://www.google.com" style="color: black;">
+        <a href="#" style="color: black;">
         <div class="overlay">
         <div class="text">
             <h1> 
@@ -81,7 +81,7 @@
             <img src="assets/trip.jpg" style="width: 100%; height: 100%; object-fit: cover;"/>
         </div>
 
-        <a href="https://www.google.com" style="color: black;" >
+        <a href="#" style="color: black;" >
         <div class="overlay">
         <div class="text">
             <h1> Adventure Pack</h1>
@@ -108,7 +108,7 @@
             <img src="assets/cars.jpg" style="width: 100%; height: 100%; object-fit: cover;"/>
         </div>
 
-        <a href="https://www.google.com" style="color: black;">
+        <a href="#" style="color: black;">
         <div class="overlay">
         <div class="text">
             <h1> Supercar Pack</h1>
