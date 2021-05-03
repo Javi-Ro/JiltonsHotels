@@ -9,36 +9,46 @@
 
 .webBorder {
     position: absolute;
-    height: 3939px;
+    height: 4090px;
+    top:0%;
+
+    width: 29%;
+}
+
+.webBorder2 {
+    top:0%;
+    right:0%;
+    position: absolute;
+    height: 4090px;
     width: 29%;
 }
 
 .filterBox {
     position: sticky;
-    margin-top: 25.5%;
+    margin-top: 88%;
     top: 10%;
-    left: 2%;
-    width: 65%;
+    left: 1%;
+    width: 63.26%;
     background-color: white;
-    height: 12%;
+    height: 8%;
     box-shadow: 8px 8px 16px 8px rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 .orderBox {
-    position: fixed;
-    top: 40%;
-    right: 1%;
-    width: 18.35%;
+    position: sticky;
+    margin-top: 88%;
+    top: 10%;
+    margin-left: 33%;
+    width: 63.26%;
     background-color: white;
-    height: 50%;
+    height: 8%;
     box-shadow: 8px 8px 16px 8px rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 .blurryBackground {
-    top: 40%;
-    width: 60%;
+    top: 56.5%;
     left: 25%;
-    right: 50%;
+    right: 25%;
     bottom: 20%;
     height: 3800px;
     background: rgba(255,255,255,0.9);
@@ -58,6 +68,7 @@
 .dropbtn {
     background: #515654;
     color: white;
+    display: inline-block;
     /* PARA QUE TUVIERA EL MISMO FORMATO QUE EL BOTON BOOK DE MASTER SERIA:
     border: 1px solid #515654;
     line-height: 21px;

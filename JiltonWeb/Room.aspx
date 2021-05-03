@@ -58,6 +58,7 @@
                      <asp:Label runat="server">  Esto es una habitacion </asp:Label>
                 </div>
             </div>
+            <div class="webBorder2">
             <div class="orderBox">
                <div class="selectionLabel"> 
                    <asp:Label runat="server"> Your selection </asp:Label>
@@ -67,6 +68,7 @@
                     <button class="searchButton"> Go </button>
                 </div>
             </div>
+           </div>
         </div>
               
     </asp:Content>
