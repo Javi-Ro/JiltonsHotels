@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <div class="background" runat="server">
-
+        <div class="webBorder">
           <div class="filterBox">
               <div class="dropdown">
                   <button class="dropbtn">Order by</button>
@@ -44,6 +44,7 @@
                   Aqui va un slider
               </asp:Label>
 
+            </div>
             </div>
 
             <div class="blurryBackground" runat="server">
