@@ -45,7 +45,7 @@
 
             </div>
             </div>
-
+            <div class="webBorder3">
             <div class="blurryBackground" runat="server">
                
                 <div class="room" runat="server">
@@ -58,6 +58,7 @@
                      <asp:Label runat="server">  Esto es una habitacion </asp:Label>
                 </div>
             </div>
+            </div>
             <div class="webBorder2">
             <div class="orderBox">
                <div class="selectionLabel"> 
@@ -65,7 +66,7 @@
                </div>
                     (Selected rooms go here)
                 <div class="Go">
-                    <button class="searchButton"> Go </button>
+                    <asp:Button  runat="server" CssClass="searchButton" Text="Go" PostBackUrl="~/Booking.aspx"></asp:Button>
                 </div>
             </div>
            </div>

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/JiltonMaster.Master" AutoEventWireup="true" CodeBehind="Booking.aspx.cs" Inherits="JiltonWeb.WebForm1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/JiltonMaster.Master" AutoEventWireup="true" CodeBehind="Booking.aspx.cs" Inherits="JiltonWeb.Booking" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="cssLink" runat="server">
         <link rel="stylesheet" href="../css/booking.css?ver=<?php echo rand(521,950)?>" />
 </asp:Content>

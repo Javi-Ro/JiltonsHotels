@@ -46,11 +46,10 @@
 }
 
 .blurryBackground {
-    top: 56.5%;
     left: 25%;
-    right: 25%;
-    bottom: 20%;
-    height: 3800px;
+    height: 3700px;
+    margin-top: 12.5%;
+    width: 50%;
     background: rgba(255,255,255,0.9);
     position: absolute;
 }
@@ -68,7 +67,8 @@
 .dropbtn {
     background: #515654;
     color: white;
-    display: inline-block;
+    display: flex;
+    flex-flow: row;
     /* PARA QUE TUVIERA EL MISMO FORMATO QUE EL BOTON BOOK DE MASTER SERIA:
     border: 1px solid #515654;
     line-height: 21px;
@@ -77,6 +77,7 @@
     border-radius: 3px;
     font-weight: bold;*/
     font-weight: bold;
+    margin: 0;
     padding: 16px;
     font-size: 15px;
     border: none;
@@ -85,10 +86,10 @@
 }
 
 .search {
-    position: relative;
+    position: absolute;
     display: inline-block;
-    left:57%;
-    top: 72%;
+    left: 68%;
+    top: 87%;
 }
 .searchButton {
     margin: 0 15px 0 15px;
@@ -162,10 +163,10 @@
 }
 
 .Go {
-    position: relative;
+    position: absolute;
     display: inline-block;
-    left: 68%;
-    top: 66%;
+    left: 76%;
+    top: 87%;
 }
 
 .Go:hover .searchButton {
