@@ -19,7 +19,7 @@ namespace Library
 
         public CADUser()
         {
-            constring = ConfigurationManager.ConnectionStrings["Database"].ConnectionString;
+            constring = ConfigurationManager.ConnectionStrings["HotelDB"].ConnectionString;
         }
 
         public bool createUser(ENUser user)
