@@ -47,8 +47,8 @@
 
 .blurryBackground {
     left: 25%;
-    height: 3700px;
-    margin-top: 12.5%;
+    height: 3750px;
+    margin-top: 7.6%;
     width: 50%;
     background: rgba(255,255,255,0.9);
     position: absolute;
@@ -92,7 +92,9 @@
     top: 87%;
 }
 .searchButton {
-    margin: 0 15px 0 15px;
+    position: absolute;
+    /*margin: 0 15px 0 15px;*/
+    right: -65px;
     border: 2px solid #515654;
     line-height: 21px;
     padding: 0 14px;
@@ -165,7 +167,7 @@
 .Go {
     position: absolute;
     display: inline-block;
-    left: 76%;
+    right: 79px;
     top: 87%;
 }
 

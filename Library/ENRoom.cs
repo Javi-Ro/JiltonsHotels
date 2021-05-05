@@ -19,7 +19,7 @@ namespace Library
 
         private string _title;
 
-        public int title
+        public string title
         {
             get { return _title; }
             set { _title = value; }
@@ -27,7 +27,7 @@ namespace Library
 
         private string _description; 
         
-        public int description { 
+        public string description { 
             get { return _description; } 
             set { _description = value; } 
         }
@@ -37,6 +37,20 @@ namespace Library
         public float price { 
             get { return _price; } 
             set { _price = value; } 
+        }
+
+        private int _adultBed;
+
+        public int adultBed
+        {
+            get { return _adultBed; }
+            set { _adultBed = value; }
+        }
+
+        public int _childBed
+        {
+            get { return _childBed; }
+            set { _childBed = value; }
         }
 
         private string _type;
@@ -76,35 +90,35 @@ namespace Library
         public bool showAll()
         {
             CADRoom room = new CADRoom();
-            bool show = user.selectAll(this);
+            bool show = room.selectAll(this);
             return show;
         }
 
         public bool showByType()
         {
             CADRoom room = new CADRoom();
-            bool show = user.selectByType(this);
+            bool show = room.selectByType(this);
             return show;
         }
 
         public bool showByMinSize()
         {
             CADRoom room = new CADRoom();
-            bool show = user.selectByMinSize(this);
+            bool show = room.selectByMinSize(this);
             return show;
         }
 
         public bool showAllOrderByPriceUp()
         {
             CADRoom room = new CADRoom();
-            bool show = user.selectOrderByPriceUp(this);
+            bool show = room.selectOrderByPriceUp(this);
             return show;
         }
 
         public bool showAllOrderByPriceDown()
         {
             CADRoom room = new CADRoom();
-            bool show = user.selectOrderByPriceDown(this);
+            bool show = room.selectOrderByPriceDown(this);
             return show;
         }
 
@@ -112,7 +126,7 @@ namespace Library
         {
             this.available = false;
             CADRoom room = new CADRoom();
-            bool show = user.UpdateNotAvailable(this);
+            bool show = room.UpdateNotAvailable(this);
             return show;
         }
 
@@ -120,7 +134,7 @@ namespace Library
         {
             this.available = true;
             CADRoom room = new CADRoom();
-            bool show = user.UpdateAvailable(this);
+            bool show = room.UpdateAvailable(this);
             return show;
         }
 
