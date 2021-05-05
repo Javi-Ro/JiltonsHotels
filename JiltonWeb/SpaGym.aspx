@@ -10,16 +10,16 @@
 
         <div class="spa">
             <div class="titulo1">
-                <h1 align="center"><b> ASIAN SPA </b></h1>
+                <h1 ><b> ASIAN SPA </b></h1>
             </div>  
             <br />
 
             <div class="spatitulo">
                 <asp:Label runat="server" align="center" CssClass="infospa1" >Here you will find information about our Spa & Gym services and reservations</asp:Label>
             </div>
-
+        
             <div class="fotopiscispa">
-                <img src ="assets/spapiscina.jpg" class ="PiscinaSpa"/>
+                <asp:Image runat="server" src ="assets/spapiscina.jpg" class ="PiscinaSpa"/>
             </div>
             <br />
 
@@ -33,7 +33,7 @@
             <br />
 
             <div class="fotojac">
-                <img src ="assets/jacuzzispa.jpg" class="JacSpa"/>
+                <asp:Image runat="server" src ="assets/jacuzzispa.jpg" class="JacSpa"/>
             </div>
             <br />
 
@@ -46,7 +46,7 @@
             <br />
 
             <div class="fotomasaje">
-                <img src="assets/masspa.jpg" class="SpaMas"/> 
+                <asp:Image runat="server" src="assets/masspa.jpg" class="SpaMas"/> 
             </div>
             <br />
 
@@ -59,7 +59,7 @@
             <br />
 
             <div class="fototrat">
-                <img src="assets/masajes.png" class="TratSpa"/>
+                <asp:Image runat="server" src="assets/masajes.png" class="TratSpa"/>
             </div>
             <br />
 
@@ -76,7 +76,7 @@
 
         <div class="gym">
             <div class="titulo2">
-                <h1 align="center"><b> GYM </b></h1>
+                <h1 ><b> GYM </b></h1>
             </div>
             <br />
 
@@ -87,7 +87,7 @@
             <br />
 
             <div class="fotopsicigym">
-                <img src="assets/gympool.jpg" class="GymPool"/>
+                <asp:Image runat="server" src="assets/gympool.jpg" class="GymPool"/>
             </div>
             <br />
 
@@ -100,7 +100,7 @@
             <br />
 
             <div class="fotomaquinas">
-                <img src="assets/gimnasiopesas.jpg" class="GymPesas"/>
+                <asp:Image runat="server" src="assets/gimnasiopesas.jpg" class="GymPesas"/>
             </div>
             <br />
 
