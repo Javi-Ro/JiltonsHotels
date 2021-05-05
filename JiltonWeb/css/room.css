@@ -10,25 +10,24 @@
 .webBorder {
     position: absolute;
     height: 4090px;
-    top:0%;
-
-    width: 29%;
+    top: 0%;
+    margin-top: calc(241px + 12.5%);
+    left: 1%;
+    width: 18.3454%;
 }
 
 .webBorder2 {
-    top:0%;
-    right:0%;
+    top: 0%;
+    right: 1%;
     position: absolute;
+    margin-top: calc(241px + 12.5%);
     height: 4090px;
-    width: 29%;
+    width: 18.3454%;
 }
 
 .filterBox {
     position: sticky;
-    margin-top: 88%;
     top: 10%;
-    left: 1%;
-    width: 63.26%;
     background-color: white;
     height: 8%;
     box-shadow: 8px 8px 16px 8px rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
@@ -36,10 +35,7 @@
 
 .orderBox {
     position: sticky;
-    margin-top: 88%;
     top: 10%;
-    margin-left: 33%;
-    width: 63.26%;
     background-color: white;
     height: 8%;
     box-shadow: 8px 8px 16px 8px rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
@@ -88,13 +84,17 @@
 .search {
     position: absolute;
     display: inline-block;
-    left: 68%;
-    top: 87%;
+    left: 100%;
+    top: 100%;
+    transform: translate(-130%, -150%);
 }
 .searchButton {
+<<<<<<< HEAD
     position: absolute;
     /*margin: 0 15px 0 15px;*/
     right: -65px;
+=======
+>>>>>>> 96a6dcb9264c7a6f03b94d513a2888fcaaf56533
     border: 2px solid #515654;
     line-height: 21px;
     padding: 0 14px;
@@ -167,8 +167,14 @@
 .Go {
     position: absolute;
     display: inline-block;
+<<<<<<< HEAD
     right: 79px;
     top: 87%;
+=======
+    left: 100%;
+    top: 100%;
+    transform: translate(-130%, -150%);
+>>>>>>> 96a6dcb9264c7a6f03b94d513a2888fcaaf56533
 }
 
 .Go:hover .searchButton {
