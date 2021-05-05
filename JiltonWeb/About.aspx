@@ -57,7 +57,7 @@
                 Javi joined with a group of long-time Cook residents to make 
                 the vision a reality.</p>
             <p>On the family property, in the area where, as kids, they’d run to watch 
-                the storms come in, MArio and Peque cleared the footprint for the 
+                the storms come in, Mario and Peque cleared the footprint for the 
                 building. They worked by hand to ensure no trees were taken down 
                 unnecessarily, and then started construction. In 1996 the Tikioki 
                 Inn and the Mori Restaurant opened at the north end of Aroa Beach, 
@@ -66,10 +66,11 @@
                 With the popularity of wildlife sightings, surfing and storm watching, 
                 the area had become a destination and the quality experience provided by 
                 the Inn brought a steady growth in international visitors.</p>
-            <br />
+            <br /><br />
             <a href="https://www.google.com/maps/place/Rarotonga,+Islas+Cook/data=!4m2!3m1!1s0x7157d168aca32ae9:0x51a001c47eff9e5d?sa=X&ved=2ahUKEwjnuOH5oK7wAhW2CGMBHXj2DjoQ8gEwKHoECFQQAQ" style="color: black;">
                 <h1>We are here</h1>
                 </a>
+            <br />
             
         </div>
         </div>
