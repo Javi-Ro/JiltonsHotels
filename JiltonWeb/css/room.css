@@ -43,8 +43,8 @@
 
 .blurryBackground {
     left: 25%;
-    height: 3700px;
-    margin-top: 12.5%;
+    height: 3750px;
+    margin-top: 7.6%;
     width: 50%;
     background: rgba(255,255,255,0.9);
     position: absolute;
@@ -89,6 +89,12 @@
     transform: translate(-130%, -150%);
 }
 .searchButton {
+<<<<<<< HEAD
+    position: absolute;
+    /*margin: 0 15px 0 15px;*/
+    right: -65px;
+=======
+>>>>>>> 96a6dcb9264c7a6f03b94d513a2888fcaaf56533
     border: 2px solid #515654;
     line-height: 21px;
     padding: 0 14px;
@@ -161,9 +167,14 @@
 .Go {
     position: absolute;
     display: inline-block;
+<<<<<<< HEAD
+    right: 79px;
+    top: 87%;
+=======
     left: 100%;
     top: 100%;
     transform: translate(-130%, -150%);
+>>>>>>> 96a6dcb9264c7a6f03b94d513a2888fcaaf56533
 }
 
 .Go:hover .searchButton {
