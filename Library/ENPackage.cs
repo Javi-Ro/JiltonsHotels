@@ -45,17 +45,20 @@ namespace Library
 
         public bool createPackage()
         {
-
+            CADPackage p = new CADPackage();
+            return p.createPackage(this);
         }
 
         public bool deletePackage()
         {
-
+            CADPackage p = new CADPackage();
+            return p.deletePackage(this);
         }
 
         public bool searchPackage()
         {
-
+            CADPackage p = new CADPackage();
+            return p.searchPackage(this);
         }
 
         //SERVICES IN THE PACKAGE
@@ -66,16 +69,20 @@ namespace Library
 
         public bool addService(ENService serv)
         {
-
+            CADPackage p = new CADPackage();
+            return p.addService(this,serv);
         }
 
         public bool deleteService(ENService serv)
         {
-
+            CADPackage p = new CADPackage();
+            return p.deleteService(this, serv);
         }
 
         public bool includes(ENService serv)
         {
+            CADPackage p = new CADPackage();
+            return p.includes(this, serv);
 
         }
 
