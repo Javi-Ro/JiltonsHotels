@@ -49,7 +49,7 @@
                     <p class="Text4">Book now your massage or treatment in one of the most relaxing places of Jilton Hotel and enjoy with our expert masseurs, well-educated in 
                         the most prestigious school of the world. Our recommendation is to book your massage at the afternoon to witness the peaceful sunset while
                         you get treated by our masseurs, creating a real harmony between your mind and body.</p>
-                    <asp:Button runat="server" Text="BOOK NOW" CssClass="MainBookMassage" PostBackUrl="~/SpaGym.aspx" />
+                    <asp:Button runat="server" Text="BOOK NOW" CssClass="MainBookMassage" ID="SpaButton" OnClick="SpaButton_Click" />
                     </div>
                 </div>
             </div>
@@ -63,7 +63,7 @@
                     <p class="Text4">The exclusivity of a 5-star hotel with an exquisit service makes Jilton Hotel the ideal place to organize your event. Jilton Hotel offers
                         versatile areas that works perfectly in a lot of types of events and are thought to get the best of it. 
                     </p>
-                    <asp:Button runat="server" Text="COMING SOON" CssClass="MainBookMassage2" PostBackUrl="~/MainPage.aspx" Enabled="False" />
+                    <asp:Button runat="server" Text="COMING SOON" CssClass="MainBookMassage2" ID="EventsButton" Enabled="False" OnClick="EventsButton_Click" />
                     </div>
                 </div>
             </div>

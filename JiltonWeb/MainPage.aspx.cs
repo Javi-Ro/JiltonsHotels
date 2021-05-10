@@ -12,5 +12,15 @@ namespace JiltonWeb
         protected void Page_Load(object sender, EventArgs e)
         {
         }
+
+        protected void SpaButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("SpaGym.aspx");
+        }
+
+        protected void EventsButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Events.aspx");
+        }
     }
 }
