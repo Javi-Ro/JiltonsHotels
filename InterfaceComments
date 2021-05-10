@@ -1,0 +1,8 @@
+IT looks good, nice webpage.
+Things to take into account:
+In the menu you will have to use the menuItemClick event instead of using the navigateUrl attr.
+Dont use href or img, use Hyperlink or Image instead (in Room, Car, SpaGym, Staff..)
+The pages that access the DDBB dont use data controls, we should decide which data control we are going to use.
+Maybe you want to use more Ajax controls , it would improve the interface
+
+Regarding the project: good, tag created, issues ok. Now it is time to add new issues!
