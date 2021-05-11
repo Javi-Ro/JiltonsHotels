@@ -65,13 +65,6 @@
     color: white;
     display: flex;
     flex-flow: row;
-    /* PARA QUE TUVIERA EL MISMO FORMATO QUE EL BOTON BOOK DE MASTER SERIA:
-    border: 1px solid #515654;
-    line-height: 21px;
-    padding: 0 10px;
-    color: white;
-    border-radius: 3px;
-    font-weight: bold;*/
     font-weight: bold;
     margin: 0;
     padding: 16px;

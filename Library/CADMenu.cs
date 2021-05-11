@@ -10,9 +10,18 @@ public class CADMenu
 		constring = ConfigurationManager.ConnectionStrings["HotelDB"].ConnectionString;
 	}
 
-	public bool showToday(ENMenu menu)
+	public bool showTodayMenu(ENMenu menu)
     {
-		//shows today's menu based on the day of the week using an asp net library
-    }
 
+	}
+
+	public bool showNextMenu(ENMenu menu)
+	{
+		//shows today's menu based on the day of the week using an asp net library
+	}
+
+	public bool showPreviousMenu(ENMenu menu)
+	{
+		//shows today's menu based on the day of the week using an asp net library
+	}
 }

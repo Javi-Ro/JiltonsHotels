@@ -62,7 +62,7 @@ namespace Library
         }
 
         //SERVICES IN THE PACKAGE
-        const public ENService[] getServices()
+        public ENService[] getServices() const
         {
 
         }

@@ -5,6 +5,37 @@
     background-attachment: fixed;
     background-size: 100% 100%;
     background-repeat: no-repeat;
+
+}
+
+
+.Menu {
+    text-align: center;
+    position: relative;
+    top: 60px;
+    float: left;
+    display: flex;
+    width: 33.33%;
+}
+
+.MenuButton {
+    text-align: center;
+    float: left;
+    width: 100%;
+    background: #515654;
+    color: white;
+    display: flex;
+    font-weight: bold;
+    padding: 15px 5px 18px 130px;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    transition: .5s ease all;
+}
+
+.Menu:hover .MenuButton {
+    background-color: white;
+    color: #515654;
 }
 
 .RestaurantTitle {
