@@ -61,17 +61,20 @@
 
 
 .dropbtn {
+    justify-content:center;
+    align-items:center;
     background: #515654;
     color: white;
     display: flex;
     flex-flow: row;
     font-weight: bold;
     margin: 0;
-    padding: 16px;
+    padding: 20% 25% 20% 20%;
     font-size: 15px;
     border: none;
     cursor: pointer;
     transition: .5s ease all;
+    width:100%;
 }
 
 .search {
@@ -103,6 +106,8 @@
     float:left;
     position: relative;
     display: inline-block;
+    width:33.33%;
+    
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -147,8 +152,8 @@
     background: #515654;
     color: white;
     font-weight: bold;
-    padding: 16px;
-    font-size: 15px;
+    padding: 7%;
+    font-size: 100%;
 }
 
 .Go {
@@ -164,4 +169,8 @@
     background: #515654;
     color: white;
     transition: .5s ease all;
+}
+
+.slider{
+    background-color: blue;
 }

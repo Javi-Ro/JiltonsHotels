@@ -2,14 +2,13 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
 
     <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <link href="css/restaurant.css?ver=<?php echo rand(533,950)?>" rel="stylesheet">
+        <link href="css/restaurant.css?ver=<?php echo rand(534,950)?>" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <div class="backgroundR" >
 
             <div class="Menu">
                   <button class="MenuButton">PREVIOUS MENU</button>
-                
             </div>
             <div class="Menu">
                   <button class="MenuButton">TODAY'S MENU</button>
@@ -62,9 +61,9 @@
                        </asp:label>
                     </div>
                     <div class ="subTitle" runat="server">
-                       <asp:label runat="server"> Feel free to ask for our superb wine selection
 
-                       </asp:label>
+                       <asp:label runat="server"> Feel free to ask for our superb wine selection</asp:label>
+
                    </div>
                </div>
     

@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/JiltonMaster.Master" AutoEventWireup="true" CodeBehind="Room.aspx.cs" Inherits="JiltonWeb.Room" %>
 
     <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <link href="css/room.css?ver=<?php echo rand(524,950)?>" rel="stylesheet">
+        <link href="css/room.css?ver=<?php echo rand(526,950)?>" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
         <div class="background" runat="server">
@@ -9,7 +9,7 @@
         <div class="webBorder">
           <div class="filterBox">
               <div class="dropdown">
-                  <button class="dropbtn">Order by</button>
+                  <button class="dropbtn">Order </button>
                   <div class="dropdown-content">
                     <a href="#">Ratings</a>
                     <a href="#">Price (lowest first) </a>
@@ -40,13 +40,19 @@
                   </div>
                 </div>
                 
-<%--                <asp:TextBox ID="Slider1" runat="server"></asp:TextBox>
-              <asp:TextBox  ID="Slider1_BoundControl" runat="server"></asp:TextBox>
-              <ajaxToolkit:SliderExtender ID="SliderExtender1" runat="server"
-                    Minimum="0"
-                    Maximum="1000"
-                    BoundControlID="Slider1_BoundControl"
-                    TargetControlID="Slider1"/>--%>
+              <div class="slider">
+<%--                  <ajaxToolkit:MultiHandleSlider ID="multiHandleSliderExtenderOne"
+                    runat="server"
+                    TargetControlID="sliderOne"
+                    BehaviorID="multiHandleSliderOne"
+                    BoundControlID="lblSliderOne"
+                    Minimum="-100"
+                    Maximum="100"
+                    Steps="5"
+                    Length="100"
+                    ToolTipText="{0}"/>     --%>
+              </div>
+                
                     
               <div class="search">
                <button class="searchButton"> Search </button>
