@@ -24,6 +24,15 @@ namespace JiltonWeb
         protected global::System.Web.UI.WebControls.TextBox DataLoginText;
 
         /// <summary>
+        /// RequiredFieldValidatorLoginDNI control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorLoginDNI;
+
+        /// <summary>
         /// PasswordText control.
         /// </summary>
         /// <remarks>
@@ -31,6 +40,15 @@ namespace JiltonWeb
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox PasswordText;
+
+        /// <summary>
+        /// RequiredFieldValidatorLoginPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorLoginPassword;
 
         /// <summary>
         /// GoToLoginFromRegister control.

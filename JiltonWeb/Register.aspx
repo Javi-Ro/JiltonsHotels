@@ -20,59 +20,65 @@
                 </div>
                 <div class="RegisterForm">
                     <div class="row">
-                        <asp:Label runat="server" Width="59%">Name:</asp:Label>
+                        <asp:Label runat="server" Width="35%">Name* :</asp:Label>
                         <asp:TextBox ID ="NameText" CssClass="col" Height="30px" style="text-align:left; border-radius:3px; border-width:1px; margin-right:2px" runat ="server" />
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorName" CssClass="Validator" runat="server" ValidationGroup="RegisterInfoGroup" ErrorMessage="Name is required" ControlToValidate="NameText" Display="Dynamic"></asp:RequiredFieldValidator>
                     </div>
 
                     <div class="row">
-                        <asp:Label runat="server" Width="59%">Surname:</asp:Label>
+                        <asp:Label runat="server" Width="35%">Surname* :</asp:Label>
                         <asp:TextBox ID ="SurnameText" CssClass="col" Height="30px" style="text-align:left; border-radius:3px; border-width:1px; margin-right:2px" runat ="server" />
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidatorSurname" CssClass="Validator" runat="server" ValidationGroup="RegisterInfoGroup" ErrorMessage="Surname is required" ControlToValidate="SurnameText" Display="Dynamic"></asp:RequiredFieldValidator>
                     </div>
 
                     <div class="row">
-                        <asp:Label runat="server" Width="59%">DNI/NIF:</asp:Label>
+                        <asp:Label runat="server" Width="35%">DNI/NIF* :</asp:Label>
                         <asp:TextBox ID ="IDText" CssClass="col" Height="30px" style="text-align:left; border-radius:3px; border-width:1px; margin-right:2px" runat ="server" />
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidatorDNI" CssClass="Validator" runat="server" ValidationGroup="RegisterInfoGroup" ErrorMessage="DNI/NIF is required" ControlToValidate="IDText" Display="Dynamic"></asp:RequiredFieldValidator>
                     </div>
 
                     <div class="row">
-                        <asp:Label runat="server" Width="59%">Date of Birth:</asp:Label>
+                        <asp:Label runat="server" Width="35%">Date of Birth* :</asp:Label>
                         <asp:TextBox ID ="AgeText" CssClass="col" Height="30px" style="text-align:left; border-radius:3px; border-width:1px; margin-right:2px" ReadOnly="true" runat ="server" />
                         <ajax:CalendarExtender ID="BirthCalendar" runat="server" TargetControlID="AgeText" Format="dd/MM/yyyy"> </ajax:CalendarExtender>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidatorBirthday" CssClass="Validator" runat="server" ValidationGroup="RegisterInfoGroup" ErrorMessage="Date of birth is required" ControlToValidate="AgeText" Display="Dynamic"></asp:RequiredFieldValidator>
                     </div>
 
                     <div class="row">
-                        <asp:Label runat="server" Width="59%">Mail:</asp:Label>
+                        <asp:Label runat="server" Width="35%">Mail* :</asp:Label>
                         <asp:TextBox ID ="MailText" CssClass="col" Height="30px" style="text-align:left; border-radius:3px; border-width:1px; margin-right:2px" runat ="server" />
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidatorMail" CssClass="Validator" runat="server" ValidationGroup="RegisterInfoGroup" ErrorMessage="E-mail is required" ControlToValidate="MailText" Display="Dynamic"></asp:RequiredFieldValidator>
                     </div>
 
                     <div class="row">
-                        <asp:Label runat="server" Width="59%">Password:</asp:Label>
+                        <asp:Label runat="server" Width="35%">Password* :</asp:Label>
                         <asp:TextBox ID ="PasswordText" CssClass="col" Height="30px" style="text-align:left; border-radius:3px; border-width:1px; margin-right:2px" TextMode="Password" runat ="server" />
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidatorPassword" CssClass="Validator" runat="server" ValidationGroup="RegisterInfoGroup" ErrorMessage="Password is required" ControlToValidate="PasswordText" Display="Dynamic"></asp:RequiredFieldValidator>
                     </div>
 
                     <div class="row">
-                        <asp:Label runat="server" Width="59%">Address:</asp:Label>
+                        <asp:Label runat="server" Width="35%">Address:</asp:Label>
                         <asp:TextBox ID ="AddressText" CssClass="col" Height="30px" style="text-align:left; border-radius:3px; border-width:1px; margin-right:2px" runat ="server" />
                     </div>
 
                     <div class="row">
-                        <asp:Label runat="server" Width="59%">City:</asp:Label>
+                        <asp:Label runat="server" Width="35%">City:</asp:Label>
                         <asp:TextBox ID ="CityText" CssClass="col" Height="30px" style="text-align:left; border-radius:3px; border-width:1px; margin-right:2px" runat ="server" />
                     </div>
 
                     <div class="row">
-                        <asp:Label runat="server" Width="59%">Postal Code:</asp:Label>
+                        <asp:Label runat="server" Width="35%">Postal Code:</asp:Label>
                         <asp:TextBox ID ="PCText" CssClass="col" Height="30px" style="text-align:left; border-radius:3px; border-width:1px; margin-right:2px" runat ="server" />
                     </div>
 
                     <div class="row">
-                        <asp:Label runat="server" Width="59%">Province:</asp:Label>
+                        <asp:Label runat="server" Width="35%">Province:</asp:Label>
                         <asp:TextBox ID ="ProvinceText" CssClass="col" Height="30px" style="text-align:left; border-radius:3px; border-width:1px; margin-right:2px" runat ="server" />
                     </div>
 
                     <div class="row">
-                        <asp:Hyperlink ID="GoToLoginFromRegister" runat="server" Width="57.8%" Text="Already have an account?" NavigateUrl="Login.aspx"/>
-                        <asp:Button CssClass="RegisterBttn" Text="Register" runat="server" />
+                        <asp:Hyperlink ID="GoToLoginFromRegister" runat="server" Width="35%" Text="Already have an account?" NavigateUrl="Login.aspx"/>
+                        <asp:Button CssClass="RegisterBttn" Text="Register" runat="server" ValidationGroup="RegisterInfoGroup"/>
                     </div>
                 </div>
             </div>
