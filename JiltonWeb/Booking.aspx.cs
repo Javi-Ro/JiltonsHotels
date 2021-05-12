@@ -23,7 +23,7 @@ namespace JiltonWeb
 
         }
 
-        protected void OnTextChanged_Card(object sender, EventArgs e)
+        protected virtual void OnTextChanged_Card(object sender, EventArgs e)
         {
             CardNumber.Text = "888888888";
         }

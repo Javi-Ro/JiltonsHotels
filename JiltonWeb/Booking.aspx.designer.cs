@@ -60,6 +60,15 @@ namespace JiltonWeb
         protected global::System.Web.UI.WebControls.TextBox CardNumber;
 
         /// <summary>
+        /// Control CardNumber_MaskedEditExtender.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::AjaxControlToolkit.MaskedEditExtender CardNumber_MaskedEditExtender;
+
+        /// <summary>
         /// Control RequiredFieldValidatorCardNumber.
         /// </summary>
         /// <remarks>
@@ -85,6 +94,15 @@ namespace JiltonWeb
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox ExpirationDate;
+
+        /// <summary>
+        /// Control ExpirationDate_MaskedEditExtender.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::AjaxControlToolkit.MaskedEditExtender ExpirationDate_MaskedEditExtender;
 
         /// <summary>
         /// Control RegularExpressionValidatorDate.
