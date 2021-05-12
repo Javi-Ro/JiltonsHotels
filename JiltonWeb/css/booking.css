@@ -2,7 +2,7 @@
     background: #e6e2e7;
     display: flex;
     justify-content: center;
-    height: 700px;
+    height: auto;
 }
 
 .CenteredContainer {
@@ -19,7 +19,9 @@
     border-radius: 4px;
     width: 65%;
     margin-right: 5%;
-    height: 90%;
+    height: auto;
+    margin-bottom: 20px;
+    max-height: 600px;
 }
 .MainBlock{
     display: flex;
@@ -32,7 +34,8 @@
     flex-flow: row wrap;
     text-transform: uppercase;
     letter-spacing: 3px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+    font-size: 20px;
 }
 
 .MethodContainer {
@@ -145,12 +148,17 @@
 
 /* ASIDE */
 .BookingResume {
+    background: #f2f2f2;
     width: 30%;
     height: 90%;
     border: 1px solid #C3C6CA;
-    border-radius: 2px;
+    border-radius: 4px;
 }
 
 .BookingSumLabel {
     font-size: 22px;
+}
+
+.ListViewSeparator{
+    margin-bottom: 15px;
 }

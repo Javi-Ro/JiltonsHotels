@@ -64,12 +64,12 @@
     border-spacing: 15px 15px;
     position: relative;
     font-size: 16px;
-    width: 60%;
+    width: 80%;
     max-height: 650px;
     margin-top: 30px;
     padding-bottom: 10px;
     border-radius: 3px;
-    background: rgb(255,255,255);
+    background: rgba(255,255,255, 0);
     display: table;
     animation: 2s ease-out 0s 1 slideInFromLeftAndBounce;
 }
@@ -84,7 +84,7 @@
 }
 
 .RegisterBttn {
-    margin: 0 10px 0 10px;
+    margin: 0 10px 0 0;
     border: 1px solid #515654;
     line-height: 21px;
     font-size: 15px;
@@ -113,6 +113,7 @@
     background: rgba(255,255,255,0.85);
     width: 40%;
     background: white;
+    z-index: 2;
 }
 
 .RegisterLessOpacity {
@@ -129,4 +130,12 @@
     height: calc(637px + 15%);
     background: white;
     animation: 1.2s ease-out 0s 1 slideInFromLeft;
+}
+
+.Validator {
+    display: inline-block;
+    background-color: lightcoral;
+    padding: 4px 10px 4px 10px;
+    margin-left: 4px;
+    border-radius: 4px;
 }
