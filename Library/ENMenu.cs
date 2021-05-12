@@ -12,20 +12,20 @@ public class ENMenu
         get { return _id; }
     }
 
-	private float _price;
+	private double _price;
 
-	public float price
+	public double price
     {
         set { _price = value; }
         get { return _price; }
     }
 
-	private string _starters, _main, _dessert;
+	private string _appetizers, _main, _dessert;
 
-	public string starters
+	public string appetizers
     {
-        get { return _starters; }
-        set { _starters = value; }
+        get { return _appetizers; }
+        set { _appetizers = value; }
     }
 
     public string main
@@ -47,15 +47,28 @@ public class ENMenu
         id = 0;
         main = System.String.Empty;
         dessert = System.String.Empty;
-        starters = System.String.Empty;
+        appetizers = System.String.Empty;
     }
 
-    public bool showMenu()
+    public bool showTodayMenu()
     {
         CADMenu menu = new CADMenu();
-        bool show = menu.showToday(this);
+        bool show = menu.showTodayMenu(this);
         return show;
     }
 
+    public bool showNextMenu()
+    {
+        CADMenu menu = new CADMenu();
+        bool show = menu.showNextMenu(this);
+        return show;
+    }
+
+    public bool showPreviousMenu()
+    {
+        CADMenu menu = new CADMenu();
+        bool show = menu.showPreviousMenu(this);
+        return show;
+    }
 
 }

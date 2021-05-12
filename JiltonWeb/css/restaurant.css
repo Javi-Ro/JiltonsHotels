@@ -5,7 +5,6 @@
     background-attachment: fixed;
     background-size: 100% 100%;
     background-repeat: no-repeat;
-
 }
 
 
@@ -17,6 +16,17 @@
     display: flex;
     width: 33.33%;
 }
+
+.MenuAdmin {
+    text-align: center;
+    position:relative;
+    display:flex;
+    float: left;
+    margin-top: 100px;
+    display: flex;
+    width: 33.33%;
+}
+
 
 .MenuButton {
     text-align: center;
@@ -34,6 +44,11 @@
 }
 
 .Menu:hover .MenuButton {
+    background-color: white;
+    color: #515654;
+}
+
+.MenuAdmin:hover .MenuButton {
     background-color: white;
     color: #515654;
 }
