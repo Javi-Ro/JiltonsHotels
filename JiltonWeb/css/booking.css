@@ -150,3 +150,7 @@
     border: 1px solid #C3C6CA;
     border-radius: 2px;
 }
+
+.BookingSumLabel {
+    font-size: 22px;
+}

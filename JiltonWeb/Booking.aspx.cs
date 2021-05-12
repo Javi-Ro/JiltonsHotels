@@ -25,15 +25,7 @@ namespace JiltonWeb
 
         protected void OnTextChanged_Card(object sender, EventArgs e)
         {
-            if (RegularExpressionValidatorCardVisa.IsValid)
-            {
-                string aux = CardNumber.Text;
-                aux.Insert(4, " ");
-                aux.Insert(9, " ");
-                aux.Insert(14, " ");
-                CardNumber.Text = aux;
-            }
-
+            CardNumber.Text = "888888888";
         }
     }
 }

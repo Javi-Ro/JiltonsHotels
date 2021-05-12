@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/JiltonMaster.Master" AutoEventWireup="true" CodeBehind="Booking.aspx.cs" Inherits="JiltonWeb.Booking" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="cssLink" runat="server">
-        <link rel="stylesheet" href="../css/booking.css?ver=<?php echo rand(210,950)?>" />
+        <link rel="stylesheet" href="../css/booking.css?ver=<?php echo rand(225,950)?>" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="MainContainerBooking">
@@ -22,8 +22,10 @@
                 <div class="PaymentForm">
                     <div class="Block">
                         <asp:TextBox id="CardNumber" CssClass="PaymentTextBox" placeholder="Card Number*" runat="server" MaxLength=20 OnTextChanged="OnTextChanged_Card"></asp:TextBox>
+                        
                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorCardNumber" CssClass="Validator" runat="server" ErrorMessage="Card number is required" ControlToValidate="CardNumber" Display="Dynamic"></asp:RequiredFieldValidator>
                         <asp:RegularExpressionValidator ID="RegularExpressionValidatorCardVisa" CssClass="Validator" runat="server" ErrorMessage="Invalid Card Number" ValidationExpression="^(?:4[0-9]{12}(?:[0-9]{3})?|(?:5[1-5][0-9]{2}|222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)[0-9]{12}|3[47][0-9]{13})$" ControlToValidate="CardNumber" Display="Dynamic"></asp:RegularExpressionValidator>
+                        
                     </div>
                     <div class="Block">
                         <asp:TextBox id="ExpirationDate" CssClass="PaymentTextBox" placeholder="Expiration Date* (mm/yyyy)" runat="server" MaxLength="7"></asp:TextBox>
@@ -45,7 +47,98 @@
             </div>
             </div>
             <aside class="BookingResume">
+                <div class="MainBlock">
+                <div class="HeaderBlock">
+                    <h1 class="BookingSumLabel">Booking</h1>
+                </div>
+                <asp:ListView ID="ListViewBooking" runat="server" DataSourceID="SqlDataSourceDefault" DataKeyNames="id" >
+                    <EmptyDataTemplate>
+                        <span>No se han devuelto datos.</span>
+                    </EmptyDataTemplate>
+                    <AlternatingItemTemplate>
+                        <span style="display:flex; flex-flow:row;">
+                            <span style="width:60%;">
+                                <div>
+                                    Id:
+                                    <asp:Label Text='<%# Eval("id") %>' runat="server" ID="idLabel" /><br />
+                                    Nombre:
+                                    <asp:Label Text='<%# Eval("nombre") %>' runat="server" ID="nombreLabel" /><br />
+                                    Nif:
+                                    <asp:Label Text='<%# Eval("nif") %>' runat="server" ID="nifLabel" /><br />
+                                    Edad:
+                                    <asp:Label Text='<%# Eval("edad") %>' runat="server" ID="edadLabel" />
+                                </div>
+                            </span>
+                            <span style="display:flex; width:40%; justify-content:flex-end; align-items:center;">
+                                <div>
+                                    <asp:Button runat="server" Text="Eliminar" Height="30px"/>
+                                </div>
+                            </span>
+                            
+                        </span>
+                        <br />
+                    </AlternatingItemTemplate>
+                    <EditItemTemplate>
+                        <span style="margin-left: 10px; font-size: 20px;">id:
+                            <asp:Label Text='<%# Eval("id") %>' runat="server" ID="idLabel1" /><br />
+                            nombre:
+                            <asp:TextBox Text='<%# Bind("nombre") %>' runat="server" ID="nombreTextBox" /><br />
+                            nif:
+                            <asp:TextBox Text='<%# Bind("nif") %>' runat="server" ID="nifTextBox" /><br />
+                            edad:
+                            <asp:TextBox Text='<%# Bind("edad") %>' runat="server" ID="edadTextBox" /><br />
+                            <asp:Button runat="server" CommandName="Update" Text="Actualizar" ID="UpdateButton" /><asp:Button runat="server" CommandName="Cancel" Text="Cancelar" ID="CancelButton" /><br />
+                            <br />
+                        </span>
 
+                    </EditItemTemplate>
+                    <InsertItemTemplate>
+                        <span style="">nombre:
+                            <asp:TextBox Text='<%# Bind("nombre") %>' runat="server" ID="nombreTextBox" /><br />
+                            nif:
+                            <asp:TextBox Text='<%# Bind("nif") %>' runat="server" ID="nifTextBox" /><br />
+                            edad:
+                            <asp:TextBox Text='<%# Bind("edad") %>' runat="server" ID="edadTextBox" /><br />
+                            <asp:Button runat="server" CommandName="Insert" Text="Insertar" ID="InsertButton" /><asp:Button runat="server" CommandName="Cancel" Text="Borrar" ID="CancelButton" /><br />
+                            <br />
+                        </span>
+
+                    </InsertItemTemplate>
+                    <ItemTemplate>
+                        <span style="">Id:
+                            <asp:Label Text='<%# Eval("id") %>' runat="server" ID="idLabel" /><br />
+                            Nombre:
+                            <asp:Label Text='<%# Eval("nombre") %>' runat="server" ID="nombreLabel" /><br />
+                            Nif:
+                            <asp:Label Text='<%# Eval("nif") %>' runat="server" ID="nifLabel" /><br />
+                            Edad:
+                            <asp:Label Text='<%# Eval("edad") %>' runat="server" ID="edadLabel" /><br />
+                            <br />
+                        </span>
+
+                    </ItemTemplate>
+                    <LayoutTemplate>
+                        <div runat="server" id="itemPlaceholderContainer" style=""><span runat="server" id="itemPlaceholder" /></div>
+
+                        <div style="">
+                        </div>
+                    </LayoutTemplate>
+                    <SelectedItemTemplate>
+                        <span style="">id:
+                            <asp:Label Text='<%# Eval("id") %>' runat="server" ID="idLabel" /><br />
+                            nombre:
+                            <asp:Label Text='<%# Eval("nombre") %>' runat="server" ID="nombreLabel" /><br />
+                            nif:
+                            <asp:Label Text='<%# Eval("nif") %>' runat="server" ID="nifLabel" /><br />
+                            edad:
+                            <asp:Label Text='<%# Eval("edad") %>' runat="server" ID="edadLabel" /><br />
+                            <br />
+                        </span>
+
+                    </SelectedItemTemplate>
+                </asp:ListView>
+                    <asp:SqlDataSource ID="SqlDataSourceDefault" runat="server" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\DBPrueba.mdf;Integrated Security=True" ProviderName="System.Data.SqlClient" SelectCommand="SELECT * FROM [Usuarios]"></asp:SqlDataSource>
+                </div>
             </aside>
         </div>
     </div>
