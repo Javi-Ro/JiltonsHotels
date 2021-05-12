@@ -40,13 +40,13 @@
                   </div>
                 </div>
                 
-                <asp:TextBox ID="Slider1" runat="server"></asp:TextBox>
+<%--                <asp:TextBox ID="Slider1" runat="server"></asp:TextBox>
               <asp:TextBox  ID="Slider1_BoundControl" runat="server"></asp:TextBox>
               <ajaxToolkit:SliderExtender ID="SliderExtender1" runat="server"
                     Minimum="0"
                     Maximum="1000"
                     BoundControlID="Slider1_BoundControl"
-                    TargetControlID="Slider1"/>
+                    TargetControlID="Slider1"/>--%>
                     
               <div class="search">
                <button class="searchButton"> Search </button>
