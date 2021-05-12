@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Controls;
 
 namespace JiltonWeb
 {
@@ -20,6 +21,11 @@ namespace JiltonWeb
         protected void OnPayNow_Click(object sender, EventArgs e)
         {
 
+        }
+
+        protected void OnTextChanged_Card(object sender, EventArgs e)
+        {
+            CardNumber.Text = "888888888";
         }
     }
 }
