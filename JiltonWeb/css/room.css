@@ -43,7 +43,7 @@
 
 .blurryBackground {
     left: 25%;
-    height: 3750px;
+    height: 4000px;
     margin-top: 12.5%;
     width: 50%;
     background: rgba(255,255,255,0.9);
@@ -171,6 +171,28 @@
     transition: .5s ease all;
 }
 
-.slider{
-    background-color: blue;
+.textInside{
+    white-space:pre-line;
+    background-color: white;
+    /*position: relative;*/
+    width: 80%;
+    height: 50%;
+    margin: 0 10% 10% 10%;
 }
+
+.slider{
+    width: 80%;
+    margin: 30% 10% 0 10%;
+    z-index: 5;
+}
+
+.handle {
+    box-shadow: none;
+    background: #515654;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    cursor:pointer;
+}
+

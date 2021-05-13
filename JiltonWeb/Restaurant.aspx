@@ -2,7 +2,7 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
 
     <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <link href="css/restaurant.css?ver=<?php echo rand(534,950)?>" rel="stylesheet">
+        <link href="css/restaurant.css?ver=<?php echo rand(535,950)?>" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <div class="backgroundR" >
@@ -59,9 +59,10 @@
 
                             Dark chocolate cylinder and smoked hazelnut praline
                        </asp:label>
+
+                        <asp:Label runat="server"> 250€</asp:Label>
                     </div>
                     <div class ="subTitle" runat="server">
-
                        <asp:label runat="server"> Feel free to ask for our superb wine selection</asp:label>
 
                    </div>
@@ -89,7 +90,12 @@
                 
                 <asp:Label runat="server"> 
                     Insert dessert   </asp:Label><asp:TextBox runat="server"> </asp:TextBox>
+
+                <asp:Label runat="server"> 
+                    Insert price   </asp:Label><asp:TextBox runat="server"> </asp:TextBox>
                 </div>
+
+                
                 <div class="Create">
                     <asp:Button  runat="server" CssClass="AdminButton" Text="Create menu" ></asp:Button>
                 </div>
