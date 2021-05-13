@@ -30,7 +30,7 @@ namespace Library
                 conection.Open();
                 
                 //nombres pendientes de ser verificados y creados en la db, son orientativos
-                string msg = "Insert INTO [dbo].[Cars] (licenseplate, brand, model, price) VALUES ('" + en.LicensePlate + "','" + en.Brand + "'," + en.Model + "','" + en.Price + ")";
+                string msg = "Insert INTO [dbo].[Cars] (licenseplate, brand, model, price, description) VALUES ('" + en.LicensePlate + "','" + en.Brand + "'," + en.Model + "','" + en.Price + "','" + en.Description + ")";
 
                 SqlCommand consulta = new SqlCommand(msg, conection);
                 consulta.ExecuteNonQuery();
@@ -38,13 +38,6 @@ namespace Library
                 create = true;
                 conection.Close();
             }
-            //ExceptionSQL controler, as we only execute SQL this is enough
-            catch (SqlException exception)
-            {
-                Console.WriteLine("User operation has failed.Error: {0}", exception.Message);
-                create = false;
-            }
-            //Other exceptions
             catch(Exception e)
             {
                 Console.WriteLine("User operation has failed.Error: {0}", e.Message);
@@ -72,12 +65,6 @@ namespace Library
                 delete = true;
                 conection.Close();
             }
-            //Exception controler
-            catch (SqlException exception)
-            {
-                Console.WriteLine("User operation has failed.Error: {0}", exception.Message);
-                delete = false;
-            }
             catch (Exception e)
             {
                 Console.WriteLine("User operation has failed.Error: {0}", e.Message);
@@ -104,10 +91,30 @@ namespace Library
                 busqueda.ExecuteNonQuery();
                 conection.Close();
             }
-            catch (SqlException exception)
+            catch (Exception e)
             {
-                Console.WriteLine("User operation has failed.Error: {0}", exception.Message);
+                Console.WriteLine("User operation has failed.Error: {0}", e.Message);
                 update = false;
+            }
+
+            return update;
+        }
+        public bool updateDescriptionCar(ENCar en)
+        {
+            bool update = true;
+            try
+            {
+
+                SqlConnection conection = new SqlConnection(constring);
+                conection.Open();
+
+                //inventao free hd esta mal 80% seguro
+                string msg = "UPDATE [dbo].[Cars] SET description= '" + en.Description + "'";
+
+                SqlCommand busqueda = new SqlCommand(msg, conection);
+
+                busqueda.ExecuteNonQuery();
+                conection.Close();
             }
             catch (Exception e)
             {
@@ -117,9 +124,10 @@ namespace Library
 
             return update;
         }
+
         public List<ENCar> listAllCars()
         {
-            ENCar car = new ENCar();
+            ENCar car = new ENCar("5342GRM","Audi","Q5",65000,"Dale paa");
             List < ENCar > a = new List<ENCar>();
             return a;
         }
