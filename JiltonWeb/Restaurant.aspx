@@ -80,7 +80,7 @@
                </div>
 
             <div class="adminBox">
-                <div class="adminTextBoxes"> <asp:Label runat="server"> Insert the new menu's date   </asp:Label> <ajax:CalendarExtender ID="DateMenu" runat="server" TargetControlID="DateTB" Format="dd/MM/yyyy"</ajax:CalendarExtender> <asp:TextBox ID="DateTB" runat="server"> </asp:TextBox>
+                <div class="adminTextBoxes"> <asp:Label runat="server"> Insert the new menu's date   </asp:Label> <ajax:CalendarExtender ID="DateMenu" runat="server" TargetControlID="DateTB" Format="dd/MM/yyyy" /><asp:TextBox ID="DateTB" runat="server"> </asp:TextBox>
                 
                     <asp:Label runat="server"> 
                     Insert appetizers  </asp:Label><asp:TextBox runat="server"> </asp:TextBox>
