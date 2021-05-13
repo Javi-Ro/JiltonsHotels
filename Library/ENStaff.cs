@@ -11,15 +11,14 @@ namespace Library
         private int id;
         private string nombre;
         private string contacto;
-        private int telefono;
-        private int salario;
+        private string tipo;
+        private string descripcion;
 
         public int ID
         {
             get { return id; }
             private set { id = value; }
         }
-
         public string Name
         {
             get { return nombre; }
@@ -32,48 +31,26 @@ namespace Library
             private set { contacto = value; }
         }
 
-        public int Telephone
+        public string Type //It can be massagist, trainer... we suppose they can not change work, obviusly but...
         {
-            get { return telefono; }
-            private set { telefono = value; }
+            get { return tipo; }
+            private set { tipo = value; }
+        }
+        public string Description
+        {
+            get { return descripcion; }
+            private set { descripcion = value; }
         }
 
-        public int Wage
-        {
-            get { return salario; }
-            private set { salario = value; }
-        }
-
-        public ENStaff(int id, string nombre, string contacto, int telefono, int salario)
+        public ENStaff(int id, string nombre, string contacto, string tipo, string descripcion)
         {
             this.id = id;
             this.nombre = nombre;
             this.contacto = contacto;
-            this.telefono = telefono;
-            this.salario = salario;
+            this.tipo = tipo;
+            this.descripcion = descripcion;
         }
-        public ENStaff()
-        {
-
-        }
-
-        public class Massagist : ENStaff
-        {
-            CADStaff massagist = new CADStaff();
-        }
-        public class Teacher : ENStaff
-        {
-            CADStaff teacher = new CADStaff();
-        }
-        public class TouristGuide : ENStaff
-        {
-            CADStaff touristGuide = new CADStaff();
-        }
-        public class PersonalTrainer : ENStaff
-        {
-            CADStaff personalTrainer = new CADStaff();
-        }
-
+ 
         public bool createStaff()
         {
             CADStaff staff = new CADStaff();
@@ -93,19 +70,11 @@ namespace Library
             return staff.updateContactStaff(this);
         }
 
-        public bool updateTelephoneStaff(int telefono)
+        public bool updateDescriptionStaff(string descripcion)
         {
             CADStaff staff = new CADStaff();
-            Telephone = telefono;
-            this.telefono = telefono;
-            return staff.updateTelephoneStaff(this);
-        }
-
-        public bool updateWageStaff(int salario)
-        {
-            CADStaff staff = new CADStaff();
-            this.salario = salario;
-            return staff.updateWageStaff(this);
+            this.descripcion = descripcion;
+            return staff.updateDescriptionStaff(this);
         }
 
 
