@@ -8,93 +8,105 @@ using System.Web.UI.WebControls;
 
 namespace JiltonWeb
 {
-    public partial class Restaurant: System.Web.UI.Page
+    public partial class Restaurant : System.Web.UI.Page
     {
-        DateTime hoy = DateTime.Today;
+        DateTime hoy = DateTime.Today.Date;
+        DateTime copia = DateTime.Today.Date;
         protected void Page_Load(object sender, EventArgs e)
         {
             CultureInfo c = new CultureInfo("en-EN");
-            titulo.Text = DateTime.Today.ToString("dddd",c).ToUpper() + "'S MENU";            
+            titulo.Text = DateTime.Today.ToString("dddd", c).ToUpper() + "'S MENU";
+        }
+        protected void OnPrevious(object sender, EventArgs e)
+        {
+            copia.AddDays(-1);
+
+            titulo.Text = "MENU OF " + copia.ToString();
+            ENMenu menu = new ENMenu();
+            menu.fecha = copia.ToString();
+
+            if (menu.showMenu())
+            {
+                APPETIZERS.Text = menu.appetizers;
+                MAINS.Text = menu.main;
+                DESSERTS.Text = menu.dessert;
+                PRICE.Text = menu.price.ToString();
+            }
+            else
+            {
+                titulo.Text = "Menu not available";
+                meal1.Visible = false;
+                meal2.Visible = false;
+                meal2.Visible = false;
+            }
+
         }
 
-        //protected void OnPrevious(object sender, EventArgs e)
-        //{
-        //    ENMenu menu = new ENMenu();
+        protected void OnNext(object sender, EventArgs e)
+        {
+            copia.AddDays(1);        //se resetea
 
-        //    int day = ((int)DateTime.Now.DayOfWeek == 0) ? 7 : (int)DateTime.Now.DayOfWeek;
+            titulo.Text = "MENU OF " + copia.ToString();
+            ENMenu menu = new ENMenu();
+            menu.fecha = copia.ToString();
 
-        //    if (day - 1 <= 0)
-        //    {
-        //        day = 7;
-        //    }
-        //    else
-        //    {
-        //        day--;
-        //    }
+            if (menu.showMenu())
+            {
+                APPETIZERS.Text = menu.appetizers;
+                MAINS.Text = menu.main;
+                DESSERTS.Text = menu.dessert;
+                PRICE.Text = menu.price.ToString();
+            }
+            else
+            {
+                titulo.Text = "Menu not available";
+                meal1.Visible = false;
+                meal2.Visible = false;
+                meal2.Visible = false;
+            }
+        }
 
-        //    menu.id = day;
+        protected void OnToday(object sender, EventArgs e)
+        {
+            copia = hoy;        //se resetea
 
-        //    if (menu.showPreviousMenu())
-        //    {
-        //        APPETIZERS.Text = menu.appetizers;
-        //        MAINS.Text = menu.main;
-        //        DESSERTS.Text = menu.dessert;
-        //    }
-        //    else
-        //    {
-        //        titulo.Text = "Menu not available";
-        //    }
+            ENMenu menu = new ENMenu();
 
-        //}
+            menu.fecha = DateTime.Today.Date.ToString();
 
-        //protected void OnNext(object sender, EventArgs e)
-        //{
-        //    ENMenu menu = new ENMenu();
+            if (menu.showMenu())
+            {
+                APPETIZERS.Text = menu.appetizers;
+                MAINS.Text = menu.main;
+                DESSERTS.Text = menu.dessert;
+                PRICE.Text = menu.price.ToString();
+            }
+            else
+            {
+                titulo.Text = "Menu not available";
+                meal1.Visible = false;
+                meal2.Visible = false;
+                meal2.Visible = false;
+            }
 
-        //    int day = ((int)DateTime.Now.DayOfWeek == 0) ? 7 : (int)DateTime.Now.DayOfWeek;
+        }
 
-        //    if (day + 1 > 7)
-        //    {
-        //        day = 7;
-        //    }
-        //    else
-        //    {
-        //        day++;
-        //    }
+        protected void OnUpdate(object sender, EventArgs e)
+        {
+            ENMenu menu = new ENMenu();
+            menu.fecha = DateTB.ToString();     //espero que funcione
 
-        //    menu.id = day;
 
-        //    if (menu.showNextMenu())
-        //    {
-        //        APPETIZERS.Text = menu.appetizers;
-        //        MAINS.Text = menu.main;
-        //        DESSERTS.Text = menu.dessert;
-        //    }
-        //    else
-        //    {
-        //        titulo.Text = "Menu not available";
-        //    }
+        }
 
-        //}
+        protected void OnInsert(object sender, EventArgs e)
+        {
 
-        //protected void OnToday(object sender, EventArgs e)
-        //{
-        //    ENMenu menu = new ENMenu();
+        }
 
-        //    int day = ((int)DateTime.Now.DayOfWeek == 0) ? 7 : (int)DateTime.Now.DayOfWeek;
-        //    menu.id = day;
-
-        //    if (menu.showTodayMenu())
-        //    {
-        //        APPETIZERS.Text = menu.appetizers;
-        //        MAINS.Text = menu.main;
-        //        DESSERTS.Text = menu.dessert;
-        //    }
-        //    else
-        //    {
-        //        titulo.Text = "Menu not available";
-        //    }
-
-        //}
+        protected void OnDelete(object sender, EventArgs e)
+        { 
+        
+        }
     }
 }

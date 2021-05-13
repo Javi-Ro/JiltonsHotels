@@ -8,13 +8,13 @@
         <div class="backgroundR" >
 
             <div class="Menu">
-                  <button class="MenuButton">PREVIOUS MENU</button>
+                  <button class="MenuButton" onclick="OnPrevious">PREVIOUS MENU</button>
             </div>
             <div class="Menu">
-                  <button class="MenuButton">TODAY'S MENU</button>
+                  <button class="MenuButton" onclick="OnToday" id="TodayButton">TODAY'S MENU</button>
             </div>
             <div class="Menu">
-                  <button class="MenuButton">NEXT MENU</button>
+                  <button class="MenuButton" onclick="OnNext">NEXT MENU</button>
             </div>
             <div class="blurryBackground">
 
@@ -25,7 +25,7 @@
                    </div>
                     <br />
                     <div class ="subTitle" runat="server">
-                       <asp:label runat="server"> APPETIZERS </asp:label>
+                       <asp:label runat="server" ID="meal1"> APPETIZERS </asp:label>
                    </div>
 
                     <div class ="Meal" runat="server">
@@ -38,7 +38,7 @@
                    </div>
                 
                     <div class ="subTitle" runat="server">
-                       <asp:label runat="server"> MAIN COURSE </asp:label>
+                       <asp:label runat="server" ID="meal2"> MAIN COURSE </asp:label>
                    </div>
                     <div class ="Meal" runat="server">
                        <asp:label ID="MAINS" runat="server">
@@ -51,7 +51,7 @@
                    </div>
 
                     <div class ="subTitle" runat="server">
-                       <asp:label runat="server"> DESSERTS </asp:label>
+                       <asp:label runat="server" ID="meal3"> DESSERTS </asp:label>
                    </div>
                     <div class ="Meal" runat="server">
                        <asp:label ID="DESSERTS" runat="server">
@@ -60,7 +60,7 @@
                             Dark chocolate cylinder and smoked hazelnut praline
                        </asp:label>
 
-                        <asp:Label runat="server"> 250€</asp:Label>
+                        <asp:Label runat="server" ID="PRICE"> 250€</asp:Label>
                     </div>
                     <div class ="subTitle" runat="server">
                        <asp:label runat="server"> Feel free to ask for our superb wine selection</asp:label>
@@ -80,7 +80,7 @@
                </div>
 
             <div class="adminBox">
-                <div class="adminTextBoxes"> <asp:Label runat="server"> Insert the new menu's date   </asp:Label> <ajax:CalendarExtender ID="DateMenu" runat="server" TargetControlID="Date" Format="dd/MM/yyyy"> </ajax:CalendarExtender> <asp:TextBox ID="Date" runat="server"> </asp:TextBox>
+                <div class="adminTextBoxes"> <asp:Label runat="server"> Insert the new menu's date   </asp:Label> <ajax:CalendarExtender ID="DateMenu" runat="server" TargetControlID="DateTB" Format="dd/MM/yyyy"</ajax:CalendarExtender> <asp:TextBox ID="DateTB" runat="server"> </asp:TextBox>
                 
                     <asp:Label runat="server"> 
                     Insert appetizers  </asp:Label><asp:TextBox runat="server"> </asp:TextBox>
