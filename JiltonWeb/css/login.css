@@ -138,3 +138,31 @@
     margin-left: 4px;
     border-radius: 4px;
 }
+
+.hideNoExistslbl {
+    display: none;
+}
+
+.showNoExistslbl {
+    position: absolute;
+    display: inline-block;
+    background-color: lightcoral;
+    border-radius: 4px;
+    text-align: center;
+    width: 34%;
+    padding: 4px 4px 4px 4px;
+}
+
+.hideWrongPsswd {
+    display: none;
+}
+
+.showWrongPsswd {
+    position: absolute;
+    display: inline-block;
+    background-color: lightcoral;
+    border-radius: 4px;
+    text-align: center;
+    width: 23%;
+    padding: 4px 4px 4px 4px;
+}

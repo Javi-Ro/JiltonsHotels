@@ -16,13 +16,13 @@ namespace Library
 
 		public string Email { set; get; }
 
-		public string Phone { set; get; }
-
-		public int Age { set; get; }
+		public string Birthday { set; get; }
 
 		public string Address { set; get; }
 
 		public string Password { set; get; }
+
+		public string LoginData { set; get; }
 
 		// ENUser constructor with parameters. (We need to fullfill all the information in the registration form in order to create the user, otherwise -> error)
 		// ID == NIE/NIF/DNI -> string type
@@ -32,42 +32,55 @@ namespace Library
 		// but on the Registrate button's handler we will concatenate all the information
 		// We will require a date of birth, not age directly. Doing it this way we can calculate the age and update every year
 
-		public ENUser(string ID, string name, string email, string phone, int age, string address, string password)
+		public ENUser(string ID, string name, string email, string birthday, string address, string password)
 		{
 			this.ID = ID;
 			this.Name = name;
 			this.Email = email;
-			this.Phone = phone;
-			this.Age = age;
+			this.Birthday = birthday;
 			this.Address = address;
 			this.Password = password;
+			this.LoginData = "";
 		}
+
+		public ENUser(string loginData, string password)
+        {
+			this.LoginData = loginData;
+			this.Password = password;
+        }
 
 		// Create, update, and delete user will return a boolean to confirm or decline the operation that was executed on the database
 
-		public bool createUser()
+		public bool CreateUser()
         {
 			CADUser cad = new CADUser();
 
-			return cad.createUser(this);
+			return cad.CreateUser(this);
         }
 
 		// Update information of the User (phone, mail or address. ID, name or age cannot be changed by obvious reasons)
 
-		public bool updateUser()
+		public bool UpdateUser()
         {
 			CADUser cad = new CADUser();
 
-			return cad.updateUser(this);
+			return cad.UpdateUser(this);
 		}
 
 		// If we want to delete the user to create another one with the same ID for example
 
-		public bool deleteUser()
+		public bool DeleteUser()
         {
 			CADUser cad = new CADUser();
 
-			return cad.deleteUser(this);
+			return cad.DeleteUser(this);
 		}
+
+		public int LoginUser()
+        {
+			CADUser cad = new CADUser();
+
+			return cad.LoginUser(this);
+        }
 	}
 }
