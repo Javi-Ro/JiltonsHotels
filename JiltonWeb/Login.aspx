@@ -32,7 +32,6 @@
                         </div>
 
                         <div class="row">
-                            <asp:Panel ID="panelLogin" DefaultButton="LoginBttn" runat="server">
                             <asp:Hyperlink ID="GoToLoginFromRegister" runat="server" Width="35%" Text="Don't have an account yet?" NavigateUrl="Register.aspx"/>
                             <asp:Button CssClass="LoginBttn" ValidationGroup="LoginInfoGroup" Text="Login" OnClick="Login_User" runat="server" />
                             <asp:Panel ID="NoExistslbl" runat="server" CssClass="hideNoExistslbl">
@@ -40,7 +39,6 @@
                             </asp:Panel>
                             <asp:Panel ID="WrongPsswd" runat="server" CssClass="hideWrongPsswd">
                                 <asp:Label runat="server" Text="Incorrect password. Try again" />
-                            </asp:Panel>
                             </asp:Panel>
                         </div>
                 </div>
