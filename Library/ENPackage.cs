@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Library
 {
-    class ENPackage
+    public class ENPackage
     {
 
         
@@ -40,6 +40,10 @@ namespace Library
 
         public ENPackage(int id,ENService services, string name, string desc, int price)
         {
+            this.id = id;
+            this.name = name;
+            this.description = desc;
+            this.price = price;
 
         }
 
@@ -60,9 +64,14 @@ namespace Library
             CADPackage p = new CADPackage();
             return p.searchPackage(this);
         }
+        public bool updatePricePackage()
+        {
+            CADPackage p = new CADPackage();
+            return p.searchPackage(this);
+        }
 
         //SERVICES IN THE PACKAGE
-        public ENService[] getServices() const
+        /*public ENService[] getServices() const
         {
 
         }
@@ -84,7 +93,7 @@ namespace Library
             CADPackage p = new CADPackage();
             return p.includes(this, serv);
 
-        }
+        }*/
 
 
     }
