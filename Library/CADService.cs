@@ -102,12 +102,16 @@ namespace Library
 
         public List<ENService> listAllServices()
         {
+            List<ENService> aux = null;
 
+            return aux;
         }
 
         public ENService searchService()
         {
+            ENService aux = null;
 
+            return aux;
         }
 
     }
