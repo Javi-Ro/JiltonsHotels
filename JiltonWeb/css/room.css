@@ -1,7 +1,7 @@
 ﻿
 .background {
     background-image: url(../assets/6.jpg);
-    height: 4000px;
+    height: 4250px;
     background-attachment: fixed;
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -10,25 +10,24 @@
 .webBorder {
     position: absolute;
     height: 4090px;
-    top:0%;
-
-    width: 29%;
+    top: 0%;
+    margin-top: calc(241px + 12.5%);
+    left: 1%;
+    width: 18.3454%;
 }
 
 .webBorder2 {
-    top:0%;
-    right:0%;
+    top: 0%;
+    right: 1%;
     position: absolute;
+    margin-top: calc(241px + 12.5%);
     height: 4090px;
-    width: 29%;
+    width: 18.3454%;
 }
 
 .filterBox {
     position: sticky;
-    margin-top: 88%;
     top: 10%;
-    left: 1%;
-    width: 63.26%;
     background-color: white;
     height: 8%;
     box-shadow: 8px 8px 16px 8px rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
@@ -36,10 +35,7 @@
 
 .orderBox {
     position: sticky;
-    margin-top: 88%;
     top: 10%;
-    margin-left: 33%;
-    width: 63.26%;
     background-color: white;
     height: 8%;
     box-shadow: 8px 8px 16px 8px rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
@@ -47,7 +43,7 @@
 
 .blurryBackground {
     left: 25%;
-    height: 3700px;
+    height: 4000px;
     margin-top: 12.5%;
     width: 50%;
     background: rgba(255,255,255,0.9);
@@ -65,34 +61,30 @@
 
 
 .dropbtn {
+    justify-content:center;
+    align-items:center;
     background: #515654;
     color: white;
     display: flex;
     flex-flow: row;
-    /* PARA QUE TUVIERA EL MISMO FORMATO QUE EL BOTON BOOK DE MASTER SERIA:
-    border: 1px solid #515654;
-    line-height: 21px;
-    padding: 0 10px;
-    color: white;
-    border-radius: 3px;
-    font-weight: bold;*/
     font-weight: bold;
     margin: 0;
-    padding: 16px;
+    padding: 20% 25% 20% 20%;
     font-size: 15px;
     border: none;
     cursor: pointer;
     transition: .5s ease all;
+    width:100%;
 }
 
 .search {
     position: absolute;
     display: inline-block;
-    left: 68%;
-    top: 87%;
+    left: 100%;
+    top: 100%;
+    transform: translate(-130%, -150%);
 }
 .searchButton {
-    margin: 0 15px 0 15px;
     border: 2px solid #515654;
     line-height: 21px;
     padding: 0 14px;
@@ -114,6 +106,8 @@
     float:left;
     position: relative;
     display: inline-block;
+    width:33.33%;
+    
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -158,15 +152,16 @@
     background: #515654;
     color: white;
     font-weight: bold;
-    padding: 16px;
-    font-size: 15px;
+    padding: 7%;
+    font-size: 100%;
 }
 
 .Go {
     position: absolute;
     display: inline-block;
-    left: 76%;
-    top: 87%;
+    left: 100%;
+    top: 100%;
+    transform: translate(-130%, -150%);
 }
 
 .Go:hover .searchButton {
@@ -175,3 +170,29 @@
     color: white;
     transition: .5s ease all;
 }
+
+.textInside{
+    white-space:pre-line;
+    background-color: white;
+    /*position: relative;*/
+    width: 80%;
+    height: 50%;
+    margin: 0 10% 10% 10%;
+}
+
+.slider{
+    width: 80%;
+    margin: 30% 10% 0 10%;
+    z-index: 5;
+}
+
+.handle {
+    box-shadow: none;
+    background: #515654;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    cursor:pointer;
+}
+

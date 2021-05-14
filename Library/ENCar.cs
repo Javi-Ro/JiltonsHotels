@@ -12,7 +12,7 @@ namespace Library
         private string marca;
         private string modelo;
         private int precio;
-
+        private string descripcion;
         public string LicensePlate
         {
             get { return matricula; }
@@ -36,13 +36,19 @@ namespace Library
             get { return precio; }
             private set { precio = value; }
         }
+        public string Description
+        {
+            get { return descripcion; }
+            private set { descripcion = value; }
+        }
 
-        public ENCar(string matricula, string marca, string modelo, int precio)
+        public ENCar(string matricula, string marca, string modelo, int precio, string descripcion)
         {
             this.matricula = matricula;
             this.marca = marca;
             this.modelo = modelo;
             this.precio = precio;
+            this.descripcion = descripcion;
         }
 
         public bool createCar()
@@ -61,6 +67,13 @@ namespace Library
         {
             CADCar car = new CADCar();
             Price = precio;
+            return car.updatePriceCar(this);
+        }
+
+        public bool updateDescriptionCar(string descripcion)
+        {
+            CADCar car = new CADCar();
+            Description = descripcion;
             return car.updatePriceCar(this);
         }
 

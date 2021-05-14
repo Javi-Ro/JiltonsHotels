@@ -1,14 +1,15 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/JiltonMaster.Master" AutoEventWireup="true" CodeBehind="Room.aspx.cs" Inherits="JiltonWeb.Room" %>
-
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
     <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <link href="css/room.css?ver=<?php echo rand(524,950)?>" rel="stylesheet">
+        <link href="css/room.css?ver=<?php echo rand(535,950)?>" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       
+      
         <div class="background" runat="server">
+
         <div class="webBorder">
           <div class="filterBox">
               <div class="dropdown">
-                  <button class="dropbtn">Order by</button>
+                  <button class="dropbtn">Order </button>
                   <div class="dropdown-content">
                     <a href="#">Ratings</a>
                     <a href="#">Price (lowest first) </a>
@@ -39,6 +40,31 @@
                   </div>
                 </div>
                 
+              <div class="textInside">
+                  <asp:Label runat="server"> 
+
+
+                  • Cancellation free of charge
+
+                  • Free room service
+
+                  • Free Wi-Fi in every room
+
+                    Select your budget:
+                  </asp:Label>
+              </div>
+              
+
+           
+
+
+                <div class="slider">
+                    <asp:TextBox ID="TB1" runat="server"> </asp:TextBox>
+                    <asp:TextBox ID="Control" runat="server" visible="false"></asp:TextBox>
+                           <ajax:SliderExtender TooltipText = "{0}" EnableHandleAnimation="true" RaiseChangeOnlyOnMouseUp="true" HandleCssClass="handle"  Maximum="1500" Minimum="150" ID="SliderExtender1" BoundControlID="Control" TargetControlID ="TB1" runat="server" />
+                </div>
+
+                    
               <div class="search">
                <button class="searchButton"> Search </button>
               </div>
@@ -49,7 +75,8 @@
             <div class="blurryBackground" runat="server">
                
                 <div class="room" runat="server">
-                     <asp:Label runat="server"> Esto es una habitacion </asp:Label>
+                     <asp:Label runat="server"> Esto es una habitacion </asp:Label>                  
+
                 </div>
                 <div class="room" runat="server">
                      <asp:Label runat="server">  Esto es una habitacion </asp:Label>

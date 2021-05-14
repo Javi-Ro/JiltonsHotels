@@ -196,9 +196,9 @@ namespace Library
         }
 
         // Auxiliary methods
-        public int calculatePrice()
+        public int calculatePrice() // Returns the total cost of the booking (taking in account the possible discount code)
         {
-            // Returns the total cost of the booking (taking in account the possible discount code)
+            return 0;
         }
     }
 }

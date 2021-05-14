@@ -6,7 +6,7 @@
 <html>
 <head runat="server">
     <title>Jilton Hotel</title>
-    <link rel="stylesheet" href="../css/master.css?ver=<?php echo rand(326,999)?>" />  
+    <link rel="stylesheet" href="../css/master.css?ver=<?php echo rand(356,999)?>" />  
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
     <asp:ContentPlaceHolder ID="cssLink" runat="server"></asp:ContentPlaceHolder>
@@ -27,29 +27,29 @@
                         <img src = "assets/JiltonLogo.png">
                     </a>
                 </div>
-                <asp:Menu CssClass ="NavigationBar" runat="server" Orientation="Horizontal">
+                <asp:Menu CssClass = "NavigationBar" ID="MainMenu" runat="server" Orientation="Horizontal" OnMenuItemClick="MainMenu_MenuItemClick">
                     <LevelMenuItemStyles>
                         <asp:MenuItemStyle CssClass="nav-enlace" />
                     </LevelMenuItemStyles>
 
                     <items>
-                        <asp:MenuItem NavigateUrl="~/Restaurant.aspx" Text="RESTAURANT" ToolTip="RESTAURANT">
+                        <asp:MenuItem Text="RESTAURANT" ToolTip="RESTAURANT" Value="Restaurant">
                         </asp:MenuItem>
-                        <asp:MenuItem NavigateUrl="~/SpaGym.aspx" Text="SPA&GYM" ToolTip="SPA&GYM">
+                        <asp:MenuItem Text="SPA&GYM" ToolTip="SPA&GYM" Value="Spa&Gym">
                         </asp:MenuItem>
-                        <asp:MenuItem NavigateUrl="~/Car.aspx" Text="CAR LEASING" ToolTip="CAR LEASING">
+                        <asp:MenuItem Text="CAR LEASING" ToolTip="CAR LEASING" Value="CarLeasing">
                         </asp:MenuItem>
-                        <asp:MenuItem NavigateUrl="~/Packages.aspx" Text="PACKAGES" ToolTip="PACKAGES">
+                        <asp:MenuItem Text="PACKAGES" ToolTip="PACKAGES" Value="Packages">
                         </asp:MenuItem>
-                        <asp:MenuItem NavigateUrl="~/Staff.aspx" Text="STAFF" ToolTip="STAFF">
+                        <asp:MenuItem Text="STAFF" ToolTip="STAFF" Value="Staff">
                         </asp:MenuItem>
-                        <asp:MenuItem NavigateUrl="~/About.aspx" Text="ABOUT US" ToolTip="ABOUT">
+                        <asp:MenuItem Text="ABOUT US" ToolTip="ABOUT" Value="AboutUs">  
                         </asp:MenuItem>
                     </items>
                 </asp:Menu>
                 <div class="RegisterContainer">
-                    <a class="Register" href="Register.aspx">REGISTER</a>
-                    <a class="Register" href="Login.aspx">LOGIN</a>
+                    <asp:Button runat="server" CssClass="Register" ID="RegisterButton" Text="REGISTER" OnClick="RegisterButton_Click"/>
+                    <asp:Button runat="server" CssClass="Register" ID="LoginButton" Text="LOGIN" OnClick="LoginButton_Click"/>
                 </div>
             </div>
             <div class="BookingRegister">
@@ -77,7 +77,7 @@
                     <asp:DropDownList ID="ChildOptions" CssClass="Desplegables" runat="server">
                     </asp:DropDownList>
 
-                    <asp:Button  runat="server" CssClass="BookingButton" Text="BOOK" PostBackUrl="~/Room.aspx"></asp:Button>
+                    <asp:Button  runat="server" CssClass="BookingButton" ID="BookButton" Text="BOOK" OnClick="BookButton_Click"></asp:Button>
                     <asp:Label CssClass="InformationLabel" runat="server">INFORMATION AND BOOKINGS +34 965 455 123</asp:Label>
                 </div>            
             </div>

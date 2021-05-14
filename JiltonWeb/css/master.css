@@ -63,6 +63,9 @@ body {
     color: black;
     font-size: 20px;
     transition: .3s ease all;
+    background: none;
+    border: none;
+    font-family: 'Karla', sans-serif;
 }
 
 .RegisterContainer {

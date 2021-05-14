@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Library
 {
-    class ENDiscount
+    public class ENDiscount
     {
         private string _code;
         public string code
@@ -23,30 +23,35 @@ namespace Library
         }
 
 
-        public ENDiscount(int code, int percentage)
+        public ENDiscount(string code, int percentage)
         {
+            this.code = code;
+            this.percentage = percentage;
 
         }
 
         public bool createDiscount()
         {
-
+            CADDiscount p = new CADDiscount();
+            return p.createDiscount(this);
         }
 
         public bool deleteDiscount()
         {
-
+            CADDiscount p = new CADDiscount();
+            return p.deleteDiscount(this);
         }
 
         public bool updatePercentage(int percentage)
         {
-
+            CADDiscount p = new CADDiscount();
+            return p.updatePercentage(this);
         }
-
+        /*
         const public ENBooking[] getBookings()
         {
 
-        }
+        }*/
 
 
     }

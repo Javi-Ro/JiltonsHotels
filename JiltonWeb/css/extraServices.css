@@ -1,0 +1,67 @@
+﻿.MainContainerBooking {
+    background: #e6e2e7;
+    display: flex;
+    justify-content: center;
+    height: 700px;
+}
+
+.CenteredContainer {
+    margin: 20px 0;
+    width: 60%;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+/* MAIN CONTAINER */
+
+.BorderMainBlock {
+    border: 1px solid #C3C6CA;
+    border-radius: 4px;
+    width: 65%;
+    margin-right: 5%;
+    height: auto;
+    margin-bottom: 20px;
+    max-height: 600px;
+}
+
+.MainBlock {
+    display: flex;
+    flex-flow: column wrap;
+    margin: 20px 20px;
+}
+
+.HeaderBlock {
+    display: flex;
+    flex-flow: row wrap;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 40px;
+    font-size: 16px;
+}
+
+.AccordionHeader:hover {
+    cursor: pointer;
+}
+
+.AccordionHeader {
+    background: transparent;
+    margin-bottom: 10px;
+    font-size: 20px;
+    height: 10%;
+}
+
+.AccordionContent {
+    background: transparent;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+/* ASIDE */
+
+.BookingResume {
+    background: #f2f2f2;
+    width: 30%;
+    height: 90%;
+    border: 1px solid #C3C6CA;
+    border-radius: 4px;
+}

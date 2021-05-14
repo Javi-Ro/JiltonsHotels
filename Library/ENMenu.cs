@@ -2,30 +2,20 @@
 
 public class ENMenu
 {
-	//the idea is to show a different menu depending on the day of the week (using an asp net library)
+	private double _price;
 
-	private int _id;
-
-	public int id
-    {
-        set { _id = value; }
-        get { return _id; }
-    }
-
-	private float _price;
-
-	public float price
+	public double price
     {
         set { _price = value; }
         get { return _price; }
     }
 
-	private string _starters, _main, _dessert;
+	private string _appetizers, _main, _dessert;
 
-	public string starters
+	public string appetizers
     {
-        get { return _starters; }
-        set { _starters = value; }
+        get { return _appetizers; }
+        set { _appetizers = value; }
     }
 
     public string main
@@ -40,22 +30,53 @@ public class ENMenu
         set { _dessert = value; }
     }
 
+    private string _fecha;
+
+    public string fecha     //will act as an identificator in the database
+    {
+        get { return _fecha; }
+        set { _fecha = value; }
+    }
 
 	public ENMenu()
 	{
         price = 0.0;
-        id = 0;
         main = System.String.Empty;
         dessert = System.String.Empty;
-        starters = System.String.Empty;
+        appetizers = System.String.Empty;
+        fecha = DateTime.Today.ToString("d");
+    }
+
+    public ENMenu(string main, string dessert, string appetizers, float price, string fecha)
+    {
+        this.main = main;
+        this.dessert = dessert;
+        this.appetizers = appetizers;
+        this.price = price;
+        this.fecha = fecha;
     }
 
     public bool showMenu()
     {
         CADMenu menu = new CADMenu();
-        bool show = menu.showToday(this);
+        bool show = menu.showMenu(this);
         return show;
     }
 
+    public bool create()
+    {
+        CADMenu menu = new CADMenu();
+        bool existe = menu.showMenu(this);
 
+        if (existe)
+        {
+            //error label 
+            return false;
+        }
+        else
+        {
+            bool creado = menu.create(this);
+            return creado;
+        }
+    }
 }

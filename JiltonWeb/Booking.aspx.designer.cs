@@ -24,6 +24,33 @@ namespace JiltonWeb
         protected global::System.Web.UI.WebControls.DropDownList PaymentList;
 
         /// <summary>
+        /// VisaCard control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image VisaCard;
+
+        /// <summary>
+        /// MasterCard control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image MasterCard;
+
+        /// <summary>
+        /// AmexCard control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image AmexCard;
+
+        /// <summary>
         /// CardNumber control.
         /// </summary>
         /// <remarks>
@@ -31,6 +58,33 @@ namespace JiltonWeb
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox CardNumber;
+
+        /// <summary>
+        /// Control CardNumber_MaskedEditExtender.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::AjaxControlToolkit.MaskedEditExtender CardNumber_MaskedEditExtender;
+
+        /// <summary>
+        /// Control RequiredFieldValidatorCardNumber.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorCardNumber;
+
+        /// <summary>
+        /// RegularExpressionValidatorCardVisa control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidatorCardVisa;
 
         /// <summary>
         /// ExpirationDate control.
@@ -42,6 +96,33 @@ namespace JiltonWeb
         protected global::System.Web.UI.WebControls.TextBox ExpirationDate;
 
         /// <summary>
+        /// Control ExpirationDate_MaskedEditExtender.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::AjaxControlToolkit.MaskedEditExtender ExpirationDate_MaskedEditExtender;
+
+        /// <summary>
+        /// Control RegularExpressionValidatorDate.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidatorDate;
+
+        /// <summary>
+        /// RequiredFieldValidatorDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorDate;
+
+        /// <summary>
         /// CVV control.
         /// </summary>
         /// <remarks>
@@ -51,6 +132,24 @@ namespace JiltonWeb
         protected global::System.Web.UI.WebControls.TextBox CVV;
 
         /// <summary>
+        /// RegularExpressionValidatorCVV control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidatorCVV;
+
+        /// <summary>
+        /// RequiredFieldValidatorCVV control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorCVV;
+
+        /// <summary>
         /// TitularName control.
         /// </summary>
         /// <remarks>
@@ -58,5 +157,32 @@ namespace JiltonWeb
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TitularName;
+
+        /// <summary>
+        /// RequiredFieldValidatorTitularName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorTitularName;
+
+        /// <summary>
+        /// ListViewBooking control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListView ListViewBooking;
+
+        /// <summary>
+        /// SqlDataSourceDefault control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceDefault;
     }
 }
