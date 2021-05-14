@@ -63,7 +63,7 @@ namespace JiltonWeb
 
             ENUser user = new ENUser(id, fullName, email, birthday, address, password);
 
-            if (!user.createUser())
+            if (!user.CreateUser())
             {
                 Context.Items.Add("display", "inline-block");
                 Server.Transfer("Register.aspx");

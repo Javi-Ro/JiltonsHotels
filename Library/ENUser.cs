@@ -22,6 +22,8 @@ namespace Library
 
 		public string Password { set; get; }
 
+		public string LoginData { set; get; }
+
 		// ENUser constructor with parameters. (We need to fullfill all the information in the registration form in order to create the user, otherwise -> error)
 		// ID == NIE/NIF/DNI -> string type
 		// We will check in the CADUser if there is already a User with that ID or email
@@ -38,33 +40,47 @@ namespace Library
 			this.Birthday = birthday;
 			this.Address = address;
 			this.Password = password;
+			this.LoginData = "";
 		}
+
+		public ENUser(string loginData, string password)
+        {
+			this.LoginData = loginData;
+			this.Password = password;
+        }
 
 		// Create, update, and delete user will return a boolean to confirm or decline the operation that was executed on the database
 
-		public bool createUser()
+		public bool CreateUser()
         {
 			CADUser cad = new CADUser();
 
-			return cad.createUser(this);
+			return cad.CreateUser(this);
         }
 
 		// Update information of the User (phone, mail or address. ID, name or age cannot be changed by obvious reasons)
 
-		public bool updateUser()
+		public bool UpdateUser()
         {
 			CADUser cad = new CADUser();
 
-			return cad.updateUser(this);
+			return cad.UpdateUser(this);
 		}
 
 		// If we want to delete the user to create another one with the same ID for example
 
-		public bool deleteUser()
+		public bool DeleteUser()
         {
 			CADUser cad = new CADUser();
 
-			return cad.deleteUser(this);
+			return cad.DeleteUser(this);
 		}
+
+		public int LoginUser()
+        {
+			CADUser cad = new CADUser();
+
+			return cad.LoginUser(this);
+        }
 	}
 }
