@@ -24,10 +24,53 @@ namespace Library
 
         public bool createUser(ENUser user)
         {
-            // Code to check if that ID or email already exists on the database or not
-            // Returns true if user was created succesfully. False in other case
+            SqlConnection c = null;
 
-            return true;
+            try
+            {
+                c = new SqlConnection(constring);
+                c.Open();
+
+                SqlCommand command = new SqlCommand("select count(*) from [dbo].uuser where id = @ID", c);
+                command.Parameters.AddWithValue("@ID", user.ID);
+
+                SqlDataReader result = command.ExecuteReader();
+
+                result.Read();
+
+                int count = result.GetInt32(0);
+
+                result.Close();
+
+                if (count == 0)
+                {
+                    SqlCommand insert = new SqlCommand("insert into [dbo].uuser values(@ID, @PASSWORD, @NAME, @BIRTHDAY, @EMAIL, @ADDRESS)", c);
+                    insert.Parameters.AddWithValue("@ID", user.ID);
+                    insert.Parameters.AddWithValue("@PASSWORD", user.Password);
+                    insert.Parameters.AddWithValue("@NAME", user.Name);
+                    //if (user.Birthday == "")
+                    //    insert.Parameters.AddWithValue("@BIRTHDAY", "NULL");
+                    //else
+                    //    insert.Parameters.AddWithValue("@BIRTHDAY", user.Birthday);
+
+                    insert.Parameters.AddWithValue("@BIRTHDAY", user.Birthday);
+                    insert.Parameters.AddWithValue("@EMAIL", user.Email);
+                    insert.Parameters.AddWithValue("@ADDRESS", user.Address);
+
+                    insert.ExecuteNonQuery();
+
+                    c.Close();
+                    return true;
+                }
+                else
+                    c.Close();
+                return false; // Already exists
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("User operation has failed. Error: {0}", ex.Message);
+                return false;
+            }
         }
 
         public bool updateUser(ENUser user)

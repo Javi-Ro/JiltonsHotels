@@ -16,9 +16,7 @@ namespace Library
 
 		public string Email { set; get; }
 
-		public string Phone { set; get; }
-
-		public int Age { set; get; }
+		public string Birthday { set; get; }
 
 		public string Address { set; get; }
 
@@ -32,13 +30,12 @@ namespace Library
 		// but on the Registrate button's handler we will concatenate all the information
 		// We will require a date of birth, not age directly. Doing it this way we can calculate the age and update every year
 
-		public ENUser(string ID, string name, string email, string phone, int age, string address, string password)
+		public ENUser(string ID, string name, string email, string birthday, string address, string password)
 		{
 			this.ID = ID;
 			this.Name = name;
 			this.Email = email;
-			this.Phone = phone;
-			this.Age = age;
+			this.Birthday = birthday;
 			this.Address = address;
 			this.Password = password;
 		}
