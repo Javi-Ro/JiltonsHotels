@@ -30,7 +30,7 @@ namespace Library
                 conection.Open();
                 
                 //nombres pendientes de ser verificados y creados en la db, son orientativos
-                string msg = "Insert INTO [dbo].[Cars] (licenseplate, brand, model, price, description) VALUES ('" + en.LicensePlate + "','" + en.Brand + "'," + en.Model + "','" + en.Price + "','" + en.Description + ")";
+                string msg = "Insert INTO [Database].[car] (licensePlate, brand, model, description, price) VALUES ('" + en.LicensePlate + "','" + en.Brand + "'," + en.Model + "','" + en.Description + "','" + en.Price + ")";
 
                 SqlCommand consulta = new SqlCommand(msg, conection);
                 consulta.ExecuteNonQuery();

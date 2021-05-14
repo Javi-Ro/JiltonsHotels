@@ -13,5 +13,20 @@ namespace JiltonWeb
         {
 
         }
+
+        protected void CrearClick(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void UpdateClick(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void DeleteClick(object sender, EventArgs e)
+        {
+
+        }
     }
 }
