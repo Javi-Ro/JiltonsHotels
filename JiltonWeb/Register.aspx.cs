@@ -13,5 +13,10 @@ namespace JiltonWeb
         {
 
         }
+
+        protected void Register_User(object sender, EventArgs e)
+        {
+            MailText.Text = "Funciona de locos"
+        }
     }
 }
