@@ -39,6 +39,23 @@
     font-size: 16px;
 }
 
+.AccordionHeader:hover {
+    cursor: pointer;
+}
+
+.AccordionHeader {
+    background: transparent;
+    margin-bottom: 10px;
+    font-size: 20px;
+    height: 10%;
+}
+
+.AccordionContent {
+    background: transparent;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
 /* ASIDE */
 
 .BookingResume {
@@ -47,13 +64,4 @@
     height: 90%;
     border: 1px solid #C3C6CA;
     border-radius: 4px;
-}
-
-.AccordionHeader{
-    background:red;
-    height: 10%;
-}
-
-.AccordionContent{
-    background: blue;
 }
