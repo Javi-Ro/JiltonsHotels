@@ -142,6 +142,6 @@ create table bookService(
 
 create table createPackage(
 	packageID int constraint FK_createpackage_package references package(id),
-	serviceID int constraint FK_createpackage_service references service(id),
+	serviceID int constraint FK_createpackage_service references servicio(id),
 	constraint PK_createpackage primary key(packageID, serviceID),
 )
