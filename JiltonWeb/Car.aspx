@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/JiltonMaster.Master" AutoEventWireup="true" CodeBehind="Car.aspx.cs" Inherits="JiltonWeb.Car" %>
 <asp:Content ID="TitleForm" ContentPlaceHolderID="cssLink" runat="server">
-        <link rel="stylesheet" href="../css/car.css?ver=<?php echo rand(149,999)?>" />
+        <link rel="stylesheet" href="../css/car.css?ver=<?php echo rand(159,999)?>" />
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -104,10 +104,39 @@
 
              <asp:Button  runat="server" CssClass="boton2" Text="RESERVE NOW"></asp:Button>
 
-        </div>
+        &nbsp;</div>
         
     </div>
-    </div>
+
+        <div class="admin">
+            <div class="entradas">
+                <div class = "labels">
+                     <asp:Label runat="server" CssClass="letrasadmin" > LicensePlate: </asp:Label>
+                     <asp:Label runat="server" CssClass="letrasadmin"> Brand: </asp:Label>
+                     <asp:Label runat="server" CssClass="letrasadmin"> Model: </asp:Label>
+                     <asp:Label runat="server" CssClass="letrasadmin"> Price:</asp:Label>
+                </div>
+
+                <div class = "data">
+                    <asp:TextBox ID ="LicensePlateData" CssClass="textboxadmin" runat ="server" />
+                    <asp:TextBox ID ="PriceData" CssClass="textboxadmin" runat ="server" />
+                    <asp:TextBox ID ="TextBox1" CssClass="textboxadmin" runat ="server" />
+                    <asp:TextBox ID ="TextBox2" CssClass="textboxadmin"  runat ="server" />
+                </div>
+            </div>
+             <div class="botonesadmin">
+                <asp:Button  runat="server" CssClass="botonadmin" Text="CREATE NEW CAR"></asp:Button>
+                <asp:Button  runat="server" CssClass="botonadmin" Text="UPDATE EXISTING CAR"></asp:Button>
+                <asp:Button  runat="server" CssClass="botonadmin" Text="DELETE EXISTING CAR"></asp:Button>
+             </div>
+              <div class="texto">
+                <p> To create a new car you MUST insert all the information.To update an existing one, you have to put the License Plate of the one you want to edit and its new price. To delete, just input the License Plate.</p>
+              </div>
+
+        </div>
+
+    </div> 
+   
 
 </asp:Content>
 

@@ -2,16 +2,6 @@
 
 public class ENMenu
 {
-	//the idea is to show a different menu depending on the day of the week (using an asp net library)
-
-	private int _id;
-
-	public int id
-    {
-        set { _id = value; }
-        get { return _id; }
-    }
-
 	private double _price;
 
 	public double price
@@ -40,35 +30,53 @@ public class ENMenu
         set { _dessert = value; }
     }
 
+    private string _fecha;
+
+    public string fecha     //will act as an identificator in the database
+    {
+        get { return _fecha; }
+        set { _fecha = value; }
+    }
 
 	public ENMenu()
 	{
         price = 0.0;
-        id = 0;
         main = System.String.Empty;
         dessert = System.String.Empty;
         appetizers = System.String.Empty;
+        fecha = DateTime.Today.ToString("d");
     }
 
-    public bool showTodayMenu()
+    public ENMenu(string main, string dessert, string appetizers, float price, string fecha)
+    {
+        this.main = main;
+        this.dessert = dessert;
+        this.appetizers = appetizers;
+        this.price = price;
+        this.fecha = fecha;
+    }
+
+    public bool showMenu()
     {
         CADMenu menu = new CADMenu();
-        bool show = menu.showTodayMenu(this);
+        bool show = menu.showMenu(this);
         return show;
     }
 
-    public bool showNextMenu()
+    public bool create()
     {
         CADMenu menu = new CADMenu();
-        bool show = menu.showNextMenu(this);
-        return show;
-    }
+        bool existe = menu.showMenu(this);
 
-    public bool showPreviousMenu()
-    {
-        CADMenu menu = new CADMenu();
-        bool show = menu.showPreviousMenu(this);
-        return show;
+        if (existe)
+        {
+            //error label 
+            return false;
+        }
+        else
+        {
+            bool creado = menu.create(this);
+            return creado;
+        }
     }
-
 }

@@ -1,6 +1,6 @@
 ﻿
 .backgroundR {
-    height: 1000px;
+    height: 1500px;
     background-image: url(../assets/restaurant2.jpg);
     background-attachment: fixed;
     background-size: 100% 100%;
@@ -22,7 +22,7 @@
     position:relative;
     display:flex;
     float: left;
-    margin-top: 100px;
+    margin-top: 110px;
     display: flex;
     width: 33.33%;
 }
@@ -36,7 +36,7 @@
     color: white;
     display: flex;
     font-weight: bold;
-    padding: 15px 5px 18px 130px;
+    padding: 15px 5px 18px 40%;
     font-size: 15px;
     border: none;
     cursor: pointer;
@@ -66,13 +66,14 @@
     font-weight: bold;
     font-size: 25px;
     width: 100%;
+    white-space:pre-line;
 }
 
 .Meal {
     text-align: center;
     font-size: 20px;
     width: 100%;
-    heigth: 100%;
+    height: 100%;
     white-space: pre-line;
     position:relative;
 }
@@ -91,4 +92,48 @@
     max-width: 80%;
     width: 80%;
     background-color: white;
+}
+
+.adminBox {
+    margin-left: 10%;
+    width: 80%;
+    background-color: white;
+    top: 110px;
+    height: 450px;
+}
+
+.adminTextBoxes {
+    font-size: 20px;
+    position: relative;
+    margin: 10% 10% 1% 10%;
+    background-color: white;
+    top: 55px;
+    white-space: pre-line;
+    /*height: 400px;*/
+}
+
+.Create {
+    position: relative;
+    display: inline-block;
+    left: 100%;
+    top: 15%;
+    transform: translate(-130%, -150%);
+}
+
+    .Create:hover .AdminButton {
+        cursor: pointer;
+        background: #515654;
+        color: white;
+        transition: .5s ease all;
+    }
+
+.AdminButton {
+    border: 2px solid #515654;
+    line-height: 21px;
+    padding: 0 14px;
+    background: transparent;
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: .5s ease all;
 }
