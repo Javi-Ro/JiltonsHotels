@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/JiltonMaster.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="JiltonWeb.Register" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/JiltonMaster.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="JiltonWeb.Login" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
 
 <asp:Content ID="cssLink" ContentPlaceHolderID="cssLink" runat="server">
@@ -19,22 +19,28 @@
                     <h2 class="HotelName">USER AUTHENTICATION</h2>
                 </div>
                 <div class="LoginForm">
-                    <div class="row">
-                        <asp:Label runat="server" Width="35%">DNI/NIF or email:</asp:Label>
-                        <asp:TextBox ID ="DataLoginText" CssClass="col" Height="30px" style="text-align:left; border-radius:3px; border-width:1px; margin-right:2px" runat ="server" />
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidatorLoginDNI" CssClass="Validator" runat="server" ValidationGroup="LoginInfoGroup" ErrorMessage="DNI/NIF or email is required" ControlToValidate="DataLoginText" Display="Dynamic"></asp:RequiredFieldValidator>
-                    </div>
+                        <div class="row">
+                            <asp:Label runat="server" Width="35%">DNI/NIF or e-mail:</asp:Label>
+                            <asp:TextBox ID ="DataLoginText" CssClass="col" Height="30px" style="text-align:left; border-radius:3px; border-width:1px; margin-right:2px" runat ="server" />
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorLoginDNI" CssClass="Validator" runat="server" ValidationGroup="LoginInfoGroup" ErrorMessage="DNI/NIF or email is required" ControlToValidate="DataLoginText" Display="Dynamic"></asp:RequiredFieldValidator>
+                        </div>
 
-                    <div class="row">
-                        <asp:Label runat="server" Width="35%">Password:</asp:Label>
-                        <asp:TextBox ID ="PasswordText" CssClass="col" Height="30px" style="text-align:left; border-radius:3px; border-width:1px; margin-right:2px" TextMode="Password" runat ="server" />
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidatorLoginPassword" CssClass="Validator" runat="server" ValidationGroup="LoginInfoGroup" ErrorMessage="Password is required" ControlToValidate="PasswordText" Display="Dynamic"></asp:RequiredFieldValidator>
-                    </div>
+                        <div class="row">
+                            <asp:Label runat="server" Width="35%">Password:</asp:Label>
+                            <asp:TextBox ID ="PasswordTextLogin" CssClass="col" Height="30px" style="text-align:left; border-radius:3px; border-width:1px; margin-right:2px" TextMode="Password" runat ="server" />
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorLoginPassword" CssClass="Validator" runat="server" ValidationGroup="LoginInfoGroup" ErrorMessage="Password is required" ControlToValidate="PasswordTextLogin" Display="Dynamic"></asp:RequiredFieldValidator>
+                        </div>
 
-                    <div class="row">
-                        <asp:Hyperlink ID="GoToLoginFromRegister" runat="server" Width="35%" Text="Don't have an account yet?" NavigateUrl="Register.aspx"/>
-                        <asp:Button CssClass="LoginBttn" ValidationGroup="LoginInfoGroup" Text="Login" runat="server" />
-                    </div>
+                        <div class="row">
+                            <asp:Hyperlink ID="GoToLoginFromRegister" runat="server" Width="35%" Text="Don't have an account yet?" NavigateUrl="Register.aspx"/>
+                            <asp:Button CssClass="LoginBttn" ValidationGroup="LoginInfoGroup" Text="Login" OnClick="Login_User" runat="server" />
+                            <asp:Panel ID="NoExistslbl" runat="server" CssClass="hideNoExistslbl">
+                                <asp:Label runat="server" Text="E-mail or DNI/NIF not found. <a href='Register.aspx'> Create an account </a>" />
+                            </asp:Panel>
+                            <asp:Panel ID="WrongPsswd" runat="server" CssClass="hideWrongPsswd">
+                                <asp:Label runat="server" Text="Incorrect password. Try again" />
+                            </asp:Panel>
+                        </div>
                 </div>
             </div>
         </div>

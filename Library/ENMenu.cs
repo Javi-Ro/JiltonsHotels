@@ -2,9 +2,9 @@
 
 public class ENMenu
 {
-	private double _price;
+	private float _price;
 
-	public double price
+	public float price
     {
         set { _price = value; }
         get { return _price; }
@@ -40,7 +40,7 @@ public class ENMenu
 
 	public ENMenu()
 	{
-        price = 0.0;
+        price = 0;
         main = System.String.Empty;
         dessert = System.String.Empty;
         appetizers = System.String.Empty;
@@ -70,13 +70,51 @@ public class ENMenu
 
         if (existe)
         {
-            //error label 
             return false;
         }
         else
         {
             bool creado = menu.create(this);
             return creado;
+        }
+    }
+
+    public bool update()
+    {
+        CADMenu menu = new CADMenu();
+        ENMenu nuevo = new ENMenu(this.main, this.dessert, this.appetizers, this.price, this.fecha);
+        bool existe = menu.showMenu(this);
+        if (existe)
+        {
+            this.main = nuevo.main;
+            this.dessert = nuevo.dessert;
+            this.appetizers = nuevo.appetizers;
+            this.price = nuevo.price;
+            this.fecha = nuevo.fecha;
+            bool update = menu.update(this);
+            return update;
+
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public bool delete()
+    {
+        CADMenu menu = new CADMenu();
+
+        bool existe = menu.showMenu(this);
+        if (existe)
+        {
+            bool borrado = menu.delete(this);
+            return borrado;
+
+        }
+        else
+        {
+            return false;
         }
     }
 }

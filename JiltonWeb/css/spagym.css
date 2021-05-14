@@ -1,5 +1,106 @@
 ﻿/*Spa & Gym page*/
 
+.super{
+    background-color : gainsboro;
+}
+
+.title{
+    text-align:center;
+}
+
+.tutle{
+    text-align:center;
+}
+
+.botones {
+    display: flex;
+    margin-left: 50px;
+    flex-flow: column wrap;
+    margin-bottom: 60px;
+}
+
+.letra {
+    color: black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+.texto44 {
+    text-align: left;
+    padding: 10px;
+    border-radius: 4px;
+    border-width: 1px;
+    margin-left: 62px;
+    margin-right: 50px;
+    margin-bottom: 5px;
+}
+
+.box {
+    padding: 4px;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.entrada {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.textoss {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.create {
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #1883ba;
+    border-radius: 6px;
+    border: 2px solid #0016b0;
+}
+
+    .create:hover {
+        color: #1883ba;
+        background-color: #ffffff;
+    }
+
+.delete {
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #1883ba;
+    border-radius: 6px;
+    border: 2px solid #0016b0;
+}
+
+.delete:hover {
+    color: #1883ba;
+    background-color: #ffffff;
+}
+
+.update {
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #1883ba;
+    border-radius: 6px;
+    border: 2px solid #0016b0;
+}
+
+.update:hover {
+    color: #1883ba;
+    background-color: #ffffff;
+}
+
 .total{
     background-color : rgba(84,200,18,0.8);
 }

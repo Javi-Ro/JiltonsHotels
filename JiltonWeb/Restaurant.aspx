@@ -2,19 +2,19 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
 
     <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <link href="css/restaurant.css?ver=<?php echo rand(535,950)?>" rel="stylesheet">
+        <link href="css/restaurant.css?ver=<?php echo rand(543,950)?>" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <div class="backgroundR" >
 
             <div class="Menu">
-                  <button class="MenuButton" onclick="OnPrevious">PREVIOUS MENU</button>
+                  <asp:Button runat="server" class="MenuButton" onclick="OnPrevious" id="PreviousButton" Text="PREVIOUS MENU"/>
             </div>
             <div class="Menu">
-                  <button class="MenuButton" onclick="OnToday" id="TodayButton">TODAY'S MENU</button>
+                  <asp:Button runat="server"  class="MenuButton" onclick="OnToday" id="TodayButton" Text="TODAY'S MENU" />
             </div>
             <div class="Menu">
-                  <button class="MenuButton" onclick="OnNext">NEXT MENU</button>
+                  <asp:Button runat="server" class="MenuButton" onclick="OnNext" id="NextButton" Text="NEXT MENU" />
             </div>
             <div class="blurryBackground">
 
@@ -30,9 +30,6 @@
 
                     <div class ="Meal" runat="server">
                        <asp:label ID="APPETIZERS" runat="server"> 
-                           Slow-cooked Duck Egg, Iberico Ham, Spring White Truffle
-
-                            Confit Foie Gras, Smoked Eel, Granny Smith Apple
 
                        </asp:label>
                    </div>
@@ -42,11 +39,6 @@
                    </div>
                     <div class ="Meal" runat="server">
                        <asp:label ID="MAINS" runat="server">
-                        Saffron Risotto, Carabineros Prawns, Gold leaf
-
-                        Wagyu Beef with Fermented Celeriac and Silver leaf (Served on Dry Ice)
-
-                        Braised Beef Cheeks with Potato Mousseline
                        </asp:label>
                    </div>
 
@@ -55,52 +47,57 @@
                    </div>
                     <div class ="Meal" runat="server">
                        <asp:label ID="DESSERTS" runat="server">
-                           Golden Opulence Sundae.
-
-                            Dark chocolate cylinder and smoked hazelnut praline
                        </asp:label>
 
                         <asp:Label runat="server" ID="PRICE"> 250€</asp:Label>
                     </div>
                     <div class ="subTitle" runat="server">
-                       <asp:label runat="server"> Feel free to ask for our superb wine selection</asp:label>
+                       <asp:label runat="server"> Feel free to ask for our superb wine selection </asp:label>
 
                    </div>
                </div>
     
             </div>
                <div class="MenuAdmin">
-                    <button class="MenuButton">CREATE MENU</button>
+                    <asp:Button runat="server" class="MenuButton" ID="CreateButton" Text="CREATE MENU" OnClick="InsertPage"/>
                </div>
                <div class="MenuAdmin">
-                   <button class="MenuButton">UPDATE MENU</button>
+                   <asp:Button runat="server" class="MenuButton" ID="UpdateButton" Text="UPDATE MENU" OnClick="UpdatePage"/>
                </div>
                <div class="MenuAdmin">
-                        <button class="MenuButton">DELETE MENU</button>
+                   <asp:Button runat="server" class="MenuButton" ID="DeleteMenu" Text="DELETE MENU" OnClick="DeletePage"/>
                </div>
 
             <div class="adminBox">
-                <div class="adminTextBoxes"> <asp:Label runat="server"> Insert the new menu's date   </asp:Label> <ajax:CalendarExtender ID="DateMenu" runat="server" TargetControlID="DateTB" Format="dd/MM/yyyy" /><asp:TextBox ID="DateTB" runat="server"> </asp:TextBox>
+                <div class="adminTextBoxes"> <asp:Label runat="server"> Insert the new menu's date   </asp:Label> <ajax:CalendarExtender ID="DateMenu" runat="server" TargetControlID="DateTB" Format="dd/MM/yyyy"/><asp:TextBox ID="DateTB" runat="server"> </asp:TextBox> <asp:Label runat="server" CssClass="ErrorMessages" ID="ErrorDate" Visible="false"> This field must be known </asp:Label>
                 
-                    <asp:Label runat="server"> 
-                    Insert appetizers  </asp:Label><asp:TextBox runat="server"> </asp:TextBox>
+                    <asp:Label runat="server" ID="appetizersLabel"> 
+                    Insert appetizers  </asp:Label><asp:TextBox runat="server" ID="appetizersTB"> </asp:TextBox> <asp:Label runat="server" CssClass="ErrorMessages" ID="ErrorApp" Visible="false"> This field must be known </asp:Label>
                 
-                <asp:Label runat="server"> 
-                    Insert main course   </asp:Label><asp:TextBox runat="server"> </asp:TextBox>
+                <asp:Label runat="server" ID="mainLabel"> 
+                    Insert main course   </asp:Label><asp:TextBox runat="server" ID="mainTB"> </asp:TextBox> <asp:Label runat="server" CssClass="ErrorMessages" ID="ErrorMain" Visible="false"> This field must be known </asp:Label>
                 
-                <asp:Label runat="server"> 
-                    Insert dessert   </asp:Label><asp:TextBox runat="server"> </asp:TextBox>
+                <asp:Label runat="server" ID="dessertLabel"> 
+                    Insert dessert   </asp:Label><asp:TextBox runat="server" ID="dessertTB"> </asp:TextBox><asp:Label runat="server" CssClass="ErrorMessages" ID="ErrorDessert" Visible="false"> This field must be known </asp:Label>
 
-                <asp:Label runat="server"> 
-                    Insert price   </asp:Label><asp:TextBox runat="server"> </asp:TextBox>
+                <asp:Label runat="server" ID="priceLabel"> 
+                    Insert price   </asp:Label><asp:TextBox runat="server" ID="priceTB"> </asp:TextBox> <asp:Label runat="server" CssClass="ErrorMessages" ID="ErrorPrice" Visible="false"> This field must be known </asp:Label>
                 </div>
 
+                <asp:Label visible="false" runat="server" ID="success" CssClass="SuccessLabel"> </asp:Label>
                 
+                <asp:Label visible="false" runat="server" ID="Error" CssClass="ErrorLabel"> </asp:Label>
+                                
                 <div class="Create">
-                    <asp:Button  runat="server" CssClass="AdminButton" Text="Create menu" ></asp:Button>
+                    <asp:Button  runat="server" CssClass="AdminButton" Text="Create menu" ID="Create" OnClick="OnCreate" />
                 </div>
-
-            </div>
+                <div class="Create">
+                    <asp:Button  runat="server" CssClass="AdminButton" Text="Update menu" ID="Update" OnClick="OnUpdate" Visible="false" />
+                </div>
+                <div class="Create">
+                    <asp:Button  runat="server" CssClass="AdminButton" Text="Delete menu" ID="Delete" OnClick="OnDelete" Visible="false"/>
+                </div>
+            </>
 
 
            </div>
