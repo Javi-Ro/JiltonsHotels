@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Library
 {
-    class ENDiscount
+    public class ENDiscount
     {
         private string _code;
         public string code

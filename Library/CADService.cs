@@ -102,12 +102,16 @@ namespace Library
 
         public List<ENService> listAllServices()
         {
+            List<ENService> list = new List<ENService>();
 
+            return list;
         }
 
         public ENService searchService()
         {
+            ENService s = new ENService();
 
+            return s;
         }
 
     }
