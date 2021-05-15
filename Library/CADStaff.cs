@@ -30,7 +30,7 @@ namespace Library
                 conection.Open();
                 
                 //nombres pendientes de ser verificados y creados en la db, son orientativos
-                string msg = "Insert INTO [dbo].[Staff] (id, name, contact, type, description) VALUES ('" + en.ID + "','" + en.Name + "'," + en.Contact + "','" + en.Type + "','" + en.Description + ")";
+                string msg = "Insert INTO [Database].[Staff] (email, name, type, description) VALUES ('" + en.Email + "'," + en.Name + "','" + en.Type + "','" + en.Description + ")";
 
                 SqlCommand consulta = new SqlCommand(msg, conection);
                 consulta.ExecuteNonQuery();
@@ -57,7 +57,7 @@ namespace Library
                 conection.Open();
 
                 //Nombre de SQL por ver :)
-                string msg = "DELETE FROM [dbo].[Cars] WHERE licenseplate = '" + en.ID + "'";
+                string msg = "DELETE FROM [Database].[staff] WHERE email = '" + en.Email + "'";
 
                 SqlCommand busqueda = new SqlCommand(msg, conection);
                 busqueda.ExecuteNonQuery();
@@ -84,7 +84,7 @@ namespace Library
                 conection.Open();
 
                 //inventao free hd esta mal 80% seguro
-                string msg = "UPDATE [dbo].[Staff] SET contact= '" + en.Contact + "'";
+                string msg = "UPDATE [Database].[staff] SET email= '" + en.Email + "'";
 
                 SqlCommand busqueda = new SqlCommand(msg, conection);
 

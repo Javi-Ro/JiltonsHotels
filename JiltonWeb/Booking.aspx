@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/JiltonMaster.Master" AutoEventWireup="true" CodeBehind="Booking.aspx.cs" Inherits="JiltonWeb.Booking" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="cssLink" runat="server">
-        <link rel="stylesheet" href="../css/booking.css?ver=<?php echo rand(255,950)?>" />
+        <link rel="stylesheet" href="../css/booking.css?ver=<?php echo rand(195,950)?>" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="MainContainerBooking">
@@ -49,98 +49,44 @@
             </div>
             <aside class="BookingResume">
                 <div class="MainBlock">
-                <div class="HeaderBlock">
-                    <h1 class="BookingSumLabel">Booking</h1>
-                </div>
-                <div class="ListViewSeparator">
-                <asp:ListView ID="ListViewBooking" runat="server" DataSourceID="SqlDataSourceDefault" DataKeyNames="id" >
-                    <EmptyDataTemplate>
-                        <span>No se han devuelto datos.</span>
-                    </EmptyDataTemplate>
-                    <AlternatingItemTemplate>
-                        <span style="display:flex; flex-flow:row;">
-                            <span style="width:60%;">
-                                <div>
-                                    Id:
-                                    <asp:Label Text='<%# Eval("id") %>' runat="server" ID="idLabel" /><br />
-                                    Nombre:
-                                    <asp:Label Text='<%# Eval("nombre") %>' runat="server" ID="nombreLabel" /><br />
-                                    Nif:
-                                    <asp:Label Text='<%# Eval("nif") %>' runat="server" ID="nifLabel" /><br />
-                                    Edad:
-                                    <asp:Label Text='<%# Eval("edad") %>' runat="server" ID="edadLabel" />
-                                </div>
-                            </span>
-                            <span style="display:flex; width:40%; justify-content:flex-end; align-items:center;">
-                                <div>
-                                    <asp:Button runat="server" Text="Eliminar" Height="30px"/>
-                                </div>
-                            </span>
-                            
-                        </span>
-                        <br />
-                    </AlternatingItemTemplate>
-                    <EditItemTemplate>
-                        <span style="margin-left: 10px; font-size: 20px;">id:
-                            <asp:Label Text='<%# Eval("id") %>' runat="server" ID="idLabel1" /><br />
-                            nombre:
-                            <asp:TextBox Text='<%# Bind("nombre") %>' runat="server" ID="nombreTextBox" /><br />
-                            nif:
-                            <asp:TextBox Text='<%# Bind("nif") %>' runat="server" ID="nifTextBox" /><br />
-                            edad:
-                            <asp:TextBox Text='<%# Bind("edad") %>' runat="server" ID="edadTextBox" /><br />
-                            <asp:Button runat="server" CommandName="Update" Text="Actualizar" ID="UpdateButton" /><asp:Button runat="server" CommandName="Cancel" Text="Cancelar" ID="CancelButton" /><br />
-                            <br />
-                        </span>
-
-                    </EditItemTemplate>
-                    <InsertItemTemplate>
-                        <span style="">nombre:
-                            <asp:TextBox Text='<%# Bind("nombre") %>' runat="server" ID="nombreTextBox" /><br />
-                            nif:
-                            <asp:TextBox Text='<%# Bind("nif") %>' runat="server" ID="nifTextBox" /><br />
-                            edad:
-                            <asp:TextBox Text='<%# Bind("edad") %>' runat="server" ID="edadTextBox" /><br />
-                            <asp:Button runat="server" CommandName="Insert" Text="Insertar" ID="InsertButton" /><asp:Button runat="server" CommandName="Cancel" Text="Borrar" ID="CancelButton" /><br />
-                            <br />
-                        </span>
-
-                    </InsertItemTemplate>
-                    <ItemTemplate>
-                        <span style="">Id:
-                            <asp:Label Text='<%# Eval("id") %>' runat="server" ID="idLabel" /><br />
-                            Nombre:
-                            <asp:Label Text='<%# Eval("nombre") %>' runat="server" ID="nombreLabel" /><br />
-                            Nif:
-                            <asp:Label Text='<%# Eval("nif") %>' runat="server" ID="nifLabel" /><br />
-                            Edad:
-                            <asp:Label Text='<%# Eval("edad") %>' runat="server" ID="edadLabel" /><br />
-                            <br />
-                        </span>
-
-                    </ItemTemplate>
-                    <LayoutTemplate>
-                        <div runat="server" id="itemPlaceholderContainer" style=""><span runat="server" id="itemPlaceholder" /></div>
-
-                        <div style="">
+                    <div class="HeaderBlock">
+                        <h1 class="BookingSumLabel">Booking</h1>
+                    </div>
+                    <div class="FechasBlock">
+                        <div class="DateBlock">
+                            <asp:Label runat="server" Text="Entry date" class="LabelDateBlock"></asp:Label>
+                            <asp:Label runat="server" Text="fecha" ID="EntryDateLabel"></asp:Label>
                         </div>
-                    </LayoutTemplate>
-                    <SelectedItemTemplate>
-                        <span style="">id:
-                            <asp:Label Text='<%# Eval("id") %>' runat="server" ID="idLabel" /><br />
-                            nombre:
-                            <asp:Label Text='<%# Eval("nombre") %>' runat="server" ID="nombreLabel" /><br />
-                            nif:
-                            <asp:Label Text='<%# Eval("nif") %>' runat="server" ID="nifLabel" /><br />
-                            edad:
-                            <asp:Label Text='<%# Eval("edad") %>' runat="server" ID="edadLabel" /><br />
-                            <br />
-                        </span>
+                        <div class="DateBlock">
+                            <asp:Label runat="server" Text="Departure date" class="LabelDateBlock"></asp:Label>
+                            <asp:Label runat="server" Text="fecha" ID="DepartureDateLabel"></asp:Label>
+                        </div>
+                    </div>
+                    <div class="separator">
+                        <hr />
+                    </div>
+                    
+                    <asp:GridView ID="GridViewRooms" CssClass="grid" runat="server" ForeColor="#333333" GridLines="None" AutoGenerateColumns="false" CellSpacing="8" ShowHeader="False" Width="100%" RowStyle-HorizontalAlign="Left"
+                         OnRowCommand="GridView_ButtonCommand">
 
-                    </SelectedItemTemplate>
-                </asp:ListView>
-                </div>
-                    <asp:SqlDataSource ID="SqlDataSourceDefault" runat="server" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\DBPrueba.mdf;Integrated Security=True" ProviderName="System.Data.SqlClient" SelectCommand="SELECT * FROM [Usuarios]"></asp:SqlDataSource>
+                        <Columns>
+                            <asp:BoundField DataField="title" ItemStyle-Width="100px"  ItemStyle-Font-Bold="true" ItemStyle-Font-Italic="false" />
+                            <asp:BoundField  ItemStyle-Width="50px" />
+                            <asp:BoundField DataField="price" DataFormatString="{0:C}" ItemStyle-Width="100px" />
+                            <asp:ButtonField Text="Delete" ButtonType="Link" ControlStyle-CssClass="GridButton"></asp:ButtonField>
+                        </Columns>
+                    </asp:GridView>
+                    <asp:GridView ID="GridViewServices" CssClass="grid" runat="server" ForeColor="#333333" GridLines="None" AutoGenerateColumns="false" CellSpacing="8" ShowHeader="False" Width="100%" RowStyle-HorizontalAlign="Left"
+                         OnRowCommand="GridView_ButtonCommand">
+
+                        <Columns>
+                            <asp:BoundField DataField="description" ItemStyle-Width="100px"  ItemStyle-Font-Bold="true" ItemStyle-Font-Italic="false" />
+                            <asp:BoundField DataField="serviceDay" DataFormatString="{0:M}" ItemStyle-Font-Italic="true" ItemStyle-Width="50px" />
+                            <asp:BoundField DataField="price" DataFormatString="{0:C}" ItemStyle-Width="100px" />
+                            <asp:ButtonField Text="Delete" ButtonType="Link" ControlStyle-CssClass="GridButton"></asp:ButtonField>
+                        </Columns>
+                    </asp:GridView>
+                    
                 </div>
             </aside>
         </div>
