@@ -76,7 +76,7 @@ namespace Library
             set { _size = value; }
         }
 
-        public EnRoom()
+        public ENRoom()
         {
             id = last_id++;
             title = "Confort room";

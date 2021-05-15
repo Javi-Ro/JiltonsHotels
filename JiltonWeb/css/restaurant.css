@@ -137,3 +137,48 @@
     font-size: 14px;
     transition: .5s ease all;
 }
+
+.ErrorMessages {
+    position: absolute;
+    left: 50%;
+    border: 2px solid #515654;
+    line-height: 21px;
+    padding: 0 14px;
+    background-color: crimson;
+    background: rgba(255,0,0,0.1);
+    border-color: crimson;
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: .5s ease all;
+}
+
+.ErrorLabel {
+    position:absolute;
+    left: 74.5%;
+    border: 2px solid #515654;
+    line-height: 21px;
+    padding: 0 14px;
+    background-color: crimson;
+    background: rgba(255,0,0,0.1);
+    border-color: crimson;
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: .5s ease all;
+}
+
+.SuccessLabel {
+    position: absolute;
+    left: 64%;
+    border: 2px solid #515654;
+    line-height: 21px;
+    padding: 0 14px;
+    background-color: crimson;
+    background: rgba(0,255,33,0.1);
+    border-color: darkgreen;
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: .5s ease all;
+}

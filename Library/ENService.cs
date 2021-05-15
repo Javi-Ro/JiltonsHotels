@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 
 namespace Library
 {
@@ -8,14 +9,66 @@ namespace Library
 		private int id;
 		private int price;
 		private string description;
-		  
+		private string name;
+		private int maxPeople;
+		private string type;
+		private string imgURL;
+
+		public string Type
+        {
+            get
+            {
+				return type;
+            }
+			set
+            {
+				type = value;
+            }
+        }
+
+		public string ImgURL
+        {
+            get
+            {
+				return imgURL;
+            }
+			set
+            {
+				imgURL = value;
+            }
+        }
+
+		public string Name
+        {
+            get
+            {
+				return name;
+            }
+			set
+            {
+				name = value;
+            }
+        }
+
+		public int MaxPeople
+        {
+            get
+            {
+				return maxPeople;
+            }
+			set
+            {
+				maxPeople = value;
+            }
+        }
+
 		public int Id
 		{ //ID  of the service
 			get
 			{
 				return id;
 			}
-			private set
+			set
 			{
 				id = value;
 			}
@@ -27,7 +80,7 @@ namespace Library
 			{
 				return price;
 			}
-			private set
+			set
 			{
 				price = value;
 			}
@@ -39,7 +92,7 @@ namespace Library
 			{
 				return description;
 			}
-			private set
+			set
 			{
 				description = value;
 			}
@@ -68,39 +121,30 @@ namespace Library
 			return service.updateService(this);
 		}
 
-		public List<ENService> listAllServices()
+		public DataSet listAllServices()
 		{
 			CADService service = new CADService();
 			return service.listAllServices();
 		}
 
-		/*public ENService searchService()
-		{
-			CADService service_ = new CADService();
-			return service_.searchService();
-		}*/
-
-		public class Excursion : ENService
+		public DataSet listAllSpa()
         {
-			private string name;
-			private int maxPeople;
-
-        }
-
-		public class Gym : ENService
-        {
-			//poder buscar empleados alomejor en esta y en todas
-        }
-
-		public class Spa : ENService
-		{
-
+			CADService service = new CADService();
+			return service.listAllSpa();
 		}
-		
-		public class Kingergarten : ENService
-        {
 
-        }
+		public DataSet listAllGym()
+        {
+			CADService service = new CADService();
+			return service.listAllGym();
+		}
+
+		public ENService searchService()
+		{
+			CADService service = new CADService();
+			return service.searchService(this.Id);
+		}
+
 
 	}
 }
