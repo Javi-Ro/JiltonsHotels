@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -51,33 +52,33 @@ namespace Library
             this.descripcion = descripcion;
         }
 
-        public bool createCar()
+        public DataSet createCar()
         {
             CADCar car = new CADCar();
-            return car.createCar(this); 
+            return car.createCar(this);
         }
 
-        public bool deleteCar()
+        public DataSet deleteCar()
         {
             CADCar car = new CADCar();
             return car.deleteCar(this);
         }
 
-        public bool updatePriceCar(int precio)
+        public DataSet updatePriceCar(int precio)
         {
             CADCar car = new CADCar();
             this.precio = precio;
             return car.updatePriceCar(this);
         }
 
-        public bool updateDescriptionCar(string descripcion)
+        public DataSet updateDescriptionCar(string descripcion)
         {
             CADCar car = new CADCar();
             this.descripcion = descripcion;
-            return car.updatePriceCar(this);
+            return car.updateDescriptionCar(this);
         }
 
-        public List<ENCar> listAllCars()
+        public DataSet listAllCars()
         {
             CADCar car = new CADCar();
             return car.listAllCars();

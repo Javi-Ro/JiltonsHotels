@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -45,24 +46,28 @@ namespace Library
             this.descripcion = descripcion;
         }
  
-        public bool createStaff()
+        public DataSet createStaff()
         {
             CADStaff staff = new CADStaff();
             return staff.createStaff(this);
         }
 
-        public bool deleteStaff()
+        public DataSet deleteStaff()
         {
             CADStaff staff = new CADStaff();
             return staff.deleteStaff(this);
         }
-        public bool updateDescriptionStaff(string descripcion)
+        public DataSet updateDescriptionStaff(string descripcion)
         {
             CADStaff staff = new CADStaff();
             this.descripcion = descripcion;
             return staff.updateDescriptionStaff(this);
         }
-
+        public DataSet listAllStaff()
+        {
+            CADStaff staff = new CADStaff();
+            return staff.listAllStaff();
+        }
 
     }
 }
