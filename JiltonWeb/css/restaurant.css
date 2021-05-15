@@ -1,5 +1,13 @@
 ﻿
 .backgroundR {
+    height: 1000px;
+    background-image: url(../assets/restaurant2.jpg);
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.AdminbackgroundR {
     height: 1500px;
     background-image: url(../assets/restaurant2.jpg);
     background-attachment: fixed;
@@ -22,7 +30,7 @@
     position:relative;
     display:flex;
     float: left;
-    margin-top: 110px;
+    /*margin-top: 110px;*/
     display: flex;
     width: 33.33%;
 }
@@ -81,8 +89,20 @@
 .blurryBackground {
     position: relative;
     top: 110px;
-    width: 100%;    
+    width: 100%;
     background: rgba(255,255,255,0.9);
+}
+
+.noAdmin {
+    display:none;
+}
+
+.AdminBlurryBackground {
+    position: relative;
+    top: 6.5%;
+    width: 100%;
+    background: rgba(255,255,255,0.9);
+    height: 450px;
 }
 
 .plainBackground {
@@ -94,30 +114,35 @@
     background-color: white;
 }
 
+
 .adminBox {
-    margin-left: 10%;
+    left: 3.67%;
+    top: 12%;
+    position:relative;
     width: 80%;
-    background-color: white;
-    top: 110px;
-    height: 450px;
+    background-color: transparent;
+    height: 550px;
 }
 
 .adminTextBoxes {
+    position: absolute;
     font-size: 20px;
     position: relative;
-    margin: 10% 10% 1% 10%;
-    background-color: white;
-    top: 55px;
+    top: 0%;
+    left: 8%;
+    padding-left: 10%;
+    background-color: transparent;
     white-space: pre-line;
-    /*height: 400px;*/
+    z-index: 3;
 }
 
 .Create {
     position: relative;
     display: inline-block;
-    left: 100%;
-    top: 15%;
+    left: 94%;
+    top: 0%;
     transform: translate(-130%, -150%);
+    z-index: 15;
 }
 
     .Create:hover .AdminButton {
@@ -136,6 +161,8 @@
     font-weight: bold;
     font-size: 14px;
     transition: .5s ease all;
+    position:relative;
+    z-index: 10;
 }
 
 .ErrorMessages {

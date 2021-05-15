@@ -17,7 +17,7 @@ namespace Library
 
         public CADBooking()
         {
-
+            constring = ConfigurationManager.ConnectionStrings["Default"].ToString();
         }
 
         // Methods for bookings (CRUD operations)
@@ -47,9 +47,13 @@ namespace Library
         }
 
         // Methods for rooms
-        public List<ENRoom> getRooms(ENBooking booking)
+        public DataSet getRooms(ENBooking booking)
         {
-            return new List<ENRoom>();
+            SqlConnection c = new SqlConnection(constring);
+            DataSet virtualSet = new DataSet();
+            SqlDataAdapter adapter = new SqlDataAdapter("select title,price,type from room where bookingNumber=" + booking.ID, c);
+            adapter.Fill(virtualSet, "booking");
+            return virtualSet;
         }
 
         public bool addRoom(ENBooking booking, ENRoom room)
@@ -63,9 +67,13 @@ namespace Library
         }
 
         // Methods for services
-        public List<ENService> getServices(ENBooking booking)
+        public DataSet getServices(ENBooking booking)
         {
-            return new List<ENService>();
+            SqlConnection c = new SqlConnection(constring);
+            DataSet virtualSet = new DataSet();
+            SqlDataAdapter adapter = new SqlDataAdapter("select description,price,serviceDay from servicio s, bookService bs where s.id=bs.serviceID and bookingID=" + booking.ID, c);
+            adapter.Fill(virtualSet, "booking");
+            return virtualSet;
         }
 
         public bool addService(ENBooking booking, ENService service)

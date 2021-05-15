@@ -19,7 +19,7 @@ namespace Library
 
         public CADUser()
         {
-            constring = ConfigurationManager.ConnectionStrings["HotelDB"].ConnectionString;
+            constring = ConfigurationManager.ConnectionStrings["Database"].ConnectionString;
         }
 
         public bool CreateUser(ENUser user)
@@ -97,7 +97,7 @@ namespace Library
                 c = new SqlConnection(constring);
                 c.Open();
 
-                SqlCommand command = new SqlCommand("select count(*) from [dbo].uuser where id = @DATA or email = @DATA", c);
+                SqlCommand command = new SqlCommand("select count(*) from [dbo].uuser where email = @DATA", c);
                 command.Parameters.AddWithValue("@DATA", user.LoginData);
 
                 SqlDataReader result = command.ExecuteReader();
@@ -110,9 +110,10 @@ namespace Library
 
                 if (count != 0)
                 {
-                    SqlCommand command2 = new SqlCommand("select count(*) from [dbo].uuser where (id = @DATA or email = @DATA) and password = @PASSWORD", c);
+                    SqlCommand command2 = new SqlCommand("select count(*) from [dbo].uuser where email = @DATA and password = @PASSWORD", c);
                     command2.Parameters.AddWithValue("@DATA", user.LoginData);
                     command2.Parameters.AddWithValue("@PASSWORD", user.Password);
+                    user.Email = user.LoginData;
 
                     SqlDataReader result2 = command2.ExecuteReader();
 

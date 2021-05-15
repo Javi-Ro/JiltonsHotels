@@ -13,14 +13,21 @@ namespace JiltonWeb
     {
         ENService en = new ENService();
         DataSet d = new DataSet();
+        ENService en2 = new ENService();
+        DataSet d2 = new DataSet();
         protected void Page_Load(object sender, EventArgs e)
         {
             en.Id = 1;
+            en2.Id = 2;
             if(!Page.IsPostBack)
             {
-                d = en.listAllServices();
+                d = en.listAllSpa();
                 GridView1.DataSource = d;
                 GridView1.DataBind();
+
+                d2 = en2.listAllGym();
+                GridView2.DataSource = d2;
+                GridView2.DataBind();
             }
         }
 
