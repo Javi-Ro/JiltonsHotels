@@ -59,7 +59,7 @@ namespace JiltonWeb
             switch (user.LoginUser())
             {
                 case 0: // No error
-                    Session["id"] = user.ID;
+                    Session["id"] = user.Email;
                     Server.Transfer("MainPage.aspx");
                     break;
                 case 1: // Data doesn't exist
