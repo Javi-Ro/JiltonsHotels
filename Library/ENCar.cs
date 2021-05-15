@@ -66,14 +66,14 @@ namespace Library
         public bool updatePriceCar(int precio)
         {
             CADCar car = new CADCar();
-            Price = precio;
+            this.precio = precio;
             return car.updatePriceCar(this);
         }
 
         public bool updateDescriptionCar(string descripcion)
         {
             CADCar car = new CADCar();
-            Description = descripcion;
+            this.descripcion = descripcion;
             return car.updatePriceCar(this);
         }
 

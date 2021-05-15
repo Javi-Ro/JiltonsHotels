@@ -47,15 +47,22 @@ namespace JiltonWeb
                 //Esto no se si esta bien porque no deberia de cambiar nada mas que el precio o descripcion si estos no son nulos :))))))
                 ENCar car = new ENCar(LicensePlateData.Text, BrandData.Text, ModelData.Text, int.Parse(PriceData.Text), DescriptionData.Text);
 
+                if (DescriptionData.Text != "" && PriceData.Text != "")
+                {
 
-                if (car.updateDescriptionCar(LicensePlateData.Text) || car.updatePriceCar(int.Parse(PriceData.Text)))
-                {
-                    output.Text = "Car updated successfuly!";
+                    if (car.updateDescriptionCar(LicensePlateData.Text) && car.updatePriceCar(int.Parse(PriceData.Text)))
+                    {
+                        output.Text = "Car updated successfuly!";
+                    }
+                    else
+                    {
+                        output.Text = "This car is not on the database";
+                    }
+
                 }
-                else
-                {
-                    output.Text = "This car is not on the database";
-                }
+
+                
+
 
             }
             else
@@ -68,8 +75,16 @@ namespace JiltonWeb
         {
             if (LicensePlateData.Text != "")
             {
-
-                ENCar car = new ENCar(LicensePlateData.Text, BrandData.Text, ModelData.Text, int.Parse(PriceData.Text), DescriptionData.Text);
+                ENCar car;
+                //We put this because if price is empty it booom and buaaa dont work wow!
+                if(PriceData.Text == "")
+                {
+                    car = new ENCar(LicensePlateData.Text, BrandData.Text, ModelData.Text, 0, DescriptionData.Text);
+                }
+                else
+                {
+                    car = new ENCar(LicensePlateData.Text, BrandData.Text, ModelData.Text, int.Parse(PriceData.Text), DescriptionData.Text);
+                }
 
                 if (car.deleteCar())
                 {
