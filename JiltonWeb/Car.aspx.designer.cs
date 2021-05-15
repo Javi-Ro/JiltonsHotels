@@ -24,6 +24,24 @@ namespace JiltonWeb
         protected global::System.Web.UI.WebControls.TextBox LicensePlateData;
 
         /// <summary>
+        /// Control BrandData.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox BrandData;
+
+        /// <summary>
+        /// Control ModelData.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox ModelData;
+
+        /// <summary>
         /// Control PriceData.
         /// </summary>
         /// <remarks>
@@ -33,21 +51,21 @@ namespace JiltonWeb
         protected global::System.Web.UI.WebControls.TextBox PriceData;
 
         /// <summary>
-        /// Control TextBox1.
+        /// Control DescriptionData.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox DescriptionData;
 
         /// <summary>
-        /// Control TextBox2.
+        /// Control output.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.Label output;
     }
 }

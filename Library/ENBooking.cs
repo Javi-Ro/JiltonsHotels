@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using System.Data.Common;
+using System.Data.SqlClient;
+using System.Data.SqlTypes;
 
 namespace Library
 {
@@ -13,7 +17,7 @@ namespace Library
         public int ID
         {
             get { return _id; }
-            private set { _id = value; }
+            set { _id = value; }  // Esto es private
         }
 
 
@@ -98,7 +102,7 @@ namespace Library
         }
 
         // Rooms methods
-        public List<ENRoom> getRooms()
+        public DataSet getRooms()
         {
             CADBooking booking = new CADBooking();
             return booking.getRooms(this);
@@ -117,7 +121,7 @@ namespace Library
         }
         
         // Services methods
-        public List<ENService> getServices()
+        public DataSet getServices()
         {
             CADBooking booking = new CADBooking();
             return booking.getServices(this);

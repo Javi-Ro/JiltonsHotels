@@ -19,6 +19,29 @@
     margin-bottom: 60px;
 }
 
+.botongrid {
+    color: floralwhite;
+    font-weight: bold;
+    font-size: 24px;
+    letter-spacing: 3px;
+    font-weight: 500;
+    padding: 0.5em 1.2em;
+    background: black;
+    position: relative;
+    border: 2px solid gray;
+    outline: 1px solid;
+    outline-color: white;
+    transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+    .botongrid:hover {
+        box-shadow: inset 0 0 20px white, 0 0 20px gray;
+        outline-color: cadetblue;
+        outline-offset: 80px;
+        text-shadow: 1px 1px 6px #fff;
+        background: gray;
+    }
+
 .letra {
     color: black;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -111,7 +134,7 @@
     background-attachment: fixed;
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    height: 3100px;
+    height: 2600px;
 }
 
 .gym {
@@ -120,7 +143,7 @@
     background-attachment: fixed;
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    height: 1600px;
+    height: 1350px;
 }
 
 
