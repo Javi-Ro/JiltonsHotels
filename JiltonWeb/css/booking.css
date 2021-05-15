@@ -7,7 +7,7 @@
 
 .CenteredContainer {
     margin: 20px 0;
-    width: 60%;
+    width: 65%;
     display: flex;
     flex-flow: row wrap;
 }
@@ -18,7 +18,7 @@
     border: 1px solid #C3C6CA;
     border-radius: 4px;
     width: 65%;
-    margin-right: 5%;
+    margin-right: 2%;
     height: auto;
     margin-bottom: 20px;
     max-height: 600px;
@@ -149,7 +149,7 @@
 /* ASIDE */
 .BookingResume {
     background: #f2f2f2;
-    width: 30%;
+    width: 33%;
     height: 90%;
     border: 1px solid #C3C6CA;
     border-radius: 4px;
@@ -157,8 +157,39 @@
 
 .BookingSumLabel {
     font-size: 22px;
+    margin-bottom: -15px;
 }
 
-.ListViewSeparator{
-    margin-bottom: 15px;
+.FechasBlock{
+    display: flex;
+    flex-flow: row wrap;
+    
 }
+
+.DateBlock{
+    display: flex;
+    flex-flow: column wrap;
+    margin-right: 60px;
+}
+
+.LabelDateBlock {
+    margin-bottom: 3px;
+    font-weight: bold;
+}
+
+.separator{
+    white-space: pre-line;
+    opacity: 0.5;
+}
+
+.grid {
+    width: 100%;
+}
+
+.GridButton{
+    text-transform: uppercase;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
