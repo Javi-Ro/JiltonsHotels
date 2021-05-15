@@ -15,11 +15,11 @@
             </div>  
             <br />
  
-            <asp:GridView ID="GridView1" runat="server" Font-Size="18px" ForeColor="#F3E7E7" GridLines="None" AutoGenerateColumns="false" CellSpacing="14" ShowHeader="false">
+            <asp:GridView ID="GridView1" Font-Underline="false" runat="server" Font-Size="18px" ForeColor="#F3E7E7" GridLines="None" AutoGenerateColumns="false" CellSpacing="14" ShowHeader="false">
                 <Columns>
                     <asp:ImageField DataImageUrlField="imgURL" ControlStyle-BorderStyle="Inset" ControlStyle-Height="600px" ControlStyle-Width="600px"></asp:ImageField>
                     <asp:BoundField DataField="description" />
-                    <asp:ButtonField Text="RESERVE" ControlStyle-BorderColor="#400040" />
+                    <asp:ButtonField Text="RESERVE" ControlStyle-CssClass="botonya" ControlStyle-BorderColor="#400040" ButtonType="Button" />
                 </Columns>
             </asp:GridView> 
 
@@ -35,7 +35,7 @@
                 <Columns>
                     <asp:ImageField DataImageUrlField="imgURL" ControlStyle-BorderStyle="Inset" ControlStyle-Height="600px" ControlStyle-Width="600px"></asp:ImageField>
                     <asp:BoundField DataField="description" />
-                    <asp:ButtonField Text="RESERVE" />
+                    <asp:ButtonField Text="RESERVE" ControlStyle-CssClass="botonya" ControlStyle-BorderColor="#400040"/>
                 </Columns>
             </asp:GridView>
 
@@ -46,40 +46,46 @@
                 <h1 >ADMINISTRATOR`S PAGE</h1>
             </div>
             <br />
-            <div class="entrada">
-                <div class="textoss">
-                    <asp:Label runat="server" cssClass="letra"> ID: </asp:Label>
-                    <asp:Label runat="server" cssClass="letra"> Description: </asp:Label>
-                    <asp:Label runat="server" cssClass="letra"> Price: </asp:Label>
-                    <asp:Label runat="server" cssClass="letra"> Name: </asp:Label>
-                    <asp:Label runat="server" cssClass="letra"> Max. People: </asp:Label>
-                    <asp:Label runat="server" cssClass="letra"> Image URL: </asp:Label>
-                    <asp:Label runat="server" cssClass="letra"> Type of service: </asp:Label>
-                </div>
-                <div class="box">
-                    <asp:TextBox ID="TextBox1" runat="server" CssClass="texto44"></asp:TextBox>
-                    <asp:TextBox ID="TextBox2" runat="server" CssClass="texto44"></asp:TextBox>
-                    <asp:TextBox ID="TextBox3" runat="server" CssClass="texto44"></asp:TextBox>
-                    <asp:TextBox ID="TextBox4" runat="server" CssClass="texto44"></asp:TextBox>
-                    <asp:TextBox ID="TextBox5" runat="server" CssClass="texto44"></asp:TextBox>
-                    <asp:TextBox ID="TextBox6" runat="server" CssClass="texto44"></asp:TextBox>
-                    <asp:TextBox ID="TextBox7" runat="server" CssClass="texto44"></asp:TextBox>
-                </div>
-            </div>
+
+       <asp:Panel runat="server" ID="adminpage" CssClass="superadmin">
+                    <div class="entrada">
+                        <div class="textoss">
+                            <asp:Label runat="server" cssClass="letra"> ID: </asp:Label>
+                            <asp:Label runat="server" cssClass="letra"> Description: </asp:Label>
+                            <asp:Label runat="server" cssClass="letra"> Price: </asp:Label>
+                            <asp:Label runat="server" cssClass="letra"> Name: </asp:Label>
+                            <asp:Label runat="server" cssClass="letra"> Max. People: </asp:Label>
+                            <asp:Label runat="server" cssClass="letra"> Image URL: </asp:Label>
+                            <asp:Label runat="server" cssClass="letra"> Type of service: </asp:Label>
+                        </div>
+                        <div class="box">
+                            <asp:TextBox ID="TextBox1" runat="server" CssClass="texto44"></asp:TextBox>
+                            <asp:TextBox ID="TextBox2" runat="server" CssClass="texto44"></asp:TextBox>
+                            <asp:TextBox ID="TextBox3" runat="server" CssClass="texto44"></asp:TextBox>
+                            <asp:TextBox ID="TextBox4" runat="server" CssClass="texto44"></asp:TextBox>
+                            <asp:TextBox ID="TextBox5" runat="server" CssClass="texto44"></asp:TextBox>
+                            <asp:TextBox ID="TextBox6" runat="server" CssClass="texto44"></asp:TextBox>
+                            <asp:TextBox ID="TextBox7" runat="server" CssClass="texto44"></asp:TextBox>
+                        </div>
+                    </div>
                 
-            <div class="botones">
-                <asp:Button CssClass="create" ID="create" runat="server" Text="Create Service" />
-                <asp:Button CssClass="delete" ID="delete" runat="server" Text="Delete Service" />
-                <asp:Button CssClass="update" ID="update" runat="server" Text="Update Service" />
-            </div>
+                    <div class="botones">
+                        <asp:Button CssClass="create" ID="create" runat="server" Text="Create Service" />
+                        <asp:Button CssClass="delete" ID="delete" runat="server" Text="Delete Service" />
+                        <asp:Button CssClass="update" ID="update" runat="server" Text="Update Service" />
+                    </div>
 
-            <div class="tutle">
-                <p> <b>Here the administrator will update the service`s page</b></p>
-            </div>
-            <br />
-        </div>
+                    <div class="tutle">
+                        <p> <b>Here the administrator will update the service`s page</b></p>
+                    </div>
+                    <br />
+                </div>
+            </asp:Panel>     
+                
+        
 
+       </div>
 
-    </div>
+        
             
 </asp:Content>
