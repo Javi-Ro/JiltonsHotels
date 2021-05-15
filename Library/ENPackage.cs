@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -47,24 +48,24 @@ namespace Library
 
         }
 
-        public bool createPackage()
+        public DataSet createPackage()
         {
             CADPackage p = new CADPackage();
             return p.createPackage(this);
         }
 
-        public bool deletePackage()
+        public DataSet deletePackage()
         {
             CADPackage p = new CADPackage();
             return p.deletePackage(this);
         }
 
-        public bool searchPackage()
+        public DataSet searchPackage()
         {
             CADPackage p = new CADPackage();
             return p.searchPackage(this);
         }
-        public bool updatePricePackage()
+        public DataSet updatePricePackage()
         {
             CADPackage p = new CADPackage();
             return p.searchPackage(this);
