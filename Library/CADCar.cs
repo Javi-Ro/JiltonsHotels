@@ -28,8 +28,8 @@ namespace Library
             {
                 SqlConnection c = new SqlConnection(constring);
                 DataSet virtualSet = new DataSet();
-                SqlDataAdapter adapter = new SqlDataAdapter ("Insert INTO [dbo].[car] (licensePlate, brand, model, description, price) VALUES "
-                                                            + "('" + en.LicensePlate + "','" + en.Brand + "','" + en.Model + "','" + en.Description + "', " + en.Price + ")", c);
+                SqlDataAdapter adapter = new SqlDataAdapter ("Insert INTO [dbo].[car] (licensePlate, brand, model, description, imgURL,price) VALUES "
+                                                            + "('" + en.LicensePlate + "','" + en.Brand + "','" + en.Model + "','" + en.Description  + "','" + en.imgURL +"'," +en.Price + ")", c);
                 adapter.Fill(virtualSet, "car");
                 return virtualSet;
             }
@@ -140,7 +140,7 @@ namespace Library
             {
                 SqlConnection c = new SqlConnection(constring);
                 DataSet virtualSet = new DataSet();
-                SqlDataAdapter adapter = new SqlDataAdapter("SELECT licenseplace,brand,model,price,description FROM car", c);
+                SqlDataAdapter adapter = new SqlDataAdapter("SELECT licenseplate,brand,model,price,description,imgURL FROM car", c);
                 adapter.Fill(virtualSet, "car");
                 return virtualSet;
             }
