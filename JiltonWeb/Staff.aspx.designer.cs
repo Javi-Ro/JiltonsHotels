@@ -24,6 +24,15 @@ namespace JiltonWeb
         protected global::System.Web.UI.WebControls.GridView GridView2;
 
         /// <summary>
+        /// Control panelAdmin.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel panelAdmin;
+
+        /// <summary>
         /// Control EmailData.
         /// </summary>
         /// <remarks>

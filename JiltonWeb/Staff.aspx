@@ -21,6 +21,7 @@
 
             </asp:GridView> 
 
+        <asp:Panel runat="server" ID="panelAdmin">
         <div class="admin">
             <div class="entradas">
                 <div class = "labels">
@@ -65,7 +66,7 @@
 
         </div>
 
-
+        </asp:Panel>
     </div>
 
 

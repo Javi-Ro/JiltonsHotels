@@ -80,7 +80,7 @@ fondo {
 .admin {
     padding: 60px;
     position: relative;
-    border: 2px solid white;
+    border: 1px solid white;
     width: 100%;
     height: 100%;
     background-color: rgba(14,23,13,0.93);
@@ -164,4 +164,7 @@ fondo {
 
 .reducedText{
     font-size:10px;
+}
+.novisibleAdmin {
+    display: none;
 }
