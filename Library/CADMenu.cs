@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Configuration;
 using System.Data.SqlClient;
 
@@ -37,31 +38,29 @@ public class CADMenu
             }
             else
                 leer = false;
-
-
-            buscador.Close();
-            return leer;
         }
         catch (SqlException ex)
         {
-            Console.WriteLine("User operation has failed. Error: {0}", ex.Message);
+            throw new Exception(ex.Message);
         }
         catch (Exception ex2)
         {
-            Console.WriteLine("User operation has failed.Error: {0}", ex2.Message);
+            Console.WriteLine("Error showing the menu of the day " + menu.fecha, ex2.Message);
         }
         finally
         {
-            if (conn != null) conn.Close();
+            if (conn != null) 
+                conn.Close();
+            
         }
-        return false;
+        return leer;
     }
 
     public bool create(ENMenu menu)
     {
         SqlConnection conn = null;
-
         String comando = "INSERT INTO [dbo].[Restaurant]([dailyMenu],[appetizers],[mains], [desserts],[price]) VALUES ('" + menu.fecha + "', '" + menu.appetizers + "', '" + menu.main + "', '" + menu.dessert + "', " + menu.price + ")";
+        bool crear = false;
         try
         {
             conn = new SqlConnection(constring);
@@ -69,21 +68,23 @@ public class CADMenu
             SqlCommand cmd = new SqlCommand(comando, conn);
             cmd.ExecuteNonQuery();      //devuelve la cantidad de registros afectados
             conn.Close();
-            return true;
+            crear = true;
         }
         catch (SqlException ex)
         {
-            Console.WriteLine("User operation has failed.Error: {0}", ex.Message);
+            throw new Exception(ex.Message);
         }
         catch (Exception ex2)
         {
-            Console.WriteLine("User operation has failed.Error: {0}", ex2.Message);
+            Console.WriteLine("Error creating the menu of the day " + menu.fecha, ex2.Message);
         }
         finally
         {
-            if (conn != null) conn.Close();
+            if (conn != null)
+                conn.Close();
+
         }
-        return false;
+        return crear;
 
     }
 
@@ -93,6 +94,7 @@ public class CADMenu
         SqlConnection conn = null;
         String comando = "Update [dbo].[Restaurant] SET";
         bool coma = false;
+        bool update = false;
         if (!String.IsNullOrEmpty(menu.appetizers))
         {
             comando = comando + " appetizers='" + menu.appetizers +"'";
@@ -140,21 +142,23 @@ public class CADMenu
             SqlCommand cmd = new SqlCommand(comando, conn);
             cmd.Parameters.AddWithValue("@aux", aux);
             cmd.ExecuteNonQuery();      //devuelve la cantidad de registros afectados
-            return true;
+            update = true;
         }
         catch (SqlException ex)
         {
-            Console.WriteLine("User operation has failed. Error: {0}", ex.Message);
+            throw new Exception(ex.Message);
         }
         catch (Exception ex2)
         {
-            Console.WriteLine("User operation has failed.Error: {0}", ex2.Message);
+            Console.WriteLine("Error updating the menu of the day " + menu.fecha, ex2.Message);
         }
         finally
         {
-            if (conn != null) conn.Close();
+            if (conn != null)
+                conn.Close();
+
         }
-        return false;
+        return update;
 
     }
 
@@ -163,7 +167,7 @@ public class CADMenu
         
         SqlConnection conn = null;
         DateTime aux = Convert.ToDateTime(menu.fecha);
-
+        bool deleted = false;
         String comando = "Delete from [dbo].[Restaurant] where dailyMenu = @aux";
         
         try
@@ -173,20 +177,22 @@ public class CADMenu
             SqlCommand cmd = new SqlCommand(comando, conn);
             cmd.Parameters.AddWithValue("@aux", aux);
             cmd.ExecuteNonQuery();
-            return true;
+            deleted = true;
         }
         catch (SqlException ex)
         {
-            Console.WriteLine("User operation has failed. Error: {0}", ex.Message);
+            throw new Exception(ex.Message);
         }
         catch (Exception ex2)
         {
-            Console.WriteLine("User operation has failed.Error: {0}", ex2.Message);
+            Console.WriteLine("Error deleting the menu of the day " + menu.fecha, ex2.Message);
         }
         finally
         {
-            if (conn != null) conn.Close();
+            if (conn != null)
+                conn.Close();
+
         }
-        return false;
+        return deleted;
     }
 }
