@@ -87,6 +87,11 @@ Black beer meringue', 180);
 
 -- END OF RESTAURANT INSERTS --
 
+-- ADMIN USER --
+
+insert into [dbo].[uuser]([id], [password], [name], [birthday], [email], [address]) values('admin', 'admin', 'admin', '1900/01/01', 'admin', 'admin');
+
+-- END ADMIN USER --
 
 -- CAR INSERTS --
 
@@ -115,5 +120,3 @@ Insert INTO [dbo].[staff] ([email],[name],[type],[description]) VALUES
 	('leodios@jilton.es','Leo Messi','massagist','This is Leo Messi. After winning almost everything in his football carrer, he started a superior cycle about administration and company management. Finally ended with a degree on massage therapist. When he joined Jilton Staff he affirmed: "Eventhough I am the best player ever on football history, I want to keep developing myself in other topics, and being part of Jilton Staff is always a pleasure"');
 	
 -- END STAFF INSERTS --
-
-

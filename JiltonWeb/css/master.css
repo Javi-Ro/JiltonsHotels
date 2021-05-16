@@ -110,7 +110,7 @@ body {
     border: none;
     text-decoration: none;
     background-color: transparent;
-    position: absolute;
+    position: relative;
     width: 100%;
     display: block;
     font-size: 16px;

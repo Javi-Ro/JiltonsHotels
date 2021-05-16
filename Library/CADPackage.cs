@@ -22,9 +22,9 @@ namespace Library
 
         public DataSet createPackage(ENPackage pack)
         {
-            /*bool create = false;
+            
             try
-            {*/
+            { 
 
                 SqlConnection c = new SqlConnection(constring);
                 DataSet virtualSet = new DataSet();
@@ -42,24 +42,32 @@ namespace Library
                 consulta.ExecuteNonQuery();
 
                 create = true;
-                conection.Close();
+                conection.Close();*/
             }
             catch (Exception e)
             {
                 Console.WriteLine("User operation has failed.Error: {0}", e.Message);
-                create = false;
+                return null;
             }
 
-            return create;*/
+            
             }
 
         public DataSet deletePackage(ENPackage pack)
         {
-            SqlConnection c = new SqlConnection(constring);
-            DataSet virtualSet = new DataSet();
-            SqlDataAdapter adapter = new SqlDataAdapter("DELETE FROM [dbo].[package] WHERE id = '" + pack.id + "'", c);
-            adapter.Fill(virtualSet, "package");
-            return virtualSet;
+            try
+            {
+                SqlConnection c = new SqlConnection(constring);
+                DataSet virtualSet = new DataSet();
+                SqlDataAdapter adapter = new SqlDataAdapter("DELETE FROM [dbo].[package] WHERE id = '" + pack.id + "'", c);
+                adapter.Fill(virtualSet, "package");
+                return virtualSet;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("User operation has failed.Error: {0}", e.Message);
+                return null;
+            }
 
             /*bool delete = false;
 
@@ -87,12 +95,20 @@ namespace Library
 
         public DataSet searchPackage(ENPackage pack)
         {
+            try
+            {
+                SqlConnection c = new SqlConnection(constring);
+                DataSet virtualSet = new DataSet();
+                SqlDataAdapter adapter = new SqlDataAdapter("SELECT FROM [dbo].[package] WHERE id = '" + pack.id + "'", c);
+                adapter.Fill(virtualSet, "package");
+                return virtualSet;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("User operation has failed.Error: {0}", e.Message);
+                return null;
+            }
 
-            SqlConnection c = new SqlConnection(constring);
-            DataSet virtualSet = new DataSet();
-            SqlDataAdapter adapter = new SqlDataAdapter("SELECT FROM [dbo].[package] WHERE id = '" + pack.id + "'", c);
-            adapter.Fill(virtualSet, "package");
-            return virtualSet;
 
             /*
             bool found = false;
@@ -120,12 +136,20 @@ namespace Library
         }
         public DataSet updatePricePackage(ENPackage pack)
         {
-
-            SqlConnection c = new SqlConnection(constring);
-            DataSet virtualSet = new DataSet();
-            SqlDataAdapter adapter = new SqlDataAdapter("UPDATE [dbo].[package] WHERE id= '" + pack.id + "' SET price= '" + pack.price + "'", c);
-            adapter.Fill(virtualSet, "package");
-            return virtualSet;
+            try
+            {
+                SqlConnection c = new SqlConnection(constring);
+                DataSet virtualSet = new DataSet();
+                SqlDataAdapter adapter = new SqlDataAdapter("UPDATE package WHERE id= '" + pack.id + "' SET price= '" + pack.price + "'", c);
+                adapter.Fill(virtualSet, "package");
+                return virtualSet;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("User operation has failed.Error: {0}", e.Message);
+                return null;
+            }
+            
 
             /*
             bool update = true;
@@ -151,11 +175,60 @@ namespace Library
             return update;*/
         }
 
-        /*SERVICES IN THE PACKAGE
-        public ENService[] getServices()
+        public DataSet updateDescPackage(ENPackage pack)
         {
-
+            try
+            {
+                SqlConnection c = new SqlConnection(constring);
+                DataSet virtualSet = new DataSet();
+                SqlDataAdapter adapter = new SqlDataAdapter("UPDATE package WHERE id= '" + pack.id + "' SET description= '" + pack.description + "'", c);
+                adapter.Fill(virtualSet, "package");
+                return virtualSet;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("User operation has failed.Error: {0}", e.Message);
+                return null;
+            }
         }
+
+        public DataSet listAllPackages(ENPackage pack)
+        {
+            try
+            {
+                SqlConnection c = new SqlConnection(constring);
+                DataSet virtualSet = new DataSet();
+                SqlDataAdapter adapter = new SqlDataAdapter("SELECT id,name,description,imgURL,price FROM package", c);
+                adapter.Fill(virtualSet, "package");
+                return virtualSet;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("User operation has failed.Error: {0}", e.Message);
+                return null;
+            }
+        }
+        /*
+        public string getServices()
+        {
+            try
+            {
+                SqlConnection c = new SqlConnection(constring);
+                DataSet virtualSet = new DataSet();
+                SqlDataAdapter adapter = new SqlDataAdapter("SELECT id,name,description,imgURL FROM package", c);
+                adapter.Fill(virtualSet, "package");
+
+                return virtualSet;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("User operation has failed.Error: {0}", e.Message);
+                return null;
+            }
+        }
+
+        SERVICES IN THE PACKAGE
+
 
         public bool addService(ENPackage pack, ENService serv)
         {
