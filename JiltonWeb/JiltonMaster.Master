@@ -49,7 +49,7 @@
                 </asp:Menu>
                 <asp:Panel runat="server" ID="RegisterContainer" class="RegisterContainer">
                     <asp:Button runat="server" ID="RegisterButton" Text="REGISTER" OnClick="RegisterButton_Click"/>
-                    <asp:Button runat="server" ID="LoginButton" Text="LOGIN" OnClick="LoginButton_Click"/>
+                    <asp:Button runat="server" ID="LoginButton" Text="LOG IN" OnClick="LoginButton_Click"/>
                 </asp:Panel>
 
                 <asp:Panel runat="server" ID="UserContainer" CssClass="RegisterContainer">
