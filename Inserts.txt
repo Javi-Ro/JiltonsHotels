@@ -119,3 +119,14 @@ Insert INTO [dbo].[staff] ([email],[name],[type],[description],[imgURL]) VALUES
 	('leodios@jilton.es','Leo Messi','massagist','This is Leo Messi. After winning almost everything in his football carrer, he started a superior cycle about administration and company management. Finally ended with a degree on massage therapist. When he joined Jilton Staff he affirmed: "Eventhough I am the best player ever on football history, I want to keep developing myself in other topics, and being part of Jilton Staff is always a pleasure"','assets/massagist.jpg');
 	
 -- END STAFF INSERTS --
+
+-- SPA & GYM INSERTS --
+
+Insert into servicio (id, descritpion, price, imgURL, type) VALUES (1,"The relaxing pool at the spa - With 50 meters long you will enjoy a quite relaxing experience", 15, assets/spapiscina.jpg, spa)
+Insert into servicio (id, descritpion, price, imgURL, type) VALUES (2,"Jacuzzi - With 100 water modes desingned for a comfort time", 30, assets/jacuzzispa.jpg, spa)
+Insert into servicio (id, descritpion, price, imgURL, type) VALUES (3,"Massages - You make your massage´s choice between more than a hundred, and then just relax", 60, assets/masspa.jpg, spa)
+Insert into servicio (id, descritpion, price, imgURL, type) VALUES (4,"Anti-stress treatments - Treatments for the people who really need to disconect from the world", 80, assets/masajes.png, spa)
+Insert into servicio (id, descritpion, price, imgURL, type) VALUES (5,"Olympic pool - The olympic pool with one of the best quality certificates", 17, assets/gympool.jpg, gym)
+Insert into servicio (id, descritpion, price, imgURL, type) VALUES (6,"Gymnasium - Machines and staff will make you so easy to get in shape", 15, assets/gimnasiopesas.jpg, gym)
+
+-- END SPA & GYM INSERTS --
