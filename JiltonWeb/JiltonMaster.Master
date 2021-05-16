@@ -47,10 +47,21 @@
                         </asp:MenuItem>
                     </items>
                 </asp:Menu>
-                <div class="RegisterContainer">
-                    <asp:Button runat="server" CssClass="Register" ID="RegisterButton" Text="REGISTER" OnClick="RegisterButton_Click"/>
-                    <asp:Button runat="server" CssClass="Register" ID="LoginButton" Text="LOGIN" OnClick="LoginButton_Click"/>
-                </div>
+                <asp:Panel runat="server" ID="RegisterContainer" class="RegisterContainer">
+                    <asp:Button runat="server" ID="RegisterButton" Text="REGISTER" OnClick="RegisterButton_Click"/>
+                    <asp:Button runat="server" ID="LoginButton" Text="LOG IN" OnClick="LoginButton_Click"/>
+                </asp:Panel>
+
+                <asp:Panel runat="server" ID="UserContainer" CssClass="RegisterContainer">
+                    <asp:Panel ID="dropdownUser" runat="server" CssClass="dropdownUser">
+                        <asp:Button runat="server" ID="UserButton" CssClass="showUser" Text="MY ACCOUNT" OnClientClick="this.disabled=true;"/>
+                      <div class="dropdown-contentUser">
+                        <asp:Button runat="server" ID="MyProfile" CssClass="dropdown-Buttons" Text="PROFILE" OnClientClick="this.disabled=true;"/>
+                        <asp:Button runat="server" ID="MyBookings" CssClass="dropdown-Buttons" Text="BOOKINGS" OnClientClick="this.disabled=true;"/>
+                        <asp:Button runat="server" ID="LogOutButton" CssClass="dropdown-Buttons" Text="LOG OUT" OnClick="LogOutUser"/>
+                      </div>
+                    </asp:Panel>
+                </asp:Panel>
             </div>
             <div class="BookingRegister">
                 <label class="bookingTitle">BOOKINGS</label>

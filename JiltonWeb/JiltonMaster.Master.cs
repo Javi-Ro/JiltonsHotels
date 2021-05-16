@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace JiltonWeb
 {
@@ -23,6 +24,23 @@ namespace JiltonWeb
                 AdultOptions.Items.Add(new ListItem("0", "0"));
                 AdultOptions.Items.Add(new ListItem("1", "1"));
                 AdultOptions.Items.Add(new ListItem("2", "2"));
+            }
+
+            if (Session["id"] != null)
+            {
+                RegisterContainer.Visible = false;
+                UserContainer.Visible = true;
+                RegisterButton.CssClass = "hideRegisterLogin";
+                LoginButton.CssClass = "hideRegisterLogin";
+                dropdownUser.CssClass = "dropdownUser";
+            }
+            else
+            {
+                RegisterContainer.Visible = true;
+                UserContainer.Visible = false;
+                RegisterButton.CssClass = "Register";
+                LoginButton.CssClass = "Register";
+                dropdownUser.CssClass = "hideDropdownUser";
             }
         }
 
@@ -64,6 +82,13 @@ namespace JiltonWeb
         protected void BookButton_Click(object sender, EventArgs e)
         {
             Response.Redirect("Room.aspx");
+        }
+
+        protected void LogOutUser(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Thread.Sleep(500);
+            Response.Redirect("MainPage.aspx");
         }
     }
 }

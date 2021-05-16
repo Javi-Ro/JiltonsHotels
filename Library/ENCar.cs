@@ -14,6 +14,8 @@ namespace Library
         private string modelo;
         private int precio;
         private string descripcion;
+        private string imagen;
+
         public string LicensePlate
         {
             get { return matricula; }
@@ -42,14 +44,24 @@ namespace Library
             get { return descripcion; }
             private set { descripcion = value; }
         }
+        public string imgURL
+        {
+            get { return imagen; }
+            private set { imagen = value; }
+        }
 
-        public ENCar(string matricula, string marca, string modelo, int precio, string descripcion)
+        public ENCar()
+        {
+
+        }
+        public ENCar(string matricula, string marca, string modelo, int precio, string descripcion, string imagen)
         {
             this.matricula = matricula;
             this.marca = marca;
             this.modelo = modelo;
             this.precio = precio;
             this.descripcion = descripcion;
+            this.imagen = imagen;
         }
 
         public DataSet createCar()
