@@ -29,6 +29,14 @@ namespace JiltonWeb
                 GridView2.DataSource = d2;
                 GridView2.DataBind();
             }
+            if (Session["id"] != null && Session["id"].ToString() == "admin")
+            {
+                adminpage.CssClass = "super";
+            }
+            else
+            {
+                adminpage.CssClass = "superadmin";
+            }
         }
 
     }
