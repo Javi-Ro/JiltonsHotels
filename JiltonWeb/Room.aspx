@@ -1,9 +1,18 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/JiltonMaster.Master" AutoEventWireup="true" CodeBehind="Room.aspx.cs" Inherits="JiltonWeb.Room" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
     <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <link href="css/room.css?ver=<?php echo rand(535,950)?>" rel="stylesheet">
+        <link href="css/room.css?ver=<?php echo rand(539,950)?>" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      
+        <asp:SqlDataSource 
+            id="SqlDataSource1" 
+            runat="server"
+            DataSourceMode="DataReader"
+            ConnectionString="<%$ ConnectionStrings:Database%>"
+            SelectCommand="SELECT * FROM room">
+            
+            
+        </asp:SqlDataSource>
+           
         <div class="background" runat="server">
 
         <div class="webBorder">
@@ -74,16 +83,33 @@
             <div class="webBorder3">
             <div class="blurryBackground" runat="server">
                
-                <div class="room" runat="server">
-                     <asp:Label runat="server"> Esto es una habitacion </asp:Label>                  
+                
+                     <asp:GridView ID="GridView1" CssClass="grid" runat="server"  RowStyle-CssClass="bottomBorder" DataSourceID="SqlDataSource1" AutoGenerateColumns="False" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">  
+                        <Columns>
+                            <asp:BoundField DataField="id" HeaderText="ID" ReadOnly="true" />
+                            <asp:TemplateField>
+                                <ItemTemplate>
+                                    <div class="room">
+                                        <div class="row">
+                                            <div class="Informacion">
+                                                <asp:Label runat="server"> AQUI VA EL TEXTO no esta acabado no juzguen :) </asp:Label>
+                                            </div> 
+                                            <div class="Foto"> 
+                                                <div class="FotoRoom">
+                                                    <asp:Image Cssclass="resize" ID="Image1" runat="server" ImageUrl='<%# Eval("imgURL") %>'/>
+                                                   
+                                                </div>
+                                           </div>
+                                        </div>
+                                    </div>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                        </Columns>
+                     
+                     </asp:GridView>                 
 
-                </div>
-                <div class="room" runat="server">
-                     <asp:Label runat="server">  Esto es una habitacion </asp:Label>
-                </div>
-                <div class="room" runat="server">
-                     <asp:Label runat="server">  Esto es una habitacion </asp:Label>
-                </div>
+                
+                
             </div>
             </div>
             <div class="webBorder2">

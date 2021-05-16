@@ -17,7 +17,7 @@ public class CADRoom
 
     public CADRoom()
     {
-        constring = ConfigurationManager.ConnectionStrings["HotelDB"].ConnectionString;
+        constring = ConfigurationManager.ConnectionStrings["Database"].ConnectionString;
     }
 
     public bool selectAll(ENRoom room)
