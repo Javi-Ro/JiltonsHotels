@@ -33,9 +33,11 @@ namespace JiltonWeb
 
             if (Session["id"] != null && Session["id"].ToString() == "admin")
             {
-
-                //backgroundR.CssClass = "AdminbackgroundR";
-                //AdminBlurryBackground.CssClass = "AdminBlurryBackground";
+                panelAdmin.CssClass = "admin";
+            }
+            else
+            {
+                panelAdmin.CssClass = "novisibleAdmin";
             }
 
         }

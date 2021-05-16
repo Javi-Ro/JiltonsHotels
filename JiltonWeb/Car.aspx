@@ -31,6 +31,7 @@
             </asp:GridView> 
      </div>
         
+        <asp:Panel runat="server" ID="panelAdmin">
         <div class="admin">
             <div class="entradas">
                 <div class = "labels">
@@ -65,9 +66,9 @@
                 <p> To create a new car you MUST insert all the information, including at least a brief description, remember price must be a number. In the urlIMG the photo directory must be included, there's one by default if we dont insert none. To update an existing one, you have to put the License Plate of the one you want to edit and its new price or/and description. To delete, just put the License Plate.</p>
               </div>
 
-
         </div>
 
+      </asp:Panel>
     </div> 
 
 
