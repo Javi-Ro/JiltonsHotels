@@ -28,12 +28,16 @@ namespace JiltonWeb
 
             if (Session["id"] != null)
             {
+                RegisterContainer.Visible = false;
+                UserContainer.Visible = true;
                 RegisterButton.CssClass = "hideRegisterLogin";
                 LoginButton.CssClass = "hideRegisterLogin";
                 dropdownUser.CssClass = "dropdownUser";
             }
             else
             {
+                RegisterContainer.Visible = true;
+                UserContainer.Visible = false;
                 RegisterButton.CssClass = "Register";
                 LoginButton.CssClass = "Register";
                 dropdownUser.CssClass = "hideDropdownUser";

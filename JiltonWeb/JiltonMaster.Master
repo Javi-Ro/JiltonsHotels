@@ -47,18 +47,19 @@
                         </asp:MenuItem>
                     </items>
                 </asp:Menu>
-                <div class="RegisterContainer">
+                <asp:Panel runat="server" ID="RegisterContainer" class="RegisterContainer">
                     <asp:Button runat="server" ID="RegisterButton" Text="REGISTER" OnClick="RegisterButton_Click"/>
                     <asp:Button runat="server" ID="LoginButton" Text="LOGIN" OnClick="LoginButton_Click"/>
+                </asp:Panel>
 
+                <asp:Panel runat="server" ID="UserContainer" CssClass="RegisterContainer">
                     <asp:Panel ID="dropdownUser" runat="server">
                         <asp:Button runat="server" ID="UserButton" CssClass="showUser" Text="MY ACCOUNT" OnClientClick="this.disabled=true;"/>
                       <div class="dropdown-contentUser">
                         <asp:Button runat="server" ID="LogOutButton" CssClass="dropdown-Buttons" Text="LOG OUT" OnClick="LogOutUser"/>
                       </div>
                     </asp:Panel>
-
-                </div>
+                </asp:Panel>
             </div>
             <div class="BookingRegister">
                 <label class="bookingTitle">BOOKINGS</label>
