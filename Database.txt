@@ -34,8 +34,8 @@ create table booking(
 
 create table room(
 	id int constraint PK_room PRIMARY KEY,
-	title varchar(20) not null,
-	description varchar(100) not null,
+	title varchar(100) not null,
+	description varchar(250) not null,
 	price int not null,
 	type varchar(20) not null,
 	bookingNumber int constraint FK_room_booking references booking(id),
@@ -43,7 +43,7 @@ create table room(
 	childBed int not null,
 	ratings float,
 	imgURL varchar(300),
-	constraint CHK_room check (adultBed > 0 and adultBed < 3 and childBed >= 0 and childBed < 5 and type in ('single', 'double', 'triple', 'deluxe', 'executive', 'presidential'))
+	constraint CHK_room check (adultBed >= 0 and adultBed < 3 and childBed >= 0 and childBed < 4 and type in ('single', 'double', 'triple', 'deluxe', 'executive', 'presidential'))
 )
 
 
