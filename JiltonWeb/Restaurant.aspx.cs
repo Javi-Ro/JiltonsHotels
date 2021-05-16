@@ -35,7 +35,7 @@ namespace JiltonWeb
             if(Context.Items["Success"] != null)
             {
                 success.Visible = true;
-                success.Text = "Menu of day " + Context.Items["Success"] + " deleted succesfully ";
+                success.Text = "Operation completed succesfully";
             }
             else
             {

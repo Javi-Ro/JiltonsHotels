@@ -129,7 +129,7 @@ public class CADMenu
             comando = comando + " price=" + menu.price.ToString();
         }
 
-        comando = comando + " WHERE dailyMenu = CONVERT(varchar, '" + menu.fecha +"', 103)";
+        comando = comando + " WHERE dailyMenu = CONVERT(varchar, '" + menu.fecha +"', 111)";
         menu.dessert = comando;
 
         try
@@ -162,7 +162,7 @@ public class CADMenu
         SqlConnection conn = null;
         
 
-        String comando = "Delete from [dbo].[Restaurant] where dailyMenu = CONVERT(varchar, '" + menu.fecha + "', 103)";
+        String comando = "Delete from [dbo].[Restaurant] where dailyMenu = CONVERT(varchar, '" + menu.fecha + "', 111)";
         menu.dessert = comando;
         try
         {
