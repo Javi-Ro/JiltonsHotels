@@ -27,8 +27,8 @@ namespace Library
             {
                 SqlConnection c = new SqlConnection(constring);
                 DataSet virtualSet = new DataSet();
-                SqlDataAdapter adapter = new SqlDataAdapter("Insert INTO [dbo].[staff] (email, name, type, description) VALUES "
-                                                            + "('" + en.Email + "','" + en.Name + "','" + en.Type + "','" + en.Description + "')", c);
+                SqlDataAdapter adapter = new SqlDataAdapter("Insert INTO [dbo].[staff] (email, name, type, description, imgURL) VALUES "
+                                                            + "('" + en.Email + "','" + en.Name + "','" + en.Type + "','" + en.Description +"','"+ en.imgURL + "')", c);
                 adapter.Fill(virtualSet, "staff");
                 return virtualSet;
             }
@@ -79,7 +79,7 @@ namespace Library
             {
                 SqlConnection c = new SqlConnection(constring);
                 DataSet virtualSet = new DataSet();
-                SqlDataAdapter adapter = new SqlDataAdapter("SELECT email,name,type,description FROM staff", c);
+                SqlDataAdapter adapter = new SqlDataAdapter("SELECT email,name,type,description,imgURL FROM staff", c);
                 adapter.Fill(virtualSet, "staff");
                 return virtualSet;
             }

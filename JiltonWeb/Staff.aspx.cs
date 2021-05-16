@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -10,16 +11,27 @@ namespace JiltonWeb
 {
     public partial class Staff : System.Web.UI.Page
     {
+
+        ENStaff staff = new ENStaff();
+        DataSet d = new DataSet();
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Page.IsPostBack)
+            {
+                d = staff.listAllStaff();
+                GridView2.DataSource = d;
+                GridView2.DataBind();
+            }
+
 
         }
 
         protected void CrearClick(object sender, EventArgs e)
         {
-            if (EmailData.Text != "" && NameData.Text != "" && TypeData.Text != "" && DescriptionData.Text != "")
+            if (EmailData.Text != "" && NameData.Text != "" && TypeData.Text != "" && DescriptionData.Text != "" && imgURL.Text != "")
             {
-                ENStaff staff = new ENStaff(EmailData.Text,NameData.Text,TypeData.Text,DescriptionData.Text);
+                ENStaff staff = new ENStaff(EmailData.Text,NameData.Text,TypeData.Text,DescriptionData.Text, imgURL.Text);
 
                 if (staff.createStaff() != null)
                 {
@@ -42,7 +54,7 @@ namespace JiltonWeb
             if (EmailData.Text != "" && DescriptionData.Text != "")
             {
                 //As the other fields wont be updated we can put it as empty strings here
-                ENStaff staff = new ENStaff(EmailData.Text, "", "", DescriptionData.Text);
+                ENStaff staff = new ENStaff(EmailData.Text, "", "", DescriptionData.Text,imgURL.Text);
 
                 if (staff.updateDescriptionStaff(DescriptionData.Text) != null)
                 {
@@ -64,7 +76,7 @@ namespace JiltonWeb
         {
             if (EmailData.Text != "")
             {
-                ENStaff staff = new ENStaff(EmailData.Text, "", "", "");
+                ENStaff staff = new ENStaff(EmailData.Text, "", "", "","");
 
                 if (staff.deleteStaff() != null)
                 {
