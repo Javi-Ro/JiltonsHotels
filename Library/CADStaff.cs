@@ -21,109 +21,74 @@ namespace Library
             constring = ConfigurationManager.ConnectionStrings["Database"].ToString();
         }
 
-        public bool createStaff(ENStaff en)
+        public DataSet createStaff(ENStaff en)
         {
-            bool create = false;
             try
             {
-                SqlConnection conection = new SqlConnection(constring);
-                conection.Open();
-                
-                //nombres pendientes de ser verificados y creados en la db, son orientativos
-                string msg = "Insert INTO [Database].[Staff] (email, name, type, description) VALUES ('" + en.Email + "'," + en.Name + "','" + en.Type + "','" + en.Description + ")";
-
-                SqlCommand consulta = new SqlCommand(msg, conection);
-                consulta.ExecuteNonQuery();
-
-                create = true;
-                conection.Close();
+                SqlConnection c = new SqlConnection(constring);
+                DataSet virtualSet = new DataSet();
+                SqlDataAdapter adapter = new SqlDataAdapter("Insert INTO [dbo].[staff] (email, name, type, description) VALUES "
+                                                            + "('" + en.Email + "','" + en.Name + "','" + en.Type + "','" + en.Description + "')", c);
+                adapter.Fill(virtualSet, "staff");
+                return virtualSet;
             }
             catch (Exception e)
             {
-                Console.WriteLine("User operation has failed.Error: {0}", e.Message);
-                create = false;
+                Console.WriteLine("Staff creation has failed.Error: {0}", e.Message);
+                return null;
             }
-
-            return create;
         }
 
-        public bool deleteStaff(ENStaff en)
+        public DataSet deleteStaff(ENStaff en)
         {
-            bool delete = false;
-
             try
             {
-                SqlConnection conection = new SqlConnection(constring);
-                conection.Open();
-
-                //Nombre de SQL por ver :)
-                string msg = "DELETE FROM [Database].[staff] WHERE email = '" + en.Email + "'";
-
-                SqlCommand busqueda = new SqlCommand(msg, conection);
-                busqueda.ExecuteNonQuery();
-
-                delete = true;
-                conection.Close();
+                SqlConnection c = new SqlConnection(constring);
+                DataSet virtualSet = new DataSet();
+                SqlDataAdapter adapter = new SqlDataAdapter("DELETE FROM [dbo].[staff] WHERE email = '" + en.Email + "'", c);
+                adapter.Fill(virtualSet, "staff");
+                return virtualSet;
             }
             catch (Exception e)
             {
-                Console.WriteLine("User operation has failed.Error: {0}", e.Message);
-                delete = false;
+                Console.WriteLine("Staff delete has failed.Error: {0}", e.Message);
+                return null;
             }
-
-            return delete;
         }
 
-        public bool updateContactStaff(ENStaff en)
+        public DataSet updateDescriptionStaff(ENStaff en)
         {
-            bool update = true;
             try
             {
-
-                SqlConnection conection = new SqlConnection(constring);
-                conection.Open();
-
-                //inventao free hd esta mal 80% seguro
-                string msg = "UPDATE [Database].[staff] SET email= '" + en.Email + "'";
-
-                SqlCommand busqueda = new SqlCommand(msg, conection);
-
-                busqueda.ExecuteNonQuery();
-                conection.Close();
+                SqlConnection c = new SqlConnection(constring);
+                DataSet virtualSet = new DataSet();
+                SqlDataAdapter adapter = new SqlDataAdapter("UPDATE [dbo].[staff] SET description= '" + en.Description + "' WHERE email = '" + en.Email + "'", c);
+                adapter.Fill(virtualSet, "staff");
+                return virtualSet;
             }
             catch (Exception e)
             {
-                Console.WriteLine("User operation has failed.Error: {0}", e.Message);
-                update = false;
+                Console.WriteLine("Staff update has failed.Error: {0}", e.Message);
+                return null;
             }
-
-            return update;
         }
 
-        public bool updateDescriptionStaff(ENStaff en)
+        public DataSet listAllStaff()
         {
-            bool update = true;
             try
             {
-
-                SqlConnection conection = new SqlConnection(constring);
-                conection.Open();
-
-                //inventao free hd esta mal 80% seguro
-                string msg = "UPDATE [dbo].[Cars] SET description= '" + en.Description + "'";
-
-                SqlCommand busqueda = new SqlCommand(msg, conection);
-
-                busqueda.ExecuteNonQuery();
-                conection.Close();
+                SqlConnection c = new SqlConnection(constring);
+                DataSet virtualSet = new DataSet();
+                SqlDataAdapter adapter = new SqlDataAdapter("SELECT email,name,type,description FROM staff", c);
+                adapter.Fill(virtualSet, "staff");
+                return virtualSet;
             }
             catch (Exception e)
             {
-                Console.WriteLine("User operation has failed.Error: {0}", e.Message);
-                update = false;
+                Console.WriteLine("Staff listing has failed.Error: {0}", e.Message);
+                return null;
             }
 
-            return update;
         }
 
 

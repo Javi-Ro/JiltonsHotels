@@ -5,7 +5,14 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+   
     <div class ="carfondo">
+
+   <div class="car">
+       <asp:GridView ID="GridView1" Font-Underline="true" runat="server" Font-Size="16px" ForeColor="#F3E7E7" GridLines="None" AutoGenerateColumns="false" CellSpacing="14" ShowHeader="true">
+    </asp:GridView> 
+   </div>
+
     <div class="car">
 
         <div class="foto">
@@ -104,7 +111,7 @@
 
              <asp:Button  runat="server" CssClass="boton2" Text="RESERVE NOW"></asp:Button>
 
-        &nbsp;</div>
+            </div>
         
     </div>
            
@@ -137,14 +144,14 @@
               <div class="texto">
                 <asp:Label ID="output" runat="server"></asp:Label><br/> 
 
-                <p> To create a new car you MUST insert all the information, including at least a brief description. To update an existing one, you have to put the License Plate of the one you want to edit and its new price or/and description. To delete, just put the License Plate.</p>
+                <p> To create a new car you MUST insert all the information, including at least a brief description, remember price must be a number. To update an existing one, you have to put the License Plate of the one you want to edit and its new price or/and description. To delete, just put the License Plate.</p>
               </div>
 
 
         </div>
 
     </div> 
-   
+
 
 </asp:Content>
 

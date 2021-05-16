@@ -60,7 +60,7 @@ public class CADMenu
     public bool create(ENMenu menu)
     {
         SqlConnection conn = null;
-     
+
         String comando = "INSERT INTO [dbo].[Restaurant]([dailyMenu],[appetizers],[mains], [desserts],[price]) VALUES ('" + menu.fecha + "', '" + menu.appetizers + "', '" + menu.main + "', '" + menu.dessert + "', " + menu.price + ")";
         try
         {
@@ -90,26 +90,46 @@ public class CADMenu
     public bool update(ENMenu menu)
     {
         SqlConnection conn = null;
-        String comando = "Update [dbo].[Restaurant] SET"; 
+        String comando = "Update [dbo].[Restaurant] SET";
+        bool coma = false;
         if (!String.IsNullOrEmpty(menu.appetizers))
         {
-            comando = comando + " appetizers=" + menu.appetizers;
+            comando = comando + " appetizers='" + menu.appetizers +"'";
         }
+        if(!String.IsNullOrEmpty(menu.appetizers) && (!String.IsNullOrEmpty(menu.main) || !String.IsNullOrEmpty(menu.dessert) || menu.price != 0)){
+            comando = comando + ",";
+            coma = true;
+        }
+
         if (!String.IsNullOrEmpty(menu.main))
         {
-            comando = comando + " mains=" + menu.main;
+            comando = comando + " mains='" + menu.main + "'";
+            coma = false;
         }
+        if (!coma && (!String.IsNullOrEmpty(menu.appetizers) || !String.IsNullOrEmpty(menu.main)) && (!String.IsNullOrEmpty(menu.dessert) || menu.price != 0))
+        {
+            comando = comando + ",";
+            coma = true;
+        }
+        
         if (!String.IsNullOrEmpty(menu.dessert))
         {
-            comando = comando + " desserts=" + menu.dessert;
+            comando = comando + " desserts='" + menu.dessert + "'";
+            coma = false;
         }
-        if (menu.price == 0)
+
+        if (!coma && (!String.IsNullOrEmpty(menu.appetizers) || !String.IsNullOrEmpty(menu.main) || !String.IsNullOrEmpty(menu.dessert)) && menu.price != 0)
+        {
+            comando = comando + ",";
+            coma = true;
+        }
+
+        if (menu.price != 0)
         {
             comando = comando + " price=" + menu.price.ToString();
         }
 
-        comando = comando + " WHERE dailyMenu = CONVERT(varchar, '" + 2021/05/13 +"', 103)";
-
+        comando = comando + " WHERE dailyMenu = CONVERT(varchar, '" + menu.fecha +"', 103)";
         menu.dessert = comando;
 
         try
@@ -138,30 +158,32 @@ public class CADMenu
 
     public bool delete(ENMenu menu)
     {
+        
         SqlConnection conn = null;
-        String comando = "Delete from [dbo].[Restaurnat] where dailyMenu = CONVERT(varchar, '" + menu.fecha + "', 103)";
+        
+
+        String comando = "Delete from [dbo].[Restaurant] where dailyMenu = CONVERT(varchar, '" + menu.fecha + "', 103)";
         menu.dessert = comando;
-        return true;
-        //try
-        //{
-        //    conn = new SqlConnection(constring);
-        //    conn.Open();
-        //    SqlCommand cmd = new SqlCommand(comando, conn);
-        //    cmd.ExecuteNonQuery();
-        //    return true;
-        //}
-        //catch (SqlException ex)
-        //{
-        //    Console.WriteLine("User operation has failed. Error: {0}", ex.Message);
-        //}
-        //catch (Exception ex2)
-        //{
-        //    Console.WriteLine("User operation has failed.Error: {0}", ex2.Message);
-        //}
-        //finally
-        //{
-        //    if (conn != null) conn.Close();
-        //}
-        //return false;
+        try
+        {
+            conn = new SqlConnection(constring);
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(comando, conn);
+            cmd.ExecuteNonQuery();
+            return true;
+        }
+        catch (SqlException ex)
+        {
+            Console.WriteLine("User operation has failed. Error: {0}", ex.Message);
+        }
+        catch (Exception ex2)
+        {
+            Console.WriteLine("User operation has failed.Error: {0}", ex2.Message);
+        }
+        finally
+        {
+            if (conn != null) conn.Close();
+        }
+        return false;
     }
 }

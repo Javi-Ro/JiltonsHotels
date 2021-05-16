@@ -21,117 +21,136 @@ namespace Library
             constring = ConfigurationManager.ConnectionStrings["Database"].ToString();
         }
 
-        public bool createCar(ENCar en)
+        public DataSet createCar(ENCar en)
         {
-            bool create = false;
+    
             try
             {
-                SqlConnection conection = new SqlConnection(constring);
-                conection.Open();
-                
-                //nombres pendientes de ser verificados y creados en la db, son orientativos
-                string msg = "Insert INTO [dbo].[car] (licensePlate, brand, model, description, price) VALUES ('" + en.LicensePlate + "','" + en.Brand + "'," + en.Model + "','" + en.Description + "','" + en.Price + ")";
+                SqlConnection c = new SqlConnection(constring);
+                DataSet virtualSet = new DataSet();
+                SqlDataAdapter adapter = new SqlDataAdapter ("Insert INTO [dbo].[car] (licensePlate, brand, model, description, price) VALUES "
+                                                            + "('" + en.LicensePlate + "','" + en.Brand + "','" + en.Model + "','" + en.Description + "', " + en.Price + ")", c);
+                adapter.Fill(virtualSet, "car");
+                return virtualSet;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Car creation has failed.Error: {0}", e.Message);
+                return null;
+            }
 
-                SqlCommand consulta = new SqlCommand(msg, conection);
-                consulta.ExecuteNonQuery();
+        }
 
-                create = true;
+        public DataSet deleteCar(ENCar en)
+        {
+            /*
+                //We make a counter before the delete in order to know if we have deleted an existing car or not
+                string msgCount = "Select count FROM [dbo].[car] WHERE licenseplate = '" + en.LicensePlate + "'";
+                string msg = "DELETE FROM [dbo].[car] WHERE licenseplate = '" + en.LicensePlate + "'";
+
+                SqlCommand contador = new SqlCommand(msgCount, conection);
+                SqlCommand busqueda = new SqlCommand(msg, conection);
+
+                SqlDataReader dr = contador.ExecuteReader();
+                dr.Read();
+                int contadorInicial = dr.GetInt32(0);
+
+                if (contadorInicial == 1)
+                {
+                    busqueda.ExecuteNonQuery();
+                    dr = contador.ExecuteReader();
+                    dr.Read();
+                    //Se ha borrado
+                    if (dr.GetInt32(0) == 0)
+                    {
+                        delete = true;
+                    }
+                    else
+                    {
+                        delete = false;
+                    }
+
+                }
+                else
+                {
+                    delete = false;
+                }
+
                 conection.Close();
+            }*/
+
+
+            try
+            {
+                SqlConnection c = new SqlConnection(constring);
+                DataSet virtualSet = new DataSet();
+                SqlDataAdapter adapter = new SqlDataAdapter("DELETE FROM[dbo].[car] WHERE licenseplate = '" + en.LicensePlate + "'", c);
+                adapter.Fill(virtualSet, "car");
+                return virtualSet;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Car delete has failed.Error: {0}", e.Message);
+                return null;
+            }
+
+
+        }
+
+        public DataSet updatePriceCar(ENCar en)
+        {
+
+            try
+            {
+                SqlConnection c = new SqlConnection(constring);
+                DataSet virtualSet = new DataSet();
+                SqlDataAdapter adapter = new SqlDataAdapter("UPDATE [dbo].[car] SET price= " + en.Price + " WHERE licenseplate = '" + en.LicensePlate + "'", c);
+                adapter.Fill(virtualSet, "car");
+                return virtualSet;
             }
             catch(Exception e)
             {
-                Console.WriteLine("User operation has failed.Error: {0}", e.Message);
-                create = false;
+                Console.WriteLine("Car delete has failed.Error: {0}", e.Message);
+                return null;
             }
 
-            return create;
         }
 
-        public bool deleteCar(ENCar en)
+        public DataSet updateDescriptionCar(ENCar en)
         {
-            bool delete = false;
-
             try
             {
-                SqlConnection conection = new SqlConnection(constring);
-                conection.Open();
-
-                //Nombre de SQL por ver :)
-                string msg = "DELETE FROM [dbo].[Cars] WHERE licenseplate = '" + en.LicensePlate + "'";
-
-                SqlCommand busqueda = new SqlCommand(msg, conection);
-                busqueda.ExecuteNonQuery();
-
-                delete = true;
-                conection.Close();
+                SqlConnection c = new SqlConnection(constring);
+                DataSet virtualSet = new DataSet();
+                SqlDataAdapter adapter = new SqlDataAdapter("UPDATE [dbo].[car] SET description= '" + en.Description + "' WHERE licenseplate = '" + en.LicensePlate + "'", c);
+                adapter.Fill(virtualSet, "car");
+                return virtualSet;
             }
-            catch (Exception e)
+            catch(Exception e)
             {
-                Console.WriteLine("User operation has failed.Error: {0}", e.Message);
-                delete = false;
+                Console.WriteLine("Car delete has failed.Error: {0}", e.Message);
+                return null;
             }
 
-            return delete;
         }
 
-        public bool updatePriceCar(ENCar en)
+        public DataSet listAllCars()
         {
-            bool update = true;
             try
             {
-
-                SqlConnection conection = new SqlConnection(constring);
-                conection.Open();
-
-                //inventao free hd esta mal 80% seguro
-                string msg = "UPDATE [dbo].[Cars] SET price= '" + en.Price + "'";
-
-                SqlCommand busqueda = new SqlCommand(msg, conection);
-
-                busqueda.ExecuteNonQuery();
-                conection.Close();
+                SqlConnection c = new SqlConnection(constring);
+                DataSet virtualSet = new DataSet();
+                SqlDataAdapter adapter = new SqlDataAdapter("SELECT licenseplace,brand,model,price,description FROM car", c);
+                adapter.Fill(virtualSet, "car");
+                return virtualSet;
             }
-            catch (Exception e)
+            catch(Exception e)
             {
-                Console.WriteLine("User operation has failed.Error: {0}", e.Message);
-                update = false;
+                Console.WriteLine("Car listing has failed.Error: {0}", e.Message);
+                return null;
             }
 
-            return update;
         }
-        public bool updateDescriptionCar(ENCar en)
-        {
-            bool update = true;
-            try
-            {
-
-                SqlConnection conection = new SqlConnection(constring);
-                conection.Open();
-
-                //inventao free hd esta mal 80% seguro
-                string msg = "UPDATE [dbo].[Cars] SET description= '" + en.Description + "'";
-
-                SqlCommand busqueda = new SqlCommand(msg, conection);
-
-                busqueda.ExecuteNonQuery();
-                conection.Close();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("User operation has failed.Error: {0}", e.Message);
-                update = false;
-            }
-
-            return update;
-        }
-
-        public List<ENCar> listAllCars()
-        {
-            ENCar car = new ENCar("5342GRM","Audi","Q5",65000,"Dale paa");
-            List < ENCar > a = new List<ENCar>();
-            return a;
-        }
-
 
     }
 }

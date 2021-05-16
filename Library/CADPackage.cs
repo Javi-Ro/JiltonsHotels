@@ -20,11 +20,19 @@ namespace Library
             constring = ConfigurationManager.ConnectionStrings["Database"].ToString();
         }
 
-        public bool createPackage(ENPackage pack)
+        public DataSet createPackage(ENPackage pack)
         {
-            bool create = false;
+            /*bool create = false;
             try
-            {
+            {*/
+
+                SqlConnection c = new SqlConnection(constring);
+                DataSet virtualSet = new DataSet();
+                SqlDataAdapter adapter = new SqlDataAdapter("Insert INTO [dbo].[package] (id, name, description, price) VALUES ('" + pack.id + "','" + pack.name + "','" + pack.description + "','" + pack.price + ")", c);
+                adapter.Fill(virtualSet, "package");
+                return virtualSet;
+
+                /*
                 SqlConnection conection = new SqlConnection(constring);
                 conection.Open();
 
@@ -42,12 +50,18 @@ namespace Library
                 create = false;
             }
 
-            return create;
-        }
+            return create;*/
+            }
 
-        public bool deletePackage(ENPackage pack)
+        public DataSet deletePackage(ENPackage pack)
         {
-            bool delete = false;
+            SqlConnection c = new SqlConnection(constring);
+            DataSet virtualSet = new DataSet();
+            SqlDataAdapter adapter = new SqlDataAdapter("DELETE FROM [dbo].[package] WHERE id = '" + pack.id + "'", c);
+            adapter.Fill(virtualSet, "package");
+            return virtualSet;
+
+            /*bool delete = false;
 
             try
             {
@@ -68,11 +82,19 @@ namespace Library
                 delete = false;
             }
 
-            return delete;
+            return delete;*/
         }
 
-        public bool searchPackage(ENPackage pack)
+        public DataSet searchPackage(ENPackage pack)
         {
+
+            SqlConnection c = new SqlConnection(constring);
+            DataSet virtualSet = new DataSet();
+            SqlDataAdapter adapter = new SqlDataAdapter("SELECT FROM [dbo].[package] WHERE id = '" + pack.id + "'", c);
+            adapter.Fill(virtualSet, "package");
+            return virtualSet;
+
+            /*
             bool found = false;
 
             try
@@ -94,10 +116,18 @@ namespace Library
                 found = false;
             }
 
-            return found;
+            return found;*/
         }
-        public bool updatePricePackage(ENPackage pack)
+        public DataSet updatePricePackage(ENPackage pack)
         {
+
+            SqlConnection c = new SqlConnection(constring);
+            DataSet virtualSet = new DataSet();
+            SqlDataAdapter adapter = new SqlDataAdapter("UPDATE [dbo].[package] WHERE id= '" + pack.id + "' SET price= '" + pack.price + "'", c);
+            adapter.Fill(virtualSet, "package");
+            return virtualSet;
+
+            /*
             bool update = true;
             try
             {
@@ -118,7 +148,7 @@ namespace Library
                 update = false;
             }
 
-            return update;
+            return update;*/
         }
 
         /*SERVICES IN THE PACKAGE

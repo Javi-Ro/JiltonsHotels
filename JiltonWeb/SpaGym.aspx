@@ -15,67 +15,13 @@
             </div>  
             <br />
  
-            <asp:GridView ID="GridView1" runat="server">
-
-            </asp:GridView>
-
-                <div class="spatitulo">
-                    <asp:Label runat="server" align="center" CssClass="infospa1" >Here you will find information about our Spa & Gym services and reservations</asp:Label>
-                </div>
-        
-                <div class="fotopiscispa">
-                    <asp:Image runat="server" src ="assets/spapiscina.jpg" class ="PiscinaSpa"/>
-                </div>
-                <br />
-
-                <div class="piscina1">
-                    <asp:Label runat="server" CssClass="infospa">The relaxing spa's pool - With 50 meters long you will enjoy a quite relaxing experience</asp:Label>
-                    <br />
-                    <br />
-                    <asp:Button ID="ReserSpaPool" runat="server" Text="RESERVE" CssClass="reserva" />
-                </div> 
-                <br />
-                <br />
-
-                <div class="fotojac">
-                    <asp:Image runat="server" src ="assets/jacuzzispa.jpg" class="JacSpa"/>
-                </div>
-                <br />
-
-                <div class="jacuzzi">
-                    <asp:Label runat="server"  CssClass="infospa3">Jacuzzi - With 100 water modes desingned for a comfort time </asp:Label>
-                    <br />
-                    <br />
-                    <asp:Button ID="ReserSpaJac" runat="server" Text="RESERVE" CssClass="reserva"/>
-                </div> 
-                <br />
-
-                <div class="fotomasaje">
-                    <asp:Image runat="server" src="assets/masspa.jpg" class="SpaMas"/> 
-                </div>
-                <br />
-
-                <div class="masajes">
-                    <asp:Label runat="server" CssClass="infospa2">Massages - You make your massage´s choice between more than a hundred, and then just relax</asp:Label>
-                    <br />
-                    <br />
-                    <asp:Button ID="ReserSpaMas" runat="server" Text="RESERVE" CssClass="reserva"/>
-                </div>
-                <br />
-
-                <div class="fototrat">
-                    <asp:Image runat="server" src="assets/masajes.png" class="TratSpa"/>
-                </div>
-                <br />
-
-                <div class="tratamientos"> 
-                    <br />
-                    <asp:Label runat="server" CssClass="infospa4">Anti-stress treatments - Treatments for the people who really need to disconect from the world</asp:Label>
-                    <br />
-                    <br />
-                    <asp:Button ID="ReserSpaTrat" runat="server" Text="RESERVE" CssClass="reserva"/>
-                </div>
-                <br />
+            <asp:GridView ID="GridView1" Font-Underline="false" runat="server" Font-Size="18px" ForeColor="#F3E7E7" GridLines="None" AutoGenerateColumns="false" CellSpacing="14" ShowHeader="false">
+                <Columns>
+                    <asp:ImageField DataImageUrlField="imgURL" ControlStyle-BorderStyle="Inset" ControlStyle-Height="600px" ControlStyle-Width="600px"></asp:ImageField>
+                    <asp:BoundField DataField="description" />
+                    <asp:ButtonField Text="RESERVE" ControlStyle-CssClass="botonya" ControlStyle-BorderColor="#400040" ButtonType="Button" />
+                </Columns>
+            </asp:GridView> 
 
         </div>
 
@@ -85,36 +31,13 @@
             </div>
             <br />
 
-            <div class="gym1">
-                <asp:Label runat="server" CssClass="infospa5">The gym section where you will find one of the best gymnasiums of the city</asp:Label>
-                <br />
-            </div>
-            <br />
-
-            <div class="fotopsicigym">
-                <asp:Image runat="server" src="assets/gympool.jpg" class="GymPool"/>
-            </div>
-            <br />
-
-            <div class="piscina2">
-                <asp:Label runat="server" CssClass="infospa6">Olympic pool - The olympic pool with one of the best quality certificates</asp:Label>
-                <br />
-                <br />
-                <asp:Button ID="ReserGymPool" runat="server" Text="RESERVE" CssClass="reserva"/>
-            </div>
-            <br />
-
-            <div class="fotomaquinas">
-                <asp:Image runat="server" src="assets/gimnasiopesas.jpg" class="GymPesas"/>
-            </div>
-            <br />
-
-            <div class="maquinas">
-                <asp:Label runat="server" CssClass="infospa7">Gymnasium - Machines and staff will make you so easy to get in shape</asp:Label>
-                <br />
-                <br />
-                <asp:Button ID="ReserGymMaq" runat="server" Text="RESERVE" CssClass="reserva"/>
-            </div>
+            <asp:GridView ID="GridView2" runat="server"  Font-Size="18px" ForeColor="#F3E7E7" GridLines="None" AutoGenerateColumns="false" CellSpacing="12" ShowHeader="false">
+                <Columns>
+                    <asp:ImageField DataImageUrlField="imgURL" ControlStyle-BorderStyle="Inset" ControlStyle-Height="600px" ControlStyle-Width="600px"></asp:ImageField>
+                    <asp:BoundField DataField="description" />
+                    <asp:ButtonField Text="RESERVE" ControlStyle-CssClass="botonya" ControlStyle-BorderColor="#400040"/>
+                </Columns>
+            </asp:GridView>
 
         </div>
 
@@ -123,40 +46,46 @@
                 <h1 >ADMINISTRATOR`S PAGE</h1>
             </div>
             <br />
-            <div class="entrada">
-                <div class="textoss">
-                    <asp:Label runat="server" cssClass="letra"> ID: </asp:Label>
-                    <asp:Label runat="server" cssClass="letra"> Description: </asp:Label>
-                    <asp:Label runat="server" cssClass="letra"> Price: </asp:Label>
-                    <asp:Label runat="server" cssClass="letra"> Name: </asp:Label>
-                    <asp:Label runat="server" cssClass="letra"> Max. People: </asp:Label>
-                    <asp:Label runat="server" cssClass="letra"> Image URL: </asp:Label>
-                    <asp:Label runat="server" cssClass="letra"> Type of service: </asp:Label>
-                </div>
-                <div class="box">
-                    <asp:TextBox ID="TextBox1" runat="server" CssClass="texto44"></asp:TextBox>
-                    <asp:TextBox ID="TextBox2" runat="server" CssClass="texto44"></asp:TextBox>
-                    <asp:TextBox ID="TextBox3" runat="server" CssClass="texto44"></asp:TextBox>
-                    <asp:TextBox ID="TextBox4" runat="server" CssClass="texto44"></asp:TextBox>
-                    <asp:TextBox ID="TextBox5" runat="server" CssClass="texto44"></asp:TextBox>
-                    <asp:TextBox ID="TextBox6" runat="server" CssClass="texto44"></asp:TextBox>
-                    <asp:TextBox ID="TextBox7" runat="server" CssClass="texto44"></asp:TextBox>
-                </div>
-            </div>
+
+       <asp:Panel runat="server" ID="adminpage" CssClass="superadmin">
+                    <div class="entrada">
+                        <div class="textoss">
+                            <asp:Label runat="server" cssClass="letra"> ID: </asp:Label>
+                            <asp:Label runat="server" cssClass="letra"> Description: </asp:Label>
+                            <asp:Label runat="server" cssClass="letra"> Price: </asp:Label>
+                            <asp:Label runat="server" cssClass="letra"> Name: </asp:Label>
+                            <asp:Label runat="server" cssClass="letra"> Max. People: </asp:Label>
+                            <asp:Label runat="server" cssClass="letra"> Image URL: </asp:Label>
+                            <asp:Label runat="server" cssClass="letra"> Type of service: </asp:Label>
+                        </div>
+                        <div class="box">
+                            <asp:TextBox ID="TextBox1" runat="server" CssClass="texto44"></asp:TextBox>
+                            <asp:TextBox ID="TextBox2" runat="server" CssClass="texto44"></asp:TextBox>
+                            <asp:TextBox ID="TextBox3" runat="server" CssClass="texto44"></asp:TextBox>
+                            <asp:TextBox ID="TextBox4" runat="server" CssClass="texto44"></asp:TextBox>
+                            <asp:TextBox ID="TextBox5" runat="server" CssClass="texto44"></asp:TextBox>
+                            <asp:TextBox ID="TextBox6" runat="server" CssClass="texto44"></asp:TextBox>
+                            <asp:TextBox ID="TextBox7" runat="server" CssClass="texto44"></asp:TextBox>
+                        </div>
+                    </div>
                 
-            <div class="botones">
-                <asp:Button CssClass="create" ID="create" runat="server" Text="Create Service" />
-                <asp:Button CssClass="delete" ID="delete" runat="server" Text="Delete Service" />
-                <asp:Button CssClass="update" ID="update" runat="server" Text="Update Service" />
-            </div>
+                    <div class="botones">
+                        <asp:Button CssClass="create" ID="create" runat="server" Text="Create Service" />
+                        <asp:Button CssClass="delete" ID="delete" runat="server" Text="Delete Service" />
+                        <asp:Button CssClass="update" ID="update" runat="server" Text="Update Service" />
+                    </div>
 
-            <div class="tutle">
-                <p> <b>Here the administrator will update the service`s page</b></p>
-            </div>
-            <br />
-        </div>
+                    <div class="tutle">
+                        <p> <b>Here the administrator will update the service`s page</b></p>
+                    </div>
+                    <br />
+                </div>
+            </asp:Panel>     
+                
+        
 
+       </div>
 
-    </div>
+        
             
 </asp:Content>

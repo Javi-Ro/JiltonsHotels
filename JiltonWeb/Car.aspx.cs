@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -8,10 +9,34 @@ using Library;
 
 namespace JiltonWeb
 {
+
+
+    //POSIBLES MEJORAS: Cuando borro o updateo, si es uno no existente no dará problemas (como debe de ser) pero en lugar de
+    // mostrar que ha ido bien, podria mostrar algo tipo, no hay coche que actualizar o borrar :))
+
     public partial class Car : System.Web.UI.Page
     {
+
+        ENCar car = new ENCar("","","",0,"");
+        DataSet d = new DataSet();
+              
+
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if (!Page.IsPostBack)
+            {
+                d = car.listAllCars();
+                GridView1.DataSource = d;
+                GridView1.DataBind();
+            }
+
+            if (Session["id"] != null && Session["id"].ToString() == "admin")
+            {
+
+                //backgroundR.CssClass = "AdminbackgroundR";
+                //AdminBlurryBackground.CssClass = "AdminBlurryBackground";
+            }
 
         }
 
@@ -20,16 +45,14 @@ namespace JiltonWeb
             if(LicensePlateData.Text != "" && BrandData.Text != "" && ModelData.Text != "" && PriceData.Text != "" && DescriptionData.Text != "")
             {
                 ENCar car = new ENCar(LicensePlateData.Text, BrandData.Text, ModelData.Text, int.Parse(PriceData.Text), DescriptionData.Text);
-
-                if (car.createCar())
+                
+                if (car.createCar() != null)
                 {
                     output.Text = "Car created successfuly!";
                 }
                 else
                 {
-                    //FALTA COMPROBAR QUE NO EXISTA ANTES DE INCLUIRLO O LO HACE LA DB?
-                    output.Text = car.LicensePlate + " " + car.Brand + " " + car.Model + " " + car.Description + " " + car.Price;
-                    //output.Text = "Car already created or couldn't create it";
+                    output.Text = "Car already created or couldn't create it";
                 }
 
             }
@@ -44,15 +67,15 @@ namespace JiltonWeb
             if (LicensePlateData.Text != "" && (PriceData.Text != "" || DescriptionData.Text != ""))
             {
 
-                //Esto no se si esta bien porque no deberia de cambiar nada mas que el precio o descripcion si estos no son nulos :))))))
-                ENCar car = new ENCar(LicensePlateData.Text, BrandData.Text, ModelData.Text, int.Parse(PriceData.Text), DescriptionData.Text);
+                ENCar car;
 
                 if (DescriptionData.Text != "" && PriceData.Text != "")
                 {
+                    car = new ENCar(LicensePlateData.Text, BrandData.Text, ModelData.Text, int.Parse(PriceData.Text), DescriptionData.Text);
 
-                    if (car.updateDescriptionCar(LicensePlateData.Text) && car.updatePriceCar(int.Parse(PriceData.Text)))
+                    if (car.updateDescriptionCar(DescriptionData.Text) != null  && car.updatePriceCar(int.Parse(PriceData.Text)) != null)
                     {
-                        output.Text = "Car updated successfuly!";
+                        output.Text = "Car description and price updated successfuly!";
                     }
                     else
                     {
@@ -60,10 +83,38 @@ namespace JiltonWeb
                     }
 
                 }
+                else if (DescriptionData.Text != "")
+                {
+                    //This means we only are going to update the description, so we must put 0 on price because "" can int.Parse
+                    car = new ENCar(LicensePlateData.Text, BrandData.Text, ModelData.Text, 0, DescriptionData.Text);
 
-                
+                    if (car.updateDescriptionCar(DescriptionData.Text) != null)
+                    {
+                        output.Text = "Car description updated successfuly!";
+                    }
+                    else
+                    {
+                        output.Text = "This car is not on the database";
+                    }
+                }
+                else if (PriceData.Text != "")
+                {
+                    car = new ENCar(LicensePlateData.Text, BrandData.Text, ModelData.Text, int.Parse(PriceData.Text), DescriptionData.Text);
 
-
+                    if (car.updatePriceCar(int.Parse(PriceData.Text)) != null)
+                    {
+                        output.Text = "Car price updated successfuly!";
+                    }
+                    else
+                    {
+                        output.Text = "This car is not on the database";
+                    }
+                }
+                else
+                {
+                    //Just in case
+                    output.Text = "Unexpected error";
+                }
             }
             else
             {
@@ -76,7 +127,8 @@ namespace JiltonWeb
             if (LicensePlateData.Text != "")
             {
                 ENCar car;
-                //We put this because if price is empty it booom and buaaa dont work wow!
+
+                //I create this if statement because  price is not needed to delete so there would be empty string, and it cant int.Parse.
                 if(PriceData.Text == "")
                 {
                     car = new ENCar(LicensePlateData.Text, BrandData.Text, ModelData.Text, 0, DescriptionData.Text);
@@ -86,19 +138,24 @@ namespace JiltonWeb
                     car = new ENCar(LicensePlateData.Text, BrandData.Text, ModelData.Text, int.Parse(PriceData.Text), DescriptionData.Text);
                 }
 
-                if (car.deleteCar())
+                
+                if (car.deleteCar() != null)
                 {
+
                     output.Text = "Deleted car successfuly!";
                 }
                 else
                 {
                     output.Text = car.LicensePlate + " couldn't be deleted";
                 }
+
             }
             else
             {
-                output.Text = "Not enough information to delete the user";
+                output.Text = "Not enough information to delete the car";
             }
+
         }
+
     }
 }

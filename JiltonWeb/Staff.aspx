@@ -108,7 +108,7 @@
                     <asp:TextBox ID ="EmailData" CssClass="textboxadmin" runat ="server" />
                     <asp:TextBox ID ="NameData" CssClass="textboxadmin" runat ="server" />
 
-                    <asp:DropDownList ID="TypeList" CssClass="textboxadmin" runat="server">
+                    <asp:DropDownList ID="TypeData" CssClass="textboxadmin" runat="server">
                       <asp:ListItem Value="Teacher"> Teacher </asp:ListItem>
                       <asp:ListItem Value="Trainer"> Trainer </asp:ListItem>
                       <asp:ListItem Value="Massagist"> Massagist </asp:ListItem>
