@@ -86,3 +86,9 @@ Rhubarb with lychee and roses', 'Golden Opulence Sundae.
 Black beer meringue', 180);
 
 -- END OF RESTAURANT INSERTS --
+
+-- ADMIN USER --
+
+insert into [dbo].[uuser]([id], [password], [name], [birthday], [email], [address]) values('admin', 'admin', 'admin', '1900/01/01', 'admin', 'admin');
+
+-- END ADMIN USER --
