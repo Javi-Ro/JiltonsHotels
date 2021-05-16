@@ -1,0 +1,88 @@
+-- RESTAURANT INSERTS --
+INSERT INTO [dbo].[Restaurant]([dailyMenu], [appetizers],[mains], [desserts],[price]) VALUES('2021-05-13', 'Trout tartare
+
+Suquet of red prawns and red mullet
+
+White asparagus with cod tripe', 'Marinated salmon with orange blossom and orange flowers
+
+Green rice with arugula and manchego cheese
+
+Rhubarb with lychee and roses.', 'Golden Opulence Sundae.
+
+Black beer meringue', 185);
+
+INSERT INTO [dbo].[Restaurant]([dailyMenu], [appetizers],[mains], [desserts],[price]) VALUES('2021-05-14', 'Solid mojito
+
+Cod foam with honey, Orange and olive salad
+
+Cream of rice pudding and toffee', 'Suffolded moray stuffed with estuary sea bass belly
+
+Wagyu and glazed eel ravioli
+
+Sea ​​bream marinated in Japanese soybeans and cooked Yakitori style with smoked ​​sauce', 'Golden Opulence Sundae
+
+Sorbet and creamy chocolate, brownie and caramelized cocoa grue', 210);
+
+INSERT INTO [dbo].[Restaurant]([dailyMenu], [appetizers],[mains], [desserts],[price]) VALUES('2021-05-15', 'Grilled octopus covered in ink sauce
+
+Green gazpacho with peppers, clams, cucumber and passion fruit
+
+Cream of rice pudding and toffee', 'Salmon with rice milk, almond milk tofu, pickled lychees and black rice vinegar jelly
+
+Coconut turmeric spiral roasted and pearl calamari crunch
+
+Sea fruits and algae salad, plankton and shrimp consommé', 'Golden Opulence Sundae
+
+Cactus with lime, tequila and green leaves', 190);
+
+INSERT INTO [dbo].[Restaurant]([dailyMenu], [appetizers],[mains], [desserts],[price])VALUES('2021-05-16', 'Native Oysters & Almus White Caviar
+
+Slow-cooked Duck Egg, Iberico Ham, Spring White Truffle
+
+Confit Foie Gras, Smoked Eel, Granny Smith Apple', 'Saffron Risotto, Carabineros Prawns, Gold leaf
+
+Wagyu Beef with Fermented Celeriac and Silver leaf (Served on Dry Ice)
+
+Braised Beef Cheeks with Potato Mousseline', 'Golden Opulence Sundae.
+
+Dark chocolate cylinder and smoked hazelnut praline', 250);
+
+
+INSERT INTO [dbo].[Restaurant]([dailyMenu], [appetizers],[mains], [desserts],[price])VALUES('2021-05-17', 'Steamed prawn with seafood foam
+
+Slow-cooked Duck Egg, Iberico Ham, Spring White Truffle
+
+Foie gras, pepper ice cream and dried fruit cake', 'Tartar-marine ceviche, crunchy trotters, celery and apple
+
+Mushroom and truffle false risotto, cauliflower marrow, field and sea asparagus.
+
+roasted Wagyu with anise, soy and ginger, apple cider and black garlic.', 'Golden Opulence Sundae.
+
+Cupcake with frozen and roasted fruits and vegetables, toasted almond meringue.', 175);
+
+
+INSERT INTO [dbo].[Restaurant]([dailyMenu], [appetizers],[mains], [desserts],[price]) VALUES('2021-05-18', 'Red Apple and bacon strudel
+
+Suquet of red prawns and red mullet
+
+White asparagus with cod tripe', 'Crunchy chickpeas and fennel seeds
+
+Potato ravioli with apple and blue cheese
+
+Apple and celery nectar, pea puree, seaweed and rosemary ice cream and aerated milk.', 'Golden Opulence Sundae.
+
+Yogurt with citrus and raspberry', 175);
+
+INSERT INTO [dbo].[Restaurant]([dailyMenu], [appetizers],[mains], [desserts],[price]) VALUES('2021-05-19', 'Trout tartare
+
+Suquet of red prawns and red mullet
+
+White asparagus with cod tripe', 'Marinated salmon with orange blossom and orange flowers
+
+Green rice with arugula and manchego cheese
+
+Rhubarb with lychee and roses', 'Golden Opulence Sundae.
+
+Black beer meringue', 180);
+
+-- END OF RESTAURANT INSERTS --

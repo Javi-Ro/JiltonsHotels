@@ -97,9 +97,13 @@ namespace Library
             return true;
         }
 
-        public List<ENPackage> getPackages(ENBooking booking)
+        public DataSet getPackages(ENBooking booking)
         {
-            return new List<ENPackage>();
+            SqlConnection c = new SqlConnection(constring);
+            DataSet virtualSet = new DataSet();
+            SqlDataAdapter adapter = new SqlDataAdapter("select name, price from package p, bookPackage bp where bp.idPackage=p.id and idBooking=" + booking.ID, c);
+            adapter.Fill(virtualSet, "booking");
+            return virtualSet;
         }
 
         // Methods for discounts
@@ -124,9 +128,13 @@ namespace Library
             return true;
         }
 
-        public List<ENCar> getCars(ENBooking booking)
+        public DataSet getCars(ENBooking booking)
         {
-            return new List<ENCar>();
+            SqlConnection c = new SqlConnection(constring);
+            DataSet virtualSet = new DataSet();
+            SqlDataAdapter adapter = new SqlDataAdapter("select brand, model, price from car where bookingNumber=" + booking.ID, c);
+            adapter.Fill(virtualSet, "booking");
+            return virtualSet;
         }
     }
 }

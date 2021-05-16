@@ -21,69 +21,18 @@
                             <Panes>
                                 <ajaxToolkit:AccordionPane ID="AccordionPane1" runat="server" HeaderCssClass="AccordionHeader" ContentCssClass="AccordionContent">
                                     <Header>
-                                        Hola
+                                        SPA
                                     </Header>
                                     <Content>
-                                        <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1" DataKeyNames="id">
-                                            <EditItemTemplate>
-                                                <span style="">id:
-                                                    <asp:Label Text='<%# Eval("id") %>' runat="server" ID="idLabel1" /><br />
-                                                    nombre:
-                                                    <asp:TextBox Text='<%# Bind("nombre") %>' runat="server" ID="nombreTextBox" /><br />
-                                                    nif:
-                                                    <asp:TextBox Text='<%# Bind("nif") %>' runat="server" ID="nifTextBox" /><br />
-                                                    edad:
-                                                    <asp:TextBox Text='<%# Bind("edad") %>' runat="server" ID="edadTextBox" /><br />
-                                                    <asp:Button runat="server" CommandName="Update" Text="Actualizar" ID="UpdateButton" /><asp:Button runat="server" CommandName="Cancel" Text="Cancelar" ID="CancelButton" /><br />
-                                                    <br />
-                                                </span>
-                                            </EditItemTemplate>
-                                            <EmptyDataTemplate>
-                                                <span>No se han devuelto datos.</span>
-                                            </EmptyDataTemplate>
-                                            <InsertItemTemplate>
-                                                <span style="">nombre:
-                                                    <asp:TextBox Text='<%# Bind("nombre") %>' runat="server" ID="nombreTextBox" /><br />
-                                                    nif:
-                                                    <asp:TextBox Text='<%# Bind("nif") %>' runat="server" ID="nifTextBox" /><br />
-                                                    edad:
-                                                    <asp:TextBox Text='<%# Bind("edad") %>' runat="server" ID="edadTextBox" /><br />
-                                                    <asp:Button runat="server" CommandName="Insert" Text="Insertar" ID="InsertButton" /><asp:Button runat="server" CommandName="Cancel" Text="Borrar" ID="CancelButton" /><br />
-                                                    <br />
-                                                </span>
-                                            </InsertItemTemplate>
-                                            <ItemTemplate>
-                                                <span style="">id:
-                                                    <asp:Label Text='<%# Eval("Id") %>' runat="server" ID="idLabel" /><br />
-                                                    nombre:
-                                                    <asp:Label Text='<%# Eval("Nombre") %>' runat="server" ID="nombreLabel" /><br />
-                                                    nif:
-                                                    <asp:Label Text='<%# Eval("Nif") %>' runat="server" ID="nifLabel" /><br />
-                                                    edad:
-                                                    <asp:Label Text='<%# Eval("Edad") %>' runat="server" ID="edadLabel" /><br />
-                                                    <asp:Button runat="server" Text="holaa"/>
-                                                    <br />
-                                                    
-                                                </span>
-                                            </ItemTemplate>
-                                            <LayoutTemplate>
-                                                <div runat="server" id="itemPlaceholderContainer" style=""><span runat="server" id="itemPlaceholder" /></div>
-                                                <div style="">
-                                                </div>
-                                            </LayoutTemplate>
-                                            <SelectedItemTemplate>
-                                                <span style="">id:
-                                                    <asp:Label Text='<%# Eval("id") %>' runat="server" ID="idLabel" /><br />
-                                                    nombre:
-                                                    <asp:Label Text='<%# Eval("nombre") %>' runat="server" ID="nombreLabel" /><br />
-                                                    nif:
-                                                    <asp:Label Text='<%# Eval("nif") %>' runat="server" ID="nifLabel" /><br />
-                                                    edad:
-                                                    <asp:Label Text='<%# Eval("edad") %>' runat="server" ID="edadLabel" /><br />
-                                                    <br />
-                                                </span>
-                                            </SelectedItemTemplate>
-                                        </asp:ListView>
+                                         <asp:GridView ID="GridViewServices" CssClass="grid" runat="server" ForeColor="#333333" GridLines="None" AutoGenerateColumns="false" CellSpacing="8" ShowHeader="False" Width="100%" RowStyle-HorizontalAlign="Left"
+                                            OnRowCommand="GridView_ButtonCommand">
+                                            <Columns>
+                                                <asp:BoundField DataField="description" ItemStyle-Width="150px"  ItemStyle-Font-Bold="true" />
+                                                <asp:BoundField DataField="serviceDay" DataFormatString="{0:M}" ItemStyle-Font-Italic="true" ItemStyle-Width="50px" />
+                                                <asp:BoundField DataField="price" DataFormatString="{0:C}" ItemStyle-Width="80px" />
+                                                <asp:ButtonField Text="Delete" ButtonType="Link" ControlStyle-CssClass="GridButton"></asp:ButtonField>
+                                            </Columns>
+                                        </asp:GridView>
                                     </Content>
                                 </ajaxToolkit:AccordionPane>
                             </Panes>

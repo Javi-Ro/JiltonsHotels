@@ -17,7 +17,7 @@ namespace Library
         public int ID
         {
             get { return _id; }
-            set { _id = value; }  // Esto es private
+            set { _id = value; }  // Esto es private -------------------------------------------------------------------
         }
 
 
@@ -33,7 +33,7 @@ namespace Library
         public IntervalDate date
         {
             get { return _date; }
-            private set { _date = value; }
+            set { _date = value; } // ESTO ES PRIVATE --------------------------------------------------------------------
         }
 
         
@@ -152,7 +152,7 @@ namespace Library
             return booking.cancelPackage(this, package);
         }
 
-        public List<ENPackage> getPackages(ENPackage package)
+        public DataSet getPackages()
         {
             CADBooking booking = new CADBooking();
             return booking.getPackages(this);
@@ -193,7 +193,7 @@ namespace Library
             return booking.deleteCar(this, car);
         }
 
-        public List<ENCar> getCars()
+        public DataSet getCars()
         {
             CADBooking booking = new CADBooking();
             return booking.getCars(this);
@@ -202,7 +202,7 @@ namespace Library
         // Auxiliary methods
         public int calculatePrice() // Returns the total cost of the booking (taking in account the possible discount code)
         {
-            return 0;
+            return 1000;
         }
     }
 }

@@ -48,7 +48,7 @@ body {
 }
 
 .nav-enlace:hover {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
     cursor: pointer;
     transition: .3s ease all;
@@ -74,13 +74,82 @@ body {
     justify-content: center;
     align-items: center;
     height: 100%;
+    position: relative;
 }
 
 .Register:hover {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
     cursor: pointer;
     transition: .3s ease all;
+}
+
+.hideRegisterLogin {
+    display: none;
+}
+
+.dropdownUser {
+    display: inline-block;
+}
+
+.dropdown-contentUser {
+    display: block;
+    visibility: hidden;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.2s linear;
+}
+
+.dropdown-contentUser .dropdown-Buttons {
+    color: black;
+    padding: 15px 16px;
+    border: none;
+    text-decoration: none;
+    background-color: transparent;
+    position: absolute;
+    width: 100%;
+    display: block;
+    font-size: 16px;
+    font-family: 'Karla', sans-serif;
+    transition: .5s ease all;
+}
+
+.dropdown-contentUser .dropdown-Buttons:hover {
+    cursor: pointer;
+    background: #515654;
+    color: white;
+    transition: .5s ease all;
+}
+
+.dropdownUser:hover .showUser {
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .5s ease all;
+}
+
+.dropdownUser:hover .dropdown-contentUser {
+    visibility: visible;
+    opacity: 1;
+}
+
+.hideDropdownUser {
+    display: none;
+}
+
+.showUser {
+    margin: 15px 25px;
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    transition: .5s ease all;
+    background: none;
+    border: none;
+    font-family: 'Karla', sans-serif;
 }
 
 /* ##### BOOKING SELECTOR ##### */

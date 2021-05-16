@@ -28,9 +28,16 @@ namespace Library
 
         public Date(int day, int month, int year)
 		{
-
+            this.day = day;
+            this.month = month;
+            this.year = year;
 		}
-	}
+
+        public override string ToString()
+        {
+            return day + "-" + month + "-" + year;
+        }
+    }
 
     public class IntervalDate
     {
@@ -50,7 +57,8 @@ namespace Library
 
         public IntervalDate(Date start, Date end)
         {
-
+            this.startDate = start;
+            this.endDate = end;
         }
     }
 }

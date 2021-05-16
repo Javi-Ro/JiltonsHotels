@@ -15,7 +15,7 @@ public class CADMenu
     {
         bool leer = false;
         SqlConnection conn = null;
-        string comando = "SELECT * FROM restaurant WHERE dailyMenu = CONVERT(varchar, '" + menu.fecha + "', 111)";
+        string comando = "SELECT * FROM restaurant WHERE dailyMenu = CONVERT(varchar, '" + menu.fecha + "', 101)";
         
         try
         {
@@ -89,6 +89,7 @@ public class CADMenu
 
     public bool update(ENMenu menu)
     {
+        DateTime aux = Convert.ToDateTime(menu.fecha);
         SqlConnection conn = null;
         String comando = "Update [dbo].[Restaurant] SET";
         bool coma = false;
@@ -129,14 +130,15 @@ public class CADMenu
             comando = comando + " price=" + menu.price.ToString();
         }
 
-        comando = comando + " WHERE dailyMenu = CONVERT(varchar, '" + menu.fecha +"', 103)";
-        menu.dessert = comando;
+        comando = comando + " WHERE dailyMenu = @aux";
+
 
         try
         {
             conn = new SqlConnection(constring);
             conn.Open();
             SqlCommand cmd = new SqlCommand(comando, conn);
+            cmd.Parameters.AddWithValue("@aux", aux);
             cmd.ExecuteNonQuery();      //devuelve la cantidad de registros afectados
             return true;
         }
@@ -160,15 +162,16 @@ public class CADMenu
     {
         
         SqlConnection conn = null;
-        
+        DateTime aux = Convert.ToDateTime(menu.fecha);
 
-        String comando = "Delete from [dbo].[Restaurant] where dailyMenu = CONVERT(varchar, '" + menu.fecha + "', 103)";
-        menu.dessert = comando;
+        String comando = "Delete from [dbo].[Restaurant] where dailyMenu = @aux";
+        
         try
         {
             conn = new SqlConnection(constring);
             conn.Open();
             SqlCommand cmd = new SqlCommand(comando, conn);
+            cmd.Parameters.AddWithValue("@aux", aux);
             cmd.ExecuteNonQuery();
             return true;
         }
