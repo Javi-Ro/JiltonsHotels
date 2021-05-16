@@ -53,7 +53,7 @@
                 </asp:Panel>
 
                 <asp:Panel runat="server" ID="UserContainer" CssClass="RegisterContainer">
-                    <asp:Panel ID="dropdownUser" runat="server">
+                    <asp:Panel ID="dropdownUser" runat="server" CssClass="dropdownUser">
                         <asp:Button runat="server" ID="UserButton" CssClass="showUser" Text="MY ACCOUNT" OnClientClick="this.disabled=true;"/>
                       <div class="dropdown-contentUser">
                         <asp:Button runat="server" ID="LogOutButton" CssClass="dropdown-Buttons" Text="LOG OUT" OnClick="LogOutUser"/>
