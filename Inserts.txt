@@ -92,7 +92,6 @@ Black beer meringue', 180);
 insert into [dbo].[uuser]([id], [password], [name], [birthday], [email], [address]) values('admin', 'admin', 'admin', '1900/01/01', 'admin', 'admin');
 
 -- END ADMIN USER --
-
 -- CAR INSERTS --
 
 Insert INTO [dbo].[car] ([licensePlate],[brand],[model],[description],[price],[imgURL]) VALUES
@@ -102,7 +101,7 @@ Insert INTO [dbo].[car] ([licensePlate],[brand],[model],[description],[price],[i
 Insert INTO [dbo].[car] ([licensePlate],[brand],[model],[description],[price],[imgURL]) VALUES
 	('54023BTC', 'Tesla', 'Roadster', 'The Tesla Roadster is an all-electric battery-powered four-seater sports car concept in development by Tesla, Inc. Tesla has claimed that it will be capable of 0 to 60 mph (0 to 97 km/h) in 1.9 seconds, which would be quicker than any street legal production. This model is not for sale yet.',9186,'assets/coche_2.jpg');
 Insert INTO [dbo].[car] ([licensePlate],[brand],[model],[description],[price],[imgURL]) VALUES
-	('7777CRR', 'Opel', 'Corsa', 'The most humble option, classical power for our classical guests, where luxury is not the most important. Just enjoy the ride!',930,'assets/coche_1.jpg');
+	('7777CRR', 'Opel', 'Corsa', 'The most humble option, classical power for our classical guests, where luxury is not the most important. Just enjoy the ride!',930,'assets/coche_7.jpg');
 Insert INTO [dbo].[car] ([licensePlate],[brand],[model],[description],[price],[imgURL]) VALUES
 	('9868DOT', 'Mercedes', 'Maybach 6', 'The Vision Mercedes-Maybach 6, represents the ultimate in contemporary luxury. It is hot and cool”, states Gorden Wagener, Chief Design Officer Daimler AG. The output of the drive system is 550 kW (750 PS), a high-performance combined with the most prestigius designs',8789,'assets/coche_4.jpg');
 
@@ -110,13 +109,13 @@ Insert INTO [dbo].[car] ([licensePlate],[brand],[model],[description],[price],[i
 
 -- STAFF INSERTS --
 
-Insert INTO [dbo].[staff] ([email],[name],[type],[description]) VALUES
-	('cr7comandante@jilton.es','Cristiano Ronaldo','trainer','This is Cristiano Ronaldo, also known as "El Bicho", "CR7" and "Mi comandante". After a long carrer at Lisboa, London, Madrid and Turín, he wanted to leave football to keep improving his physical knowledge. After 6 years of studying at University of Massachusetts, Cristiano Ronaldo was recluited by Jilton Hotel');
-Insert INTO [dbo].[staff] ([email],[name],[type],[description]) VALUES
-	('davidprofe@jilton.es','David Calle','teacher','This is David Calle. He is one of the most popular world-wide reconiced, he used to teach on platforms suchs as YouTube. Recently he said "I am so glad being able to join Jilton Hotels, I always wanted to work in the most important Hotel in the country. I will do everything I can in order to teach your childs!"');
-Insert INTO [dbo].[staff] ([email],[name],[type],[description]) VALUES
-	('esterexposito@jilton.es','Ester Expósito','guide','This is Ester Exposito. In the last years she became the most famous Spanish women among social networks after filming many popular Netflix Series such as Elite. Once she reached the peak of her carrer, in an interview on La Resistencia she said that when she was a child always wanted to became a tourist guide in Jilton Hotel. We are proud of announcing her as the official guide!');
-Insert INTO [dbo].[staff] ([email],[name],[type],[description]) VALUES
-	('leodios@jilton.es','Leo Messi','massagist','This is Leo Messi. After winning almost everything in his football carrer, he started a superior cycle about administration and company management. Finally ended with a degree on massage therapist. When he joined Jilton Staff he affirmed: "Eventhough I am the best player ever on football history, I want to keep developing myself in other topics, and being part of Jilton Staff is always a pleasure"');
+Insert INTO [dbo].[staff] ([email],[name],[type],[description],[imgURL]) VALUES
+	('cr7comandante@jilton.es','Cristiano Ronaldo','trainer','This is Cristiano Ronaldo, also known as "El Bicho", "CR7" and "Mi comandante". After a long carrer at Lisboa, London, Madrid and Turín, he wanted to leave football to keep improving his physical knowledge. After 6 years of studying at University of Massachusetts, Cristiano Ronaldo was recluited by Jilton Hotel','assets/trainer.jpg');
+Insert INTO [dbo].[staff] ([email],[name],[type],[description],[imgURL]) VALUES
+	('davidprofe@jilton.es','David Calle','teacher','This is David Calle. He is one of the most popular world-wide reconiced, he used to teach on platforms suchs as YouTube. Recently he said "I am so glad being able to join Jilton Hotels, I always wanted to work in the most important Hotel in the country. I will do everything I can in order to teach your childs!"','assets/teacher.jpg');
+Insert INTO [dbo].[staff] ([email],[name],[type],[description],[imgURL]) VALUES
+	('esterexposito@jilton.es','Ester Expósito','guide','This is Ester Exposito. In the last years she became the most famous Spanish women among social networks after filming many popular Netflix Series such as Elite. Once she reached the peak of her carrer, in an interview on La Resistencia she said that when she was a child always wanted to became a tourist guide in Jilton Hotel. We are proud of announcing her as the official guide!','assets/guide.jpg');
+Insert INTO [dbo].[staff] ([email],[name],[type],[description],[imgURL]) VALUES
+	('leodios@jilton.es','Leo Messi','massagist','This is Leo Messi. After winning almost everything in his football carrer, he started a superior cycle about administration and company management. Finally ended with a degree on massage therapist. When he joined Jilton Staff he affirmed: "Eventhough I am the best player ever on football history, I want to keep developing myself in other topics, and being part of Jilton Staff is always a pleasure"','assets/massagist.jpg');
 	
 -- END STAFF INSERTS --
