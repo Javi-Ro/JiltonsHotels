@@ -185,13 +185,27 @@ namespace JiltonWeb
             if (String.IsNullOrEmpty(priceTB.Text))
             {
                 ErrorPrice.Visible = true;
+                ErrorPrice.Text = "This field must be known";
             }
             
-            if(!String.IsNullOrEmpty(DateTB.Text) && !String.IsNullOrEmpty(appetizersTB.Text) && !String.IsNullOrEmpty(mainTB.Text) && !String.IsNullOrEmpty(dessertTB.Text) && !String.IsNullOrEmpty(priceTB.Text)){
+
+            float precio = 0;       //we assume that the price of a menu will never be 0
+
+            try
+            {
+                precio = float.Parse(priceTB.Text);
+            }
+            catch (Exception)
+            {
+                ErrorPrice.Visible = true;
+                ErrorPrice.Text = "Price must be a number";
+            }
+
+            if (precio != 0 && !String.IsNullOrEmpty(DateTB.Text) && !String.IsNullOrEmpty(appetizersTB.Text) && !String.IsNullOrEmpty(mainTB.Text) && !String.IsNullOrEmpty(dessertTB.Text) && !String.IsNullOrEmpty(priceTB.Text)){
                 string[] aux = new string[3];
                 aux = DateTB.Text.Split('/');
                 string fechaFormateada = aux[2] + "/" + aux[1] + "/" + aux[0];
-                ENMenu menu = new ENMenu(mainTB.Text, dessertTB.Text, appetizersTB.Text, float.Parse(priceTB.Text), fechaFormateada);
+                ENMenu menu = new ENMenu(mainTB.Text, dessertTB.Text, appetizersTB.Text, precio, fechaFormateada);
                 
                 if (menu.create())
                 {
@@ -217,31 +231,30 @@ namespace JiltonWeb
                 ErrorDate.Visible = true;
             }
 
-            if (!String.IsNullOrEmpty(DateTB.Text))
+            else
             {
                 string[] aux = new string[3];
                 aux = DateTB.Text.Split('/');
                 string fechaFormateada = aux[2] + "/" + aux[1] + "/" + aux[0];
                 float price = 0;
-                try
+                 
+                if (String.IsNullOrEmpty(priceTB.Text))
                 {
-                    
-                    if (String.IsNullOrEmpty(priceTB.Text))
-                    {
-                        price = 0;
-                    }
-                    else
+                    price = 0;
+                }
+                else
+                {
+                    try
                     {
                         price = float.Parse(priceTB.Text);
                     }
-                    
+                    catch (Exception)
+                    {
+                        ErrorPrice.Visible = true;
+                        ErrorPrice.Text = "Price must be a number";
+                    }
                 }
-                catch (Exception)
-                {
-                    ErrorPrice.Visible = true;
-                    ErrorPrice.Text = "Price must be a number";
-                }
-
+                   
                 ENMenu menu = new ENMenu(mainTB.Text, dessertTB.Text, appetizersTB.Text, price, fechaFormateada);
 
                 if ((!String.IsNullOrEmpty(appetizersTB.Text) || !String.IsNullOrEmpty(mainTB.Text) || !String.IsNullOrEmpty(dessertTB.Text) || !String.IsNullOrEmpty(priceTB.Text)))      //at least one field must be known
@@ -294,6 +307,8 @@ namespace JiltonWeb
                 else
                 {
                     Error.Visible = true;
+                    //DateTime aux2 = Convert.ToDateTime(menu.fecha);
+                    //Error.Text = aux2.ToString();
                     Error.Text = "Could not delete menu";
                 }
             }

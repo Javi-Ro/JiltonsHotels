@@ -89,6 +89,7 @@ public class CADMenu
 
     public bool update(ENMenu menu)
     {
+        DateTime aux = Convert.ToDateTime(menu.fecha);
         SqlConnection conn = null;
         String comando = "Update [dbo].[Restaurant] SET";
         bool coma = false;
@@ -129,14 +130,15 @@ public class CADMenu
             comando = comando + " price=" + menu.price.ToString();
         }
 
-        comando = comando + " WHERE dailyMenu = CONVERT(varchar, '" + menu.fecha +"', 101)";
-        menu.dessert = comando;
+        comando = comando + " WHERE dailyMenu = @aux";
+
 
         try
         {
             conn = new SqlConnection(constring);
             conn.Open();
             SqlCommand cmd = new SqlCommand(comando, conn);
+            cmd.Parameters.AddWithValue("@aux", aux);
             cmd.ExecuteNonQuery();      //devuelve la cantidad de registros afectados
             return true;
         }

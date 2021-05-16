@@ -25,7 +25,7 @@
                        </asp:label>
                    </div>
                     <br />
-                    <asp:Image id="imagen" runat="server" ImageUrl="assets/jiltonLogo2.png" width="25%" visible="false" style="position:absolute; left:50%; transform:translateX(-50%);"/>
+                    <asp:Image id="imagen" runat="server" ImageUrl="assets/jiltonLogo2.png" width="290px" visible="false" style="position:absolute; left:50%; transform:translateX(-50%);"/>
                       
                                      
                     <div class ="subTitle" runat="server">
