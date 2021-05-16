@@ -18,15 +18,21 @@ namespace JiltonWeb
     public partial class Booking : System.Web.UI.Page
     {
         ENBooking booking = new ENBooking();
+        IntervalDate dates = new IntervalDate(new Date(1, 1, 2021), new Date(3, 1, 2021));
         DataSet d = new DataSet();
 
         protected void Page_Load(object sender, EventArgs e)
         {
             booking.ID = 1;
+            booking.date = dates; 
             if (!Page.IsPostBack)
             {
                 // Add payment methods
                 PaymentList.Items.Add("Debit/Credit Card");
+
+                // Booking dates
+                EntryDateLabel.Text = booking.date.startDate.ToString();
+                DepartureDateLabel.Text = booking.date.endDate.ToString();
 
                 // Filling grid views of the booking resume
                 d = booking.getServices();
@@ -37,6 +43,16 @@ namespace JiltonWeb
                 GridViewRooms.DataSource = d;
                 GridViewRooms.DataBind();
 
+                d = booking.getCars();
+                GridViewCars.DataSource = d;
+                GridViewCars.DataBind();
+
+                d = booking.getPackages();
+                GridViewPackages.DataSource = d;
+                GridViewPackages.DataBind();
+
+                // Total price
+                TotalPriceLabel.Text = booking.calculatePrice().ToString() + " €";
             }
         }
 
@@ -45,12 +61,7 @@ namespace JiltonWeb
 
         }
 
-        protected virtual void OnTextChanged_Card(object sender, EventArgs e)
-        {
-            CardNumber.Text = "888888888";
-        }
-
-        protected virtual void GridView_ButtonCommand(Object sender, GridViewCommandEventArgs e)
+        protected virtual void GridView_ButtonCommand(object sender, GridViewCommandEventArgs e)
         {
             
         }
