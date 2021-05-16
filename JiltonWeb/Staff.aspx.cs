@@ -24,6 +24,15 @@ namespace JiltonWeb
                 GridView2.DataBind();
             }
 
+            if (Session["id"] != null && Session["id"].ToString() == "admin")
+            {
+                panelAdmin.CssClass = "admin";
+            }
+            else
+            {
+                panelAdmin.CssClass = "novisibleAdmin";
+            }
+
 
         }
 

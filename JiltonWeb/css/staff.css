@@ -62,7 +62,7 @@ h1 {
 .admin {
     padding: 60px;
     position: relative;
-    border: 2px solid white;
+    border: 1px solid white;
     width: 100%;
     height: 100%;
     background-color: rgba(14,23,13,0.93);
@@ -140,4 +140,8 @@ h1 {
     color: aliceblue;
     font-size: 17px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.novisibleAdmin{
+    display:none;
 }
