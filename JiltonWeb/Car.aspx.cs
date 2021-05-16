@@ -17,7 +17,7 @@ namespace JiltonWeb
     public partial class Car : System.Web.UI.Page
     {
 
-        ENCar car = new ENCar("","","",0,"");
+        ENCar car = new ENCar("","","",0,"","");
         DataSet d = new DataSet();
               
 
@@ -42,9 +42,9 @@ namespace JiltonWeb
 
         protected void CrearClick(object sender, EventArgs e)
         {
-            if(LicensePlateData.Text != "" && BrandData.Text != "" && ModelData.Text != "" && PriceData.Text != "" && DescriptionData.Text != "")
+            if(LicensePlateData.Text != "" && BrandData.Text != "" && ModelData.Text != "" && PriceData.Text != "" && DescriptionData.Text != "" && imgURL.Text != "")
             {
-                ENCar car = new ENCar(LicensePlateData.Text, BrandData.Text, ModelData.Text, int.Parse(PriceData.Text), DescriptionData.Text);
+                ENCar car = new ENCar(LicensePlateData.Text, BrandData.Text, ModelData.Text, int.Parse(PriceData.Text), DescriptionData.Text, imgURL.Text);
                 
                 if (car.createCar() != null)
                 {
@@ -71,7 +71,7 @@ namespace JiltonWeb
 
                 if (DescriptionData.Text != "" && PriceData.Text != "")
                 {
-                    car = new ENCar(LicensePlateData.Text, BrandData.Text, ModelData.Text, int.Parse(PriceData.Text), DescriptionData.Text);
+                    car = new ENCar(LicensePlateData.Text, BrandData.Text, ModelData.Text, int.Parse(PriceData.Text), DescriptionData.Text, imgURL.Text);
 
                     if (car.updateDescriptionCar(DescriptionData.Text) != null  && car.updatePriceCar(int.Parse(PriceData.Text)) != null)
                     {
@@ -86,7 +86,7 @@ namespace JiltonWeb
                 else if (DescriptionData.Text != "")
                 {
                     //This means we only are going to update the description, so we must put 0 on price because "" can int.Parse
-                    car = new ENCar(LicensePlateData.Text, BrandData.Text, ModelData.Text, 0, DescriptionData.Text);
+                    car = new ENCar(LicensePlateData.Text, BrandData.Text, ModelData.Text, 0, DescriptionData.Text,imgURL.Text);
 
                     if (car.updateDescriptionCar(DescriptionData.Text) != null)
                     {
@@ -99,7 +99,7 @@ namespace JiltonWeb
                 }
                 else if (PriceData.Text != "")
                 {
-                    car = new ENCar(LicensePlateData.Text, BrandData.Text, ModelData.Text, int.Parse(PriceData.Text), DescriptionData.Text);
+                    car = new ENCar(LicensePlateData.Text, BrandData.Text, ModelData.Text, int.Parse(PriceData.Text), DescriptionData.Text, imgURL.Text);
 
                     if (car.updatePriceCar(int.Parse(PriceData.Text)) != null)
                     {
@@ -131,11 +131,11 @@ namespace JiltonWeb
                 //I create this if statement because  price is not needed to delete so there would be empty string, and it cant int.Parse.
                 if(PriceData.Text == "")
                 {
-                    car = new ENCar(LicensePlateData.Text, BrandData.Text, ModelData.Text, 0, DescriptionData.Text);
+                    car = new ENCar(LicensePlateData.Text, BrandData.Text, ModelData.Text, 0, DescriptionData.Text, imgURL.Text);
                 }
                 else
                 {
-                    car = new ENCar(LicensePlateData.Text, BrandData.Text, ModelData.Text, int.Parse(PriceData.Text), DescriptionData.Text);
+                    car = new ENCar(LicensePlateData.Text, BrandData.Text, ModelData.Text, int.Parse(PriceData.Text), DescriptionData.Text,imgURL.Text);
                 }
 
                 
