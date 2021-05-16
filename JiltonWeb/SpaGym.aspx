@@ -15,7 +15,7 @@
             </div>  
             <br />
  
-            <asp:GridView ID="GridView1" Font-Underline="false" runat="server" Font-Size="18px" ForeColor="#F3E7E7" GridLines="None" AutoGenerateColumns="false" CellSpacing="14" ShowHeader="false">
+            <asp:GridView ID="GridView1" Font-Bold="true" Font-Underline="false" runat="server" Font-Size="18px" ForeColor="#F3E7E7" GridLines="None" AutoGenerateColumns="false" CellSpacing="14" ShowHeader="false">
                 <Columns>
                     <asp:ImageField DataImageUrlField="imgURL" ControlStyle-BorderStyle="Inset" ControlStyle-Height="600px" ControlStyle-Width="600px"></asp:ImageField>
                     <asp:BoundField DataField="description" />
@@ -31,23 +31,27 @@
             </div>
             <br />
 
-            <asp:GridView ID="GridView2" runat="server"  Font-Size="18px" ForeColor="#F3E7E7" GridLines="None" AutoGenerateColumns="false" CellSpacing="12" ShowHeader="false">
+            <asp:GridView ID="GridView2" runat="server"  Font-Size="18px" Font-Bold="true" ForeColor="#000000" GridLines="None" AutoGenerateColumns="false" CellSpacing="12" ShowHeader="false">
                 <Columns>
                     <asp:ImageField DataImageUrlField="imgURL" ControlStyle-BorderStyle="Inset" ControlStyle-Height="600px" ControlStyle-Width="600px"></asp:ImageField>
                     <asp:BoundField DataField="description" />
-                    <asp:ButtonField Text="RESERVE" ControlStyle-CssClass="botonya" ControlStyle-BorderColor="#400040"/>
+                    <asp:ButtonField Text="RESERVE" ControlStyle-CssClass="botonya" ControlStyle-BorderColor="#400040" ButtonType="Button"/>
                 </Columns>
             </asp:GridView>
 
         </div>
 
-        <div class ="super">
-            <div class="title">
-                <h1 >ADMINISTRATOR`S PAGE</h1>
-            </div>
-            <br />
 
-       <asp:Panel runat="server" ID="adminpage" CssClass="superadmin">
+        <asp:Panel runat="server" ID="adminpage">
+
+            <div class ="super">
+
+                <div class="title">
+                    <h1 >ADMINISTRATOR`S PAGE</h1>
+                </div>
+                <br />
+
+       
                     <div class="entrada">
                         <div class="textoss">
                             <asp:Label runat="server" cssClass="letra"> ID: </asp:Label>
@@ -80,6 +84,7 @@
                     </div>
                     <br />
                 </div>
+
             </asp:Panel>     
                 
         
