@@ -60,6 +60,7 @@ namespace JiltonWeb
             {
                 case 0: // No error
                     Session["id"] = user.LoginData;
+                    Session.Timeout = 15;
                     Server.Transfer("MainPage.aspx");
                     break;
                 case 1: // Data doesn't exist
