@@ -1,0 +1,195 @@
+-- RESTAURANT INSERTS --
+INSERT INTO [dbo].[Restaurant]([dailyMenu], [appetizers],[mains], [desserts],[price]) VALUES('2021-05-13', 'Trout tartare
+
+Suquet of red prawns and red mullet
+
+White asparagus with cod tripe', 'Marinated salmon with orange blossom and orange flowers
+
+Green rice with arugula and manchego cheese
+
+Rhubarb with lychee and roses.', 'Golden Opulence Sundae.
+
+Black beer meringue', 185);
+
+INSERT INTO [dbo].[Restaurant]([dailyMenu], [appetizers],[mains], [desserts],[price]) VALUES('2021-05-14', 'Solid mojito
+
+Cod foam with honey, Orange and olive salad
+
+Cream of rice pudding and toffee', 'Suffolded moray stuffed with estuary sea bass belly
+
+Wagyu and glazed eel ravioli
+
+Sea ​​bream marinated in Japanese soybeans and cooked Yakitori style with smoked ​​sauce', 'Golden Opulence Sundae
+
+Sorbet and creamy chocolate, brownie and caramelized cocoa grue', 210);
+
+INSERT INTO [dbo].[Restaurant]([dailyMenu], [appetizers],[mains], [desserts],[price]) VALUES('2021-05-15', 'Grilled octopus covered in ink sauce
+
+Green gazpacho with peppers, clams, cucumber and passion fruit
+
+Cream of rice pudding and toffee', 'Salmon with rice milk, almond milk tofu, pickled lychees and black rice vinegar jelly
+
+Coconut turmeric spiral roasted and pearl calamari crunch
+
+Sea fruits and algae salad, plankton and shrimp consommé', 'Golden Opulence Sundae
+
+Cactus with lime, tequila and green leaves', 190);
+
+INSERT INTO [dbo].[Restaurant]([dailyMenu], [appetizers],[mains], [desserts],[price])VALUES('2021-05-16', 'Native Oysters & Almus White Caviar
+
+Slow-cooked Duck Egg, Iberico Ham, Spring White Truffle
+
+Confit Foie Gras, Smoked Eel, Granny Smith Apple', 'Saffron Risotto, Carabineros Prawns, Gold leaf
+
+Wagyu Beef with Fermented Celeriac and Silver leaf (Served on Dry Ice)
+
+Braised Beef Cheeks with Potato Mousseline', 'Golden Opulence Sundae.
+
+Dark chocolate cylinder and smoked hazelnut praline', 250);
+
+
+INSERT INTO [dbo].[Restaurant]([dailyMenu], [appetizers],[mains], [desserts],[price])VALUES('2021-05-17', 'Steamed prawn with seafood foam
+
+Slow-cooked Duck Egg, Iberico Ham, Spring White Truffle
+
+Foie gras, pepper ice cream and dried fruit cake', 'Tartar-marine ceviche, crunchy trotters, celery and apple
+
+Mushroom and truffle false risotto, cauliflower marrow, field and sea asparagus.
+
+roasted Wagyu with anise, soy and ginger, apple cider and black garlic.', 'Golden Opulence Sundae.
+
+Cupcake with frozen and roasted fruits and vegetables, toasted almond meringue.', 175);
+
+
+INSERT INTO [dbo].[Restaurant]([dailyMenu], [appetizers],[mains], [desserts],[price]) VALUES('2021-05-18', 'Red Apple and bacon strudel
+
+Suquet of red prawns and red mullet
+
+White asparagus with cod tripe', 'Crunchy chickpeas and fennel seeds
+
+Potato ravioli with apple and blue cheese
+
+Apple and celery nectar, pea puree, seaweed and rosemary ice cream and aerated milk.', 'Golden Opulence Sundae.
+
+Yogurt with citrus and raspberry', 175);
+
+INSERT INTO [dbo].[Restaurant]([dailyMenu], [appetizers],[mains], [desserts],[price]) VALUES('2021-05-19', 'Trout tartare
+
+Suquet of red prawns and red mullet
+
+White asparagus with cod tripe', 'Marinated salmon with orange blossom and orange flowers
+
+Green rice with arugula and manchego cheese
+
+Rhubarb with lychee and roses', 'Golden Opulence Sundae.
+
+Black beer meringue', 180);
+
+-- END OF RESTAURANT INSERTS --
+
+-- ADMIN USER --
+
+insert into [dbo].[uuser]([id], [password], [name], [birthday], [email], [address]) values('admin', 'admin', 'admin', '1900/01/01', 'admin', 'admin');
+
+-- END ADMIN USER --
+-- CAR INSERTS --
+
+Insert INTO [dbo].[car] ([licensePlate],[brand],[model],[description],[price],[imgURL]) VALUES
+	('1234ADA', 'Mercedes', 'S63 AMG', 'Making use of a 4.0-liter bi-turbo V8 engine with 603 hp and 664 lb-ft of torque, the S63 will blast to 60 mph in only 3.5 seconds. A nine-speed AMG automatic transmission, 4Matic+ all-wheel-drive, and an adaptive sport suspension are standard.',930,'assets/coche_1.jpg');
+Insert INTO [dbo].[car] ([licensePlate],[brand],[model],[description],[price],[imgURL]) VALUES
+	('3581ETH', 'Rolls-Royce', 'Phantom','This exclusive English high class and luxurius model, is provided by a silken 563-hp twin-turbo V-12 paired with an eight-speed automatic and rear-wheel drive. Acceleration is brisk, but Rolls-Royces claimed 5.1-second zero-to-60-mph time',7625,'assets/coche_3.jpg');
+Insert INTO [dbo].[car] ([licensePlate],[brand],[model],[description],[price],[imgURL]) VALUES
+	('54023BTC', 'Tesla', 'Roadster', 'The Tesla Roadster is an all-electric battery-powered four-seater sports car concept in development by Tesla, Inc. Tesla has claimed that it will be capable of 0 to 60 mph (0 to 97 km/h) in 1.9 seconds, which would be quicker than any street legal production. This model is not for sale yet.',9186,'assets/coche_2.jpg');
+Insert INTO [dbo].[car] ([licensePlate],[brand],[model],[description],[price],[imgURL]) VALUES
+	('7777CRR', 'Opel', 'Corsa', 'The most humble option, classical power for our classical guests, where luxury is not the most important. Just enjoy the ride!',930,'assets/coche_7.jpg');
+Insert INTO [dbo].[car] ([licensePlate],[brand],[model],[description],[price],[imgURL]) VALUES
+	('9868DOT', 'Mercedes', 'Maybach 6', 'The Vision Mercedes-Maybach 6, represents the ultimate in contemporary luxury. It is hot and cool”, states Gorden Wagener, Chief Design Officer Daimler AG. The output of the drive system is 550 kW (750 PS), a high-performance combined with the most prestigius designs',8789,'assets/coche_4.jpg');
+
+-- END CAR INSERTS --
+
+-- STAFF INSERTS --
+
+Insert INTO [dbo].[staff] ([email],[name],[type],[description],[imgURL]) VALUES
+	('cr7comandante@jilton.es','Cristiano Ronaldo','trainer','This is Cristiano Ronaldo, also known as "El Bicho", "CR7" and "Mi comandante". After a long carrer at Lisboa, London, Madrid and Turín, he wanted to leave football to keep improving his physical knowledge. After 6 years of studying at University of Massachusetts, Cristiano Ronaldo was recluited by Jilton Hotel','assets/trainer.jpg');
+Insert INTO [dbo].[staff] ([email],[name],[type],[description],[imgURL]) VALUES
+	('davidprofe@jilton.es','David Calle','teacher','This is David Calle. He is one of the most popular world-wide reconiced, he used to teach on platforms suchs as YouTube. Recently he said "I am so glad being able to join Jilton Hotels, I always wanted to work in the most important Hotel in the country. I will do everything I can in order to teach your childs!"','assets/teacher.jpg');
+Insert INTO [dbo].[staff] ([email],[name],[type],[description],[imgURL]) VALUES
+	('esterexposito@jilton.es','Ester Expósito','guide','This is Ester Exposito. In the last years she became the most famous Spanish women among social networks after filming many popular Netflix Series such as Elite. Once she reached the peak of her carrer, in an interview on La Resistencia she said that when she was a child always wanted to became a tourist guide in Jilton Hotel. We are proud of announcing her as the official guide!','assets/guide.jpg');
+Insert INTO [dbo].[staff] ([email],[name],[type],[description],[imgURL]) VALUES
+	('leodios@jilton.es','Leo Messi','massagist','This is Leo Messi. After winning almost everything in his football carrer, he started a superior cycle about administration and company management. Finally ended with a degree on massage therapist. When he joined Jilton Staff he affirmed: "Eventhough I am the best player ever on football history, I want to keep developing myself in other topics, and being part of Jilton Staff is always a pleasure"','assets/massagist.jpg');
+	
+-- END STAFF INSERTS --
+
+<<<<<<< HEAD
+
+--ROOM INSERTS 
+
+INSERT INTO [dbo].[room]([id], [title],[description], [price],[type],[adultBed],[childBed],[imgURL]) VALUES(
+1,
+'Single room. Botanical Gardens View. Asian-inspired Style. 12 sqm', 'Independent, warm and comfortable suitable for every lonely traveler', 300, 'single', 1, 0, 'assets/room11.jpg');
+
+INSERT INTO [dbo].[room]([id], [title],[description], [price],[type],[adultBed],[childBed],[imgURL]) VALUES(
+2,'Single room. Botanical Gardens & Terrace View. Classic Style. 15 sqm', 'Independent, warm and comfortable suitable for every lonely traveler', 320, 'single', 1, 0, 'assets/room2.jpg');
+
+INSERT INTO [dbo].[room]([id], [title],[description], [price],[type],[adultBed],[childBed],[imgURL]) VALUES(
+3,'Private Balinese Cabin. Botanical Gardens View. 10 sqm', 'Exclusive cabin perfect for nature lovers', 380, 'single', 1, 0, 'assets/room13.jpg');
+
+INSERT INTO [dbo].[room]([id], [title],[description], [price],[type],[adultBed],[childBed],[imgURL]) VALUES(
+4,'Relaxing Double Room. Gardens & Pool View. 12 sqm', 'Private room in a unique atmosphere', 380, 'double', 1, 0, 'assets/room7.jpg');
+
+INSERT INTO [dbo].[room]([id], [title],[description], [price],[type],[adultBed],[childBed],[imgURL]) VALUES(
+5,'Private cabin. Asian Gardens View. 15 sqm', 'Exclusive room with the best mod cons', 420, 'double', 1, 0, 'assets/room5.jpg');
+
+INSERT INTO [dbo].[room]([id], [title],[description], [price],[type],[adultBed],[childBed],[imgURL]) VALUES(
+6,'Private cabin. Asian Gardens View. Classic Style. 10 sqm', 'Warm room for lovers', 390, 'double', 1, 0, 'assets/room6.jpg');
+
+INSERT INTO [dbo].[room]([id], [title],[description], [price],[type],[adultBed],[childBed],[imgURL]) VALUES(
+7,'Private cabin with its own garden. 16 sqm', 'Exclusive cabin especially suitable for the younger ones', 420, 'double', 0, 2, 'assets/room14.jpg');
+
+INSERT INTO [dbo].[room]([id], [title],[description], [price],[type],[adultBed],[childBed],[imgURL]) VALUES(
+8,'Spacious family-oriented suite. Balinese-modern style. 15 sqm', 'Comfortable room perfect for families with children', 450, 'triple', 1, 1, 'assets/room12.jpg');
+
+INSERT INTO [dbo].[room]([id], [title],[description], [price],[type],[adultBed],[childBed],[imgURL]) VALUES(
+9,'Spacious suite. Modern style. 25 sqm', 'Spacious room perfect for young couples', 830, 'triple', 2, 2, 'assets/room17.jpg');
+
+INSERT INTO [dbo].[room]([id], [title],[description], [price],[type],[adultBed],[childBed],[imgURL]) VALUES(
+10,'Room for small families. Sea View. 12 sqm', 'Spacious room perfect for young couples with an optional single bed', 490, 'triple', 2, 1, 'assets/room1.jpg');
+
+INSERT INTO [dbo].[room]([id], [title],[description], [price],[type],[adultBed],[childBed],[imgURL]) VALUES(
+11,'Private cabin. Balinese luxurious style. 16 sqm', 'Unique cabin equipped with the most luxurious furniture', 470, 'double', 1, 0, 'assets/room4.jpg');
+
+INSERT INTO [dbo].[room]([id], [title],[description], [price],[type],[adultBed],[childBed],[imgURL]) VALUES(
+12,'Room for small families. Gardens & Pool View. 12 sqm', 'Specially suitable for small families', 490, 'triple', 2, 1, 'assets/room3.jpg');
+
+INSERT INTO [dbo].[room]([id], [title],[description], [price],[type],[adultBed],[childBed],[imgURL]) VALUES(
+14,'Private cabin. Asian Gardens View. 15 sqm', 'Exclusive cabin for the most adventurous visitors', 720, 'deluxe', 1, 0, 'assets/room15.jpg');
+
+INSERT INTO [dbo].[room]([id], [title],[description], [price],[type],[adultBed],[childBed],[imgURL]) VALUES(
+15,'Exclusive suite. Pool & Sea View. 18 sqm', 'Unique suite with a luxurious hydromassage bathtub', 800, 'deluxe', 1, 1, 'assets/room8.jpg');
+
+INSERT INTO [dbo].[room]([id], [title],[description], [price],[type],[adultBed],[childBed],[imgURL]) VALUES(
+16,'Honeymoon suite. Pool & Sea View. 18 sqm', 'Private cabin where the night of your dreams will become a reality', 880, 'deluxe', 1, 0, 'assets/room9.jpg');
+
+INSERT INTO [dbo].[room]([id], [title],[description], [price],[type],[adultBed],[childBed],[imgURL]) VALUES(
+17,'Langkawi Luxury Suite. Pool & Sea View. Private terrace. 25 sqm', 'Feel like a royal in the most luxurious suite in Rarotonga', 2100, 'presidential', 1, 0, 'assets/room18.jpg');
+
+INSERT INTO [dbo].[room]([id], [title],[description], [price],[type],[adultBed],[childBed],[imgURL]) VALUES(
+18,'Business Room. Sea View. Full-equipped. 15 sqm', 'Pefect for executives - private office included', 800, 'executive', 1, 0, 'assets/room10.jpg');
+
+INSERT INTO [dbo].[room]([id], [title],[description], [price],[type],[adultBed],[childBed],[imgURL]) VALUES(
+13,'Spacious Business Room. Gardens View. Full-equipped. 25 sqm', 'Spacious suite specially designed for meetings and receptions', 1700, 'executive', 1, 0, 'assets/room16.jpg');
+
+
+-- END ROOM INSERTS
+=======
+-- SPA & GYM INSERTS --
+
+Insert into servicio (id, descritpion, price, imgURL, type) VALUES (1,"The relaxing pool at the spa - With 50 meters long you will enjoy a quite relaxing experience", 15, assets/spapiscina.jpg, spa)
+Insert into servicio (id, descritpion, price, imgURL, type) VALUES (2,"Jacuzzi - With 100 water modes desingned for a comfort time", 30, assets/jacuzzispa.jpg, spa)
+Insert into servicio (id, descritpion, price, imgURL, type) VALUES (3,"Massages - You make your massage´s choice between more than a hundred, and then just relax", 60, assets/masspa.jpg, spa)
+Insert into servicio (id, descritpion, price, imgURL, type) VALUES (4,"Anti-stress treatments - Treatments for the people who really need to disconect from the world", 80, assets/masajes.png, spa)
+Insert into servicio (id, descritpion, price, imgURL, type) VALUES (5,"Olympic pool - The olympic pool with one of the best quality certificates", 17, assets/gympool.jpg, gym)
+Insert into servicio (id, descritpion, price, imgURL, type) VALUES (6,"Gymnasium - Machines and staff will make you so easy to get in shape", 15, assets/gimnasiopesas.jpg, gym)
+
+-- END SPA & GYM INSERTS --
+>>>>>>> 6e13e45e4d2e86b3a8944357c58ee884b1f71ca7

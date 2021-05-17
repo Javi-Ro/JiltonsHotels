@@ -14,7 +14,7 @@ namespace Library
         private string nombre;
         private string tipo;
         private string descripcion;
-
+        private string imagen;
         public string Email //PK
         {
             get { return email; }
@@ -38,12 +38,24 @@ namespace Library
             private set { descripcion = value; }
         }
 
-        public ENStaff(string email, string nombre, string tipo, string descripcion)
+        public string imgURL
+        {
+            get { return imagen; }
+            private set { imagen = value; }
+        }
+
+        public ENStaff()
+        {
+
+        }
+
+        public ENStaff(string email, string nombre, string tipo, string descripcion, string imagen)
         {
             this.email = email;
             this.nombre = nombre;
             this.tipo = tipo;
             this.descripcion = descripcion;
+            this.imagen = imagen;
         }
  
         public DataSet createStaff()

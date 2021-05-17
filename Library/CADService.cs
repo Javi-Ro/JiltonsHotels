@@ -105,28 +105,67 @@ namespace Library
 
         public DataSet listAllServices()
         { //lista todo
-            SqlConnection con = new SqlConnection(constring);
             DataSet aux = new DataSet();
-            SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM servicio", con);
-            adapter.Fill(aux, "servicio");
+            try
+            {
+                SqlConnection con = new SqlConnection(constring);
+                SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM servicio", con);
+                adapter.Fill(aux, "servicio");
+                return aux;
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine("User operation has failed.Error: {0}", e.Message);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("User operation has failed.Error: {0}", e.Message);
+            }
+
             return aux;
         }
 
         public DataSet listAllGym()
         { //lista gym
-            SqlConnection con = new SqlConnection(constring);
             DataSet aux = new DataSet();
-            SqlDataAdapter adapter = new SqlDataAdapter("SELECT description, price, imgURL FROM servicio WHERE type='gym' ", con);
-            adapter.Fill(aux, "servicio1");
+            try
+            {
+                SqlConnection con = new SqlConnection(constring);
+                SqlDataAdapter adapter = new SqlDataAdapter("SELECT description, price, imgURL FROM servicio WHERE type='gym' ", con);
+                adapter.Fill(aux, "servicio1");
+                return aux;
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine("User operation has failed.Error: {0}", e.Message);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("User operation has failed.Error: {0}", e.Message);
+            }
+
             return aux;
         }
 
         public DataSet listAllSpa()
         { //lista spa
-            SqlConnection con = new SqlConnection(constring);
             DataSet aux = new DataSet();
-            SqlDataAdapter adapter = new SqlDataAdapter("SELECT description, price, imgURL FROM servicio WHERE type='spa' ", con);
-            adapter.Fill(aux, "servicioo");
+            try
+            {
+                SqlConnection con = new SqlConnection(constring);
+                SqlDataAdapter adapter = new SqlDataAdapter("SELECT description, price, imgURL FROM servicio WHERE type='spa' ", con);
+                adapter.Fill(aux, "servicioo");
+                return aux;
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine("User operation has failed.Error: {0}", e.Message);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("User operation has failed.Error: {0}", e.Message);
+            }
+
             return aux;
         }
 

@@ -39,7 +39,10 @@ namespace Library
             set { _price = value; }
         }
 
-        public ENPackage(int id,ENService services, string name, string desc, int price)
+        public ENPackage() {
+        }
+
+        public ENPackage(int id, string name, string desc, int price)
         {
             this.id = id;
             this.name = name;
@@ -68,7 +71,19 @@ namespace Library
         public DataSet updatePricePackage()
         {
             CADPackage p = new CADPackage();
-            return p.searchPackage(this);
+            return p.updatePricePackage(this);
+        }
+
+        public DataSet updateDescPackage()
+        {
+            CADPackage p = new CADPackage();
+            return p.updateDescPackage(this);
+        }
+
+        public DataSet listAllPackages()
+        {
+            CADPackage p = new CADPackage();
+            return p.listAllPackages(this);
         }
 
         //SERVICES IN THE PACKAGE

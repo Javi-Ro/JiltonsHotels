@@ -7,93 +7,21 @@
 
 
     <div class="stafffondo">
-    <div class="staff">
 
-        <div class="foto">
-            <img src="assets/teacher.jpg" width="475" height="325"/>
-        </div>
+   
+            <asp:GridView ID="GridView2" CssClass="staff" RowStyle-HorizontalAlign="Center" Font-Underline="false" runat="server" Font-Size="14px" ForeColor="#F3E7E7" GridLines="Horizontal" AutoGenerateColumns="false" CellSpacing="40" ShowHeader="false" CellPadding="7">
+                <Columns>
+                    <asp:ImageField DataImageUrlField ="imgURL" ControlStyle-Height="355px" ControlStyle-Width="425px"  />
+                    <asp:BoundField DataField="name" ItemStyle-Width="160px"  />
+                    <asp:BoundField DataField="description" ItemStyle-Width="600px" />
+                    <asp:BoundField DataField="email"  ItemStyle-Width="210px"  />
+                    <asp:BoundField DataField="type" ItemStyle-Width="110px" />
 
-        <div class ="texto">
-            <h1> Teacher </h1>
+                </Columns>
 
-            <p> This is David Calle. He's one of the most popular world-wide reconiced,
-                he used to teach on platforms suchs as YouTube. Recently he said "I'm so glad being able to join Jilton Hotels, I always
-                wanted to work in the most important Hotel in the country. I will do everything I can in order to teach your childs!"
-            </p>
-            <br /> <br />
+            </asp:GridView> 
 
-            <p> For more information about classes contact teachers@jilton.com </p>
-
-        </div>
-        
-    </div>
-
-    <div class="staff">
-
-        <div class="foto">
-            <img src="assets/trainer.jpg" width="475" height="325"/>
-        </div>
-
-        <div class ="texto">
-            <h1> Trainer </h1>
-
-            <p> This is Cristiano Ronaldo, also known as "El Bicho", "CR7" and "Mi comandante". After a long carrer at Lisboa, London, Madrid and Turín, 
-                he wanted to leave football to keep improving his physical knowledge. After 6 years of studying at University of Massachusetts,
-                Cristiano Ronaldo was recluited by Jilton Hotel.
-            </p>
-            <br /> <br />
-
-            <p> For training sesions and information contact trainer@jilton.com </p>
-
-        </div>
-        
-    </div>
-
-    <div class="staff">
-
-        <div class="foto">
-            <img src="assets/massagist.jpg" width="475" height="325"/>
-        </div>
-
-        <div class ="texto">
-            <h1> Massagist </h1>
-
-            <p> This is Leo Messi. After winning almost everything in his football carrer, he started a superior cycle
-                about administration and company management. Finally ended with a degree on massage therapist. When he joined
-                Jilton Staff he affirmed: "Eventhough I'm the best player ever on football history, I want to keep developing myself
-                in other topics, and being part of Jilton Staff is always a pleasure".
-
-            </p>
-            <br /> <br />
-
-            <p> For the massagist timetable contact massagist@jilton.com </p>
-
-        </div>
-        
-    </div>
-
-    <div class="staff">
-
-        <div class="foto">
-            <img src="assets/guide.jpg" width="475" height="325"/>
-        </div>
-
-        <div class ="texto">
-            <h1> Tourist Guide </h1>
-
-            <p> This is Ester Exposito. In the last years she became the most famous Spanish women among social networks after filming
-                many popular Netflix Series such as Elite. Once she reached the peak of her carrer, in an interview on La Resistencia she
-                said that when she was a child always wanted to became a tourist guide in Jilton Hotel. We are proud of announcing her as 
-                the official guide!
-            </p>
-            <br /> <br />
-
-            <p> For more information about expeditions contact guide@jilton.com </p>
-
-        </div>
-        
-    </div>
-
+        <asp:Panel runat="server" ID="panelAdmin">
         <div class="admin">
             <div class="entradas">
                 <div class = "labels">
@@ -101,6 +29,7 @@
                      <asp:Label runat="server" CssClass="letrasadmin"> Name: </asp:Label>
                      <asp:Label runat="server" CssClass="letrasadmin"> Type: </asp:Label>
                      <asp:Label runat="server" CssClass="letrasadmin"> Description:</asp:Label>
+                     <asp:Label runat="server" CssClass="letrasadmin"> imgURL:</asp:Label>
 
                 </div>
 
@@ -109,14 +38,15 @@
                     <asp:TextBox ID ="NameData" CssClass="textboxadmin" runat ="server" />
 
                     <asp:DropDownList ID="TypeData" CssClass="textboxadmin" runat="server">
-                      <asp:ListItem Value="Teacher"> Teacher </asp:ListItem>
-                      <asp:ListItem Value="Trainer"> Trainer </asp:ListItem>
-                      <asp:ListItem Value="Massagist"> Massagist </asp:ListItem>
-                      <asp:ListItem Value="Tourist Guide"> Tourist Guide </asp:ListItem>
+
+                      <asp:ListItem Value="teacher"> Teacher </asp:ListItem>
+                      <asp:ListItem Value="trainer"> Trainer </asp:ListItem>
+                      <asp:ListItem Value="massagist"> Massagist </asp:ListItem>
+                      <asp:ListItem Value="guide"> Tourist Guide </asp:ListItem>
                     </asp:DropDownList>
 
                     <asp:TextBox ID ="DescriptionData" CssClass="textboxadmin"  runat ="server" />
-
+                    <asp:TextBox ID ="imgURL" CssClass="textboxadmin" Text="assets/defaultStaff.jpg" runat ="server" />
 
                 </div>
             </div>
@@ -127,14 +57,16 @@
              </div>
               <div class="texto">
                 <asp:Label ID="output" runat="server"></asp:Label><br/> 
-
-                <p> To create a new staff member you MUST insert all the information, you have to also include, at least, a brief description. To update an existing member, you have to put the email of it, and its new description. In order to delete a member, introduce its contact direction.</p>
+                  <br>
+                <p> To create a new staff member you MUST insert all the information, you have to also include, at least, a brief description. To update an existing member, you have to put the email of it, and its new description. In order to delete a member, introduce its contact direction.
+                    IT'S IMPORTANT TO NOT INTRODUCE SIMPLE QUOTES AS IT WILL FAIL THEN!
+                </p>
               </div>
 
 
         </div>
 
-
+        </asp:Panel>
     </div>
 
 
