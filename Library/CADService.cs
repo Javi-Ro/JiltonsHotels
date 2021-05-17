@@ -125,6 +125,28 @@ namespace Library
             return aux;
         }
 
+        public DataSet listMoreServices()
+        { //lista todo
+            DataSet aux = new DataSet();
+            try
+            {
+                SqlConnection con = new SqlConnection(constring);
+                SqlDataAdapter adapter = new SqlDataAdapter("SELECT description,price FROM servicio where type!='spa' and type!='gym'", con);
+                adapter.Fill(aux, "servicio");
+                return aux;
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine("User operation has failed.Error: {0}", e.Message);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("User operation has failed.Error: {0}", e.Message);
+            }
+
+            return aux;
+        }
+
         public DataSet listAllGym()
         { //lista gym
             DataSet aux = new DataSet();

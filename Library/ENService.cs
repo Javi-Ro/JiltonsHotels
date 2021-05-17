@@ -127,6 +127,12 @@ namespace Library
 			return service.listAllServices();
 		}
 
+		public DataSet listMoreServices()
+		{
+			CADService service = new CADService();
+			return service.listMoreServices();
+		}
+
 		public DataSet listAllSpa()
         {
 			CADService service = new CADService();

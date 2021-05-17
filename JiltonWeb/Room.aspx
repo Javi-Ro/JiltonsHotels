@@ -119,7 +119,7 @@
                </div>
                     (Selected rooms go here)
                 <div class="Go">
-                    <asp:Button  runat="server" CssClass="searchButton" Text="Go" PostBackUrl="~/Booking.aspx"></asp:Button>
+                    <asp:Button  runat="server" CssClass="searchButton" Text="Go" OnClick="GoButton_Click"></asp:Button>
                 </div>
             </div>
            </div>

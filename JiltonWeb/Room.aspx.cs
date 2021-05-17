@@ -27,5 +27,10 @@ namespace JiltonWeb
         {
 
         }
+
+        protected void GoButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ExtraServices.aspx");
+        }
     }
 }
