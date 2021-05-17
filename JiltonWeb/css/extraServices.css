@@ -2,26 +2,42 @@
     background: #e6e2e7;
     display: flex;
     justify-content: center;
-    height: 700px;
+    height: auto;
 }
 
 .CenteredContainer {
     margin: 20px 0;
-    width: 60%;
+    width: 65%;
     display: flex;
     flex-flow: row wrap;
 }
 
 /* MAIN CONTAINER */
 
+.ServicesContainer {
+    display: flex;
+    justify-content: center;
+    background: #f2f2f2;
+    border-radius: 4px;
+    height: auto;
+    border: 1px solid #C3C6CA;
+    width: 100%;
+}
+
+.centeredAccordion {
+    width: 95%;
+    display:flex;
+    align-items: center;
+}
+
 .BorderMainBlock {
     border: 1px solid #C3C6CA;
     border-radius: 4px;
     width: 65%;
-    margin-right: 5%;
+    margin-right: 2%;
     height: auto;
     margin-bottom: 20px;
-    max-height: 600px;
+    max-height: auto;
 }
 
 .MainBlock {
@@ -35,8 +51,8 @@
     flex-flow: row wrap;
     text-transform: uppercase;
     letter-spacing: 3px;
-    margin-bottom: 40px;
-    font-size: 16px;
+    margin-bottom: 30px;
+    font-size: 20px;
 }
 
 .AccordionHeader:hover {
@@ -45,36 +61,187 @@
 
 .AccordionHeader {
     background: transparent;
-    margin-bottom: 10px;
     font-size: 20px;
-    height: 10%;
+    padding: 10px 0px;
+    transition: .3s ease all;
+    padding-left: 10px;
+}
+
+.AccordionHeader:hover{
+    background: #e6e2e7;
+    transition: .3s ease all;
+    border-top: 1px solid #C3C6CA;
+    border-bottom: 1px solid #C3C6CA;
+}
+
+.SelectedHeaderAccordion {
+    background: #e6e2e7;
+    font-size: 20px;
+    padding: 10px 0px;
+    transition: .3s ease all;
+    padding-left: 20px;
+    cursor: pointer;
+    border-top: 1px solid #C3C6CA;
 }
 
 .AccordionContent {
     background: transparent;
-    margin-bottom: 10px;
+    padding: 10px 30px;
+    background: #e6e2e7;
+    border-bottom: 1px solid #C3C6CA;
+}
+
+.GridButton {
+    text-transform: uppercase;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+    
+.Accordion{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+/* ADDSERVICE BAR */
+
+.AddServicePanel {
+    margin-top: 40px;
+    background: #f2f2f2;
+    border: 1px solid #C3C6CA;
+    border-radius: 4px;
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.LabelAddingService {
+    margin-right: 10px;
+}
+
+.HourServices {
+    margin-right: 10px;
+}
+
+.SelectedService {
+    
+}
+
+.PaddingPanel {
+    padding: 20px 0px;
+    width: 95%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: flex-start;
     margin-left: 10px;
 }
 
-/* ASIDE */
+.PanelBlock {
+    padding: 7px 0px;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
+}
 
+.ListStaff {
+    padding: 3px;
+    text-align: center;
+    border-radius: 3px;
+    border-width: 1px;
+}
+
+.ButtonAddService {
+    margin-top: 15px;
+    font-size: 16px;
+    color: #0e170d;
+    border: 2px solid #0e170d;
+    line-height: 30px;
+    padding: 0px 30px;
+    background: transparent;
+    font-family: 'Karla', sans-serif;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* ASIDE */
 .BookingResume {
     background: #f2f2f2;
-    width: 30%;
-    height: 90%;
+    width: 33%;
+    height: auto;
     border: 1px solid #C3C6CA;
     border-radius: 4px;
 }
 
+.BookingSumLabel {
+    font-size: 22px;
+    margin-bottom: -15px;
+}
 
+.FechasBlock {
+    display: flex;
+    flex-flow: row wrap;
+}
 
+.DateBlock {
+    display: flex;
+    flex-flow: column wrap;
+    margin-right: 60px;
+}
 
+.LabelDateBlock {
+    margin-bottom: 3px;
+    font-weight: bold;
+}
 
-/*para el boton de continuar*/
+.separator {
+    white-space: pre-line;
+    opacity: 0.5;
+}
+
+.grid {
+    margin-left: -7px;
+    margin-bottom: 5px;
+}
+
+.GridButton {
+    text-transform: uppercase;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.LabelTotal {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.TotalBooking {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.TotalPrice {
+    display: flex;
+    flex-flow: row wrap;
+}
+
 .ButtonTotalDiv {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
+    margin-top: 35px;
+}
+
+.MainButtonTotalDiv {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;    
     margin-top: 35px;
 }
 
@@ -85,8 +252,23 @@
     line-height: 30px;
     padding: 0px 30px;
     background: #0e170d;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     border-radius: 4px;
     font-weight: bold;
     cursor: pointer;
+    font-family: 'Karla', sans-serif;
+}
+
+.MainButtonTotal {
+    font-size: 18px;
+    color: white;
+    border: 2px solid #0e170d;
+    line-height: 30px;
+    padding: 0px 30px;
+    background: #0e170d;
+    letter-spacing: 2px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: 'Karla', sans-serif;
 }

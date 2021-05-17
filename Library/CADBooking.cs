@@ -17,7 +17,7 @@ namespace Library
 
         public CADBooking()
         {
-            constring = ConfigurationManager.ConnectionStrings["Default"].ToString();
+            constring = ConfigurationManager.ConnectionStrings["Database"].ToString();
         }
 
         // Methods for bookings (CRUD operations)
