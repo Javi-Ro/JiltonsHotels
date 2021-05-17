@@ -120,8 +120,6 @@ Insert INTO [dbo].[staff] ([email],[name],[type],[description],[imgURL]) VALUES
 	
 -- END STAFF INSERTS --
 
-<<<<<<< HEAD
-
 --ROOM INSERTS 
 
 INSERT INTO [dbo].[room]([id], [title],[description], [price],[type],[adultBed],[childBed],[imgURL]) VALUES(
@@ -181,15 +179,14 @@ INSERT INTO [dbo].[room]([id], [title],[description], [price],[type],[adultBed],
 
 
 -- END ROOM INSERTS
-=======
+
 -- SPA & GYM INSERTS --
 
-Insert into servicio (id, descritpion, price, imgURL, type) VALUES (1,"The relaxing pool at the spa - With 50 meters long you will enjoy a quite relaxing experience", 15, assets/spapiscina.jpg, spa)
-Insert into servicio (id, descritpion, price, imgURL, type) VALUES (2,"Jacuzzi - With 100 water modes desingned for a comfort time", 30, assets/jacuzzispa.jpg, spa)
-Insert into servicio (id, descritpion, price, imgURL, type) VALUES (3,"Massages - You make your massage´s choice between more than a hundred, and then just relax", 60, assets/masspa.jpg, spa)
-Insert into servicio (id, descritpion, price, imgURL, type) VALUES (4,"Anti-stress treatments - Treatments for the people who really need to disconect from the world", 80, assets/masajes.png, spa)
-Insert into servicio (id, descritpion, price, imgURL, type) VALUES (5,"Olympic pool - The olympic pool with one of the best quality certificates", 17, assets/gympool.jpg, gym)
-Insert into servicio (id, descritpion, price, imgURL, type) VALUES (6,"Gymnasium - Machines and staff will make you so easy to get in shape", 15, assets/gimnasiopesas.jpg, gym)
+Insert into servicio (id, description, price, imgURL, type) VALUES (1,'The relaxing pool at the spa - With 50 meters long you will enjoy a quite relaxing experience', 15, 'assets/spapiscina.jpg', 'spa');
+Insert into servicio (id, description, price, imgURL, type) VALUES (2,'Jacuzzi - With 100 water modes desingned for a comfort time', 30, 'assets/jacuzzispa.jpg', 'spa');
+Insert into servicio (id, description, price, imgURL, type) VALUES (3,'Massages - You make your massage´s choice between more than a hundred, and then just relax', 60, 'assets/masspa.jpg', 'spa');
+Insert into servicio (id, description, price, imgURL, type) VALUES (4,'Anti-stress treatments - Treatments for the people who really need to disconect from the world', 80, 'assets/masajes.png', 'spa');
+Insert into servicio (id, description, price, imgURL, type) VALUES (5,'Olympic pool - The olympic pool with one of the best quality certificates', 17, 'assets/gympool.jpg', 'gym');
+Insert into servicio (id, description, price, imgURL, type) VALUES (6,'Gymnasium - Machines and staff will make you so easy to get in shape', 15, 'assets/gimnasiopesas.jpg', 'gym');
 
 -- END SPA & GYM INSERTS --
->>>>>>> 6e13e45e4d2e86b3a8944357c58ee884b1f71ca7
