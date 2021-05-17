@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/JiltonMaster.Master" AutoEventWireup="true" CodeBehind="Packages.aspx.cs" Inherits="JiltonWeb.Packages" %>
 
 <asp:Content ID="cssLink" ContentPlaceHolderID="cssLink" runat="server">
-    <link rel="stylesheet" href="../css/packages.css?ver=<?php echo rand(159,999)?>" />
+    <link rel="stylesheet" href="../css/packages.css?ver=<?php echo rand(157,999)?>" />
     <link href="https://fonts.googleapis.com/css2?family=IM+Fell+Double+Pica:ital@1&display=swap" rel="stylesheet">
     <style type="text/css">
       
@@ -17,15 +17,20 @@
      
     <div class="pack" >
 
-        <asp:GridView CssClass="grid1" ID="GridView1" Font-Underline="false" runat="server" ForeColor="Black" Width="100%" GridLines="Horizontal" AutoGenerateColumns="false"  ShowHeader="false">
-                <Columns>
-                    <asp:ImageField DataImageUrlField="imgURL" ItemStyle-CssClass="image" ControlStyle-Height="500px" ControlStyle-Width="800px"></asp:ImageField>
-                    <asp:BoundField DataField="name" ItemStyle-CssClass="name" ItemStyle-Width="150px"/>
-                    <asp:BoundField DataField="description" ItemStyle-CssClass="desc" ItemStyle-Width="650px"/>
-                    <asp:BoundField DataField="price" ItemStyle-CssClass="price"  DataFormatString="{0:C}" ItemStyle-Width="150px"/>
-                    <asp:ButtonField Text="RESERVE" ControlStyle-CssClass="boton"  ButtonType="Button" />
-                </Columns>
+        <asp:GridView CssClass="grid1" ID="GridView1" Font-Underline="false" runat="server" ForeColor="Black" Height="400px" Width="100%" GridLines="Horizontal" AutoGenerateColumns="false"  ShowHeader="false">
+               
+            <Columns>
+                
+                    <asp:ImageField DataImageUrlField="imgURL" ItemStyle-CssClass="image" ControlStyle-Height="400px" ControlStyle-Width="640px"></asp:ImageField>
+                    <asp:BoundField DataField="name" ItemStyle-CssClass="name" ItemStyle-Width="280px"/>
+                    <asp:BoundField DataField="description" ItemStyle-CssClass="desc" ItemStyle-Width="600px"/>
+                    <asp:BoundField DataField="price" ItemStyle-CssClass="price"  DataFormatString="{0:C}" ItemStyle-Width="200px"/>
+                    <asp:ButtonField Text="RESERVE" ControlStyle-CssClass="boton"  ButtonType="Button" ItemStyle-Width="200px"/>
+                
+             </Columns>
+               
            </asp:GridView> 
+
     </div>
 
        <!-- <div class="image">
