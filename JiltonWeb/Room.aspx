@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/JiltonMaster.Master" AutoEventWireup="true" CodeBehind="Room.aspx.cs" Inherits="JiltonWeb.Room" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
     <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <link href="css/room.css?ver=<?php echo rand(539,950)?>" rel="stylesheet">
+        <link href="css/room.css?ver=<?php echo rand(541,950)?>" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <asp:SqlDataSource 
             id="SqlDataSource1" 
@@ -52,7 +52,6 @@
               <div class="textInside">
                   <asp:Label runat="server"> 
 
-
                   • Cancellation free of charge
 
                   • Free room service
@@ -86,16 +85,33 @@
                 
                      <asp:GridView ID="GridView1" CssClass="grid" runat="server"  RowStyle-CssClass="bottomBorder" DataSourceID="SqlDataSource1" AutoGenerateColumns="False" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">  
                         <Columns>
-                            <asp:BoundField DataField="id" HeaderText="ID" ReadOnly="true" />
+                            <asp:BoundField DataField="id" HeaderText="ID" ReadOnly="true" Visible="false" />
                             <asp:TemplateField>
                                 <ItemTemplate>
                                     <div class="room">
                                         <div class="row">
                                             <div class="Informacion">
-                                                <asp:Label runat="server"> AQUI VA EL TEXTO no esta acabado no juzguen :) </asp:Label>
+                                                <asp:Label ID="Label1" runat="server" CssClass="titulo" Text='<%# Eval("title") %>'></asp:Label>
+                                                <br />
+                                                <br />
+                                                <asp:Label ID="Label2" runat="server"  CssClass="field"> Description: </asp:Label>
+                                                <asp:Label ID="Label3" runat="server" Text='<%# Eval("description") %>'> </asp:Label>
+                                                <br />
+                                                <br />
+                                                <asp:Label ID="Label4" runat="server"  CssClass="field"> Category: </asp:Label>
+                                                <asp:Label ID="Label5" runat="server" Text='<%# Eval("type") %>' >   </asp:Label>
+                                                | King beds: 
+                                                <asp:Label ID="Label6" runat="server" Text='<%# Eval("AdultBed") %>' >  </asp:Label>
+                                                | Single beds:
+                                                <asp:Label ID="Label7" runat="server" Text='<%# Eval("ChildBed") %>' > </asp:Label>
+                                                <br />
+                                                <br />
+                                                <asp:Label ID="Label8" runat="server"  CssClass="field"> Overnight price: </asp:Label>
+                                                <asp:Label ID="Label9" runat="server" Text='<%# Eval("price") %>' > </asp:Label>
+                                                €
                                             </div> 
-                                            <div class="Foto"> 
-                                                <div class="FotoRoom">
+                                            <div class="FotoContenedor">
+                                                    
                                                     <asp:Image Cssclass="resize" ID="Image1" runat="server" ImageUrl='<%# Eval("imgURL") %>'/>
                                                    
                                                 </div>
@@ -105,6 +121,8 @@
                                 </ItemTemplate>
                             </asp:TemplateField>
                         </Columns>
+                     
+<RowStyle CssClass="bottomBorder"></RowStyle>
                      
                      </asp:GridView>                 
 
