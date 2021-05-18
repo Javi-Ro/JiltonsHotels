@@ -5,9 +5,8 @@
     position: relative;
     background-size: cover;
     display: flex;
-    border:2px solid black;
     object-fit: contain;
-    width: auto;
+    width: 100%;
     height: auto;
     text-align: center;
     vertical-align: middle;
@@ -23,12 +22,12 @@
 
 
 .name {
-    font-size: 40px;
+    font-size: 52px;
     text-align: center;
 }
 
 .desc {
-    font-size: 20px;
+    font-size: 25px;
 }
 
 .boton {
