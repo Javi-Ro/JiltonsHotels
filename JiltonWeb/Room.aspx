@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/JiltonMaster.Master" AutoEventWireup="true" CodeBehind="Room.aspx.cs" Inherits="JiltonWeb.Room" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
     <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <link href="css/room.css?ver=<?php echo rand(541,950)?>" rel="stylesheet">
+        <link href="css/room.css?ver=<?php echo rand(543,950)?>" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <asp:SqlDataSource 
             id="SqlDataSource1" 
@@ -69,7 +69,7 @@
                 <div class="slider">
                     <asp:TextBox ID="TB1" runat="server"> </asp:TextBox>
                     <asp:TextBox ID="Control" runat="server" visible="false"></asp:TextBox>
-                           <ajax:SliderExtender TooltipText = "{0}" EnableHandleAnimation="true" RaiseChangeOnlyOnMouseUp="true" HandleCssClass="handle"  Maximum="1500" Minimum="150" ID="SliderExtender1" BoundControlID="Control" TargetControlID ="TB1" runat="server" />
+                           <ajax:SliderExtender TooltipText = "{0}" EnableHandleAnimation="true" RaiseChangeOnlyOnMouseUp="true" Maximum="1500" Minimum="150" ID="SliderExtender1" BoundControlID="Control" TargetControlID ="TB1" runat="server" />
                 </div>
 
                     
@@ -83,15 +83,17 @@
             <div class="blurryBackground" runat="server">
                
                 
-                     <asp:GridView ID="GridView1" CssClass="grid" runat="server"  RowStyle-CssClass="bottomBorder" DataSourceID="SqlDataSource1" AutoGenerateColumns="False" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">  
-                        <Columns>
-                            <asp:BoundField DataField="id" HeaderText="ID" ReadOnly="true" Visible="false" />
+                     <asp:GridView ID="GridView1" CssClass="grid" runat="server" showHeader="false"  DataSourceID="SqlDataSource1" AutoGenerateColumns="False" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">  
+                        <Columns >
+  
+                            <asp:BoundField DataField="id" ReadOnly="true" Visible="false" />
                             <asp:TemplateField>
                                 <ItemTemplate>
                                     <div class="room">
                                         <div class="row">
                                             <div class="Informacion">
                                                 <asp:Label ID="Label1" runat="server" CssClass="titulo" Text='<%# Eval("title") %>'></asp:Label>
+                                                
                                                 <br />
                                                 <br />
                                                 <asp:Label ID="Label2" runat="server"  CssClass="field"> Description: </asp:Label>
@@ -109,12 +111,33 @@
                                                 <asp:Label ID="Label8" runat="server"  CssClass="field"> Overnight price: </asp:Label>
                                                 <asp:Label ID="Label9" runat="server" Text='<%# Eval("price") %>' > </asp:Label>
                                                 €
-                                            </div> 
+                                                
+                                                <div class="ratingStar">
+                                                    <asp:Image runat="server" CssClass="imagen2" ImageUrl="assets/ratings2.png"/> 
+                                                </div>
+
+                                                <asp:Panel runat="server" ID="adminViewRoom" CssClass="iconoHidden">
+                                                    <asp:Image CssClass="imagen" ID="deleteImage" runat="server" ImageUrl="assets/deleteIcon.png" />
+                                                    <asp:Image  CssClass="imagen" ID="UpdateImage" runat="server" ImageUrl="assets/editIcon.png" />
+                                                </asp:Panel>
+                                                <%--<ajax:Rating runat="server" ID="Rating1"
+                                                    MaxRating="5"
+                                                    CurrentRating="2"
+                                                    CssClass="ratingStar"
+                                                    StarCssClass="ratingItem"
+                                                    WaitingStarCssClass="Saved"
+                                                    FilledStarCssClass="Filled"
+                                                    EmptyStarCssClass="Empty"
+                                                    >
+                                                </ajax:Rating>--%>
+                                                
+
+                                             </div>
                                             <div class="FotoContenedor">
                                                     
                                                     <asp:Image Cssclass="resize" ID="Image1" runat="server" ImageUrl='<%# Eval("imgURL") %>'/>
                                                    
-                                                </div>
+                                           </div>
                                            </div>
                                         </div>
                                     </div>

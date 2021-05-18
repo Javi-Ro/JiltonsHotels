@@ -186,13 +186,15 @@
 
 .handle {
     box-shadow: none;
+    background-image: url(../assets/6.jpg);
     background: #515654;
     position: absolute;
     width: 15px;
     height: 15px;
     border-radius: 50%;
-    cursor:pointer;
+    cursor: pointer;
 }
+
 
 .room {
     position: relative;
@@ -262,4 +264,34 @@
 
 .field{
     font-weight:bold;
+}
+
+.iconoHidden {
+    display:none
+}
+
+.icono {
+    position: relative;
+    left: 94%;
+    display: inline-block;
+}
+
+.imagen {
+    max-width: 4%;
+    max-height: 4%;
+}
+
+.ratingStar {
+    position: relative;
+    left: 80%;
+    display: inline-block;
+}
+
+.StarCssClass {
+    background-image: url(../assets/ratings.png);
+}
+
+.imagen2 {
+   max-width: 23%;
+   height: auto;
 }
