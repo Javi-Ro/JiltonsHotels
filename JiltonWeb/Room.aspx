@@ -12,6 +12,15 @@
             
             
         </asp:SqlDataSource>
+        <asp:SqlDataSource 
+            id="SqlDataSource2" 
+            runat="server"
+            DataSourceMode="DataReader"
+            ConnectionString="<%$ ConnectionStrings:Database%>"
+            SelectCommand="SELECT * FROM room where id=1">
+            
+            
+        </asp:SqlDataSource>
            
         <div class="background" runat="server">
 
@@ -158,7 +167,17 @@
                <div class="selectionLabel"> 
                    <asp:Label runat="server"> Your selection </asp:Label>
                </div>
-                    (Selected rooms go here)
+                <div class="gridContainer">
+                      <asp:GridView ID="GridViewRooms" CssClass="grid2" DataSourceID="SqlDataSource2" runat="server" ForeColor="#333333" GridLines="None" AutoGenerateColumns="false" CellSpacing="8" ShowHeader="False" Width="100%" RowStyle-HorizontalAlign="Left">
+
+                        <Columns>
+                            <asp:BoundField DataField="title" ItemStyle-Width="150px"  ItemStyle-Font-Bold="true" />
+                            <asp:BoundField ItemStyle-Width="50px" />
+                            <asp:BoundField DataField="price" DataFormatString="{0:C}" ItemStyle-Width="80px" />
+                            
+                        </Columns>
+                    </asp:GridView>
+                </div>
                 <div class="Go">
                     <asp:Button  runat="server" CssClass="searchButton" Text="Go" OnClick="GoButton_Click"></asp:Button>
                 </div>

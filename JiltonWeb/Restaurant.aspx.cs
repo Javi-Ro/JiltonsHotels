@@ -60,8 +60,8 @@ namespace JiltonWeb
                 DESSERTS.Visible = true;
                 PRICE.Visible = true;
                 imagen.Visible = false;
-                APPETIZERS.Text = i.ToString();
-                MAINS.Text = copia.ToString("dd'/'MM'/'yyyy");
+                APPETIZERS.Text = menu.appetizers;
+                MAINS.Text = menu.main;
                 DESSERTS.Text = menu.dessert;
                 PRICE.Text = menu.price.ToString() + "€";
                 EndMessage.Text = "Feel free to ask for our superb wine selection";
