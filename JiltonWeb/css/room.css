@@ -37,8 +37,11 @@
     position: sticky;
     top: 10%;
     background-color: white;
-    height: 8%;
+    min-height: 8%;
     box-shadow: 8px 8px 16px 8px rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    max-height: 8%;
+    overflow-x: hidden; 
+    overflow-y: auto;
 }
 
 .blurryBackground {
@@ -158,12 +161,18 @@
     font-size: 100%;
 }
 
+.GoContainer {
+    position:relative;
+    display: inline;
+    bottom: 15%;
+    right: 2%;
+    width:100%;
+}
 .Go {
     position: absolute;
     display: inline-block;
-    left: 100%;
-    top: 100%;
-    transform: translate(-130%, -150%);
+    left: 70%;
+    bottom: 50%;
 }
 
 .Go:hover .searchButton {
@@ -219,6 +228,10 @@
     background-color: white;
 }
 
+.gridContainer{
+    position:relative;
+    margin-bottom: 15%;
+}
 .Informacion {
     padding: 3%;
     width: 70%;

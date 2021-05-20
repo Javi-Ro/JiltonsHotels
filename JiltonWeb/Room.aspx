@@ -167,9 +167,11 @@
                         </Columns>
                     </asp:GridView>
                 </div>
-                <div class="Go">
-                    <asp:Button  runat="server" CssClass="searchButton" Text="Go" OnClick="GoButton_Click"></asp:Button>
-                </div>
+                <div class="GoContainer">
+                    <div class="Go">
+                        <asp:Button  runat="server" CssClass="searchButton" Text="Go" OnClick="GoButton_Click"></asp:Button>
+                    </div>
+               </div>
             </div>
            </div>
         </div>

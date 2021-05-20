@@ -62,7 +62,6 @@
                </div>
     
             </div>
-     
             
             <asp:Panel CssClass="noAdmin" ID="AdminBlurryBackground" runat="server">
                <div class="MenuAdmin">
