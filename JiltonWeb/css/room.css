@@ -115,21 +115,27 @@
     transition: visibility 0s, opacity 0.2s linear;
 }
 
-    /* Links inside the dropdown */
-    .dropdown-content a {
+    .dropdown-content .dropdown-Buttons {
         color: black;
-        padding: 12px 16px;
+        padding: 15px 16px;
+        border: none;
         text-decoration: none;
+        background-color: transparent;
+        position: relative;
+        width: 100%;
         display: block;
+        font-size: 16px;
+        font-family: 'Karla', sans-serif;
+        transition: .5s ease all;
     }
 
-        /* Change color of dropdown links on hover */
-        .dropdown-content a:hover {
-            cursor: pointer;
-            background: #515654;
-            color: white;
-            transition: .5s ease all;
-        }
+
+.dropdown-content .dropdown-Buttons:hover {
+    cursor: pointer;
+    background: #515654;
+    color: white;
+    transition: .5s ease all;
+}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
@@ -158,7 +164,6 @@
     left: 100%;
     top: 100%;
     transform: translate(-130%, -150%);
-    
 }
 
 .Go:hover .searchButton {
@@ -232,6 +237,8 @@
     float: left;
     margin: auto;
     background-color:white;
+    display:flex;
+    align-items: center;
 }
 
 .resize:hover {
@@ -240,10 +247,9 @@
 
 .resize {
     max-width: 100%;
-    width:auto;
+    width: auto;
     height: auto;
     transition: 0.3s;
-    
 }
 
 .img {
@@ -276,6 +282,34 @@
     display: inline-block;
 }
 
+
+.add {
+    position: absolute;
+    display: inline-block;
+    left: 85%;
+    top: 80%;
+}
+
+.addButton {
+    position: absolute;
+    border: 2px solid #515654;
+    line-height: 21px;
+    padding: 0 14px;
+    background: transparent;
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: .5s ease all;
+}
+
+    .addButton:hover {
+        cursor: pointer;
+        background: #515654;
+        color: white;
+        transition: .5s ease all;
+    }
+
+
 .imagen {
     max-width: 4%;
     max-height: 4%;
@@ -295,3 +329,6 @@
    max-width: 23%;
    height: auto;
 }
+
+
+

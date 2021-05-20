@@ -1,7 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/JiltonMaster.Master" AutoEventWireup="true" CodeBehind="Room.aspx.cs" Inherits="JiltonWeb.Room" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/JiltonMaster.Master" AutoEventWireup="true" CodeBehind="Room.aspx.cs" Inherits="JiltonWeb.Room" EnableEventValidation="false" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
+
     <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <link href="css/room.css?ver=<?php echo rand(543,950)?>" rel="stylesheet">
+        <link href="css/room.css?ver=<?php echo rand(544,950)?>" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <asp:SqlDataSource 
             id="SqlDataSource1" 
@@ -9,17 +10,6 @@
             DataSourceMode="DataReader"
             ConnectionString="<%$ ConnectionStrings:Database%>"
             SelectCommand="SELECT * FROM room">
-            
-            
-        </asp:SqlDataSource>
-        <asp:SqlDataSource 
-            id="SqlDataSource2" 
-            runat="server"
-            DataSourceMode="DataReader"
-            ConnectionString="<%$ ConnectionStrings:Database%>"
-            SelectCommand="SELECT * FROM room where id=1">
-            
-            
         </asp:SqlDataSource>
            
         <div class="background" runat="server">
@@ -27,34 +17,33 @@
         <div class="webBorder">
           <div class="filterBox">
               <div class="dropdown">
-                  <button class="dropbtn">Order </button>
-                  <div class="dropdown-content">
-                    <a href="#">Ratings</a>
-                    <a href="#">Price (lowest first) </a>
-                    <a href="#">Price (highest first)</a>
-                  </div>
+                  <asp:Button runat="server" Text="Order" CssClass="dropbtn" />
+                    <div class="dropdown-content">
+                        <asp:Button runat="server" ID="MyProfile" CssClass="dropdown-Buttons" Text="Ratings" OnClientClick="this.disabled=true;"/>
+                        <asp:Button runat="server" ID="MyBookings" CssClass="dropdown-Buttons" Text="Price (lowest first)" OnClick="showLowest"/>
+                        <asp:Button runat="server" ID="LogOutButton" CssClass="dropdown-Buttons" Text="Price (highest first)"  />
+                    </div>
                 </div>
 
                 <div class="dropdown">
-                  <button class="dropbtn">Type</button>
+                  <asp:Button runat="server" Text="Type" CssClass="dropbtn" />
                   <div class="dropdown-content">
-                    <a href="#">Single</a>
-                    <a href="#">Double </a>
-                    <a href="#">Triple</a>
-                     <a href="#">Deluxe</a>
-                    <a href="#">Executive </a>
-                    <a href="#">Presidential</a>
-   
+                        <asp:Button runat="server" ID="Button1" CssClass="dropdown-Buttons" Text="Single" OnClientClick="this.disabled=true;"/>
+                        <asp:Button runat="server" ID="Button2" CssClass="dropdown-Buttons" Text="Double" OnClientClick="this.disabled=true;"/>
+                        <asp:Button runat="server" ID="Button3" CssClass="dropdown-Buttons" Text="Triple" />
+                        <asp:Button runat="server" ID="Button4" CssClass="dropdown-Buttons" Text="Deluxe" OnClientClick="this.disabled=true;"/>
+                        <asp:Button runat="server" ID="Button5" CssClass="dropdown-Buttons" Text="Executive" OnClientClick="this.disabled=true;"/>
+                        <asp:Button runat="server" ID="Button6" CssClass="dropdown-Buttons" Text="Presidential"/>   
                   </div>
                 </div>
               <div class="dropdown">
-                  <button class="dropbtn">Ratings</button>
+                   <asp:Button runat="server" Text="Ratings" CssClass="dropbtn" />
                   <div class="dropdown-content">
-                    <a href="#">1</a>
-                    <a href="#">2 </a>
-                    <a href="#">3</a>
-                     <a href="#">4</a>
-                    <a href="#">5 </a>
+                        <asp:Button runat="server" ID="Button7" CssClass="dropdown-Buttons" Text="1" OnClientClick="this.disabled=true;"/>
+                        <asp:Button runat="server" ID="Button8" CssClass="dropdown-Buttons" Text="2" OnClientClick="this.disabled=true;"/>
+                        <asp:Button runat="server" ID="Button9" CssClass="dropdown-Buttons" Text="3" />
+                        <asp:Button runat="server" ID="Button10" CssClass="dropdown-Buttons" Text="4" OnClientClick="this.disabled=true;"/>
+                        <asp:Button runat="server" ID="Button11" CssClass="dropdown-Buttons" Text="5" OnClientClick="this.disabled=true;"/>
                   </div>
                 </div>
                 
@@ -71,10 +60,6 @@
                   </asp:Label>
               </div>
               
-
-           
-
-
                 <div class="slider">
                     <asp:TextBox ID="TB1" runat="server"> </asp:TextBox>
                     <asp:TextBox ID="Control" runat="server" visible="false"></asp:TextBox>
@@ -121,10 +106,14 @@
                                                 <asp:Label ID="Label9" runat="server" Text='<%# Eval("price") %>' > </asp:Label>
                                                 €
                                                 
-                                                <div class="ratingStar">
+                                             <%--   <div class="ratingStar">
                                                     <asp:Image runat="server" CssClass="imagen2" ImageUrl="assets/ratings2.png"/> 
-                                                </div>
-
+                                                </div>--%>
+                                                
+                                                    <div class="add">
+                                                   <asp:Button  runat="server" Cssclass="addButton" onClick="addButton" Text="Add"/>
+                                                  </div>
+                                                
                                                 <asp:Panel runat="server" ID="adminViewRoom" CssClass="iconoHidden">
                                                     <asp:Image CssClass="imagen" ID="deleteImage" runat="server" ImageUrl="assets/deleteIcon.png" />
                                                     <asp:Image  CssClass="imagen" ID="UpdateImage" runat="server" ImageUrl="assets/editIcon.png" />
@@ -168,7 +157,7 @@
                    <asp:Label runat="server"> Your selection </asp:Label>
                </div>
                 <div class="gridContainer">
-                      <asp:GridView ID="GridViewRooms" CssClass="grid2" DataSourceID="SqlDataSource2" runat="server" ForeColor="#333333" GridLines="None" AutoGenerateColumns="false" CellSpacing="8" ShowHeader="False" Width="100%" RowStyle-HorizontalAlign="Left">
+                      <asp:GridView ID="GridViewRooms" CssClass="grid2"  runat="server" ForeColor="#333333" GridLines="None" AutoGenerateColumns="false" CellSpacing="8" ShowHeader="False" Width="100%" RowStyle-HorizontalAlign="Left">
 
                         <Columns>
                             <asp:BoundField DataField="title" ItemStyle-Width="150px"  ItemStyle-Font-Bold="true" />
