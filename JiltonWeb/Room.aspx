@@ -2,7 +2,7 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
 
     <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <link href="css/room.css?ver=<?php echo rand(544,950)?>" rel="stylesheet">
+        <link href="css/room.css?ver=<?php echo rand(546,950)?>" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <asp:SqlDataSource 
             id="SqlDataSource1" 
@@ -110,9 +110,7 @@
                                                     <asp:Image runat="server" CssClass="imagen2" ImageUrl="assets/ratings2.png"/> 
                                                 </div>--%>
                                                 
-                                                    <div class="add">
-                                                   <asp:Button  runat="server" Cssclass="addButton" onClick="addButton" Text="Add"/>
-                                                  </div>
+                                                 
                                                 
                                                 <asp:Panel runat="server" ID="adminViewRoom" CssClass="iconoHidden">
                                                     <asp:Image CssClass="imagen" ID="deleteImage" runat="server" ImageUrl="assets/deleteIcon.png" />
@@ -137,6 +135,9 @@
                                                    
                                            </div>
                                            </div>
+                                        <div class="add">
+                                                   <asp:Button  runat="server" Cssclass="addButton" onClick="addButton" Text="Add"/>
+                                                  </div>
                                         </div>
                                     </div>
                                 </ItemTemplate>
@@ -167,11 +168,11 @@
                         </Columns>
                     </asp:GridView>
                 </div>
-                <div class="GoContainer">
-                    <div class="Go">
-                        <asp:Button  runat="server" CssClass="searchButton" Text="Go" OnClick="GoButton_Click"></asp:Button>
+                <div class="goContainer">
+                    <div class="go">
+                        <asp:Button  runat="server" Cssclass="searchButton" Text="Go"/>
                     </div>
-               </div>
+                </div>
             </div>
            </div>
         </div>

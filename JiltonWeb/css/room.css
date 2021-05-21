@@ -40,8 +40,6 @@
     min-height: 8%;
     box-shadow: 8px 8px 16px 8px rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     max-height: 8%;
-    overflow-x: hidden; 
-    overflow-y: auto;
 }
 
 .blurryBackground {
@@ -52,8 +50,6 @@
     background: rgba(255,255,255,0.9);
     position: absolute;
 }
-
-
 
 .dropbtn {
     justify-content:center;
@@ -161,21 +157,25 @@
     font-size: 100%;
 }
 
-.GoContainer {
-    position:relative;
-    display: inline;
-    bottom: 15%;
-    right: 2%;
-    width:100%;
-}
-.Go {
+.goContainer {
     position: absolute;
     display: inline-block;
-    left: 70%;
-    bottom: 50%;
+    width: 20%;
+    height: 5%;
+    /*padding: 5%;
+    left: 72%;*/
+    top: 100%;
+    left: 100%;
+    transform: translate(-140%, -219%);
 }
 
-.Go:hover .searchButton {
+.go {
+    position: absolute;
+    display: inline-block;
+    margin-bottom: 4%;
+}
+
+.go:hover .searchButton {
     cursor: pointer;
     background: #515654;
     color: white;
@@ -213,8 +213,6 @@
 .room {
     position: relative;
     height: 100%;
-    background-color:blue;
-    box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 .grid {
@@ -228,9 +226,11 @@
     background-color: white;
 }
 
-.gridContainer{
-    position:relative;
-    margin-bottom: 15%;
+.gridContainer {
+    max-height: 233px;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 .Informacion {
     padding: 3%;
@@ -297,10 +297,11 @@
 
 
 .add {
-    position: absolute;
+    position: relative;
     display: inline-block;
-    left: 85%;
-    top: 80%;
+    right: 40%;
+    margin-top: 25%;
+    
 }
 
 .addButton {
