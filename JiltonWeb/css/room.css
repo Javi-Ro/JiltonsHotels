@@ -46,7 +46,7 @@
 
 .blurryBackground {
     left: 25%;
-    height: 4000px;
+    max-height: 4000px;
     margin-top: 12.5%;
     width: 50%;
     background: rgba(255,255,255,0.9);
@@ -217,9 +217,8 @@
 }
 
 .grid {
-    margin-top: 1%;
-    margin-left: 1%;
-    margin-right: 1%;
+    margin: 1%;
+    border:none;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     /*height: 3700px;*/
     width: 98%;
@@ -264,6 +263,7 @@
     width: auto;
     height: auto;
     transition: 0.3s;
+    z-index: 3;
 }
 
 .img {
@@ -327,22 +327,33 @@
 .imagen {
     max-width: 4%;
     max-height: 4%;
+    z-index: 3;
 }
 
-.ratingStar {
-    position: relative;
-    left: 80%;
-    display: inline-block;
-}
-
-.StarCssClass {
-    background-image: url(../assets/ratings.png);
-}
 
 .imagen2 {
    max-width: 23%;
    height: auto;
 }
 
+.emptyRow {
+    height: 400px;
+    background: rgba(255,255,255,0.9);
+    display: flex;
+    bottom: 1%;
+    border-color: white;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
 
+.textWhenEmpty{
+    margin: 1% 1% 1% 1%;
+    position:relative;
+    display:inline-block;
+    top:0%;
+    font-weight: bold;
+}
 
+.emptyRow2 {
+    display: flex;
+    bottom: 1%;
+}

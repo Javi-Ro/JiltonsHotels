@@ -78,7 +78,13 @@
                
                 
                      <asp:GridView ID="GridView1" CssClass="grid" runat="server" showHeader="false"  DataSourceID="SqlDataSource1" AutoGenerateColumns="False" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">  
-                        <Columns >
+                         <emptydatarowstyle CssClass="emptyRow"/>
+                    
+                            <emptydatatemplate>
+                                <asp:Label runat="server" CssClass="textWhenEmpty" Text = "No rooms with these characteristics were found. Try to apply different filters. Sorry for the inconvenience"></asp:Label>
+                                <asp:Image id="imagen" runat="server" ImageUrl="assets/jiltonLogo2.png" width="250px" style="position:absolute; top:20%; left:50%; transform:translateX(-50%);"/>
+                            </emptydatatemplate> 
+                         <Columns >
   
                             <asp:BoundField DataField="id" ReadOnly="true" Visible="false" />
                             <asp:TemplateField>
@@ -159,8 +165,13 @@
                </div>
                 <div class="gridContainer">
                       <asp:GridView ID="GridViewRooms" CssClass="grid2"  runat="server" ForeColor="#333333" GridLines="None" AutoGenerateColumns="false" CellSpacing="8" ShowHeader="False" Width="100%" RowStyle-HorizontalAlign="Left">
-
-                        <Columns>
+                 <%--       <emptydatarowstyle CssClass="emptyRow2"/>
+                    
+                            <emptydatatemplate>
+                                <asp:Label runat="server" CssClass="textWhenEmpty" Text = "Select any room you like"></asp:Label>
+                            </emptydatatemplate> --%>
+                        
+                          <Columns>
                             <asp:BoundField DataField="title" ItemStyle-Width="150px"  ItemStyle-Font-Bold="true" />
                             <asp:BoundField ItemStyle-Width="50px" />
                             <asp:BoundField DataField="price" DataFormatString="{0:C}" ItemStyle-Width="80px" />
