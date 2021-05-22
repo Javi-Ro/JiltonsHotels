@@ -37,13 +37,16 @@
     position: sticky;
     top: 10%;
     background-color: white;
-    height: 8%;
+    min-height: 8%;
     box-shadow: 8px 8px 16px 8px rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    max-height: 8%;
+/*    overflow-x: hidden; 
+    overflow-y: auto;*/
 }
 
 .blurryBackground {
     left: 25%;
-    height: 4000px;
+    max-height: 4000px;
     margin-top: 12.5%;
     width: 50%;
     background: rgba(255,255,255,0.9);
@@ -115,21 +118,27 @@
     transition: visibility 0s, opacity 0.2s linear;
 }
 
-    /* Links inside the dropdown */
-    .dropdown-content a {
+    .dropdown-content .dropdown-Buttons {
         color: black;
-        padding: 12px 16px;
+        padding: 15px 16px;
+        border: none;
         text-decoration: none;
+        background-color: transparent;
+        position: relative;
+        width: 100%;
         display: block;
+        font-size: 16px;
+        font-family: 'Karla', sans-serif;
+        transition: .5s ease all;
     }
 
-        /* Change color of dropdown links on hover */
-        .dropdown-content a:hover {
-            cursor: pointer;
-            background: #515654;
-            color: white;
-            transition: .5s ease all;
-        }
+
+.dropdown-content .dropdown-Buttons:hover {
+    cursor: pointer;
+    background: #515654;
+    color: white;
+    transition: .5s ease all;
+}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
@@ -152,16 +161,22 @@
     font-size: 100%;
 }
 
-.Go {
+.goContainer {
     position: absolute;
     display: inline-block;
-    left: 100%;
+    width: 20%;
+    height: 5%;
     top: 100%;
-    transform: translate(-130%, -150%);
-    
+    left: 100%;
+    transform: translate(-140%, -219%);
+}
+.go {
+    position: absolute;
+    display: inline-block;
+    margin-bottom: 4%;
 }
 
-.Go:hover .searchButton {
+.go:hover .searchButton {
     cursor: pointer;
     background: #515654;
     color: white;
@@ -198,15 +213,12 @@
 
 .room {
     position: relative;
-    height: 100%;
-    background-color:blue;
-    box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    height: 100%; 
 }
 
 .grid {
-    margin-top: 1%;
-    margin-left: 1%;
-    margin-right: 1%;
+    margin: 1%;
+    border:none;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     /*height: 3700px;*/
     width: 98%;
@@ -214,6 +226,12 @@
     background-color: white;
 }
 
+.gridContainer{
+    max-height: 233px;
+    position:relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
 .Informacion {
     padding: 3%;
     width: 70%;
@@ -232,6 +250,8 @@
     float: left;
     margin: auto;
     background-color:white;
+    display:flex;
+    align-items: center;
 }
 
 .resize:hover {
@@ -240,10 +260,10 @@
 
 .resize {
     max-width: 100%;
-    width:auto;
+    width: auto;
     height: auto;
     transition: 0.3s;
-    
+    z-index: 3;
 }
 
 .img {
@@ -276,22 +296,64 @@
     display: inline-block;
 }
 
+
+.add {
+    position: relative;
+    display: inline-block;
+    right: 40%;
+    margin-top: 25%;
+}
+
+.addButton {
+    position: absolute;
+    border: 2px solid #515654;
+    line-height: 21px;
+    padding: 0 14px;
+    background: transparent;
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: .5s ease all;
+}
+
+    .addButton:hover {
+        cursor: pointer;
+        background: #515654;
+        color: white;
+        transition: .5s ease all;
+    }
+
+
 .imagen {
     max-width: 4%;
     max-height: 4%;
+    z-index: 3;
 }
 
-.ratingStar {
-    position: relative;
-    left: 80%;
-    display: inline-block;
-}
-
-.StarCssClass {
-    background-image: url(../assets/ratings.png);
-}
 
 .imagen2 {
    max-width: 23%;
    height: auto;
+}
+
+.emptyRow {
+    height: 400px;
+    background: rgba(255,255,255,0.9);
+    display: flex;
+    bottom: 1%;
+    border-color: white;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.textWhenEmpty{
+    margin: 1% 1% 1% 1%;
+    position:relative;
+    display:inline-block;
+    top:0%;
+    font-weight: bold;
+}
+
+.emptyRow2 {
+    display: flex;
+    bottom: 1%;
 }

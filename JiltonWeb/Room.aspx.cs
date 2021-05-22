@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -11,11 +12,24 @@ namespace JiltonWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Context.Items["showLowest"] != null)
+            {
+                SqlDataSource1.SelectCommand += Context.Items["showLowest"];
+            }
             
             if (!IsPostBack)
             {
                 
             }
+            if(Context.Items["Check"] != null)
+            {
+                DataTable seleccionado = (DataTable)Session["sessionSelected"];
+                GridViewRooms.DataSource = seleccionado;
+                GridViewRooms.DataBind();
+            }
+
+            
+
 
             GridView1.DataBind();
 
@@ -51,6 +65,45 @@ namespace JiltonWeb
         protected void GoButton_Click(object sender, EventArgs e)
         {
             Response.Redirect("ExtraServices.aspx");
+        }
+
+        protected void showLowest(object sender, EventArgs e)
+        {
+            Context.Items.Add("showLowest", " order by price");
+            Server.Transfer("Room.aspx");
+        }
+
+        protected void addButton(object sender, EventArgs e)
+        {
+            DataTable seleccionado = (DataTable)Session["sessionSelected"];
+            
+            if(seleccionado == null)
+            {
+                seleccionado = new DataTable();
+                DataColumn title = new DataColumn();
+                title.DataType = System.Type.GetType("System.String");
+                title.ColumnName = "title";
+                DataColumn price = new DataColumn();
+                price.DataType = System.Type.GetType("System.Single");
+                price.ColumnName = "price";
+                seleccionado.Columns.Add(title);
+                seleccionado.Columns.Add(price);
+            }
+
+            DataRow dr = seleccionado.NewRow();
+  
+
+            Button button1 = (Button)sender;
+            GridViewRow gr = (GridViewRow)button1.NamingContainer;
+            Label titulo = (Label)gr.FindControl("Label1");
+            Label precio = (Label)gr.FindControl("Label9");
+            dr["title"] = titulo.Text;
+            dr["price"] = float.Parse(precio.Text);
+            seleccionado.Rows.Add(dr);
+            
+            Session["sessionSelected"] = seleccionado;
+            Context.Items.Add("Check", true);
+            Server.Transfer("Room.aspx");
         }
     }
 }

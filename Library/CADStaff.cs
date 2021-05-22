@@ -90,7 +90,22 @@ namespace Library
             }
 
         }
-
+        public DataSet FilterByType(ENStaff en)
+        {
+            try
+            {
+                SqlConnection c = new SqlConnection(constring);
+                DataSet virtualSet = new DataSet();
+                SqlDataAdapter adapter = new SqlDataAdapter("SELECT email WHERE type = '" + en.Type + "'", c);
+                adapter.Fill(virtualSet, "staff");
+                return virtualSet;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Staff filter has failed.Error: {0}", e.Message);
+                return null;
+            }
+        }
 
     }
 }
