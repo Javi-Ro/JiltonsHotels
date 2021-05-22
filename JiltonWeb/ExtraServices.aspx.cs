@@ -26,13 +26,15 @@ namespace JiltonWeb
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            booking.ID = 1;
-            booking.date = dates;
+            //booking.ID = 1;
+            //booking.date = dates;
             if (!Page.IsPostBack)
             {
                 // Booking dates
-                EntryDateLabel.Text = booking.date.startDate.ToString();
-                DepartureDateLabel.Text = booking.date.endDate.ToString();
+                //EntryDateLabel.Text = booking.date.startDate.ToString();
+                //DepartureDateLabel.Text = booking.date.endDate.ToString();
+                EntryDateLabel.Text = "-";
+                DepartureDateLabel.Text = "-";
 
                 // Filling grid views of the accordion panes
                 d = service.listAllSpa();
@@ -94,6 +96,10 @@ namespace JiltonWeb
         protected void ContinueButton_Click(object sender, EventArgs e)
         {
             Response.Redirect("Booking.aspx");
+        }
+
+        protected void AddServiceButton_Click(object sender, EventArgs e)
+        {
         }
     }
 }

@@ -96,25 +96,25 @@ namespace JiltonWeb
         protected global::System.Web.UI.WebControls.Button UserButton;
 
         /// <summary>
-        /// MyProfile control.
+        /// Control MyProfile.
         /// </summary>
         /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button MyProfile;
 
         /// <summary>
-        /// MyBookings control.
+        /// Control MyBookings.
         /// </summary>
         /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button MyBookings;
 
         /// <summary>
-        /// LogOutButton control.
+        /// Control LogOutButton.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
@@ -211,6 +211,24 @@ namespace JiltonWeb
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BookButton;
+
+        /// <summary>
+        /// Control RequiredFieldValidatorEntryDate.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorEntryDate;
+
+        /// <summary>
+        /// Control RequiredFieldValidatorDepartureDate.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorDepartureDate;
 
         /// <summary>
         /// Control ContentPlaceHolder1.

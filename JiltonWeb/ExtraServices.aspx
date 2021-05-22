@@ -108,22 +108,22 @@
                             </div>
                             <div class="PanelBlock">
                                 <asp:Label runat="server" Text="CHOOSE THE DATE" Font-Bold="true" CssClass="LabelAddingService"></asp:Label>
-                                <asp:TextBox Enabled="false" ID ="TextEntry" Width ="80px" Height="20px" style="text-align:center; border-radius:3px; border-width:1px; margin-right:2px;" ReadOnly="true" runat ="server" />
-                                <asp:ImageButton ID="ShowEntry"  Enabled="false" Width="18px" Height="18px" ImageAlign="Middle" ImageUrl="assets/Calendar.png" BorderWidth ="1px" BackColor="White" style="border-radius:3px"  AlternateText="No Image available" runat="server" />
+                                <asp:TextBox Enabled="true" ID ="TextEntry" Width ="80px" Height="20px" style="text-align:center; border-radius:3px; border-width:1px; margin-right:2px;" ReadOnly="true" runat ="server" />
+                                <asp:ImageButton ID="ShowEntry"  Enabled="true" Width="18px" Height="18px" ImageAlign="Middle" ImageUrl="assets/Calendar.png" BorderWidth ="1px" BackColor="White" style="border-radius:3px"  AlternateText="No Image available" runat="server" />
                                 <ajaxToolkit:CalendarExtender ID="EntryCalendar" PopupButtonID="ShowEntry" runat="server"  TargetControlID="TextEntry" Format="dd/MM/yyyy" ></ajaxToolkit:CalendarExtender>
                             </div>
                             <div class="PanelBlock">
                                 <asp:Label runat="server" Text="CHOOSE THE HOUR" Font-Bold="true" CssClass="HourServices"></asp:Label>
-                                <asp:TextBox ID ="HourTextBox" Width ="80px" Height="20px" style="text-align:center; border-radius:3px; border-width:1px;" runat ="server" Enabled="false" />
+                                <asp:TextBox ID ="HourTextBox" Width ="80px" Height="20px" style="text-align:center; border-radius:3px; border-width:1px;" runat ="server" Enabled="true" />
                                 <ajaxToolkit:MaskedEditExtender runat="server" CultureDatePlaceholder="" CultureTimePlaceholder="" CultureDecimalPlaceholder="" CultureThousandsPlaceholder="" CultureDateFormat="" CultureCurrencySymbolPlaceholder="" CultureAMPMPlaceholder="" Century="2000" BehaviorID="TextBox1_MaskedEditExtender" TargetControlID="HourTextBox" ID="HourTextBox_MaskedEditExtender" MaskType="Time" Mask="99:00" ClearMaskOnLostFocus="False" UserTimeFormat="None"></ajaxToolkit:MaskedEditExtender>
                                 <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Not correct hour introduced" ControlToValidate="HourTextBox" ValidationExpression="^([0-1]?[0-9]|2[0-3]):00$" Display="Dynamic"></asp:RegularExpressionValidator>
                             </div>
                             <div class="PanelBlock">
                                 <asp:Label runat="server" Text="CHOOSE YOUR STAFF" Font-Bold="true" CssClass="HourServices"></asp:Label>
-                                <asp:DropDownList ID="StaffList" runat="server" Enabled="false" CssClass="ListStaff"></asp:DropDownList>
+                                <asp:DropDownList ID="StaffList" runat="server" Enabled="true" CssClass="ListStaff"></asp:DropDownList>
                             </div>
                             <div class="PanelBlock">
-                                <asp:Button ID="AddServiceButton" CssClass="ButtonAddService" runat="server" Text="Add Service" />
+                                <asp:Button ID="AddServiceButton" CssClass="ButtonAddService" runat="server" Text="Add Service" OnClick="AddServiceButton_Click" />
                             </div>
                         </div>
                     </asp:Panel>

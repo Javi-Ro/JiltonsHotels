@@ -89,6 +89,8 @@
                     </asp:DropDownList>
 
                     <asp:Button  runat="server" CssClass="BookingButton" ID="BookButton" Text="BOOK" OnClick="BookButton_Click"></asp:Button>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidatorEntryDate" CssClass="Validator" runat="server" ErrorMessage="Entry date is required" ControlToValidate="TextEntry" Display="Dynamic"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidatorDepartureDate" CssClass="Validator" runat="server" ErrorMessage="Departure date is required" ControlToValidate="TextDeparture" Display="Dynamic"></asp:RequiredFieldValidator>
                     <asp:Label CssClass="InformationLabel" runat="server">INFORMATION AND BOOKINGS +34 965 455 123</asp:Label>
                 </div>            
             </div>

@@ -82,6 +82,7 @@ namespace JiltonWeb
         protected void BookButton_Click(object sender, EventArgs e)
         {
             Response.Redirect("Room.aspx");
+            
         }
 
         protected void LogOutUser(object sender, EventArgs e)
