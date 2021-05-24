@@ -32,7 +32,7 @@ namespace JiltonWeb
             {
                 ENPackage pack = new ENPackage(int.Parse(IdData.Text), NameDate.Text, DescriptionData.Text, int.Parse(PriceData.Text));
 
-                if (pack.createPackage() != null)
+                if (pack.createPackage() == true)
                 {
                     output.Text = "Pack created successfuly!";
                 }
@@ -59,7 +59,7 @@ namespace JiltonWeb
                 {
                     pack = new ENPackage(int.Parse(IdData.Text), NameDate.Text, DescriptionData.Text, int.Parse(PriceData.Text));
 
-                    if (pack.updateDescPackage()!= null && pack.updatePricePackage() != null)
+                    if (pack.updateDescPackage() == true && pack.updatePricePackage() == true)
                     {
                         output.Text = "Pack description and price updated successfuly!";
                     }
@@ -74,20 +74,20 @@ namespace JiltonWeb
                     //This means we only are going to update the description, so we must put 0 on price because "" can int.Parse
                     pack = new ENPackage(int.Parse(IdData.Text), NameDate.Text, DescriptionData.Text, 0);
 
-                    if (pack.updateDescPackage() != null)
+                    if (pack.updateDescPackage() == true)
                     {
                         output.Text = "Pack description updated successfuly!";
                     }
                     else
                     {
-                        output.Text = "This pàck is not on the database";
+                        output.Text = "This pack is not on the database";
                     }
                 }
                 else if (PriceData.Text != "")
                 {
                     pack = new ENPackage(int.Parse(IdData.Text), NameDate.Text, DescriptionData.Text, int.Parse(PriceData.Text));
 
-                    if (pack.updatePricePackage() != null)
+                    if (pack.updatePricePackage()==true)
                     {
                         output.Text = "Pack price updated successfuly!";
                     }
