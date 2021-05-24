@@ -4,13 +4,13 @@
     <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
         <link href="css/room.css?ver=<?php echo rand(546,950)?>" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <asp:SqlDataSource 
+<%--        <asp:SqlDataSource 
             id="SqlDataSource1" 
             runat="server"
             DataSourceMode="DataReader"
             ConnectionString="<%$ ConnectionStrings:Database%>"
             SelectCommand="SELECT * FROM room">
-        </asp:SqlDataSource>
+        </asp:SqlDataSource>--%>
            
         <div class="background" runat="server">
 
@@ -63,7 +63,7 @@
                 <div class="slider">
                     <asp:TextBox ID="TB1" runat="server"> </asp:TextBox>
                     <asp:TextBox ID="Control" runat="server" visible="false"></asp:TextBox>
-                           <ajax:SliderExtender TooltipText = "{0}" EnableHandleAnimation="true" RaiseChangeOnlyOnMouseUp="true" Maximum="1500" Minimum="150" ID="SliderExtender1" BoundControlID="Control" TargetControlID ="TB1" runat="server" />
+                           <ajax:SliderExtender TooltipText = "{0}" EnableHandleAnimation="true"  RaiseChangeOnlyOnMouseUp="true" Maximum="1500" Minimum="150" ID="SliderExtender1" BoundControlID="Control" TargetControlID ="TB1" runat="server" />
                 </div>
 
                     
@@ -77,8 +77,17 @@
             <div class="blurryBackground" runat="server">
                
                 
-                     <asp:GridView ID="GridView1" CssClass="grid" runat="server" showHeader="false"  DataSourceID="SqlDataSource1" AutoGenerateColumns="False" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">  
+                     <asp:GridView ID="GridView1" allowpaging="true"  CssClass="grid" runat="server" showHeader="false" AutoGenerateColumns="False" OnPageIndexChanging="gridview_PageIndexChanging">  
                          <emptydatarowstyle CssClass="emptyRow"/>
+
+                             <pagersettings mode="Numeric"
+                              position="Bottom"           
+                              pagebuttoncount="10"/>
+                      
+                            <pagerstyle backcolor="White"
+                              height="30px"
+                              verticalalign="Bottom"
+                              horizontalalign="Center"/>
                     
                             <emptydatatemplate>
                                 <asp:Label runat="server" CssClass="textWhenEmpty" Text = "No rooms with these characteristics were found. Try to apply different filters. Sorry for the inconvenience"></asp:Label>
@@ -150,7 +159,7 @@
                             </asp:TemplateField>
                         </Columns>
                      
-<RowStyle CssClass="bottomBorder"></RowStyle>
+                        <RowStyle CssClass="bottomBorder"></RowStyle>
                      
                      </asp:GridView>                 
 

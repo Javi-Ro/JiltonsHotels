@@ -20,23 +20,59 @@ public class CADRoom
         constring = ConfigurationManager.ConnectionStrings["Database"].ConnectionString;
     }
 
-    public bool selectAll(ENRoom room)
+    public DataSet showAll(ENRoom room)
     {
-        //shows all the available rooms
+        DataSet virtualSet = new DataSet();
+        try
+        {
+            SqlConnection conn = new SqlConnection(constring);
+            SqlDataAdapter adapter = new SqlDataAdapter("SELECT * from room", conn);
+            adapter.Fill(virtualSet, "room");
+            return virtualSet;
+        }
+        catch (SqlException ex)
+        {
+            throw new Exception(ex.Message);
+        }
+        catch (Exception ex2)
+        {
+            Console.WriteLine(ex2.Message + "Error showing all the rooms");
+        }
+        return virtualSet;
+    }
+
+    public bool create(ENRoom room)
+    {
         return true;
     }
 
-    public bool selectByType(ENRoom room)
+    public bool delete(ENRoom room)
     {
-        //shows all the available rooms with the selected type
         return true;
     }
 
-    public bool selectByMinSize(ENRoom room)
+    public bool update(ENRoom room)
     {
-        //shows all the available rooms that have more than the size selected
         return true;
     }
+
+    public bool searchRoom(ENRoom room)
+    {
+        return true;
+    }
+
+
+    //public DataSet selectByType(ENRoom room)
+    //{
+    //    //shows all the available rooms with the selected type
+    //    return true;
+    //}
+
+    //public DataSet selectByMinSize(ENRoom room)
+    //{
+    //    //shows all the available rooms that have more than the size selected
+    //    return true;
+    //}
 
     public bool selectOrderByPriceUp(ENRoom room)
     {
@@ -62,4 +98,6 @@ public class CADRoom
         //sets a room available when the booking ends or when the user cancels the booking
         return true;
     }
+
+
 }

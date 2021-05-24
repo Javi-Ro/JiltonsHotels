@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,13 +9,11 @@ namespace Library
 {
     public class ENRoom
     {
-        private static int last_id = 0;
+        private int _id;
 
-        private int _id; 
-        
-        public int id { 
-            get { return _id; } 
-            set { _id = value; } 
+        public int id {
+            get { return _id; }
+            set { _id = value; }
         }
 
         private string _title;
@@ -25,18 +24,18 @@ namespace Library
             set { _title = value; }
         }
 
-        private string _description; 
-        
-        public string description { 
-            get { return _description; } 
-            set { _description = value; } 
+        private string _description;
+
+        public string description {
+            get { return _description; }
+            set { _description = value; }
         }
 
-        private float _price; 
-        
-        public float price { 
-            get { return _price; } 
-            set { _price = value; } 
+        private float _price;
+
+        public float price {
+            get { return _price; }
+            set { _price = value; }
         }
 
         private int _adultBed;
@@ -47,7 +46,8 @@ namespace Library
             set { _adultBed = value; }
         }
 
-        public int _childBed
+        private int _childBed;
+        public int childBed
         {
             get { return _childBed; }
             set { _childBed = value; }
@@ -61,52 +61,118 @@ namespace Library
             set { _type = value; }
         }
 
-        private bool _available;
+        private ENBooking _booking;
 
-        public bool available
+        public ENBooking booking
         {
-            get { return _available; }
-            set { _available = value; }
-        }
-        private int _size;
-
-        public int size
-        {
-            get { return _size; }
-            set { _size = value; }
+            get { return _booking; }
+            set { _booking = value; }
         }
 
+        private float _ratings;
+
+        public float ratings{
+            get { return _ratings;}
+            set {
+                if (value > 5.0)
+                    _ratings = 5;
+                else
+                    _ratings = ratings;
+            }
+        }
         public ENRoom()
         {
-            id = last_id++;
+            id = 0;
             title = "Confort room";
             description = "Comfort room suitable for all kinds of families";
-            size = 15;
-            available = true;
+            booking = null;
             price = 60;
             type = "Single";
+            ratings = 5;
         }
 
-        public bool showAll()
+        public ENRoom(int id,string title,string description, float price, int childBed,  int adultBed, string type, float ratings, ENBooking booking)
         {
-            CADRoom room = new CADRoom();
-            bool show = room.selectAll(this);
-            return show;
+            this.id = id;
+            this.title = title;
+            this.description = description;
+            this.price = price;
+            this.childBed = childBed;
+            this.adultBed = adultBed;
+            this.type = type;
+            this.ratings = ratings;
+            this.booking = booking;
         }
 
-        public bool showByType()
+        public DataSet showAll()
         {
             CADRoom room = new CADRoom();
-            bool show = room.selectByType(this);
-            return show;
+            return room.showAll(this);
         }
 
-        public bool showByMinSize()
+        public bool createRoom()
         {
             CADRoom room = new CADRoom();
-            bool show = room.selectByMinSize(this);
-            return show;
+            bool create = room.create(this);
+            return create;
         }
+
+        public bool updateRoom()
+        {
+            CADRoom room = new CADRoom();
+            ENRoom nuevo = new ENRoom(this.id, this.title, this.description, this.price, this.childBed, this.adultBed, this.type, this.ratings, this.booking);
+            bool existe = room.searchRoom(this);
+            if (existe)
+            {
+                this.id = nuevo.id;
+                this.title = nuevo.title;
+                this.description = nuevo.description;
+                this.price = nuevo.price;
+                this.childBed = nuevo.childBed;
+                this.adultBed = nuevo.adultBed;
+                this.type = nuevo.type;
+                this.ratings = nuevo.ratings;
+                this.booking = nuevo.booking;
+                bool update = room.update(this);
+                return update;
+
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool delete()
+        {
+            CADRoom room = new CADRoom();
+
+            bool existe = room.searchRoom(this);
+            if (existe)
+            {
+                bool borrado = room.delete(this);
+                return borrado;
+
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        //public bool showByType()
+        //{
+        //    CADRoom room = new CADRoom();
+        //    bool show = room.selectByType(this);
+        //    return show;
+        //}
+
+        //public bool showByMinSize()
+        //{
+        //    CADRoom room = new CADRoom();
+        //    bool show = room.selectByMinSize(this);
+        //    return show;
+        //}
 
         public bool showAllOrderByPriceUp()
         {
@@ -122,21 +188,21 @@ namespace Library
             return show;
         }
 
-        public bool setNotAvailable()
-        {
-            this.available = false;
-            CADRoom room = new CADRoom();
-            bool show = room.UpdateNotAvailable(this);
-            return show;
-        }
+        //public bool setNotAvailable()
+        //{
+        //    this.available = false;
+        //    CADRoom room = new CADRoom();
+        //    bool show = room.UpdateNotAvailable(this);
+        //    return show;
+        //}
 
-        public bool setAvailableAgain()
-        {
-            this.available = true;
-            CADRoom room = new CADRoom();
-            bool show = room.UpdateAvailable(this);
-            return show;
-        }
+        //public bool setAvailableAgain()
+        //{
+        //    this.available = true;
+        //    CADRoom room = new CADRoom();
+        //    bool show = room.UpdateAvailable(this);
+        //    return show;
+        //}
 
     }
 }

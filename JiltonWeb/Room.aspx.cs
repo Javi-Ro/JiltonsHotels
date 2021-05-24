@@ -1,6 +1,9 @@
-﻿using System;
+﻿using Library;
+using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -10,16 +13,19 @@ namespace JiltonWeb
 {
     public partial class Room : System.Web.UI.Page
     {
+        ENRoom room = new ENRoom();
+        DataSet datos = new DataSet();
+        private String constring = ConfigurationManager.ConnectionStrings["Database"].ToString();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Context.Items["showLowest"] != null)
-            {
-                SqlDataSource1.SelectCommand += Context.Items["showLowest"];
-            }
+            //if (Context.Items["showLowest"] != null)
+            //{
+            //    SqlDataSource1.SelectCommand += Context.Items["showLowest"];
+            //}
             
             if (!IsPostBack)
             {
-                
+                this.BindGrid();
             }
             if(Context.Items["Check"] != null)
             {
@@ -52,6 +58,20 @@ namespace JiltonWeb
             }
 
         }
+
+        private void BindGrid()
+        {
+            string constr = ConfigurationManager.ConnectionStrings["database"].ConnectionString;
+            SqlConnection con = new SqlConnection(constr);
+            SqlCommand cmd = new SqlCommand("SELECT * from room");
+            SqlDataAdapter sda = new SqlDataAdapter();
+            cmd.Connection = con;
+            sda.SelectCommand = cmd;
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            GridView1.DataSource = dt;
+            GridView1.DataBind();
+        }
         protected void Button1_Click(object sender, EventArgs e)
         {
 
@@ -73,6 +93,12 @@ namespace JiltonWeb
             Server.Transfer("Room.aspx");
         }
 
+        protected void gridview_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            GridView1.PageIndex = e.NewPageIndex;
+            this.BindGrid();
+
+        }
         protected void addButton(object sender, EventArgs e)
         {
             DataTable seleccionado = (DataTable)Session["sessionSelected"];
