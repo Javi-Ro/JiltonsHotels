@@ -1,5 +1,5 @@
 -- RESTAURANT INSERTS --
-INSERT INTO [dbo].[Restaurant]([dailyMenu], [appetizers],[mains], [desserts],[price]) VALUES('2021-05-13', 'Trout tartare
+INSERT INTO [dbo].[Restaurant]([dailyMenu], [appetizers],[mains], [desserts],[price]) VALUES('2021-05-23', 'Trout tartare
 
 Suquet of red prawns and red mullet
 
@@ -11,7 +11,7 @@ Rhubarb with lychee and roses.', 'Golden Opulence Sundae.
 
 Black beer meringue', 185);
 
-INSERT INTO [dbo].[Restaurant]([dailyMenu], [appetizers],[mains], [desserts],[price]) VALUES('2021-05-14', 'Solid mojito
+INSERT INTO [dbo].[Restaurant]([dailyMenu], [appetizers],[mains], [desserts],[price]) VALUES('2021-05-24', 'Solid mojito
 
 Cod foam with honey, Orange and olive salad
 
@@ -23,7 +23,7 @@ Sea ​​bream marinated in Japanese soybeans and cooked Yakitori style with sm
 
 Sorbet and creamy chocolate, brownie and caramelized cocoa grue', 210);
 
-INSERT INTO [dbo].[Restaurant]([dailyMenu], [appetizers],[mains], [desserts],[price]) VALUES('2021-05-15', 'Grilled octopus covered in ink sauce
+INSERT INTO [dbo].[Restaurant]([dailyMenu], [appetizers],[mains], [desserts],[price]) VALUES('2021-05-25', 'Grilled octopus covered in ink sauce
 
 Green gazpacho with peppers, clams, cucumber and passion fruit
 
@@ -35,7 +35,7 @@ Sea fruits and algae salad, plankton and shrimp consommé', 'Golden Opulence Sun
 
 Cactus with lime, tequila and green leaves', 190);
 
-INSERT INTO [dbo].[Restaurant]([dailyMenu], [appetizers],[mains], [desserts],[price])VALUES('2021-05-16', 'Native Oysters & Almus White Caviar
+INSERT INTO [dbo].[Restaurant]([dailyMenu], [appetizers],[mains], [desserts],[price])VALUES('2021-05-26', 'Native Oysters & Almus White Caviar
 
 Slow-cooked Duck Egg, Iberico Ham, Spring White Truffle
 
@@ -48,7 +48,7 @@ Braised Beef Cheeks with Potato Mousseline', 'Golden Opulence Sundae.
 Dark chocolate cylinder and smoked hazelnut praline', 250);
 
 
-INSERT INTO [dbo].[Restaurant]([dailyMenu], [appetizers],[mains], [desserts],[price])VALUES('2021-05-17', 'Steamed prawn with seafood foam
+INSERT INTO [dbo].[Restaurant]([dailyMenu], [appetizers],[mains], [desserts],[price])VALUES('2021-05-27', 'Steamed prawn with seafood foam
 
 Slow-cooked Duck Egg, Iberico Ham, Spring White Truffle
 
@@ -61,7 +61,7 @@ roasted Wagyu with anise, soy and ginger, apple cider and black garlic.', 'Golde
 Cupcake with frozen and roasted fruits and vegetables, toasted almond meringue.', 175);
 
 
-INSERT INTO [dbo].[Restaurant]([dailyMenu], [appetizers],[mains], [desserts],[price]) VALUES('2021-05-18', 'Red Apple and bacon strudel
+INSERT INTO [dbo].[Restaurant]([dailyMenu], [appetizers],[mains], [desserts],[price]) VALUES('2021-05-28', 'Red Apple and bacon strudel
 
 Suquet of red prawns and red mullet
 
@@ -73,7 +73,7 @@ Apple and celery nectar, pea puree, seaweed and rosemary ice cream and aerated m
 
 Yogurt with citrus and raspberry', 175);
 
-INSERT INTO [dbo].[Restaurant]([dailyMenu], [appetizers],[mains], [desserts],[price]) VALUES('2021-05-19', 'Trout tartare
+INSERT INTO [dbo].[Restaurant]([dailyMenu], [appetizers],[mains], [desserts],[price]) VALUES('2021-05-29', 'Trout tartare
 
 Suquet of red prawns and red mullet
 
@@ -122,43 +122,43 @@ Insert INTO [dbo].[staff] ([email],[name],[type],[description],[imgURL]) VALUES
 
 --ROOM INSERTS 
 
-INSERT INTO [dbo].[room]([title],[description], [price],[type],[adultBed],[childBed],[imgURL]) VALUES(
-'Single room. Botanical Gardens View. Asian-inspired Style. 12 sqm', 'Independent, warm and comfortable suitable for every lonely traveler', 300, 'single', 1, 0, 'assets/room11.jpg');
+INSERT INTO [dbo].[room]([title],[description], [price],[type],[adultBed],[childBed],[ratings],[imgURL]) VALUES(
+'Single room. Botanical Gardens View. Asian-inspired Style. 12 sqm', 'Independent, warm and comfortable suitable for every lonely traveler', 300, 'single', 1, 0,5, 'assets/room11.jpg');
 
-INSERT INTO [dbo].[room]([title],[description], [price],[type],[adultBed],[childBed],[imgURL]) VALUES(
-'Single room. Botanical Gardens & Terrace View. Classic Style. 15 sqm', 'Independent, warm and comfortable suitable for every lonely traveler', 320, 'single', 1, 0, 'assets/room2.jpg');
+INSERT INTO [dbo].[room]([title],[description], [price],[type],[adultBed],[childBed],[ratings],[imgURL]) VALUES(
+'Single room. Botanical Gardens & Terrace View. Classic Style. 15 sqm', 'Independent, warm and comfortable suitable for every lonely traveler', 320, 'single', 1, 0,5, 'assets/room2.jpg');
 
-INSERT INTO [dbo].[room]([title],[description], [price],[type],[adultBed],[childBed],[imgURL]) VALUES('Private Balinese Cabin. Botanical Gardens View. 10 sqm', 'Exclusive cabin perfect for nature lovers', 380, 'single', 1, 0, 'assets/room13.jpg');
+INSERT INTO [dbo].[room]([title],[description], [price],[type],[adultBed],[childBed],[ratings],[imgURL]) VALUES('Private Balinese Cabin. Botanical Gardens View. 10 sqm', 'Exclusive cabin perfect for nature lovers', 380, 'single', 1, 0,5, 'assets/room13.jpg');
 
-INSERT INTO [dbo].[room]([title],[description], [price],[type],[adultBed],[childBed],[imgURL]) VALUES('Relaxing Double Room. Gardens & Pool View. 12 sqm', 'Private room in a unique atmosphere', 380, 'double', 1, 0, 'assets/room7.jpg');
+INSERT INTO [dbo].[room]([title],[description], [price],[type],[adultBed],[childBed],[ratings],[imgURL]) VALUES('Relaxing Double Room. Gardens & Pool View. 12 sqm', 'Private room in a unique atmosphere', 380, 'double', 1, 0, 5,'assets/room7.jpg');
 
-INSERT INTO [dbo].[room]([title],[description], [price],[type],[adultBed],[childBed],[imgURL]) VALUES('Private cabin. Asian Gardens View. 15 sqm', 'Exclusive room with the best mod cons', 420, 'double', 1, 0, 'assets/room5.jpg');
+INSERT INTO [dbo].[room]([title],[description], [price],[type],[adultBed],[childBed],[ratings],[imgURL]) VALUES('Private cabin. Asian Gardens View. 15 sqm', 'Exclusive room with the best mod cons', 420, 'double', 1, 0, 5,'assets/room5.jpg');
 
-INSERT INTO [dbo].[room]([title],[description], [price],[type],[adultBed],[childBed],[imgURL]) VALUES('Private cabin. Asian Gardens View. Classic Style. 10 sqm', 'Warm room for lovers', 390, 'double', 1, 0, 'assets/room6.jpg');
+INSERT INTO [dbo].[room]([title],[description], [price],[type],[adultBed],[childBed],[ratings],[imgURL]) VALUES('Private cabin. Asian Gardens View. Classic Style. 10 sqm', 'Warm room for lovers', 390, 'double', 1, 0, 5,'assets/room6.jpg');
 
-INSERT INTO [dbo].[room]([title],[description], [price],[type],[adultBed],[childBed],[imgURL]) VALUES('Private cabin with its own garden. 16 sqm', 'Exclusive cabin especially suitable for the younger ones', 420, 'double', 0, 2, 'assets/room14.jpg');
+INSERT INTO [dbo].[room]([title],[description], [price],[type],[adultBed],[childBed],[ratings],[imgURL]) VALUES('Private cabin with its own garden. 16 sqm', 'Exclusive cabin especially suitable for the younger ones', 420, 'double', 0, 2, 5,'assets/room14.jpg');
 
-INSERT INTO [dbo].[room]([title],[description], [price],[type],[adultBed],[childBed],[imgURL]) VALUES('Spacious family-oriented suite. Balinese-modern style. 15 sqm', 'Comfortable room perfect for families with children', 450, 'triple', 1, 1, 'assets/room12.jpg');
+INSERT INTO [dbo].[room]([title],[description], [price],[type],[adultBed],[childBed],[ratings],[imgURL]) VALUES('Spacious family-oriented suite. Balinese-modern style. 15 sqm', 'Comfortable room perfect for families with children', 450, 'triple', 1, 1, 5,'assets/room12.jpg');
 
-INSERT INTO [dbo].[room]([title],[description], [price],[type],[adultBed],[childBed],[imgURL]) VALUES('Spacious suite. Modern style. 25 sqm', 'Spacious room perfect for young couples', 830, 'triple', 2, 2, 'assets/room17.jpg');
+INSERT INTO [dbo].[room]([title],[description], [price],[type],[adultBed],[childBed],[ratings],[imgURL]) VALUES('Spacious suite. Modern style. 25 sqm', 'Spacious room perfect for young couples', 830, 'triple', 2, 2,5, 'assets/room17.jpg');
 
-INSERT INTO [dbo].[room]([title],[description], [price],[type],[adultBed],[childBed],[imgURL]) VALUES('Room for small families. Sea View. 12 sqm', 'Spacious room perfect for young couples with an optional single bed', 490, 'triple', 2, 1, 'assets/room1.jpg');
+INSERT INTO [dbo].[room]([title],[description], [price],[type],[adultBed],[childBed],[ratings],[imgURL]) VALUES('Room for small families. Sea View. 12 sqm', 'Spacious room perfect for young couples with an optional single bed', 490, 'triple', 2, 1,5, 'assets/room1.jpg');
 
-INSERT INTO [dbo].[room]([title],[description], [price],[type],[adultBed],[childBed],[imgURL]) VALUES('Private cabin. Balinese luxurious style. 16 sqm', 'Unique cabin equipped with the most luxurious furniture', 470, 'double', 1, 0, 'assets/room4.jpg');
+INSERT INTO [dbo].[room]([title],[description], [price],[type],[adultBed],[childBed],[ratings],[imgURL]) VALUES('Private cabin. Balinese luxurious style. 16 sqm', 'Unique cabin equipped with the most luxurious furniture', 470, 'double', 1, 0,5, 'assets/room4.jpg');
 
-INSERT INTO [dbo].[room]([title],[description], [price],[type],[adultBed],[childBed],[imgURL]) VALUES('Room for small families. Gardens & Pool View. 12 sqm', 'Specially suitable for small families', 490, 'triple', 2, 1, 'assets/room3.jpg');
+INSERT INTO [dbo].[room]([title],[description], [price],[type],[adultBed],[childBed],[ratings],[imgURL]) VALUES('Room for small families. Gardens & Pool View. 12 sqm', 'Specially suitable for small families', 490, 'triple', 2, 1,5, 'assets/room3.jpg');
 
-INSERT INTO [dbo].[room]([title],[description], [price],[type],[adultBed],[childBed],[imgURL]) VALUES('Private cabin. Asian Gardens View. 15 sqm', 'Exclusive cabin for the most adventurous visitors', 720, 'deluxe', 1, 0, 'assets/room15.jpg');
+INSERT INTO [dbo].[room]([title],[description], [price],[type],[adultBed],[childBed],[ratings],[imgURL]) VALUES('Private cabin. Asian Gardens View. 15 sqm', 'Exclusive cabin for the most adventurous visitors', 720, 'deluxe', 1, 0,5, 'assets/room15.jpg');
 
-INSERT INTO [dbo].[room]([title],[description], [price],[type],[adultBed],[childBed],[imgURL]) VALUES('Exclusive suite. Pool & Sea View. 18 sqm', 'Unique suite with a luxurious hydromassage bathtub', 800, 'deluxe', 1, 1, 'assets/room8.jpg');
+INSERT INTO [dbo].[room]([title],[description], [price],[type],[adultBed],[childBed],[ratings],[imgURL]) VALUES('Exclusive suite. Pool & Sea View. 18 sqm', 'Unique suite with a luxurious hydromassage bathtub', 800, 'deluxe', 1, 1,5, 'assets/room8.jpg');
 
-INSERT INTO [dbo].[room]([title],[description], [price],[type],[adultBed],[childBed],[imgURL]) VALUES('Honeymoon suite. Pool & Sea View. 18 sqm', 'Private cabin where the night of your dreams will become a reality', 880, 'deluxe', 1, 0, 'assets/room9.jpg');
+INSERT INTO [dbo].[room]([title],[description], [price],[type],[adultBed],[childBed],[ratings],[imgURL]) VALUES('Honeymoon suite. Pool & Sea View. 18 sqm', 'Private cabin where the night of your dreams will become a reality', 880, 'deluxe', 1, 0, 5, 'assets/room9.jpg');
 
-INSERT INTO [dbo].[room]([title],[description], [price],[type],[adultBed],[childBed],[imgURL]) VALUES('Langkawi Luxury Suite. Pool & Sea View. Private terrace. 25 sqm', 'Feel like a royal in the most luxurious suite in Rarotonga', 2100, 'presidential', 1, 0, 'assets/room18.jpg');
+INSERT INTO [dbo].[room]([title],[description], [price],[type],[adultBed],[childBed],[ratings],[imgURL]) VALUES('Langkawi Luxury Suite. Pool & Sea View. Private terrace. 25 sqm', 'Feel like a royal in the most luxurious suite in Rarotonga', 2100, 'presidential', 1, 0, 5, 'assets/room18.jpg');
 
-INSERT INTO [dbo].[room]([title],[description], [price],[type],[adultBed],[childBed],[imgURL]) VALUES('Business Room. Sea View. Full-equipped. 15 sqm', 'Pefect for executives - private office included', 800, 'executive', 1, 0, 'assets/room10.jpg');
+INSERT INTO [dbo].[room]([title],[description], [price],[type],[adultBed],[childBed],[ratings],[imgURL]) VALUES('Business Room. Sea View. Full-equipped. 15 sqm', 'Pefect for executives - private office included', 800, 'executive', 1, 0, 5,'assets/room10.jpg');
 
-INSERT INTO [dbo].[room]([title],[description], [price],[type],[adultBed],[childBed],[imgURL]) VALUES('Spacious Business Room. Gardens View. Full-equipped. 25 sqm', 'Spacious suite specially designed for meetings and receptions', 1700, 'executive', 1, 0, 'assets/room16.jpg');
+INSERT INTO [dbo].[room]([title],[description], [price],[type],[adultBed],[childBed],[ratings],[imgURL]) VALUES('Spacious Business Room. Gardens View. Full-equipped. 25 sqm', 'Spacious suite specially designed for meetings and receptions', 1700, 'executive', 1, 0, 5, 'assets/room16.jpg');
 
 
 -- END ROOM INSERTS
