@@ -74,7 +74,32 @@ namespace Library
             // Code to update the information of the user
             // Returns true if user was updated succesfully. False in other case
 
-            return true;
+            SqlConnection c = null;
+
+            try
+            {
+                c = new SqlConnection(constring);
+                c.Open();
+                string password = "";
+                if (user.Password != "")
+                {
+                    password = ", password = '" + user.Password + "'";
+                }
+                SqlCommand command = new SqlCommand("update [dbo].uuser set address = @ADDRESS" + password + " where id = @ID", c);
+                command.Parameters.AddWithValue("@ID", user.ID);
+                command.Parameters.AddWithValue("@ADDRESS", user.Address);
+
+                command.ExecuteNonQuery();
+
+                c.Close();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("User operation has failed. Error: {0}", ex.Message);
+                return false;
+            }
         }
 
         public bool DeleteUser(ENUser user)
@@ -82,7 +107,27 @@ namespace Library
             // Code to delete the user
             // Returns true if user was deleted succesfully. False in other case
 
-            return true;
+            SqlConnection c = null;
+
+            try
+            {
+                c = new SqlConnection(constring);
+                c.Open();
+
+                SqlCommand command = new SqlCommand("delete from [dbo].uuser where id = @ID", c);
+                command.Parameters.AddWithValue("@ID", user.ID);
+
+                command.ExecuteNonQuery();
+
+                c.Close();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("User operation has failed. Error: {0}", ex.Message);
+                return false;
+            }
         }
 
         public int LoginUser(ENUser user)
@@ -140,6 +185,25 @@ namespace Library
             {
                 Console.WriteLine("User operation has failed. Error: {0}", ex.Message);
                 return -1;
+            }
+        }
+
+        public DataSet GetUserInfo(ENUser user)
+        {
+            try
+            {
+                SqlConnection c = new SqlConnection(constring);
+                DataSet data = new DataSet();
+                SqlCommand cmd = new SqlCommand("select * from [dbo].uuser where email = @DATA", c);
+                cmd.Parameters.Add(new SqlParameter("@DATA", user.LoginData));
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(data, "userInfo");
+                return data;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Getting user information has failed. Error: {0}", e.Message);
+                return null;
             }
         }
     }
