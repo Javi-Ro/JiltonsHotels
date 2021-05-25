@@ -222,13 +222,13 @@ namespace JiltonWeb
         protected global::System.Web.UI.WebControls.TextBox appetizersTB;
 
         /// <summary>
-        /// Control ErrorApp.
+        /// Control RequiredFieldValidatorAppetizers.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ErrorApp;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorAppetizers;
 
         /// <summary>
         /// Control mainLabel.
@@ -249,13 +249,13 @@ namespace JiltonWeb
         protected global::System.Web.UI.WebControls.TextBox mainTB;
 
         /// <summary>
-        /// Control ErrorMain.
+        /// Control RequiredFieldValidatorMains.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ErrorMain;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorMains;
 
         /// <summary>
         /// Control dessertLabel.
@@ -276,13 +276,13 @@ namespace JiltonWeb
         protected global::System.Web.UI.WebControls.TextBox dessertTB;
 
         /// <summary>
-        /// Control ErrorDessert.
+        /// Control RequiredFieldValidatorDesserts.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ErrorDessert;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorDesserts;
 
         /// <summary>
         /// Control priceLabel.
@@ -303,13 +303,13 @@ namespace JiltonWeb
         protected global::System.Web.UI.WebControls.TextBox priceTB;
 
         /// <summary>
-        /// Control ErrorPrice.
+        /// Control RequiredFieldValidatorPrice.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ErrorPrice;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorPrice;
 
         /// <summary>
         /// Control success.

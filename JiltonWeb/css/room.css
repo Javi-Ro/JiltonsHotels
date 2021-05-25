@@ -414,9 +414,9 @@
     display: inline-block;
     background-color: lightcoral;
     padding: 4px 10px 4px 10px;
-    margin-left: 70%;
     border-radius: 4px;
-    position:absolute;
+    margin-left: 70%;
+    position: absolute;
     margin-top: -5%;
 }
 
@@ -466,16 +466,15 @@
 
 .ErrorLabel {
     position: absolute;
-    left: 74.5%;
+    right: 0%;
+    top: 79%;
     border: 2px solid #515654;
     line-height: 21px;
     padding: 0 14px;
-    background-color: crimson;
-    background: rgba(255,0,0,0.1);
-    border-color: crimson;
-    border-radius: 3px;
-    font-weight: bold;
-    font-size: 14px;
+    background-color: lightcoral;
+    padding: 4px 10px 4px 10px;
+    border-radius: 4px;
+    border-color: transparent;
     transition: .5s ease all;
 }
 
@@ -486,13 +485,13 @@
     border: 2px solid #515654;
     line-height: 21px;
     padding: 0 14px;
-    background-color: crimson;
-    background: rgba(0,255,33,0.1);
-    border-color: darkgreen;
-    border-radius: 3px;
-    font-weight: bold;
-    font-size: 14px;
+    background-color: rgb(142, 208, 14);
+    padding: 4px 10px 4px 10px;
+    border-radius: 4px;
+    border-color: transparent;
     transition: .5s ease all;
+    position: absolute;
+
 }
 
 .ddlstyle {

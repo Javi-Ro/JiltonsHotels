@@ -169,57 +169,26 @@ namespace JiltonWeb
             if(String.IsNullOrEmpty(DateTB.Text))
             {
                 ErrorDate.Visible = true;
-            }
-            if (String.IsNullOrEmpty(appetizersTB.Text))
+            }            
+
+            float precio = float.Parse(priceTB.Text);
+            string[] aux = new string[3];
+            aux = DateTB.Text.Split('/');
+            string fechaFormateada = aux[2] + "/" + aux[1] + "/" + aux[0];
+            ENMenu menu = new ENMenu(mainTB.Text, dessertTB.Text, appetizersTB.Text, precio, fechaFormateada);
+                
+            if (menu.create())
             {
-                ErrorApp.Visible = true;
+                Context.Items.Add("Success", DateTB.Text);
+                Server.Transfer("Restaurant.aspx");
             }
-            if (String.IsNullOrEmpty(mainTB.Text))
+
+            else
             {
-                ErrorMain.Visible = true;
-            }
-            if (String.IsNullOrEmpty(dessertTB.Text))
-            {
-                ErrorDessert.Visible = true;
-            }
-            if (String.IsNullOrEmpty(priceTB.Text))
-            {
-                ErrorPrice.Visible = true;
-                ErrorPrice.Text = "This field must be known";
+                Error.Visible = true;
+                Error.Text = "Could not insert menu ";
             }
             
-
-            float precio = 0;       //we assume that the price of a menu will never be 0
-
-            try
-            {
-                precio = float.Parse(priceTB.Text);
-            }
-            catch (Exception)
-            {
-                ErrorPrice.Visible = true;            if (precio != 0 && !String.IsNullOrEmpty(DateTB.Text) && !String.IsNullOrEmpty(appetizersTB.Text) && !String.IsNullOrEmpty(mainTB.Text) && !String.IsNullOrEmpty(dessertTB.Text) && !String.IsNullOrEmpty(priceTB.Text)){
-                string[] aux = new string[3];
-                aux = DateTB.Text.Split('/');
-                string fechaFormateada = aux[2] + "/" + aux[1] + "/" + aux[0];
-                ENMenu menu = new ENMenu(mainTB.Text, dessertTB.Text, appetizersTB.Text, precio, fechaFormateada);
-                
-                if (menu.create())
-                {
-                    Context.Items.Add("Success", DateTB.Text);
-                    Server.Transfer("Restaurant.aspx");
-                }
-
-                else
-                {
-                    Error.Visible = true;
-                    Error.Text = "Could not insert menu ";
-                }
-            }
-                ErrorPrice.Text = "Price must be a number";
-            }
-
-
-
         }
 
         protected void OnUpdate(object sender, EventArgs e)
@@ -236,42 +205,15 @@ namespace JiltonWeb
                 string[] aux = new string[3];
                 aux = DateTB.Text.Split('/');
                 string fechaFormateada = aux[2] + "/" + aux[1] + "/" + aux[0];
-                float price = 0;
-                 
-                if (String.IsNullOrEmpty(priceTB.Text))
-                {
-                    price = 0;
-                }
-                else
-                {
-                    try
-                    {
-                        price = float.Parse(priceTB.Text);
-                    }
-                    catch (Exception)
-                    {
-                        ErrorPrice.Visible = true;
-                        ErrorPrice.Text = "Price must be a number";
-                    }
-                }
-                   
+                float price = float.Parse(priceTB.Text);
                 ENMenu menu = new ENMenu(mainTB.Text, dessertTB.Text, appetizersTB.Text, price, fechaFormateada);
 
-                if ((!String.IsNullOrEmpty(appetizersTB.Text) || !String.IsNullOrEmpty(mainTB.Text) || !String.IsNullOrEmpty(dessertTB.Text) || !String.IsNullOrEmpty(priceTB.Text)))      //at least one field must be known
+
+                if (menu.update())
                 {
-                    if (menu.update())
-                    {
-                        Context.Items.Add("Success", DateTB.Text);
-                        Server.Transfer("Restaurant.aspx");
-                    }
-                    else
-                    {
-                        Error.Visible = true;
-                        Error.Text = "Could not update menu";
-                    }
-
+                    Context.Items.Add("Success", DateTB.Text);
+                    Server.Transfer("Restaurant.aspx");
                 }
-
                 else
                 {
                     Error.Visible = true;
@@ -307,8 +249,6 @@ namespace JiltonWeb
                 else
                 {
                     Error.Visible = true;
-                    //DateTime aux2 = Convert.ToDateTime(menu.fecha);
-                    //Error.Text = aux2.ToString();
                     Error.Text = "Could not delete menu";
                 }
             }
@@ -320,10 +260,6 @@ namespace JiltonWeb
         {
             DateTB.Text = String.Empty;
             ErrorDate.Visible = false;
-            ErrorDessert.Visible = false;
-            ErrorApp.Visible = false;
-            ErrorPrice.Visible = false;
-            ErrorMain.Visible = false;
             mainLabel.Visible = false;
             mainTB.Visible = false;
             appetizersTB.Visible = false;
@@ -348,10 +284,6 @@ namespace JiltonWeb
             dessertTB.Text = String.Empty;
 
             ErrorDate.Visible = false;
-            ErrorDessert.Visible = false;
-            ErrorApp.Visible = false;
-            ErrorPrice.Visible = false;
-            ErrorMain.Visible = false;
             mainLabel.Visible = true;
             mainTB.Visible = true;
             appetizersTB.Visible = true;
@@ -375,10 +307,6 @@ namespace JiltonWeb
             mainTB.Text = String.Empty;
             dessertTB.Text = String.Empty;
             ErrorDate.Visible = false;
-            ErrorDessert.Visible = false;
-            ErrorApp.Visible = false;
-            ErrorPrice.Visible = false;
-            ErrorMain.Visible = false;
             Create.Visible = true;
             Update.Visible = false;
             Delete.Visible = false;

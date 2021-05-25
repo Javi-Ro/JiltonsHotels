@@ -2,7 +2,7 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
 
     <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <link href="css/restaurant.css?ver=<?php echo rand(551,950)?>" rel="stylesheet">
+        <link href="css/restaurant.css?ver=<?php echo rand(552,950)?>" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <asp:Panel runat="server" ID="backgroundR" >
@@ -76,28 +76,29 @@
                 <div class="adminBox">
                     <div class="adminTextBoxes"> <asp:Label runat="server"> Insert the new menu's date   </asp:Label> <ajax:CalendarExtender ID="DateMenu" runat="server" TargetControlID="DateTB" Format="dd/MM/yyyy"/><asp:TextBox ID="DateTB" runat="server"> </asp:TextBox> <asp:Label runat="server" CssClass="ErrorMessages" ID="ErrorDate" Visible="false"> This field must be known </asp:Label>
                 
-                        <asp:Label runat="server" ID="appetizersLabel"> 
-                        Insert appetizers  </asp:Label><asp:TextBox TextMode="MultiLine" Rows="1" runat="server" ID="appetizersTB"> </asp:TextBox> <asp:Label runat="server" CssClass="ErrorMessages" ID="ErrorApp" Visible="false"> This field must be known </asp:Label>
-                
-                    <asp:Label runat="server" ID="mainLabel"> 
-                        Insert main course   </asp:Label><asp:TextBox TextMode="MultiLine" Rows="1" runat="server" ID="mainTB"> </asp:TextBox> <asp:Label runat="server" CssClass="ErrorMessages" ID="ErrorMain" Visible="false"> This field must be known </asp:Label>
-                
-                    <asp:Label runat="server" ID="dessertLabel"> 
-                        Insert dessert   </asp:Label><asp:TextBox TextMode="MultiLine" Rows="1" runat="server" ID="dessertTB"> </asp:TextBox><asp:Label runat="server" CssClass="ErrorMessages" ID="ErrorDessert" Visible="false"> This field must be known </asp:Label>
-
-                    <asp:Label runat="server" ID="priceLabel"> 
-                        Insert price   </asp:Label><asp:TextBox runat="server" ID="priceTB"> </asp:TextBox> <asp:Label runat="server" CssClass="ErrorMessages" ID="ErrorPrice" Visible="false"> This field must be known </asp:Label>
-                    </div>
+                            <asp:Label runat="server" ID="appetizersLabel"> 
+                            Insert appetizers  </asp:Label><asp:TextBox TextMode="MultiLine" Rows="1" runat="server" ID="appetizersTB"> </asp:TextBox> 
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorAppetizers" CssClass="Validator" runat="server" ValidationGroup="RestaurantGroup" ErrorMessage="This field is required" ControlToValidate="appetizersTB" Display="Dynamic"></asp:RequiredFieldValidator>  
+                            <asp:Label runat="server" ID="mainLabel"> 
+                            Insert main course   </asp:Label><asp:TextBox TextMode="MultiLine" Rows="1" runat="server" ID="mainTB"> </asp:TextBox> 
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorMains" CssClass="Validator" runat="server" ValidationGroup="RestaurantGroup" ErrorMessage="This field is required" ControlToValidate="mainTB" Display="Dynamic"></asp:RequiredFieldValidator>  
+                            <asp:Label runat="server" ID="dessertLabel"> 
+                            Insert dessert   </asp:Label> <asp:TextBox TextMode="MultiLine" Rows="1" runat="server" ID="dessertTB"> </asp:TextBox> 
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorDesserts" CssClass="Validator" runat="server" ValidationGroup="RestaurantGroup" ErrorMessage="This field is required" ControlToValidate="dessertTB" Display="Dynamic"></asp:RequiredFieldValidator>  
+                            <asp:Label runat="server" ID="priceLabel"> 
+                             Insert price   </asp:Label><asp:TextBox runat="server" ID="priceTB"> </asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorPrice" CssClass="Validator" runat="server" ValidationGroup="RestaurantGroup" ErrorMessage="This field is required" ControlToValidate="priceTB" Display="Dynamic"></asp:RequiredFieldValidator>  <%--<asp:RangeValidator ID="RangePrice" CssClass="ValidatorRange" ValidationGroup="RestaurantGroup" MinimumValue="0" MaximumValue="1000"" Type="Integer" Text="Price must be a number" ControlToValidate="priceTB" Display="Dynamic" runat="server"></asp:RangeValidator>                            --%>
+                     </div>
 
                     <asp:Label visible="false" runat="server" ID="success" CssClass="SuccessLabel"> </asp:Label>
                 
                     <asp:Label visible="false" runat="server" ID="Error" CssClass="ErrorLabel"> </asp:Label>
                                 
                     <div class="Create">
-                        <asp:Button  runat="server" CssClass="AdminButton" Text="Create menu" ID="Create" OnClick="OnCreate" />
+                        <asp:Button  runat="server" CssClass="AdminButton" Text="Create menu" ID="Create" ValidationGroup="RestaurantGroup"  OnClick="OnCreate" />
                     </div>
                     <div class="Create">
-                        <asp:Button  runat="server" CssClass="AdminButton" Text="Update menu" ID="Update" OnClick="OnUpdate" Visible="false" />
+                        <asp:Button  runat="server" CssClass="AdminButton" Text="Update menu" ValidationGroup="RestaurantGroup" ID="Update" OnClick="OnUpdate" Visible="false" />
                     </div>
                     <div class="Create">
                         <asp:Button  runat="server" CssClass="AdminButton" Text="Delete menu" ID="Delete" OnClick="OnDelete" Visible="false"/>
