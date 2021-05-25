@@ -2,7 +2,7 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
 
     <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <link href="css/room.css?ver=<?php echo rand(556,950)?>" rel="stylesheet">
+        <link href="css/room.css?ver=<?php echo rand(557,950)?>" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <%--        <asp:SqlDataSource 
             id="SqlDataSource1" 
@@ -88,7 +88,7 @@
                     
                             <emptydatatemplate>
                                 <asp:Label runat="server" CssClass="textWhenEmpty" Text = "No rooms with these characteristics were found. Try to apply different filters. Sorry for the inconvenience"></asp:Label>
-                                <asp:Image id="imagen" runat="server" ImageUrl="assets/jiltonLogo2.png" width="250px" style="position:absolute; top:20%; left:50%; transform:translateX(-50%);"/>
+                                <asp:Image id="imagen" runat="server" ImageUrl="assets/jiltonLogo2.png" width="250px" style="position:absolute; top:7%; left:50%; transform:translateX(-50%);"/>
                             </emptydatatemplate> 
                          <Columns >
   
@@ -160,7 +160,7 @@
                      
                      </asp:GridView>                 
 
-                <asp:Panel runat="server" ID="adminViewRoom" CssClass="vistaNoAdminRoom">
+                <asp:Panel runat="server" ID="adminViewRoom" CssClass="invisible">
                         <div class="Room2">
                             <asp:Button runat="server" class="RoomButton" ID="CreateButton" Text="CREATE ROOM" OnClick="InsertInterface"/>
                        </div>
@@ -172,13 +172,20 @@
                        </div>
                     <div class="adminBox">
                         <asp:Panel runat="server" ID="InsertOrUpdate" CssClass="visible">
+                            <asp:Panel runat="server" ID="onlyUpdateID" CssClass="invisible">
+                                <asp:label runat="server" width="35%"> Room ID </asp:label><asp:textbox id ="roomIDUpdate" height="30px" runat ="server" />
+                                 <asp:RequiredFieldValidator ID="RequiredFieldValidatorIDupdate" CssClass="Validator" runat="server" ValidationGroup="RoomGroup" ErrorMessage="This field is required" ControlToValidate="roomIDUpdate" Display="Dynamic"></asp:RequiredFieldValidator>  
+                                 <asp:RangeValidator ID="RangeValidatorIDupdate" CssClass="ValidatorRange" ValidationGroup="RoomGroup" MinimumValue="0" MaximumValue="1000000" Type="Integer" Text="ID must be a number" ControlToValidate="roomIDUpdate" Display="Dynamic" runat="server"></asp:RangeValidator>                             </asp:Panel>
                              <asp:label runat="server" width="35%"> Name </asp:label><asp:textbox id ="nameTB" height="30px" runat ="server" />
                              <asp:RequiredFieldValidator ID="RequiredFieldValidatorName" CssClass="Validator" runat="server" ValidationGroup="RoomGroup" ErrorMessage="This field is required" ControlToValidate="nameTB" Display="Dynamic"></asp:RequiredFieldValidator>  
-                             <asp:label runat="server" width="35%"> Description </asp:label><asp:textbox id ="descriptionTB" height="30px" runat ="server" />
+                            
+                            <asp:label runat="server" width="35%"> Description </asp:label><asp:textbox id ="descriptionTB" height="30px" runat ="server" />
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidatorDescription" CssClass="Validator" runat="server" ValidationGroup="RoomGroup" ErrorMessage="This field is required" ControlToValidate="descriptionTB" Display="Dynamic"></asp:RequiredFieldValidator>  
-                             <asp:label runat="server" width="35%"> Price </asp:label><asp:textbox id ="priceTB" height="30px" runat ="server" />
+                            
+                            <asp:label runat="server" width="35%"> Price </asp:label><asp:textbox id ="priceTB" height="30px" runat ="server" />
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidatorPrice" CssClass="Validator" runat="server" ValidationGroup="RoomGroup" ErrorMessage="This field is required" ControlToValidate="priceTB" Display="Dynamic"></asp:RequiredFieldValidator><asp:Label ID="errorParsePrice" CssClass="Validator" runat="server" Text="This field must be a number" Visible="false">  </asp:Label>
-                             <asp:label runat="server" width="35%"> Type </asp:label><asp:DropDownList id="TypeTB" CssClass="ddlstyle" 
+                            <asp:RangeValidator ID="RangeValidatorPrice" CssClass="ValidatorRange" ValidationGroup="RoomGroup" MinimumValue="0" MaximumValue="1000000" Type="Integer" Text="Must be a number" ControlToValidate="priceTB" Display="Dynamic" runat="server"></asp:RangeValidator>                             
+                            <asp:label runat="server" width="35%"> Type </asp:label><asp:DropDownList id="TypeTB" CssClass="ddlstyle" 
                                     runat="server">
 
                                   <asp:ListItem Selected="True" Value="single"> Single </asp:ListItem>
@@ -190,25 +197,31 @@
                         
                             </asp:DropDownList>
          
+
                              <asp:label runat="server" width="35%"> Number of king beds </asp:label><asp:textbox id ="kingBedTB" height="30px" runat ="server" />
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidatorKingBed" CssClass="Validator" runat="server" ValidationGroup="RoomGroup" ErrorMessage="This field is required" ControlToValidate="kingBedTB" Display="Dynamic"></asp:RequiredFieldValidator>  
-                             <asp:label runat="server" width="35%"> Number of single beds </asp:label><asp:textbox id ="childBedTB" height="30px" runat ="server" />
+                            <asp:RangeValidator ID="RangeValidatorKingBed" CssClass="ValidatorRange" ValidationGroup="RoomGroup" MinimumValue="0" MaximumValue="3" Type="Integer" Text="Integer between 0 and 3" ControlToValidate="kingBedTB" Display="Dynamic" runat="server"></asp:RangeValidator>                            
+                            <asp:label runat="server" width="35%"> Number of single beds </asp:label><asp:textbox id ="childBedTB" height="30px" runat ="server" />
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidatorSingleBed" CssClass="Validator" runat="server" ValidationGroup="RoomGroup" ErrorMessage="This field is required" ControlToValidate="childBedTB" Display="Dynamic"></asp:RequiredFieldValidator>  
-                             <asp:label runat="server" width="35%"> Assigned booking (optional) </asp:label><asp:textbox id ="bookingTB" height="30px" runat ="server" />
-                     
-                             <asp:label runat="server" width="35%"> Ratings (optional) </asp:label><asp:textbox id ="ratings" height="30px" runat ="server" />
+                            <asp:RangeValidator ID="RangeValidatorSingleBed" CssClass="ValidatorRange" ValidationGroup="RoomGroup" MinimumValue="0" MaximumValue="4" Type="Integer" Text="Integer between 0 and 4" ControlToValidate="childBedTB" Display="Dynamic" runat="server"></asp:RangeValidator>                           
+                            <asp:label runat="server" width="35%"> Ratings </asp:label><asp:textbox id ="ratingsTB" height="30px" runat ="server" />
+                             <asp:RequiredFieldValidator ID="RequiredFieldValidatorRatings" CssClass="Validator" runat="server" ValidationGroup="RoomGroup" ErrorMessage="This field is required" ControlToValidate="ratingsTB" Display="Dynamic"></asp:RequiredFieldValidator>  
+                            <asp:RangeValidator ID="RangeRatings" CssClass="ValidatorRange" ValidationGroup="RoomGroup" MinimumValue="0" MaximumValue="5" Type="Integer" Text="Integer between 0 and 5" ControlToValidate="ratingsTB" Display="Dynamic" runat="server"></asp:RangeValidator>                            
+                            
+                            <asp:label runat="server" width="35%"> Image URL </asp:label><asp:textbox id ="imageTB" Text="assets/room1.jpg" height="30px" runat ="server" />
                             <div class="Create">
                                 <asp:Button  runat="server" CssClass="AdminButton" Text="Create room" ID="Insert" ValidationGroup="RoomGroup" OnClick="onInsert" />
                             </div>
                             <div class="Create">
-                                <asp:Button  runat="server" CssClass="AdminButton" Text="Update room" ID="Update" ValidationGroup="RoomGroup" />
+                                <asp:Button  runat="server" CssClass="AdminButton" Text="Update room" ID="Update" ValidationGroup="RoomGroup" OnClick="onUpdate"/>
                             </div>
                             <asp:Label runat="server" id="success" CssClass="SuccessLabel" Visible="false"> </asp:Label>
                             <asp:Label runat="server" id="error" CssClass="ErrorLabel" Visible="false"> </asp:Label>
                           </asp:Panel>
                           <asp:Panel runat="server" ID="deletePanel" CssClass="invisible">
-                              <asp:label runat="server" width="35%"> Room id </asp:label><asp:textbox id ="roomID" height="30px" runat ="server" />
+                              <asp:label runat="server" width="35%"> Room ID </asp:label><asp:textbox id ="roomID" height="30px" runat ="server" />
                              <asp:RequiredFieldValidator ID="RequiredFieldValidatorDeleteID" CssClass="Validator" runat="server" ValidationGroup="RoomIDinDelete" ErrorMessage="This field is required" ControlToValidate="roomID" Display="Dynamic"></asp:RequiredFieldValidator>  
+                              <asp:RangeValidator ID="RangeValidatorIDdelete" CssClass="ValidatorRange" ValidationGroup="RoomIDinDelete" MinimumValue="0" MaximumValue="1000000" Type="Integer" Text="ID must be a number" ControlToValidate="roomID" Display="Dynamic" runat="server"></asp:RangeValidator>                             
                             <div class="Create">
                                 <asp:Button  runat="server" CssClass="AdminButton" Text="Delete room" ID="Delete" ValidationGroup="RoomIDinDelete" OnClick="onDelete"/>
                             </div>

@@ -222,6 +222,42 @@ namespace JiltonWeb
         protected global::System.Web.UI.WebControls.Panel InsertOrUpdate;
 
         /// <summary>
+        /// Control onlyUpdateID.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel onlyUpdateID;
+
+        /// <summary>
+        /// Control roomIDUpdate.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox roomIDUpdate;
+
+        /// <summary>
+        /// Control RequiredFieldValidatorIDupdate.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorIDupdate;
+
+        /// <summary>
+        /// Control RangeValidatorIDupdate.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator RangeValidatorIDupdate;
+
+        /// <summary>
         /// Control nameTB.
         /// </summary>
         /// <remarks>
@@ -285,6 +321,15 @@ namespace JiltonWeb
         protected global::System.Web.UI.WebControls.Label errorParsePrice;
 
         /// <summary>
+        /// Control RangeValidatorPrice.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator RangeValidatorPrice;
+
+        /// <summary>
         /// Control TypeTB.
         /// </summary>
         /// <remarks>
@@ -312,6 +357,15 @@ namespace JiltonWeb
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorKingBed;
 
         /// <summary>
+        /// Control RangeValidatorKingBed.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator RangeValidatorKingBed;
+
+        /// <summary>
         /// Control childBedTB.
         /// </summary>
         /// <remarks>
@@ -330,22 +384,49 @@ namespace JiltonWeb
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorSingleBed;
 
         /// <summary>
-        /// Control bookingTB.
+        /// Control RangeValidatorSingleBed.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox bookingTB;
+        protected global::System.Web.UI.WebControls.RangeValidator RangeValidatorSingleBed;
 
         /// <summary>
-        /// Control ratings.
+        /// Control ratingsTB.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ratings;
+        protected global::System.Web.UI.WebControls.TextBox ratingsTB;
+
+        /// <summary>
+        /// Control RequiredFieldValidatorRatings.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorRatings;
+
+        /// <summary>
+        /// Control RangeRatings.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator RangeRatings;
+
+        /// <summary>
+        /// Control imageTB.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox imageTB;
 
         /// <summary>
         /// Control Insert.
@@ -409,6 +490,15 @@ namespace JiltonWeb
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorDeleteID;
+
+        /// <summary>
+        /// Control RangeValidatorIDdelete.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator RangeValidatorIDdelete;
 
         /// <summary>
         /// Control Delete.

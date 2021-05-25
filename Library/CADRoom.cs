@@ -36,7 +36,7 @@ public class CADRoom
         }
         catch (Exception ex2)
         {
-            Console.WriteLine(ex2.Message + "Error showing all the rooms");
+            Console.WriteLine("Error showing all the rooms: " + ex2.Message);
         }
         return virtualSet;
     }
@@ -49,8 +49,8 @@ public class CADRoom
             SqlConnection c = new SqlConnection(constring);
             DataSet virtualSet = new DataSet();
             SqlDataAdapter adapter = new SqlDataAdapter(
-                "INSERT INTO[dbo].[room]([title],[description],[price],[type],[adultBed],[childBed],[imgURL]) VALUES('" + room.title
-                + "', '" + room.description + "', " + room.price + ", '" + room.type + "', " + room.adultBed + ", " + room.childBed + ", '" + room.imageLink +  "')", c);
+                "INSERT INTO[dbo].[room]([title],[description],[price],[type],[adultBed],[childBed],[imgURL],[ratings]) VALUES('" + room.title
+                + "', '" + room.description + "', " + room.price + ", '" + room.type + "', " + room.adultBed + ", " + room.childBed + ", '" + room.imageLink +  "', " + room.ratings +")", c);
             adapter.Fill(virtualSet, "room");
             return true;
         }
@@ -82,14 +82,34 @@ public class CADRoom
         }
         catch (Exception ex2)
         {
-            Console.WriteLine("Error deleting room: {0},{1}", room.id, ex2.Message);
+            Console.WriteLine("Error deleting room: {0}" + ex2.Message, room.id);
         }
         return false;
     }
 
     public bool update(ENRoom room)
     {
-        return true;
+        try
+        {
+            SqlConnection c = new SqlConnection(constring);
+            DataSet virtualSet = new DataSet();
+            SqlDataAdapter adapter = new SqlDataAdapter("UPDATE [dbo].[room] " +
+                "SET title= '" + room.title + "', description='" + room.description + "', price=" + room.price
+                + ", type= '" + room.type + "', adultBed=" + room.adultBed + ", childBed=" + room.childBed + ", ratings=" + room.ratings
+                + ", imgURL='" + room.imageLink + "' WHERE id=" + room.id, c);
+
+            adapter.Fill(virtualSet, "room");
+            return true;
+        }
+        catch (SqlException ex)
+        {
+            throw new Exception(ex.Message);
+        }
+        catch (Exception ex2)
+        {
+            Console.WriteLine("Error updating the room: " + ex2.Message);
+        }
+        return false;
     }
 
     public bool searchRoom(ENRoom room)
@@ -111,7 +131,7 @@ public class CADRoom
         }
         catch (Exception e)
         {
-            Console.WriteLine("Room was not found: {0}", e.Message);
+            Console.WriteLine("Room {0} was not found: " + e.Message, room.id);
             return false;
         }
     }

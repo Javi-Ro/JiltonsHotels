@@ -43,7 +43,7 @@ namespace JiltonWeb
                 //    Panel panel = (Panel)row.FindControl("adminViewRoom");
                 //    panel.CssClass = "icono";
                 //}
-                adminViewRoom.CssClass = "vistaAdminRoom";
+                adminViewRoom.CssClass = "visible";
                 InsertInterface(sender, e);
 
 
@@ -55,7 +55,7 @@ namespace JiltonWeb
                 //    Panel panel = (Panel)row.FindControl("adminViewRoom");
                 //    panel.CssClass = "iconoHidden";
                 //}
-                adminViewRoom.CssClass = "vistaNoAdminRoom";
+                adminViewRoom.CssClass = "invisible";
             }
 
         }
@@ -105,6 +105,7 @@ namespace JiltonWeb
         {
             InsertOrUpdate.CssClass = "invisible";
             deletePanel.CssClass = "visible";
+            onlyUpdateID.CssClass = "invisible";
 
         }
 
@@ -114,80 +115,71 @@ namespace JiltonWeb
             deletePanel.CssClass = "invisible";
             Update.Visible = false;
             Insert.Visible = true;
+            onlyUpdateID.CssClass = "invisible";
         }
 
+        protected void onUpdate(object sender, EventArgs e)
+        {
+            success.Visible = false;
+            error.Visible = false;
+            int id = int.Parse(roomIDUpdate.Text);
+            float precio = float.Parse(priceTB.Text);
+            int single = int.Parse(childBedTB.Text);
+            int king = int.Parse(kingBedTB.Text);
+            int rating = int.Parse(ratingsTB.Text);
+            string imagen = imageTB.Text;
+            if (string.IsNullOrEmpty(imageTB.Text))
+            {
+                imagen = "assets/room1.jpg";
+            }
+            ENRoom room = new ENRoom(id, nameTB.Text, descriptionTB.Text, precio, single, king, TypeTB.SelectedValue, rating, null, imagen);
+
+            if (room.update())
+            {
+                //Context.Items.Add("Success", DateTB.Text);
+                //Server.Transfer("Restaurant.aspx");
+                success.Visible = true;
+               
+                success.Text = "Room updated succesfully";
+            }
+            else
+            {
+                error.Visible = true;
+                error.Text = "Could not update the room " + room.id;
+                //"Could not update room";
+            }
+
+        }
         protected void onInsert(object sender, EventArgs e)
         {
             success.Visible = false;
             error.Visible = false;
 
-            float precio = 0;       //we assume that the price of a room will never be 0
+            float precio = float.Parse(priceTB.Text);
+            int single = int.Parse(childBedTB.Text);
+            int king = int.Parse(kingBedTB.Text);
+            int rating = int.Parse(ratingsTB.Text);
+            string imagen = imageTB.Text;
+            if (string.IsNullOrEmpty(imageTB.Text))
+            {
+                imagen = "assets/room1.jpg";
+            }
+            //All the validations have been done with range validators and require field validators
+            ENRoom room = new ENRoom(0, nameTB.Text, descriptionTB.Text, precio,single,king, TypeTB.SelectedValue, rating, null, imagen);
 
-            try
+            if (room.insertRoom())
             {
-                precio = float.Parse(priceTB.Text);
+                success.Visible = true;
+                success.Text = "Room inserted succesfully";
             }
-            catch (Exception)
-            {
-                error.Visible = true;
-                error.Text = "Price must be a number";
-            }
-            int kingBeds = -1;       //we assume that the amount of king beds will never be -1
 
-            try
-            {
-                kingBeds = int.Parse(kingBedTB.Text);
-                if(kingBeds < 0 || kingBeds > 2)
-                {
-                    error.Visible = true;
-                    error.Text = "King beds must be a number between 0 and 2";
-                    kingBeds = -1;
-                }
-            }
-            catch (Exception)
+            else
             {
                 error.Visible = true;
-                error.Text = "King beds must be a number";
+                error.Text = "Could not insert room ";
             }
-
-            int childBeds = -1;       //we assume that the amount of king beds will never be -1
-
-            try
-            {
-                childBeds = int.Parse(childBedTB.Text);
-                if (childBeds < 0 || childBeds > 3)
-                {
-                    error.Visible = true;
-                    error.Text = "Child beds must be a number between 0 and 3";
-                    childBeds = -1;
-                }
-            }
-            catch (Exception)
-            {
-                error.Visible = true;
-                error.Text = "Child beds must be a number";
-            }
-
-            if (precio != 0 && kingBeds != -1 && childBeds != -1 && !String.IsNullOrEmpty(nameTB.Text) && !String.IsNullOrEmpty(descriptionTB.Text) 
-                && !String.IsNullOrEmpty(priceTB.Text))
-            {
-                ENRoom room = new ENRoom(0, nameTB.Text, descriptionTB.Text, precio, childBeds, kingBeds, TypeTB.SelectedValue, 5, null, "assets/room1.jpg");
-                //ENMenu menu = new ENMenu(mainTB.Text, dessertTB.Text, appetizersTB.Text, precio, fechaFormateada);
-
-                if (room.insertRoom())
-                {
-                    success.Visible = true;
-                    success.Text = "Room inserted succesfully";
-                }
-
-                else
-                {
-                    error.Visible = true;
-                    error.Text = "Could not insert room ";
-                }
-            }
+            
         }
-
         protected void onDelete(object sender,EventArgs e)
         {
             success.Visible = false;
@@ -217,8 +209,6 @@ namespace JiltonWeb
 
                 else
                 {
-                    success.Visible = true;
-                    success.Text = "no se pudo borrar";
                     error.Visible = true;
                     error.Text = "Could not delete room";
                 }
@@ -230,6 +220,7 @@ namespace JiltonWeb
             deletePanel.CssClass = "invisible";
             Update.Visible = true;
             Insert.Visible = false;
+            onlyUpdateID.CssClass = "visible";
         }
         protected void addButton(object sender, EventArgs e)
         {

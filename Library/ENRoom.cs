@@ -127,7 +127,7 @@ namespace Library
             return create;
         }
 
-        public bool updateRoom()
+        public bool update()
         {
             CADRoom room = new CADRoom();
             ENRoom nuevo = new ENRoom(this.id, this.title, this.description, this.price, this.childBed, this.adultBed, this.type, this.ratings, this.booking, this.imageLink);
