@@ -41,20 +41,22 @@ namespace JiltonWeb
 
             if (Session["id"] != null && Session["id"].ToString() == "admin")
             {
-                foreach(GridViewRow row in GridView1.Rows)
-                {
-                    Panel panel = (Panel)row.FindControl("adminViewRoom");
-                    panel.CssClass = "icono";
-                }
+                //foreach(GridViewRow row in GridView1.Rows)
+                //{
+                //    Panel panel = (Panel)row.FindControl("adminViewRoom");
+                //    panel.CssClass = "icono";
+                //}
+                adminViewRoom.CssClass = "vistaAdminRoom";
    
             }
             else
             {
-                foreach (GridViewRow row in GridView1.Rows)
-                {
-                    Panel panel = (Panel)row.FindControl("adminViewRoom");
-                    panel.CssClass = "iconoHidden";
-                }
+                //foreach (GridViewRow row in GridView1.Rows)
+                //{
+                //    Panel panel = (Panel)row.FindControl("adminViewRoom");
+                //    panel.CssClass = "iconoHidden";
+                //}
+                adminViewRoom.CssClass = "vistaNoAdminRoom";
             }
 
         }

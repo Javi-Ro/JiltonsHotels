@@ -2,7 +2,7 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
 
     <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <link href="css/room.css?ver=<?php echo rand(546,950)?>" rel="stylesheet">
+        <link href="css/room.css?ver=<?php echo rand(550,950)?>" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <%--        <asp:SqlDataSource 
             id="SqlDataSource1" 
@@ -127,10 +127,10 @@
                                                 
                                                  
                                                 
-                                                <asp:Panel runat="server" ID="adminViewRoom" CssClass="iconoHidden">
+                                        <%--        <asp:Panel runat="server" ID="adminViewRoom" CssClass="iconoHidden">
                                                     <asp:Image CssClass="imagen" ID="deleteImage" runat="server" ImageUrl="assets/deleteIcon.png" />
                                                     <asp:Image  CssClass="imagen" ID="UpdateImage" runat="server" ImageUrl="assets/editIcon.png" />
-                                                </asp:Panel>
+                                                </asp:Panel>--%>
                                                 <%--<ajax:Rating runat="server" ID="Rating1"
                                                     MaxRating="5"
                                                     CurrentRating="2"
@@ -163,7 +163,33 @@
                      
                      </asp:GridView>                 
 
-                
+                <asp:Panel runat="server" ID="adminViewRoom" CssClass="vistaNoAdminRoom">
+                   <asp:Label runat="server" CssClass ="vistaNoAdminRoom"> VISTA DE ADMIN </asp:Label>
+                        <div class="RoomAdmin">
+                            <asp:Button runat="server" class="RoomButton" ID="CreateButton" Text="CREATE ROOM"/>
+                       </div>
+                       <div class="RoomAdmin">
+                           <asp:button runat="server" class="RoomButton" ID="UpdateButton" text="UPDATE ROOM" />
+                       </div>
+                       <div class="RoomAdmin">
+                           <asp:button runat="server" class="RoomButton" ID="DeleteMenu" text="DELETE ROOM"/>
+                       </div>
+                    <div class="adminBox">
+               
+                     <asp:label runat="server" width="35%"> Name </asp:label><asp:textbox id ="name" height="30px" runat ="server" /><asp:RequiredFieldValidator ID="RequiredFieldValidatorName" CssClass="Validator" runat="server" ValidationGroup="RoomGroup" ErrorMessage="This field is required" ControlToValidate="name" Display="Dynamic"></asp:RequiredFieldValidator>  
+                     <asp:label runat="server" width="35%"> Description </asp:label><asp:textbox id ="description" height="30px" runat ="server" /><asp:RequiredFieldValidator ID="RequiredFieldValidatorDescription" CssClass="Validator" runat="server" ValidationGroup="RoomGroup" ErrorMessage="This field is required" ControlToValidate="description" Display="Dynamic"></asp:RequiredFieldValidator>  
+                     <asp:label runat="server" width="35%"> Price </asp:label><asp:textbox id ="price" height="30px" runat ="server" /><asp:RequiredFieldValidator ID="RequiredFieldValidatorPrice" CssClass="Validator" runat="server" ValidationGroup="RoomGroup" ErrorMessage="This field is required" ControlToValidate="price" Display="Dynamic"></asp:RequiredFieldValidator>  
+                     <asp:label runat="server" width="35%"> Type </asp:label><asp:textbox id ="type" height="30px" runat ="server" /><asp:RequiredFieldValidator ID="RequiredFieldValidatorType" CssClass="Validator" runat="server" ValidationGroup="RoomGroup" ErrorMessage="This field is required" ControlToValidate="type" Display="Dynamic"></asp:RequiredFieldValidator>  
+                     <asp:label runat="server" width="35%"> Number of king beds </asp:label><asp:textbox id ="kingBed" height="30px" runat ="server" /><asp:RequiredFieldValidator ID="RequiredFieldValidatorKingBed" CssClass="Validator" runat="server" ValidationGroup="RoomGroup" ErrorMessage="This field is required" ControlToValidate="kingBed" Display="Dynamic"></asp:RequiredFieldValidator>  
+                     <asp:label runat="server" width="35%"> Number of single beds </asp:label><asp:textbox id ="childBed" height="30px" runat ="server" /><asp:RequiredFieldValidator ID="RequiredFieldValidatorSingleBed" CssClass="Validator" runat="server" ValidationGroup="RoomGroup" ErrorMessage="This field is required" ControlToValidate="childBed" Display="Dynamic"></asp:RequiredFieldValidator>  
+                     <asp:label runat="server" width="35%"> Booking assigned (optional) </asp:label><asp:textbox id ="booking" height="30px" runat ="server" />
+                     
+                        <div class="Create">
+                        <asp:Button  runat="server" CssClass="AdminButton" Text="Delete menu" ID="Delete" ValidationGroup="RoomGroup"/>
+                        </div>
+        
+                    </div>
+                </asp:Panel>
                 
             </div>
             </div>

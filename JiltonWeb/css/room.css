@@ -1,7 +1,7 @@
 ﻿
 .background {
     background-image: url(../assets/6.jpg);
-    height: 3000px;
+    height: 4800px;
     background-attachment: fixed;
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -356,4 +356,78 @@
 .emptyRow2 {
     display: flex;
     bottom: 1%;
+}
+
+
+.vistaNoAdminRoom {
+    display: none;
+}
+
+.vistaAdminRoom{
+    
+}
+
+
+.RoomAdmin {
+    text-align: center;
+    position: relative;
+    display: flex;
+    float: left;
+    /*margin-top: 110px;*/
+    display: flex;
+    width: 33.33%;
+}
+
+.Room2 {
+    text-align: center;
+    position: relative;
+    top: 60px;
+    float: left;
+    display: flex;
+    width: 33.33%;
+}
+
+.RoomButton {
+    text-align: center;
+    float: left;
+    width: 100%;
+    background: #515654;
+    color: white;
+    display: flex;
+    font-weight: bold;
+    padding: 15px 5px 18px 27%;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    transition: .5s ease all;
+}
+
+.Room2:hover .RoomButton {
+    background-color: white;
+    color: #515654;
+}
+
+.RoomAdmin:hover .RoomButton {
+    background-color: white;
+    color: #515654;
+}
+
+.adminBox {
+    left: 3.67%;
+    top: 15%;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    white-space:pre-line;
+    margin-left: 5%;
+    position: relative;
+    width: 80%;
+/*    min-height: 550px;*/
+}
+
+.Validator {
+    display: inline-block;
+    background-color: lightcoral;
+    padding: 4px 10px 4px 10px;
+    margin-left: 70%;
+    border-radius: 4px;
 }
