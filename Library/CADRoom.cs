@@ -41,9 +41,28 @@ public class CADRoom
         return virtualSet;
     }
 
-    public bool create(ENRoom room)
+    public bool Insert(ENRoom room)
     {
-        return true;
+
+        try
+        {
+            SqlConnection c = new SqlConnection(constring);
+            DataSet virtualSet = new DataSet();
+            SqlDataAdapter adapter = new SqlDataAdapter(
+                "INSERT INTO[dbo].[room]([title],[description], [price],[type],[adultBed],[childBed],[imgURL]) VALUES('" + room.title
+                + "', '" + room.description + "', " + room.price + ", " + room.adultBed + ", " + room.childBed + ", '" + room.imageLink +  "'", c);
+            adapter.Fill(virtualSet, "room");
+            return true;
+        }
+        catch (SqlException ex)
+        {
+            throw new Exception(ex.Message);
+        }
+        catch (Exception ex2)
+        {
+            Console.WriteLine("Error inserting room: {0},{1}", room.id, ex2.Message);
+        }
+        return false;
     }
 
     public bool delete(ENRoom room)

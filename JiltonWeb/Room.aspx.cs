@@ -116,6 +116,58 @@ namespace JiltonWeb
             Insert.Visible = true;
         }
 
+        protected void onInsert(object sender, EventArgs e)
+        {
+            success.Visible = false;
+            error.Visible = false;
+
+            float precio = 0;       //we assume that the price of a room will never be 0
+
+            try
+            {
+                precio = float.Parse(priceTB.Text);
+            }
+            catch (Exception)
+            {
+            }
+            int kingBeds = -1;       //we assume that the amount of king beds will never be -1
+
+            try
+            {
+                kingBeds = int.Parse(kingBedTB.Text);
+            }
+            catch (Exception)
+            {
+            }
+
+            int childBeds = -1;       //we assume that the amount of king beds will never be -1
+
+            try
+            {
+                childBeds = int.Parse(childBedTB.Text);
+            }
+            catch (Exception)
+            {
+            }
+
+            if (precio != 0 && kingBeds != -1 && childBeds != -1 && !String.IsNullOrEmpty(nameTB.Text) && !String.IsNullOrEmpty(descriptionTB.Text) 
+                && !String.IsNullOrEmpty(priceTB.Text))
+            {
+                ENRoom room = new ENRoom(0, nameTB.Text, descriptionTB.Text, precio, childBeds, kingBeds, TypeTB.SelectedValue, 5, null, "assets/room1.jpg");
+                //ENMenu menu = new ENMenu(mainTB.Text, dessertTB.Text, appetizersTB.Text, precio, fechaFormateada);
+
+                if (room.insertRoom())
+                {
+                    success.Visible = true;
+                }
+
+                else
+                {
+                    error.Visible = true;
+                    error.Text = "Could not insert room ";
+                }
+            }
+        }
         protected void UpdateInterface(object sender, EventArgs e)
         {
             InsertOrUpdate.CssClass = "visible";
@@ -155,5 +207,6 @@ namespace JiltonWeb
             Context.Items.Add("Check", true);
             Server.Transfer("Room.aspx");
         }
+
     }
 }

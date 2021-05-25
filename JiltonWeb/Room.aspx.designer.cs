@@ -222,13 +222,13 @@ namespace JiltonWeb
         protected global::System.Web.UI.WebControls.Panel InsertOrUpdate;
 
         /// <summary>
-        /// Control name.
+        /// Control nameTB.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox name;
+        protected global::System.Web.UI.WebControls.TextBox nameTB;
 
         /// <summary>
         /// Control RequiredFieldValidatorName.
@@ -240,13 +240,13 @@ namespace JiltonWeb
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorName;
 
         /// <summary>
-        /// Control description.
+        /// Control descriptionTB.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox description;
+        protected global::System.Web.UI.WebControls.TextBox descriptionTB;
 
         /// <summary>
         /// Control RequiredFieldValidatorDescription.
@@ -258,13 +258,13 @@ namespace JiltonWeb
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorDescription;
 
         /// <summary>
-        /// Control price.
+        /// Control priceTB.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox price;
+        protected global::System.Web.UI.WebControls.TextBox priceTB;
 
         /// <summary>
         /// Control RequiredFieldValidatorPrice.
@@ -276,31 +276,31 @@ namespace JiltonWeb
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorPrice;
 
         /// <summary>
-        /// Control type.
+        /// Control errorParsePrice.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox type;
+        protected global::System.Web.UI.WebControls.Label errorParsePrice;
 
         /// <summary>
-        /// Control RequiredFieldValidatorType.
+        /// Control TypeTB.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorType;
+        protected global::System.Web.UI.WebControls.DropDownList TypeTB;
 
         /// <summary>
-        /// Control kingBed.
+        /// Control kingBedTB.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox kingBed;
+        protected global::System.Web.UI.WebControls.TextBox kingBedTB;
 
         /// <summary>
         /// Control RequiredFieldValidatorKingBed.
@@ -312,13 +312,13 @@ namespace JiltonWeb
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorKingBed;
 
         /// <summary>
-        /// Control childBed.
+        /// Control childBedTB.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox childBed;
+        protected global::System.Web.UI.WebControls.TextBox childBedTB;
 
         /// <summary>
         /// Control RequiredFieldValidatorSingleBed.
@@ -330,13 +330,13 @@ namespace JiltonWeb
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorSingleBed;
 
         /// <summary>
-        /// Control booking.
+        /// Control bookingTB.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox booking;
+        protected global::System.Web.UI.WebControls.TextBox bookingTB;
 
         /// <summary>
         /// Control ratings.
@@ -364,6 +364,24 @@ namespace JiltonWeb
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Update;
+
+        /// <summary>
+        /// Control success.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label success;
+
+        /// <summary>
+        /// Control error.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label error;
 
         /// <summary>
         /// Control deletePanel.
