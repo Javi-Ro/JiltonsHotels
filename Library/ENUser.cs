@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace Library
 {
@@ -49,6 +50,10 @@ namespace Library
 			this.Password = password;
         }
 
+		public ENUser()
+		{
+		}
+
 		// Create, update, and delete user will return a boolean to confirm or decline the operation that was executed on the database
 
 		public bool CreateUser()
@@ -82,5 +87,12 @@ namespace Library
 
 			return cad.LoginUser(this);
         }
+
+		public DataSet GetUserInfo()
+        {
+			CADUser cad = new CADUser();
+
+			return cad.GetUserInfo(this);
+		}
 	}
 }
