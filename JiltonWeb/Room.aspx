@@ -92,7 +92,7 @@
                             </emptydatatemplate> 
                          <Columns >
   
-                            <asp:BoundField DataField="id" ReadOnly="true" Visible="false" />
+                            <asp:BoundField DataField="id" ReadOnly="true" Visible="true" />
                             <asp:TemplateField>
                                 <ItemTemplate>
                                     <div class="room">
@@ -210,7 +210,7 @@
                               <asp:label runat="server" width="35%"> Room id </asp:label><asp:textbox id ="roomID" height="30px" runat ="server" />
                              <asp:RequiredFieldValidator ID="RequiredFieldValidatorDeleteID" CssClass="Validator" runat="server" ValidationGroup="RoomIDinDelete" ErrorMessage="This field is required" ControlToValidate="roomID" Display="Dynamic"></asp:RequiredFieldValidator>  
                             <div class="Create">
-                                <asp:Button  runat="server" CssClass="AdminButton" Text="Delete room" ID="Delete" ValidationGroup="RoomIDinDelete"/>
+                                <asp:Button  runat="server" CssClass="AdminButton" Text="Delete room" ID="Delete" ValidationGroup="RoomIDinDelete" OnClick="onDelete"/>
                             </div>
                           </asp:Panel>
                    

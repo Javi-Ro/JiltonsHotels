@@ -129,15 +129,25 @@ namespace JiltonWeb
             }
             catch (Exception)
             {
+                error.Visible = true;
+                error.Text = "Price must be a number";
             }
             int kingBeds = -1;       //we assume that the amount of king beds will never be -1
 
             try
             {
                 kingBeds = int.Parse(kingBedTB.Text);
+                if(kingBeds < 0 || kingBeds > 2)
+                {
+                    error.Visible = true;
+                    error.Text = "King beds must be a number between 0 and 2";
+                    kingBeds = -1;
+                }
             }
             catch (Exception)
             {
+                error.Visible = true;
+                error.Text = "King beds must be a number";
             }
 
             int childBeds = -1;       //we assume that the amount of king beds will never be -1
@@ -145,9 +155,17 @@ namespace JiltonWeb
             try
             {
                 childBeds = int.Parse(childBedTB.Text);
+                if (childBeds < 0 || childBeds > 3)
+                {
+                    error.Visible = true;
+                    error.Text = "Child beds must be a number between 0 and 3";
+                    childBeds = -1;
+                }
             }
             catch (Exception)
             {
+                error.Visible = true;
+                error.Text = "Child beds must be a number";
             }
 
             if (precio != 0 && kingBeds != -1 && childBeds != -1 && !String.IsNullOrEmpty(nameTB.Text) && !String.IsNullOrEmpty(descriptionTB.Text) 
@@ -159,12 +177,50 @@ namespace JiltonWeb
                 if (room.insertRoom())
                 {
                     success.Visible = true;
+                    success.Text = "Room inserted succesfully";
                 }
 
                 else
                 {
                     error.Visible = true;
                     error.Text = "Could not insert room ";
+                }
+            }
+        }
+
+        protected void onDelete(object sender,EventArgs e)
+        {
+            success.Visible = false;
+            error.Visible = false;
+            ENRoom room = new ENRoom();
+            if (String.IsNullOrEmpty(roomID.Text))
+            {
+                error.Visible = true;
+            }
+            else
+            {
+                try
+                {
+                    room.id = int.Parse(roomID.Text);
+                }
+                catch(Exception)
+                {
+                    error.Visible = true;
+                    error.Text = "Room id must be a number";
+                }
+
+                if (room.delete())
+                {
+                    success.Visible = true;
+                    success.Text = "Room deleted succesfully";
+                }
+
+                else
+                {
+                    success.Visible = true;
+                    success.Text = "no se pudo borrar";
+                    error.Visible = true;
+                    error.Text = "Could not delete room";
                 }
             }
         }

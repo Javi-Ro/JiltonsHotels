@@ -49,8 +49,8 @@ public class CADRoom
             SqlConnection c = new SqlConnection(constring);
             DataSet virtualSet = new DataSet();
             SqlDataAdapter adapter = new SqlDataAdapter(
-                "INSERT INTO[dbo].[room]([title],[description], [price],[type],[adultBed],[childBed],[imgURL]) VALUES('" + room.title
-                + "', '" + room.description + "', " + room.price + ", " + room.adultBed + ", " + room.childBed + ", '" + room.imageLink +  "'", c);
+                "INSERT INTO[dbo].[room]([title],[description],[price],[type],[adultBed],[childBed],[imgURL]) VALUES('" + room.title
+                + "', '" + room.description + "', " + room.price + ", '" + room.type + "', " + room.adultBed + ", " + room.childBed + ", '" + room.imageLink +  "')", c);
             adapter.Fill(virtualSet, "room");
             return true;
         }
@@ -67,7 +67,24 @@ public class CADRoom
 
     public bool delete(ENRoom room)
     {
-        return true;
+        try
+        {
+            SqlConnection c = new SqlConnection(constring);
+            DataSet virtualSet = new DataSet();
+            SqlDataAdapter adapter = new SqlDataAdapter(
+                "DELETE from room where id = " + room.id, c);
+            adapter.Fill(virtualSet, "room");
+            return true;
+        }
+        catch (SqlException ex)
+        {
+            throw new Exception(ex.Message);
+        }
+        catch (Exception ex2)
+        {
+            Console.WriteLine("Error deleting room: {0},{1}", room.id, ex2.Message);
+        }
+        return false;
     }
 
     public bool update(ENRoom room)
@@ -77,7 +94,26 @@ public class CADRoom
 
     public bool searchRoom(ENRoom room)
     {
-        return true;
+        try
+        {
+            SqlConnection c = new SqlConnection(constring);
+            DataSet virtualSet = new DataSet();
+            SqlDataAdapter adapter = new SqlDataAdapter("select * from room where id=" + room.id, c);
+            adapter.Fill(virtualSet, "room");
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+
+            if (dt.Rows.Count == 1)
+            {
+                return true;
+            }
+            return false;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("Room was not found: {0}", e.Message);
+            return false;
+        }
     }
 
 
