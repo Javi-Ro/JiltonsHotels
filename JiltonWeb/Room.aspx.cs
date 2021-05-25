@@ -34,9 +34,6 @@ namespace JiltonWeb
                 GridViewRooms.DataBind();
             }
 
-            
-
-
             GridView1.DataBind();
 
             if (Session["id"] != null && Session["id"].ToString() == "admin")
@@ -47,7 +44,9 @@ namespace JiltonWeb
                 //    panel.CssClass = "icono";
                 //}
                 adminViewRoom.CssClass = "vistaAdminRoom";
-   
+                InsertInterface(sender, e);
+
+
             }
             else
             {
@@ -100,6 +99,29 @@ namespace JiltonWeb
             GridView1.PageIndex = e.NewPageIndex;
             this.BindGrid();
 
+        }
+
+        protected void DeleteInterface(object sender, EventArgs e)
+        {
+            InsertOrUpdate.CssClass = "invisible";
+            deletePanel.CssClass = "visible";
+
+        }
+
+        protected void InsertInterface(object sender, EventArgs e)
+        {
+            InsertOrUpdate.CssClass = "visible";
+            deletePanel.CssClass = "invisible";
+            Update.Visible = false;
+            Insert.Visible = true;
+        }
+
+        protected void UpdateInterface(object sender, EventArgs e)
+        {
+            InsertOrUpdate.CssClass = "visible";
+            deletePanel.CssClass = "invisible";
+            Update.Visible = true;
+            Insert.Visible = false;
         }
         protected void addButton(object sender, EventArgs e)
         {

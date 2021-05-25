@@ -359,32 +359,21 @@
 }
 
 
-.vistaNoAdminRoom {
+.invisible {
     display: none;
 }
 
-.vistaAdminRoom{
+.visible{
     
-}
-
-
-.RoomAdmin {
-    text-align: center;
-    position: relative;
-    display: flex;
-    float: left;
-    /*margin-top: 110px;*/
-    display: flex;
-    width: 33.33%;
 }
 
 .Room2 {
     text-align: center;
     position: relative;
-    top: 60px;
     float: left;
     display: flex;
     width: 33.33%;
+    z-index:2;
 }
 
 .RoomButton {
@@ -407,11 +396,6 @@
     color: #515654;
 }
 
-.RoomAdmin:hover .RoomButton {
-    background-color: white;
-    color: #515654;
-}
-
 .adminBox {
     left: 3.67%;
     top: 15%;
@@ -421,6 +405,7 @@
     margin-left: 5%;
     position: relative;
     width: 80%;
+    z-index:0;
 /*    min-height: 550px;*/
 }
 
@@ -430,4 +415,38 @@
     padding: 4px 10px 4px 10px;
     margin-left: 70%;
     border-radius: 4px;
+    position:absolute;
+    margin-top: -5%;
+}
+
+.paginacion {
+    border-color: white;
+}
+
+.Create {
+    max-height: 5px;
+    position: absolute;
+    left: 110%;
+    bottom: 15%;
+    transform: translate(-130%, -150%);
+    z-index: 15;
+}
+
+    .Create:hover .AdminButton {
+        cursor: pointer;
+        background: #515654;
+        color: white;
+        transition: .5s ease all;
+    }
+
+.AdminButton {
+    border: 2px solid #515654;
+    line-height: 21px;
+    padding: 0 14px;
+    background: transparent;
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: .5s ease all;
+    z-index: 10;
 }
