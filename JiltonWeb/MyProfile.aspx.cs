@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Library;
+using System.Threading;
 
 namespace JiltonWeb
 {
@@ -16,13 +17,14 @@ namespace JiltonWeb
         DataRow userRow;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Page.IsPostBack)
-            {
-            }
-
             user.LoginData = Session["id"].ToString();
             data = user.GetUserInfo();
             userRow = data.Tables[0].Rows[0];
+
+            if (!Page.IsPostBack)
+            {
+                AddressText.Text = userRow.ItemArray.GetValue(5).ToString().ToUpper();
+            }
 
             incorrectPassword.Visible = false;
 
@@ -37,7 +39,7 @@ namespace JiltonWeb
                 IDText.Text = userRow.ItemArray.GetValue(0).ToString().ToUpper();
                 EmailText.Text = userRow.ItemArray.GetValue(4).ToString();
                 AgeText.Text = userRow.ItemArray.GetValue(3).ToString().Substring(0, 10);
-                AddressText.Text = userRow.ItemArray.GetValue(5).ToString().ToUpper();
+                
                 MyInfoPanel.Visible = true;
                 onlyAdmin.Visible = false;
             }
@@ -45,7 +47,26 @@ namespace JiltonWeb
 
         protected void DeleteAccount(object sender, EventArgs e)
         {
-
+            if (CurrentPasswordText.Text == userRow.ItemArray.GetValue(1).ToString())
+            {
+                user.ID = IDText.Text;
+                
+                if (user.DeleteUser())
+                {
+                    Session.Abandon();
+                    Thread.Sleep(500);
+                    Response.Redirect("MainPage.aspx");
+                }
+                else
+                {
+                    Server.Transfer("MainPage.aspx");
+                    Console.WriteLine("User could not be deleted.");
+                }
+            }
+            else
+            {
+                incorrectPassword.Visible = true;
+            }
         }
 
         protected void UpdateAccount(object sender, EventArgs e)
@@ -55,13 +76,12 @@ namespace JiltonWeb
                 user.ID = IDText.Text;
                 user.Address = AddressText.Text;
                 user.Password = NewPasswordText.Text;
-                user.Birthday = AgeText.Text;
                 if (user.UpdateUser())
                 {
-                    Response.Redirect("MyProfile.aspx");
                 }
                 else
                 {
+                    Server.Transfer("MainPage.aspx");
                     Console.WriteLine("User could not be updated.");
                 }
             }

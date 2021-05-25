@@ -85,9 +85,8 @@ namespace Library
                 {
                     password = ", password = '" + user.Password + "'";
                 }
-                SqlCommand command = new SqlCommand("update [dbo].uuser set birthday = @AGE, address = @ADDRESS" + password + " where id = @ID", c);
+                SqlCommand command = new SqlCommand("update [dbo].uuser set address = @ADDRESS" + password + " where id = @ID", c);
                 command.Parameters.AddWithValue("@ID", user.ID);
-                command.Parameters.AddWithValue("@AGE", user.Birthday);
                 command.Parameters.AddWithValue("@ADDRESS", user.Address);
 
                 command.ExecuteNonQuery();
@@ -115,36 +114,14 @@ namespace Library
                 c = new SqlConnection(constring);
                 c.Open();
 
-                SqlCommand command = new SqlCommand("select count(*) from [dbo].uuser where id = @ID or email = @EMAIL", c);
+                SqlCommand command = new SqlCommand("delete from [dbo].uuser where id = @ID", c);
                 command.Parameters.AddWithValue("@ID", user.ID);
-                command.Parameters.AddWithValue("@EMAIL", user.Email);
 
-                SqlDataReader result = command.ExecuteReader();
+                command.ExecuteNonQuery();
 
-                result.Read();
+                c.Close();
 
-                int count = result.GetInt32(0);
-
-                result.Close();
-
-                if (count == 0)
-                {
-                    SqlCommand insert = new SqlCommand("insert into [dbo].uuser values(@ID, @PASSWORD, @NAME, @BIRTHDAY, @EMAIL, @ADDRESS)", c);
-                    insert.Parameters.AddWithValue("@ID", user.ID);
-                    insert.Parameters.AddWithValue("@PASSWORD", user.Password);
-                    insert.Parameters.AddWithValue("@NAME", user.Name);
-                    insert.Parameters.AddWithValue("@BIRTHDAY", user.Birthday);
-                    insert.Parameters.AddWithValue("@EMAIL", user.Email);
-                    insert.Parameters.AddWithValue("@ADDRESS", user.Address);
-
-                    insert.ExecuteNonQuery();
-
-                    c.Close();
-                    return true;
-                }
-                else
-                    c.Close();
-                return false; // Already exists
+                return true;
             }
             catch (Exception ex)
             {

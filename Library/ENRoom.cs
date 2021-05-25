@@ -80,6 +80,14 @@ namespace Library
                     _ratings = ratings;
             }
         }
+
+        private string _imageLink;
+
+        public string imageLink
+        {
+            get { return _imageLink; }
+            set { _imageLink = value; }
+        }
         public ENRoom()
         {
             id = 0;
@@ -89,9 +97,10 @@ namespace Library
             price = 60;
             type = "Single";
             ratings = 5;
+            imageLink = "assets/room1.jpg";
         }
 
-        public ENRoom(int id,string title,string description, float price, int childBed,  int adultBed, string type, float ratings, ENBooking booking)
+        public ENRoom(int id,string title,string description, float price, int childBed,  int adultBed, string type, float ratings, ENBooking booking, string imagen)
         {
             this.id = id;
             this.title = title;
@@ -102,6 +111,7 @@ namespace Library
             this.type = type;
             this.ratings = ratings;
             this.booking = booking;
+            this.imageLink = imagen;
         }
 
         public DataSet showAll()
@@ -110,17 +120,17 @@ namespace Library
             return room.showAll(this);
         }
 
-        public bool createRoom()
+        public bool insertRoom()
         {
             CADRoom room = new CADRoom();
-            bool create = room.create(this);
+            bool create = room.Insert(this);
             return create;
         }
 
         public bool updateRoom()
         {
             CADRoom room = new CADRoom();
-            ENRoom nuevo = new ENRoom(this.id, this.title, this.description, this.price, this.childBed, this.adultBed, this.type, this.ratings, this.booking);
+            ENRoom nuevo = new ENRoom(this.id, this.title, this.description, this.price, this.childBed, this.adultBed, this.type, this.ratings, this.booking, this.imageLink);
             bool existe = room.searchRoom(this);
             if (existe)
             {
@@ -133,6 +143,7 @@ namespace Library
                 this.type = nuevo.type;
                 this.ratings = nuevo.ratings;
                 this.booking = nuevo.booking;
+                this.imageLink = nuevo.imageLink;
                 bool update = room.update(this);
                 return update;
 

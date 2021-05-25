@@ -197,11 +197,7 @@ namespace JiltonWeb
             }
             catch (Exception)
             {
-                ErrorPrice.Visible = true;
-                ErrorPrice.Text = "Price must be a number";
-            }
-
-            if (precio != 0 && !String.IsNullOrEmpty(DateTB.Text) && !String.IsNullOrEmpty(appetizersTB.Text) && !String.IsNullOrEmpty(mainTB.Text) && !String.IsNullOrEmpty(dessertTB.Text) && !String.IsNullOrEmpty(priceTB.Text)){
+                ErrorPrice.Visible = true;            if (precio != 0 && !String.IsNullOrEmpty(DateTB.Text) && !String.IsNullOrEmpty(appetizersTB.Text) && !String.IsNullOrEmpty(mainTB.Text) && !String.IsNullOrEmpty(dessertTB.Text) && !String.IsNullOrEmpty(priceTB.Text)){
                 string[] aux = new string[3];
                 aux = DateTB.Text.Split('/');
                 string fechaFormateada = aux[2] + "/" + aux[1] + "/" + aux[0];
@@ -219,6 +215,10 @@ namespace JiltonWeb
                     Error.Text = "Could not insert menu ";
                 }
             }
+                ErrorPrice.Text = "Price must be a number";
+            }
+
+
 
         }
 
