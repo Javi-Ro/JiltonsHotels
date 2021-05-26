@@ -106,6 +106,8 @@ namespace JiltonWeb
             InsertOrUpdate.CssClass = "invisible";
             deletePanel.CssClass = "visible";
             onlyUpdateID.CssClass = "invisible";
+            error.Visible = false;
+            success.Visible = false;
 
         }
 
@@ -115,13 +117,15 @@ namespace JiltonWeb
             deletePanel.CssClass = "invisible";
             Update.Visible = false;
             Insert.Visible = true;
+            error.Visible = false;
+            success.Visible = false;
             onlyUpdateID.CssClass = "invisible";
         }
 
         protected void onUpdate(object sender, EventArgs e)
         {
-            success.Visible = false;
             error.Visible = false;
+            success.Visible = false;
             int id = int.Parse(roomIDUpdate.Text);
             float precio = float.Parse(priceTB.Text);
             int single = int.Parse(childBedTB.Text);
@@ -139,7 +143,6 @@ namespace JiltonWeb
                 //Context.Items.Add("Success", DateTB.Text);
                 //Server.Transfer("Restaurant.aspx");
                 success.Visible = true;
-               
                 success.Text = "Room updated succesfully";
             }
             else
@@ -152,9 +155,8 @@ namespace JiltonWeb
         }
         protected void onInsert(object sender, EventArgs e)
         {
-            success.Visible = false;
             error.Visible = false;
-
+            success.Visible = false;
             float precio = float.Parse(priceTB.Text);
             int single = int.Parse(childBedTB.Text);
             int king = int.Parse(kingBedTB.Text);
@@ -181,9 +183,7 @@ namespace JiltonWeb
             
         }
         protected void onDelete(object sender,EventArgs e)
-        {
-            success.Visible = false;
-            error.Visible = false;
+        { 
             ENRoom room = new ENRoom();
             if (String.IsNullOrEmpty(roomID.Text))
             {
@@ -191,15 +191,7 @@ namespace JiltonWeb
             }
             else
             {
-                try
-                {
-                    room.id = int.Parse(roomID.Text);
-                }
-                catch(Exception)
-                {
-                    error.Visible = true;
-                    error.Text = "Room id must be a number";
-                }
+                room.id = int.Parse(roomID.Text);
 
                 if (room.delete())
                 {
@@ -210,7 +202,7 @@ namespace JiltonWeb
                 else
                 {
                     error.Visible = true;
-                    error.Text = "Could not delete room";
+                    error.Text = "Could not delete room " + room.id;
                 }
             }
         }
@@ -220,6 +212,8 @@ namespace JiltonWeb
             deletePanel.CssClass = "invisible";
             Update.Visible = true;
             Insert.Visible = false;
+            error.Visible = false;
+            success.Visible = false;
             onlyUpdateID.CssClass = "visible";
         }
         protected void addButton(object sender, EventArgs e)

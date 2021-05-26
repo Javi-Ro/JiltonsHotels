@@ -174,8 +174,8 @@
                         <asp:Panel runat="server" ID="InsertOrUpdate" CssClass="visible">
                             <asp:Panel runat="server" ID="onlyUpdateID" CssClass="invisible">
                                 <asp:label runat="server" width="35%"> Room ID </asp:label><asp:textbox id ="roomIDUpdate" height="30px" runat ="server" />
-                                 <asp:RequiredFieldValidator ID="RequiredFieldValidatorIDupdate" CssClass="Validator" runat="server" ValidationGroup="RoomGroup" ErrorMessage="This field is required" ControlToValidate="roomIDUpdate" Display="Dynamic"></asp:RequiredFieldValidator>  
-                                 <asp:RangeValidator ID="RangeValidatorIDupdate" CssClass="ValidatorRange" ValidationGroup="RoomGroup" MinimumValue="0" MaximumValue="1000000" Type="Integer" Text="ID must be a number" ControlToValidate="roomIDUpdate" Display="Dynamic" runat="server"></asp:RangeValidator>                             </asp:Panel>
+                                 <asp:RequiredFieldValidator ID="RequiredFieldValidatorIDupdate" CssClass="Validator" runat="server" ValidationGroup="RoomGroup" ErrorMessage="This field is required" ControlToValidate="roomIDUpdate" Display="Dynamic"></asp:RequiredFieldValidator>  <asp:RangeValidator ID="RangeValidatorIDupdate" CssClass="ValidatorRange" ValidationGroup="RoomGroup" MinimumValue="0" MaximumValue="1000000" Type="Integer" Text="ID must be a number" ControlToValidate="roomIDUpdate" Display="Dynamic" runat="server"></asp:RangeValidator>                          
+                            </asp:Panel>
                              <asp:label runat="server" width="35%"> Name </asp:label><asp:textbox id ="nameTB" height="30px" runat ="server" />
                              <asp:RequiredFieldValidator ID="RequiredFieldValidatorName" CssClass="Validator" runat="server" ValidationGroup="RoomGroup" ErrorMessage="This field is required" ControlToValidate="nameTB" Display="Dynamic"></asp:RequiredFieldValidator>  
                             
@@ -183,8 +183,8 @@
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidatorDescription" CssClass="Validator" runat="server" ValidationGroup="RoomGroup" ErrorMessage="This field is required" ControlToValidate="descriptionTB" Display="Dynamic"></asp:RequiredFieldValidator>  
                             
                             <asp:label runat="server" width="35%"> Price </asp:label><asp:textbox id ="priceTB" height="30px" runat ="server" />
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorPrice" CssClass="Validator" runat="server" ValidationGroup="RoomGroup" ErrorMessage="This field is required" ControlToValidate="priceTB" Display="Dynamic"></asp:RequiredFieldValidator><asp:Label ID="errorParsePrice" CssClass="Validator" runat="server" Text="This field must be a number" Visible="false">  </asp:Label>
-                            <asp:RangeValidator ID="RangeValidatorPrice" CssClass="ValidatorRange" ValidationGroup="RoomGroup" MinimumValue="0" MaximumValue="1000000" Type="Integer" Text="Must be a number" ControlToValidate="priceTB" Display="Dynamic" runat="server"></asp:RangeValidator>                             
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidatorPrice" CssClass="Validator" runat="server" ValidationGroup="RoomGroup" ErrorMessage="This field is required" ControlToValidate="priceTB" Display="Dynamic"></asp:RequiredFieldValidator>
+                            <asp:RangeValidator ID="RangeValidatorPrice" CssClass="ValidatorRange" ValidationGroup="RoomGroup" MinimumValue="0" MaximumValue="1000000" Type="Integer" Text="It must be an integer number" ControlToValidate="priceTB" Display="Dynamic" runat="server"></asp:RangeValidator>                             
                             <asp:label runat="server" width="35%"> Type </asp:label><asp:DropDownList id="TypeTB" CssClass="ddlstyle" 
                                     runat="server">
 
