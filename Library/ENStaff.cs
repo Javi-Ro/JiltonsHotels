@@ -80,7 +80,7 @@ namespace Library
             CADStaff staff = new CADStaff();
             return staff.listAllStaff();
         }
-        public DataSet FilterByType(string tipo)
+        public List<string> FilterByType(string tipo)
         {
             CADStaff staff = new CADStaff();
             this.tipo = tipo;

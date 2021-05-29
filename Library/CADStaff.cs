@@ -90,15 +90,30 @@ namespace Library
             }
 
         }
-        public DataSet FilterByType(ENStaff en)
+        public List<string> FilterByType(ENStaff en)
         {
             try
             {
+                List<string> staff = new List<string>();
                 SqlConnection c = new SqlConnection(constring);
                 DataSet virtualSet = new DataSet();
-                SqlDataAdapter adapter = new SqlDataAdapter("SELECT email WHERE type = '" + en.Type + "'", c);
+                SqlDataAdapter adapter;
+                if (en.Type == "extra")
+                {
+                    adapter = new SqlDataAdapter("SELECT email FROM staff WHERE type = 'teacher' or type = 'guide'", c);
+                }
+                else
+                {
+                    adapter = new SqlDataAdapter("SELECT email FROM staff WHERE type = '" + en.Type + "'", c);
+                }
                 adapter.Fill(virtualSet, "staff");
-                return virtualSet;
+                DataTable t = new DataTable();
+                t = virtualSet.Tables["staff"];
+                foreach (DataRow dr in t.Rows)
+                {
+                    staff.Add(dr[0].ToString());
+                }
+                return staff;
             }
             catch (Exception e)
             {

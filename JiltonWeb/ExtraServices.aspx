@@ -28,9 +28,9 @@
                                          <asp:GridView ID="AccordionPaneSpa" CssClass="grid" runat="server" ForeColor="#333333" GridLines="None" AutoGenerateColumns="false" CellSpacing="8" ShowHeader="False" Width="100%" RowStyle-HorizontalAlign="Left"
                                             OnRowCommand="GridView_ButtonCommand">
                                             <Columns>
-                                                <asp:BoundField DataField="description" ItemStyle-Width="150px"  ItemStyle-Font-Bold="true" />
+                                                <asp:BoundField DataField="description" ItemStyle-Width="500px"  ItemStyle-Font-Bold="true" />
                                                 <asp:BoundField DataField="price" DataFormatString="{0:C}" ItemStyle-Width="80px" />
-                                                <asp:ButtonField Text="ADD" ButtonType="Link" ControlStyle-CssClass="GridButton"></asp:ButtonField>
+                                                <asp:ButtonField Text="ADD" ButtonType="Link" ControlStyle-CssClass="GridButton" CommandName="AddSpa" ></asp:ButtonField>
                                             </Columns>
                                         </asp:GridView>
                                     </Content>
@@ -45,7 +45,7 @@
                                             <Columns>
                                                 <asp:BoundField DataField="description" ItemStyle-Width="150px"  ItemStyle-Font-Bold="true" />
                                                 <asp:BoundField DataField="price" DataFormatString="{0:C}" ItemStyle-Width="80px" />
-                                                <asp:ButtonField Text="ADD" ButtonType="Link" ControlStyle-CssClass="GridButton"></asp:ButtonField>
+                                                <asp:ButtonField Text="ADD" ButtonType="Link" ControlStyle-CssClass="GridButton" CommandName="AddGym"></asp:ButtonField>
                                             </Columns>
                                         </asp:GridView>
                                     </Content>
@@ -61,7 +61,7 @@
                                                 <asp:BoundField DataField="brand" ItemStyle-Width="50px"  ItemStyle-Font-Bold="true" />
                                                 <asp:BoundField DataField="model" ItemStyle-Width="50px"  ItemStyle-Font-Italic="true" />
                                                 <asp:BoundField DataField="price" DataFormatString="{0:C}" ItemStyle-Width="80px" />
-                                                <asp:ButtonField Text="ADD" ButtonType="Link" ControlStyle-CssClass="GridButton"></asp:ButtonField>
+                                                <asp:ButtonField Text="ADD" ButtonType="Link" ControlStyle-CssClass="GridButton" CommandName="AddCar"></asp:ButtonField>
                                             </Columns>
                                         </asp:GridView>
                                     </Content>
@@ -76,7 +76,7 @@
                                             <Columns>
                                                 <asp:BoundField DataField="description" ItemStyle-Width="150px"  ItemStyle-Font-Bold="true" />
                                                 <asp:BoundField DataField="price" DataFormatString="{0:C}" ItemStyle-Width="80px" />
-                                                <asp:ButtonField Text="ADD" ButtonType="Link" ControlStyle-CssClass="GridButton"></asp:ButtonField>
+                                                <asp:ButtonField Text="ADD" ButtonType="Link" ControlStyle-CssClass="GridButton" CommandName="AddExtra"></asp:ButtonField>
                                             </Columns>
                                         </asp:GridView>
                                     </Content>
@@ -91,7 +91,7 @@
                                             <Columns>
                                                 <asp:BoundField DataField="name" ItemStyle-Width="100px"  ItemStyle-Font-Bold="true" />
                                                 <asp:BoundField DataField="price" DataFormatString="{0:C}" ItemStyle-Width="80px" />
-                                                <asp:ButtonField Text="ADD" ButtonType="Link" ControlStyle-CssClass="GridButton"></asp:ButtonField>
+                                                <asp:ButtonField Text="ADD" ButtonType="Link" ControlStyle-CssClass="GridButton" CommandName="AddPackage"></asp:ButtonField>
                                             </Columns>
                                         </asp:GridView>
                                     </Content>
@@ -104,26 +104,26 @@
                         <div class="PaddingPanel">
                             <div class="PanelBlock">
                                 <asp:Label runat="server" Text="SELECTED SERVICE" Font-Bold="true" CssClass="LabelAddingService"></asp:Label>
-                                <asp:Label runat="server" CssClass="LabelAddingService" Text="None" Font-Italic="True"></asp:Label>
+                                <asp:Label runat="server" ID="AddingServiceLabel" CssClass="LabelAddingService" Text="None" Font-Italic="True"></asp:Label>
                             </div>
                             <div class="PanelBlock">
                                 <asp:Label runat="server" Text="CHOOSE THE DATE" Font-Bold="true" CssClass="LabelAddingService"></asp:Label>
-                                <asp:TextBox Enabled="true" ID ="TextEntry" Width ="80px" Height="20px" style="text-align:center; border-radius:3px; border-width:1px; margin-right:2px;" ReadOnly="true" runat ="server" />
-                                <asp:ImageButton ID="ShowEntry"  Enabled="true" Width="18px" Height="18px" ImageAlign="Middle" ImageUrl="assets/Calendar.png" BorderWidth ="1px" BackColor="White" style="border-radius:3px"  AlternateText="No Image available" runat="server" />
+                                <asp:TextBox Enabled="false" ID ="TextEntry" Width ="80px" Height="20px" style="text-align:center; border-radius:3px; border-width:1px; margin-right:2px;" ReadOnly="true" runat ="server" />
+                                <asp:ImageButton ID="ShowEntry"  Enabled="false" Width="18px" Height="18px" ImageAlign="Middle" ImageUrl="assets/Calendar.png" BorderWidth ="1px" BackColor="White" style="border-radius:3px"  AlternateText="No Image available" runat="server" />
                                 <ajaxToolkit:CalendarExtender ID="EntryCalendar" PopupButtonID="ShowEntry" runat="server"  TargetControlID="TextEntry" Format="dd/MM/yyyy" ></ajaxToolkit:CalendarExtender>
                             </div>
                             <div class="PanelBlock">
                                 <asp:Label runat="server" Text="CHOOSE THE HOUR" Font-Bold="true" CssClass="HourServices"></asp:Label>
-                                <asp:TextBox ID ="HourTextBox" Width ="80px" Height="20px" style="text-align:center; border-radius:3px; border-width:1px;" runat ="server" Enabled="true" />
+                                <asp:TextBox ID ="HourTextBox" Width ="80px" Height="20px" style="text-align:center; border-radius:3px; border-width:1px;" runat ="server" Enabled="false" />
                                 <ajaxToolkit:MaskedEditExtender runat="server" CultureDatePlaceholder="" CultureTimePlaceholder="" CultureDecimalPlaceholder="" CultureThousandsPlaceholder="" CultureDateFormat="" CultureCurrencySymbolPlaceholder="" CultureAMPMPlaceholder="" Century="2000" BehaviorID="TextBox1_MaskedEditExtender" TargetControlID="HourTextBox" ID="HourTextBox_MaskedEditExtender" MaskType="Time" Mask="99:00" ClearMaskOnLostFocus="False" UserTimeFormat="None"></ajaxToolkit:MaskedEditExtender>
                                 <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Not correct hour introduced" ControlToValidate="HourTextBox" ValidationExpression="^([0-1]?[0-9]|2[0-3]):00$" Display="Dynamic"></asp:RegularExpressionValidator>
                             </div>
                             <div class="PanelBlock">
                                 <asp:Label runat="server" Text="CHOOSE YOUR STAFF" Font-Bold="true" CssClass="HourServices"></asp:Label>
-                                <asp:DropDownList ID="StaffList" runat="server" Enabled="true" CssClass="ListStaff"></asp:DropDownList>
+                                <asp:DropDownList ID="StaffList" runat="server" Enabled="false" CssClass="ListStaff"></asp:DropDownList>
                             </div>
                             <div class="PanelBlock">
-                                <asp:Button ID="AddServiceButton" CssClass="ButtonAddService" runat="server" Text="Add Service" OnClick="AddServiceButton_Click" />
+                                <asp:Button ID="AddServiceButton" Enabled="false" CssClass="ButtonAddService" runat="server" Text="Add Service" OnClick="AddServiceButton_Click" />
                             </div>
                         </div>
                     </asp:Panel>
