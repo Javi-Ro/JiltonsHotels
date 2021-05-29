@@ -17,6 +17,10 @@ namespace JiltonWeb
         DataRow userRow;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["id"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
             user.LoginData = Session["id"].ToString();
             data = user.GetUserInfo();
             userRow = data.Tables[0].Rows[0];
