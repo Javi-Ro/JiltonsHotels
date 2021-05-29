@@ -17,7 +17,7 @@ namespace Library
         public int ID
         {
             get { return _id; }
-            set { _id = value; }  // Esto es private -------------------------------------------------------------------
+            private set { _id = value; }
         }
 
 
@@ -33,7 +33,7 @@ namespace Library
         public IntervalDate date
         {
             get { return _date; }
-            set { _date = value; } // ESTO ES PRIVATE --------------------------------------------------------------------
+            private set { _date = value; }
         }
 
         
@@ -83,13 +83,13 @@ namespace Library
             return booking.deleteBooking(this);
         }
 
-        public List<ENBooking> listAllBookings()
+        public DataSet listAllBookings()
         {
             CADBooking booking = new CADBooking();
             return booking.listAllBookings();
         }
 
-        public ENBooking searchBooking(ENUser user, IntervalDate interval)
+        public DataSet searchBooking(ENUser user, IntervalDate interval)
         {
             CADBooking booking = new CADBooking();
             return booking.searchBooking(user, interval);
@@ -165,10 +165,10 @@ namespace Library
             return booking.applyDiscount(this, discount);
         }
 
-        public bool quitDiscount(ENDiscount discount)
+        public bool quitDiscount()
         {
             CADBooking booking = new CADBooking();
-            return booking.quitDiscount(this, discount);
+            return booking.quitDiscount(this);
         }
 
         public bool isDiscounted()

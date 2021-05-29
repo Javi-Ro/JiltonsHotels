@@ -63,20 +63,24 @@
                             <asp:Label runat="server" cssClass="letra"> Type of service: </asp:Label>
                         </div>
                         <div class="box">
-                            <asp:TextBox ID="TextBox1" runat="server" CssClass="texto44"></asp:TextBox>
-                            <asp:TextBox ID="TextBox2" runat="server" CssClass="texto44"></asp:TextBox>
-                            <asp:TextBox ID="TextBox3" runat="server" CssClass="texto44"></asp:TextBox>
-                            <asp:TextBox ID="TextBox4" runat="server" CssClass="texto44"></asp:TextBox>
-                            <asp:TextBox ID="TextBox5" runat="server" CssClass="texto44"></asp:TextBox>
-                            <asp:TextBox ID="TextBox6" runat="server" CssClass="texto44"></asp:TextBox>
-                            <asp:TextBox ID="TextBox7" runat="server" CssClass="texto44"></asp:TextBox>
+                            <asp:TextBox ID="id" runat="server" CssClass="texto44"></asp:TextBox>
+                            <asp:TextBox ID="descr" runat="server" CssClass="texto44"></asp:TextBox>
+                            <asp:TextBox ID="price" runat="server" CssClass="texto44"></asp:TextBox>
+                            <asp:TextBox ID="name" runat="server" CssClass="texto44"></asp:TextBox>
+                            <asp:TextBox ID="maxp" runat="server" CssClass="texto44"></asp:TextBox>
+                            <asp:TextBox ID="image" runat="server" CssClass="texto44"></asp:TextBox>
+                            <asp:TextBox ID="type" runat="server" CssClass="texto44"></asp:TextBox>
                         </div>
                     </div>
                 
                     <div class="botones">
-                        <asp:Button CssClass="create" ID="create" runat="server" Text="Create Service" />
-                        <asp:Button CssClass="delete" ID="delete" runat="server" Text="Delete Service" />
-                        <asp:Button CssClass="update" ID="update" runat="server" Text="Update Service" />
+                        <asp:Button CssClass="create" OnClick="Crear" ID="create" runat="server" Text="Create Service" />
+                        <asp:Button CssClass="delete" OnClick="Borrar" ID="delete" runat="server" Text="Delete Service" />
+                        <asp:Button CssClass="update" OnClick="Update" ID="update" runat="server" Text="Update Service" />
+                    </div>
+
+                    <div class="textoinsertar">
+                        <asp:Label ID="output" runat="server"></asp:Label>
                     </div>
 
                     <div class="tutle">

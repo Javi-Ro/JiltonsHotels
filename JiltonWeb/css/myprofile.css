@@ -1,0 +1,175 @@
+﻿#backgroundProfile {
+    background-image: url(../assets/6.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 1000px;
+}
+
+#blurryBack {
+    width: 100%;
+    position: relative;
+    top: 10%;
+    min-height: 800px;
+    background: rgba(255,255,255,0.9);
+}
+
+#nonBlurryBack {
+    width: 80%;
+    position: relative;
+    left: 10%;
+    right: 10%;
+    min-height: 800px;
+    background: white;
+}
+
+#intro {
+    height: 200px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+    #intro img {
+        margin-top: 80px;
+        width: 110px;
+        height: 125px;
+        margin-left: calc(50% - (110px / 2));
+        margin-right: calc(50% - (110px / 2));
+    }
+
+    #intro .HotelName {
+        margin-top: 25px;
+        letter-spacing: 5px;
+        text-align: center;
+    }
+
+#bothFlex {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    position: relative;
+    top: 90px;
+}
+
+#labelsFlex {
+    display: flex;
+    flex-flow: column;
+    min-height: 20px;
+    min-width: 35%;
+    font-size: 18px;
+}
+
+#textBoxFlex {
+    display: flex;
+    flex-flow: column;
+    min-height: 20px;
+    min-width: 35%;
+}
+
+.col {
+    width: 100%;
+    background: white;
+    margin-bottom: 20px;
+}
+
+.labels {
+    margin-bottom: calc(20px + 20px / 2); 
+    /* 30px / 2 because 30px is the height of the textbox, so we do this to align the items */
+}
+
+.nonModifiable {
+    width: 100%;
+    background: lightgray;
+    margin-bottom: 20px;
+}
+
+.modifiable {
+    width: 100%;
+    background: white;
+    margin-bottom: 20px;
+}
+
+.Validator {
+    display: inline-block;
+    max-width: 240px;
+    background-color: lightcoral;
+    text-align: center;
+    padding: 4px 10px 4px 10px;
+    border-radius: 4px;
+}
+
+.DeleteAccountButton {
+    text-decoration: none;
+    /*background: #FF5757;*/
+    background: linear-gradient(to right, #FF5757 50%, white 50%);
+    position: absolute;
+    top: 85%;
+    left: 15%;
+    background-size: 200% 100%;
+    background-position: right;
+    color: red;
+    cursor: pointer;
+    min-width: 10%;
+    max-width: 10%;
+    font-size: 18px;
+    border: 1px solid red;
+    font-family: 'Karla', sans-serif;
+    border-radius: 4px;
+    padding: 7px;
+    transition: 0.65s ease-in;
+}
+
+    .DeleteAccountButton:hover {
+        /*background: #FF5757;*/
+        color: white;
+        background-position: left;
+        transition: 0.65s ease-out;
+    }
+
+.UpdateAccountButton {
+    position: absolute;
+    top: 85%;
+    right: 15%;
+    text-decoration: none;
+    border: 1px solid black;
+    font-family: 'Karla', sans-serif;
+    border-radius: 4px;
+    padding: 5px 14px;
+    background: white;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.65s ease all;
+}
+
+    .UpdateAccountButton:hover {
+        /*background: #FF5757;*/
+        color: white;
+        background: #515654;
+        border: 1px solid #515654;
+        transition: 0.65s ease all;
+    }
+
+.adminText {
+    margin-top: 180px;
+    letter-spacing: 5px;
+    text-align: center;
+}
+
+.adminText2 {
+    margin-top: 30px;
+    letter-spacing: 5px;
+    text-align: center;
+}
+
+.incorrectPass {
+    text-decoration: none;
+    width: 30%;
+    font-size: 16px;
+    border-radius: 4px;
+    padding: 8px;
+    border: none;
+    background: lightcoral;
+    font-family: 'Karla', sans-serif;
+}

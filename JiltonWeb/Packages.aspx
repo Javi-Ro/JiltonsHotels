@@ -17,7 +17,7 @@
      
     <div class="pack" >
 
-        <asp:GridView CssClass="grid1" ID="GridView1" Font-Underline="false" runat="server" ForeColor="Black" Height="400px" Width="100%" GridLines="Horizontal" AutoGenerateColumns="false"  ShowHeader="false">
+        <asp:GridView CssClass="grid1" ID="GridView1" Font-Underline="false" runat="server" ForeColor="Black" CellPadding="7" CellSpacing="40" RowStyle-HorizontalAlign="Center" Width="100%" GridLines="Horizontal" AutoGenerateColumns="false"  ShowHeader="false">
                
             <Columns>
                 

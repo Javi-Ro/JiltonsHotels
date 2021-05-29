@@ -35,7 +35,6 @@
     width: 33.33%;
 }
 
-
 .MenuButton {
     text-align: center;
     float: left;
@@ -136,22 +135,39 @@
     z-index: 3;
 }
 
-.Create {
-    position: relative;
+.CreateorInsert {
+    
+    position: absolute;
     display: inline-block;
     left: 94%;
-    top: 0%;
-    transform: translate(-130%, -150%);
+    bottom: 25%;
+    display:flex;
+    transform: translate(-150%, -150%);
     z-index: 15;
 }
 
-    .Create:hover .AdminButton {
+    .CreateorInsert:hover .AdminButton {
         cursor: pointer;
         background: #515654;
         color: white;
         transition: .5s ease all;
     }
 
+.Delete {
+    position: absolute;
+    display: inline-block;
+    left: 94%;
+    bottom: 15%;
+    top: 58%;
+    transform: translate(-150%, -150%);
+    z-index: 15;
+}
+.Delete:hover .AdminButton {
+    cursor: pointer;
+    background: #515654;
+    color: white;
+    transition: .5s ease all;
+}
 .AdminButton {
     border: 2px solid #515654;
     line-height: 21px;
@@ -165,47 +181,56 @@
     z-index: 10;
 }
 
-.ErrorMessages {
-    position: absolute;
-    left: 50%;
-    border: 2px solid #515654;
-    line-height: 21px;
-    padding: 0 14px;
-    background-color: crimson;
-    background: rgba(255,0,0,0.1);
-    border-color: crimson;
-    border-radius: 3px;
-    font-weight: bold;
-    font-size: 14px;
-    transition: .5s ease all;
-}
-
 .ErrorLabel {
-    position:absolute;
-    left: 74.5%;
+    position: absolute;
+    left: 81.5%;
+    top: 52%;
     border: 2px solid #515654;
     line-height: 21px;
     padding: 0 14px;
-    background-color: crimson;
-    background: rgba(255,0,0,0.1);
-    border-color: crimson;
-    border-radius: 3px;
-    font-weight: bold;
-    font-size: 14px;
-    transition: .5s ease all;
+    background-color: lightcoral;
+    padding: 4px 10px 4px 10px;
+    border-radius: 4px;
+    border-color: transparent;
+    font-size: 16px;
 }
 
 .SuccessLabel {
     position: absolute;
-    left: 68.5%;
+    left: 75%;
+    top: 52%;
     border: 2px solid #515654;
     line-height: 21px;
     padding: 0 14px;
-    background-color: crimson;
-    background: rgba(0,255,33,0.1);
-    border-color: darkgreen;
-    border-radius: 3px;
-    font-weight: bold;
-    font-size: 14px;
-    transition: .5s ease all;
+    background-color: rgb(142, 208, 14);
+    padding: 4px 10px 4px 10px;
+    border-radius: 4px;
+    border-color: transparent;
+    font-size: 16px;
+}
+
+.Validator {
+    display: inline-block;
+    background-color: lightcoral;
+    padding: 4px 10px 4px 10px;
+    border-radius: 4px;
+    margin-left: 40%;
+    position: absolute;
+    margin-top: -2%;
+    font-size: 16px;
+}
+
+.ValidatorRange {
+    display: inline-block;
+    background-color: lightcoral;
+    padding: 4px 10px 4px 10px;
+    margin-left: 40%;
+    border-radius: 4px;
+    position: absolute;
+    margin-top: -4.5%;
+    font-size: 16px;
+}
+
+.invisible{
+    display:none;
 }

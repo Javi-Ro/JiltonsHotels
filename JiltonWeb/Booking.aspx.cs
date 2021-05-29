@@ -23,16 +23,18 @@ namespace JiltonWeb
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            booking.ID = 1;
-            booking.date = dates; 
+            //booking.ID = 1;
+            //booking.date = dates; 
             if (!Page.IsPostBack)
             {
                 // Add payment methods
                 PaymentList.Items.Add("Debit/Credit Card");
 
                 // Booking dates
-                EntryDateLabel.Text = booking.date.startDate.ToString();
-                DepartureDateLabel.Text = booking.date.endDate.ToString();
+                //EntryDateLabel.Text = booking.date.startDate.ToString();
+                //DepartureDateLabel.Text = booking.date.endDate.ToString();
+                EntryDateLabel.Text = "-";
+                DepartureDateLabel.Text = "-";
 
                 // Filling grid views of the booking resume
                 d = booking.getServices();

@@ -103,6 +103,26 @@ namespace Library
 
 		}
 
+		public ENService(int id, string description, int price, string name, int maxp, string img, string type)
+        {
+			this.id = id;
+			this.description = description;
+			this.price = price;
+			this.name = name;
+			this.maxPeople = maxp;
+			this.imgURL = img;
+			this.type = type;
+        }
+
+		public ENService(int id, string description, int price, string img, string type)
+		{
+			this.id = id;
+			this.description = description;
+			this.price = price;
+			this.imgURL = img;
+			this.type = type;
+		}
+
 		public bool createService()
         {
 			CADService service = new CADService();
