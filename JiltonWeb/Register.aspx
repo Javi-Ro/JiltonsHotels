@@ -71,7 +71,7 @@
                     </div>
 
                     <div class="row">
-                        <asp:Label runat="server" Width="35%">Date of Birth :</asp:Label>
+                        <asp:Label runat="server" Width="35%">Date of Birth:</asp:Label>
                         <asp:TextBox ID ="AgeText" CssClass="col" Height="30px" style="text-align:left; border-radius:3px; border-width:1px; margin-right:2px" OnKeyPress="return false;" AutoComplete="off" runat ="server" />
                         <ajax:CalendarExtender ID="BirthCalendar" runat="server" TargetControlID="AgeText" Format="MM/dd/yyyy"> </ajax:CalendarExtender>
                     </div>
