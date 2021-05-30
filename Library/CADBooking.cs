@@ -55,9 +55,13 @@ namespace Library
                 adapter.Fill(virtualSet, "booking");
                 DataTable t = new DataTable();
                 t = virtualSet.Tables["booking"];
-                DataRow dr = t.NewRow();
-                dr[0] = booking.ID; dr[1] = booking.board; dr[2] = booking.date.startDate; dr[3] = booking.date.endDate; dr[4] = booking.user; dr[5] = booking.discount;
-                t.Rows.Remove(dr);
+                foreach (DataRow dr in t.Rows)
+                {
+                    if (dr[0].ToString() == booking.ID.ToString())
+                    {
+                        t.Rows.Remove(dr);
+                    }
+                }
                 SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
                 adapter.Update(virtualSet, "booking");
                 return true;
