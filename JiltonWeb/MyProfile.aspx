@@ -25,13 +25,13 @@
 
                     <div id="bothFlex">
                         <div id="labelsFlex">
-                            <asp:Label CssClass="labels" runat="server" Width="35%">Full name :</asp:Label>
-                            <asp:Label CssClass="labels" runat="server" Width="35%">DNI/NIE :</asp:Label>
-                            <asp:Label CssClass="labels" runat="server" Width="35%">E-mail :</asp:Label>
-                            <asp:Label CssClass="labels" runat="server" Width="35%">Date of Birth :</asp:Label>
-                            <asp:Label CssClass="labels" runat="server" Width="35%">Address :</asp:Label>
-                            <asp:Label CssClass="labels" runat="server" Width="35%">New password :</asp:Label>
-                            <asp:Label CssClass="labels" runat="server" Width="35%">Current password :</asp:Label>
+                            <asp:Label CssClass="labels" runat="server" Width="35%">Full name:</asp:Label>
+                            <asp:Label CssClass="labels" runat="server" Width="35%">DNI/NIE:</asp:Label>
+                            <asp:Label CssClass="labels" runat="server" Width="35%">E-mail:</asp:Label>
+                            <asp:Label CssClass="labels" runat="server" Width="35%">Date of Birth:</asp:Label>
+                            <asp:Label CssClass="labels" runat="server" Width="35%">Address:</asp:Label>
+                            <asp:Label CssClass="labels" runat="server" Width="35%">New password:</asp:Label>
+                            <asp:Label CssClass="labels" runat="server" Width="35%">Current password:</asp:Label>
                         </div>
                         <div id="textBoxFlex">
                             <asp:TextBox ID ="NameText" CssClass="nonModifiable" Text="" ReadOnly="true" Height="30px" style="text-align:left; border-radius:3px; border-width:1px; padding: 0px 4px;" runat ="server" />
