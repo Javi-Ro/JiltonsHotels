@@ -2,7 +2,7 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
 
     <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <link href="css/room.css?ver=<?php echo rand(557,950)?>" rel="stylesheet">
+        <link href="css/room.css?ver=<?php echo rand(560,950)?>" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <%--        <asp:SqlDataSource 
             id="SqlDataSource1" 
@@ -16,39 +16,45 @@
 
         <div class="webBorder">
           <div class="filterBox">
-              <div class="dropdown">
-                  <asp:Button runat="server" Text="Order" CssClass="dropbtn" />
-                    <div class="dropdown-content">
-                        <asp:Button runat="server" ID="MyProfile" CssClass="dropdown-Buttons" Text="Ratings" OnClientClick="this.disabled=true;"/>
-                        <asp:Button runat="server" ID="MyBookings" CssClass="dropdown-Buttons" Text="Price (lowest first)" OnClick="showLowest"/>
-                        <asp:Button runat="server" ID="LogOutButton" CssClass="dropdown-Buttons" Text="Price (highest first)"  />
-                    </div>
-                </div>
+              <asp:DropDownList id="orderList"
+                    AutoPostBack="False"
+                    runat="server" CssClass="item">
+                  <asp:ListItem selected="true" disabled="true"> Order by </asp:ListItem>
+                  <asp:ListItem Value="Ratings"> Rating </asp:ListItem>
+                  <asp:ListItem Value="Lowest"> Lowest price </asp:ListItem>
+                  <asp:ListItem Value="Highest"> Highest price </asp:ListItem>
 
-                <div class="dropdown">
-                  <asp:Button runat="server" Text="Type" CssClass="dropbtn" />
-                  <div class="dropdown-content">
-                        <asp:Button runat="server" ID="Button1" CssClass="dropdown-Buttons" Text="Single" OnClientClick="this.disabled=true;"/>
-                        <asp:Button runat="server" ID="Button2" CssClass="dropdown-Buttons" Text="Double" OnClientClick="this.disabled=true;"/>
-                        <asp:Button runat="server" ID="Button3" CssClass="dropdown-Buttons" Text="Triple" />
-                        <asp:Button runat="server" ID="Button4" CssClass="dropdown-Buttons" Text="Deluxe" OnClientClick="this.disabled=true;"/>
-                        <asp:Button runat="server" ID="Button5" CssClass="dropdown-Buttons" Text="Executive" OnClientClick="this.disabled=true;"/>
-                        <asp:Button runat="server" ID="Button6" CssClass="dropdown-Buttons" Text="Presidential"/>   
-                  </div>
-                </div>
-              <div class="dropdown">
-                   <asp:Button runat="server" Text="Ratings" CssClass="dropbtn" />
-                  <div class="dropdown-content">
-                        <asp:Button runat="server" ID="Button7" CssClass="dropdown-Buttons" Text="1" OnClientClick="this.disabled=true;"/>
-                        <asp:Button runat="server" ID="Button8" CssClass="dropdown-Buttons" Text="2" OnClientClick="this.disabled=true;"/>
-                        <asp:Button runat="server" ID="Button9" CssClass="dropdown-Buttons" Text="3" />
-                        <asp:Button runat="server" ID="Button10" CssClass="dropdown-Buttons" Text="4" OnClientClick="this.disabled=true;"/>
-                        <asp:Button runat="server" ID="Button11" CssClass="dropdown-Buttons" Text="5" OnClientClick="this.disabled=true;"/>
-                  </div>
-                </div>
+               </asp:DropDownList>
+
+               <asp:DropDownList id="typeList"
+                    AutoPostBack="False"
+                    runat="server" CssClass="item">
+                  <asp:ListItem selected="true"  disabled="true"> Type </asp:ListItem>
+                  <asp:ListItem Value="single"> Single </asp:ListItem>
+                  <asp:ListItem Value="double"> Double </asp:ListItem>
+                  <asp:ListItem Value="triple"> Triple </asp:ListItem>
+                  <asp:ListItem Value="deluxe"> Deluxe </asp:ListItem>
+                  <asp:ListItem Value="executive"> Executive </asp:ListItem>
+                  <asp:ListItem Value="presidential"> Presidential </asp:ListItem>
+
+               </asp:DropDownList>
+
+                 <asp:DropDownList id="RatingsList"
+                    AutoPostBack="False"
+                    runat="server" CssClass="item">
+                  <asp:ListItem selected="true"  disabled="true"> Stars </asp:ListItem>
+                  <asp:ListItem Value="1"> 1 </asp:ListItem>
+                  <asp:ListItem Value="2"> 2 </asp:ListItem>
+                  <asp:ListItem Value="3"> 3 </asp:ListItem>
+                  <asp:ListItem Value="4"> 4 </asp:ListItem>
+                  <asp:ListItem Value="5"> 5 </asp:ListItem>
+
+
+               </asp:DropDownList>
                 
               <div class="textInside">
                   <asp:Label runat="server"> 
+
 
                   • Cancellation free of charge
 

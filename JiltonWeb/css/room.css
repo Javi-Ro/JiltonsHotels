@@ -53,25 +53,6 @@
     position: absolute;
 }
 
-
-
-.dropbtn {
-    justify-content:center;
-    align-items:center;
-    background: #515654;
-    color: white;
-    display: flex;
-    flex-flow: row;
-    font-weight: bold;
-    margin: 0;
-    padding: 20% 25% 20% 20%;
-    font-size: 15px;
-    border: none;
-    cursor: pointer;
-    transition: .5s ease all;
-    width:100%;
-}
-
 .search {
     position: absolute;
     display: inline-block;
@@ -79,6 +60,7 @@
     top: 100%;
     transform: translate(-130%, -150%);
 }
+
 .searchButton {
     border: 2px solid #515654;
     line-height: 21px;
@@ -95,62 +77,6 @@
     background: #515654;
     color: white;
     transition: .5s ease all;
-}
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-    float: left;
-    position: relative;
-    display: inline-block;
-    width: 33.33%;
-    transition: visibility 0s, opacity 0.2s linear;
-}
-
-/* El contenido*/
-.dropdown-content {
-    display: block;
-    visibility: hidden;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    opacity: 0;
-    transition: visibility 0s, opacity 0.2s linear;
-}
-
-    .dropdown-content .dropdown-Buttons {
-        color: black;
-        padding: 15px 16px;
-        border: none;
-        text-decoration: none;
-        background-color: transparent;
-        position: relative;
-        width: 100%;
-        display: block;
-        font-size: 16px;
-        font-family: 'Karla', sans-serif;
-        transition: .5s ease all;
-    }
-
-
-.dropdown-content .dropdown-Buttons:hover {
-    cursor: pointer;
-    background: #515654;
-    color: white;
-    transition: .5s ease all;
-}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-
-    visibility: visible;
-    opacity: 1;
-}
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {
-    background-color: transparent;
-    color: #515654;
 }
 
 .selectionLabel {
@@ -170,6 +96,7 @@
     left: 100%;
     transform: translate(-140%, -219%);
 }
+
 .go {
     position: absolute;
     display: inline-block;
@@ -210,7 +137,6 @@
     cursor: pointer;
 }
 
-
 .room {
     position: relative;
     height: 100%; 
@@ -232,6 +158,7 @@
     overflow-x: hidden;
     overflow-y: auto;
 }
+
 .Informacion {
     padding: 3%;
     width: 70%;
@@ -286,17 +213,6 @@
     font-weight:bold;
 }
 
-.iconoHidden {
-    display:none
-}
-
-.icono {
-    position: relative;
-    left: 94%;
-    display: inline-block;
-}
-
-
 .add {
     position: relative;
     display: inline-block;
@@ -330,7 +246,6 @@
     z-index: 3;
 }
 
-
 .imagen2 {
    max-width: 23%;
    height: auto;
@@ -358,7 +273,6 @@
     display: flex;
     bottom: 1%;
 }
-
 
 .invisible {
     display: none;
@@ -433,6 +347,35 @@
 .paginacion {
     border-color: white;
 }
+
+.item {
+    width: 33.33%;
+    color: white;
+    padding: 7.2% 10px;
+    border: none;
+    float: left;
+    background-color: #515654;
+    font-weight: bold;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+    display: inline-block;
+    font-size: 16px;
+    font-family: 'Karla', sans-serif;
+    transition: .5s ease all;
+    border: none;
+    outline: none;
+    margin: 0 auto;
+    overflow-wrap: break-word;
+}
+
+    .item:hover {
+        cursor: pointer;
+        background: white;
+        color: #515654;
+        transition: .5s ease all;
+    }
 
 .Create {
     position: absolute;
