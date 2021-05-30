@@ -19,7 +19,7 @@
               <asp:DropDownList id="orderList"
                     AutoPostBack="False"
                     runat="server" CssClass="item">
-                  <asp:ListItem selected="true" disabled="true"> Order by </asp:ListItem>
+                  <asp:ListItem selected="true" disabled="true" Value="unselected"> Order by </asp:ListItem>
                   <asp:ListItem Value="Ratings"> Rating </asp:ListItem>
                   <asp:ListItem Value="Lowest"> Lowest price </asp:ListItem>
                   <asp:ListItem Value="Highest"> Highest price </asp:ListItem>
@@ -29,7 +29,7 @@
                <asp:DropDownList id="typeList"
                     AutoPostBack="False"
                     runat="server" CssClass="item">
-                  <asp:ListItem selected="true"  disabled="true"> Type </asp:ListItem>
+                  <asp:ListItem selected="true"  disabled="true" Value="unselected"> Type </asp:ListItem>
                   <asp:ListItem Value="single"> Single </asp:ListItem>
                   <asp:ListItem Value="double"> Double </asp:ListItem>
                   <asp:ListItem Value="triple"> Triple </asp:ListItem>
@@ -42,7 +42,7 @@
                  <asp:DropDownList id="RatingsList"
                     AutoPostBack="False"
                     runat="server" CssClass="item">
-                  <asp:ListItem selected="true"  disabled="true"> Stars </asp:ListItem>
+                  <asp:ListItem selected="true"  disabled="true" Value="unselected"> Stars </asp:ListItem>
                   <asp:ListItem Value="1"> 1 </asp:ListItem>
                   <asp:ListItem Value="2"> 2 </asp:ListItem>
                   <asp:ListItem Value="3"> 3 </asp:ListItem>
@@ -74,7 +74,7 @@
 
                     
               <div class="search">
-               <button class="searchButton"> Search </button>
+               <asp:Button runat="server" onClick="onSearch" CssClass="searchButton" Text="Search"/>
               </div>
 
             </div>
@@ -98,7 +98,7 @@
                             </emptydatatemplate> 
                          <Columns >
   
-                            <asp:BoundField DataField="id" ReadOnly="true" Visible="true" />
+                            <asp:BoundField DataField="id" ReadOnly="true"/>
                             <asp:TemplateField>
                                 <ItemTemplate>
                                     <div class="room">
