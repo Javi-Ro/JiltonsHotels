@@ -191,7 +191,7 @@ namespace Library
             return aux;
         }
 
-        public ENService searchService(int id)
+        public ENService searchService(string description)
         {
             ENService aux = null;
 
@@ -201,7 +201,7 @@ namespace Library
                 con = new SqlConnection(constring);
                 con.Open();
 
-                string cadena = "Select * FROM servicio WHERE id='"+ id +"' ";
+                string cadena = "Select * FROM servicio WHERE description='"+ description +"' ";
                 SqlCommand com = new SqlCommand(cadena, con);
                 SqlDataReader datos = com.ExecuteReader();
                 datos.Read();
