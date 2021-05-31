@@ -2,7 +2,7 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
 
     <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <link href="css/room.css?ver=<?php echo rand(560,950)?>" rel="stylesheet">
+        <link href="css/room.css?ver=<?php echo rand(563,950)?>" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <%--        <asp:SqlDataSource 
             id="SqlDataSource1" 
@@ -20,7 +20,6 @@
                     AutoPostBack="False"
                     runat="server" CssClass="item">
                   <asp:ListItem selected="true" disabled="true" Value="unselected"> Order by </asp:ListItem>
-                  <asp:ListItem Value="Ratings"> Rating </asp:ListItem>
                   <asp:ListItem Value="Lowest"> Lowest price </asp:ListItem>
                   <asp:ListItem Value="Highest"> Highest price </asp:ListItem>
 
@@ -39,18 +38,6 @@
 
                </asp:DropDownList>
 
-                 <asp:DropDownList id="RatingsList"
-                    AutoPostBack="False"
-                    runat="server" CssClass="item">
-                  <asp:ListItem selected="true"  disabled="true" Value="unselected"> Stars </asp:ListItem>
-                  <asp:ListItem Value="1"> 1 </asp:ListItem>
-                  <asp:ListItem Value="2"> 2 </asp:ListItem>
-                  <asp:ListItem Value="3"> 3 </asp:ListItem>
-                  <asp:ListItem Value="4"> 4 </asp:ListItem>
-                  <asp:ListItem Value="5"> 5 </asp:ListItem>
-
-
-               </asp:DropDownList>
                 
               <div class="textInside">
                   <asp:Label runat="server"> 
@@ -62,14 +49,15 @@
 
                   • Free Wi-Fi in every room
 
-                    Select your budget:
+                  Select a budget: <asp:TextBox ID="Control" CssClass="budget" runat="server" Text="€" ></asp:TextBox><asp:Label runat="server" Text="€"> </asp:Label>
                   </asp:Label>
               </div>
-              
                 <div class="slider">
-                    <asp:TextBox ID="TB1" runat="server"> </asp:TextBox>
-                    <asp:TextBox ID="Control" runat="server" visible="false"></asp:TextBox>
-                           <ajax:SliderExtender TooltipText = "{0}" EnableHandleAnimation="true"  RaiseChangeOnlyOnMouseUp="true" Maximum="1500" Minimum="150" ID="SliderExtender1" BoundControlID="Control" TargetControlID ="TB1" runat="server" />
+                    
+                    <asp:TextBox ID="SliderValue" runat="server"> </asp:TextBox>
+         
+                           <ajax:SliderExtender TooltipText = "Select your budget: " RailCssClass="ajax__slider_h_rail" HandleCssClass="ajax__slider_h_handle" EnableHandleAnimation="true"  RaiseChangeOnlyOnMouseUp="true" Maximum="2100" Minimum="350" ID="SliderExtender1" BoundControlID="Control" TargetControlID ="SliderValue" runat="server" />
+           
                 </div>
 
                     
@@ -104,6 +92,7 @@
                                     <div class="room">
                                         <div class="row">
                                             <div class="Informacion">
+                                                <asp:Label ID="idLabel" Visible="false" runat="server" Text='<%# Eval("id") %>'></asp:Label>
                                                 <asp:Label ID="Label1" runat="server" CssClass="titulo" Text='<%# Eval("title") %>'></asp:Label>
                                                 
                                                 <br />
@@ -123,28 +112,7 @@
                                                 <asp:Label ID="Label8" runat="server"  CssClass="field"> Overnight price: </asp:Label>
                                                 <asp:Label ID="Label9" runat="server" Text='<%# Eval("price") %>' > </asp:Label>
                                                 €
-                                                
-                                             <%--   <div class="ratingStar">
-                                                    <asp:Image runat="server" CssClass="imagen2" ImageUrl="assets/ratings2.png"/> 
-                                                </div>--%>
-                                                
-                                                 
-                                                
-                                        <%--        <asp:Panel runat="server" ID="adminViewRoom" CssClass="iconoHidden">
-                                                    <asp:Image CssClass="imagen" ID="deleteImage" runat="server" ImageUrl="assets/deleteIcon.png" />
-                                                    <asp:Image  CssClass="imagen" ID="UpdateImage" runat="server" ImageUrl="assets/editIcon.png" />
-                                                </asp:Panel>--%>
-                                                <%--<ajax:Rating runat="server" ID="Rating1"
-                                                    MaxRating="5"
-                                                    CurrentRating="2"
-                                                    CssClass="ratingStar"
-                                                    StarCssClass="ratingItem"
-                                                    WaitingStarCssClass="Saved"
-                                                    FilledStarCssClass="Filled"
-                                                    EmptyStarCssClass="Empty"
-                                                    >
-                                                </ajax:Rating>--%>
-                                                
+                                                                                              
 
                                              </div>
                                             <div class="FotoContenedor">
@@ -154,7 +122,7 @@
                                            </div>
                                            </div>
                                         <div class="add">
-                                                   <asp:Button  runat="server" Cssclass="addButton" onClick="addButton" Text="Add"/>
+                                             <asp:Button  runat="server" Cssclass="addButton" onClick="addButton" Text="Add"/>
                                                   </div>
                                         </div>
                                     </div>
@@ -190,7 +158,7 @@
                             
                             <asp:label runat="server" width="35%"> Price </asp:label><asp:textbox id ="priceTB" height="30px" runat ="server" />
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidatorPrice" CssClass="Validator" runat="server" ValidationGroup="RoomGroup" ErrorMessage="This field is required" ControlToValidate="priceTB" Display="Dynamic"></asp:RequiredFieldValidator>
-                            <asp:RangeValidator ID="RangeValidatorPrice" CssClass="ValidatorRange" ValidationGroup="RoomGroup" MinimumValue="0" MaximumValue="1000000" Type="Integer" Text="It must be an integer number" ControlToValidate="priceTB" Display="Dynamic" runat="server"></asp:RangeValidator>                             
+                            <asp:RangeValidator ID="RangeValidatorPrice" CssClass="ValidatorRange" ValidationGroup="RoomGroup" MinimumValue="350" MaximumValue="2100" Type="Integer" Text="Integer between 350 and 2100" ControlToValidate="priceTB" Display="Dynamic" runat="server"></asp:RangeValidator>                             
                             <asp:label runat="server" width="35%"> Type </asp:label><asp:DropDownList id="TypeTB" CssClass="ddlstyle" 
                                     runat="server">
 
@@ -247,11 +215,9 @@
                </div>
                 <div class="gridContainer">
                       <asp:GridView ID="GridViewRooms" CssClass="grid2"  runat="server" ForeColor="#333333" GridLines="None" AutoGenerateColumns="false" CellSpacing="8" ShowHeader="False" Width="100%" RowStyle-HorizontalAlign="Left">
-                 <%--       <emptydatarowstyle CssClass="emptyRow2"/>
-                    
                             <emptydatatemplate>
-                                <asp:Label runat="server" CssClass="textWhenEmpty" Text = "Select any room you like"></asp:Label>
-                            </emptydatatemplate> --%>
+                                <asp:Label runat="server" CssClass="textWhenEmpty" Text = "At least one room must be selected "></asp:Label>
+                            </emptydatatemplate> 
                         
                           <Columns>
                             <asp:BoundField DataField="title" ItemStyle-Width="150px"  ItemStyle-Font-Bold="true" />
@@ -263,7 +229,7 @@
                 </div>
                 <div class="goContainer">
                     <div class="go">
-                        <asp:Button  runat="server" Cssclass="searchButton" Text="Go"/>
+                        <asp:Button id="goButton" visible="false" runat="server" Cssclass="searchButton" Text="Go" OnClick="GoButton_Click"/>
                     </div>
                 </div>
             </div>

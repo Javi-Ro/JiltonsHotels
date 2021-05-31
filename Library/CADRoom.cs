@@ -136,32 +136,6 @@ public class CADRoom
         }
     }
 
-
-    //public DataSet selectByType(ENRoom room)
-    //{
-    //    //shows all the available rooms with the selected type
-    //    return true;
-    //}
-
-    //public DataSet selectByMinSize(ENRoom room)
-    //{
-    //    //shows all the available rooms that have more than the size selected
-    //    return true;
-    //}
-
-    public bool selectOrderByPriceUp(ENRoom room)
-    {
-        //shows all the available rooms in order from the most expensive to the least 
-        return true;
-    }
-
-    public bool selectOrderByPriceDown(ENRoom room)
-    {
-        //shows all the available rooms in order from the least expensive to the most 
-
-        return true;
-    }
-
     public bool UpdateNotAvailable(ENRoom room)
     {
         //sets a room not available when the user books a room

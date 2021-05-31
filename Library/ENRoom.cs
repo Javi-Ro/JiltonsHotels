@@ -171,34 +171,6 @@ namespace Library
             }
         }
 
-        //public bool showByType()
-        //{
-        //    CADRoom room = new CADRoom();
-        //    bool show = room.selectByType(this);
-        //    return show;
-        //}
-
-        //public bool showByMinSize()
-        //{
-        //    CADRoom room = new CADRoom();
-        //    bool show = room.selectByMinSize(this);
-        //    return show;
-        //}
-
-        public bool showAllOrderByPriceUp()
-        {
-            CADRoom room = new CADRoom();
-            bool show = room.selectOrderByPriceUp(this);
-            return show;
-        }
-
-        public bool showAllOrderByPriceDown()
-        {
-            CADRoom room = new CADRoom();
-            bool show = room.selectOrderByPriceDown(this);
-            return show;
-        }
-
         //public bool setNotAvailable()
         //{
         //    this.available = false;

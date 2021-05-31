@@ -18,44 +18,35 @@ namespace JiltonWeb
         private String constring = ConfigurationManager.ConnectionStrings["Database"].ToString();
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (Context.Items["showLowest"] != null)
-            //{
-            //    SqlDataSource1.SelectCommand += Context.Items["showLowest"];
-            //}
 
             if (!IsPostBack)
             {
                 
             }
-            if(Context.Items["Check"] != null)
+
+            if(Session["sessionSelected"] != null)
             {
                 DataTable seleccionado = (DataTable)Session["sessionSelected"];
+                goButton.Visible = true;
                 GridViewRooms.DataSource = seleccionado;
                 GridViewRooms.DataBind();
             }
+
             this.BindGrid();
             GridView1.DataBind();
+            GridViewRooms.DataBind();
 
             if (Session["id"] != null && Session["id"].ToString() == "admin")
             {
-                //foreach(GridViewRow row in GridView1.Rows)
-                //{
-                //    Panel panel = (Panel)row.FindControl("adminViewRoom");
-                //    panel.CssClass = "icono";
-                //}
+
                 GridView1.Columns[0].Visible = true;
                 adminViewRoom.CssClass = "visible";
                 InsertInterface(sender, e);
 
-
             }
             else
             {
-                //foreach (GridViewRow row in GridView1.Rows)
-                //{
-                //    Panel panel = (Panel)row.FindControl("adminViewRoom");
-                //    panel.CssClass = "iconoHidden";
-                //}
+
                 GridView1.Columns[0].Visible = false;
                 adminViewRoom.CssClass = "invisible";
             }
@@ -64,9 +55,14 @@ namespace JiltonWeb
 
         private void BindGrid()
         {
+            string comando = "select * from room ";
+            if(Session["filters"] != null)
+            {
+                comando = Session["filters"].ToString();
+            }
             string constr = ConfigurationManager.ConnectionStrings["database"].ConnectionString;
             SqlConnection con = new SqlConnection(constr);
-            SqlCommand cmd = new SqlCommand("SELECT * from room");
+            SqlCommand cmd = new SqlCommand(comando);
             SqlDataAdapter sda = new SqlDataAdapter();
             cmd.Connection = con;
             sda.SelectCommand = cmd;
@@ -90,11 +86,6 @@ namespace JiltonWeb
             Response.Redirect("ExtraServices.aspx");
         }
 
-        protected void showLowest(object sender, EventArgs e)
-        {
-            Context.Items.Add("showLowest", " order by price");
-            Server.Transfer("Room.aspx");
-        }
 
         protected void gridview_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
@@ -220,35 +211,62 @@ namespace JiltonWeb
         }
         protected void addButton(object sender, EventArgs e)
         {
-            DataTable seleccionado = (DataTable)Session["sessionSelected"];
-            
-            if(seleccionado == null)
-            {
-                seleccionado = new DataTable();
-                DataColumn title = new DataColumn();
-                title.DataType = System.Type.GetType("System.String");
-                title.ColumnName = "title";
-                DataColumn price = new DataColumn();
-                price.DataType = System.Type.GetType("System.Single");
-                price.ColumnName = "price";
-                seleccionado.Columns.Add(title);
-                seleccionado.Columns.Add(price);
-            }
+            //if (Page.IsValid)
+            //{
+               
+                DataTable seleccionado = (DataTable)Session["sessionSelected"];
 
-            DataRow dr = seleccionado.NewRow();
-  
+                if (seleccionado == null)
+                {
+                    seleccionado = new DataTable();
+                    DataColumn id = new DataColumn();
+                    id.DataType = System.Type.GetType("System.Single");
+                    id.ColumnName = "id";
+                    
+                    DataColumn title = new DataColumn();
+                    title.DataType = System.Type.GetType("System.String");
+                    title.ColumnName = "title";
+                    DataColumn price = new DataColumn();
+                    price.DataType = System.Type.GetType("System.Single");
+                    price.ColumnName = "price";
+                    seleccionado.Columns.Add(title);
+                    seleccionado.Columns.Add(price);
+                    seleccionado.Columns.Add(id);
+                }
 
-            Button button1 = (Button)sender;
-            GridViewRow gr = (GridViewRow)button1.NamingContainer;
-            Label titulo = (Label)gr.FindControl("Label1");
-            Label precio = (Label)gr.FindControl("Label9");
-            dr["title"] = titulo.Text;
-            dr["price"] = float.Parse(precio.Text);
-            seleccionado.Rows.Add(dr);
-            
-            Session["sessionSelected"] = seleccionado;
-            Context.Items.Add("Check", true);
-            Server.Transfer("Room.aspx");
+                goButton.Visible = true;
+                DataRow dr = seleccionado.NewRow();
+
+                Button button1 = (Button)sender;
+                GridViewRow gr = (GridViewRow)button1.NamingContainer;
+                bool repeated = false;
+
+                foreach (GridViewRow row in GridViewRooms.Rows)
+                {
+                    if(row.FindControl("id") != null)
+                    {
+                        if ((((Label)row.FindControl("id")).Text == idLabel.Text))
+                        {
+
+                            repeated = true;
+                        }
+                    }
+                    
+                }
+                if(repeated == false)
+                {
+                    Label titulo = (Label)gr.FindControl("Label1");
+                    Label precio = (Label)gr.FindControl("Label9");
+                    dr["title"] = titulo.Text;
+                    dr["price"] = float.Parse(precio.Text);
+                    
+                    seleccionado.Rows.Add(dr);
+
+                    Session["sessionSelected"] = seleccionado;
+                    Context.Items.Add("Check", true);
+                    Response.Redirect("Room.aspx");
+                }    
+
         }
         protected void onSearch(object sender, EventArgs e)
         {
@@ -261,23 +279,16 @@ namespace JiltonWeb
                 firstWhere = true;
             }
 
-            if (RatingsList.SelectedValue != "unselected")
+            if (firstWhere == true)
             {
-                if (!firstWhere)
-                {
-                    comando = comando + " WHERE ratings = " + RatingsList.SelectedValue + " ";
-                }
-                else
-                {
-                    comando = comando + "and ratings = " + RatingsList.SelectedValue + " ";
-                }
-                
+                comando = comando + " AND price <= " + Control.Text;
             }
+            else
+            {
+                comando = comando + " WHERE price <= " + Control.Text;
 
+            }
             switch (orderList.SelectedValue){
-                case "Ratings":
-                    comando = comando + " order by ratings ";
-                    break;
                 case "Lowest":
                     comando = comando + " order by price ";
                     break;
@@ -288,7 +299,9 @@ namespace JiltonWeb
                     comando = comando + ' ';
                     break;
             }
-            
+
+
+            Session["filters"] = comando;
             SqlConnection con = new SqlConnection(constr);
             SqlCommand cmd = new SqlCommand(comando);
             SqlDataAdapter sda = new SqlDataAdapter();
@@ -298,6 +311,7 @@ namespace JiltonWeb
             sda.Fill(dt);
             GridView1.DataSource = dt;
             GridView1.DataBind();
+            
         }
     }
 }
