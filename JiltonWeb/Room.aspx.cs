@@ -22,10 +22,10 @@ namespace JiltonWeb
             //{
             //    SqlDataSource1.SelectCommand += Context.Items["showLowest"];
             //}
-            
+
             if (!IsPostBack)
             {
-                this.BindGrid();
+                
             }
             if(Context.Items["Check"] != null)
             {
@@ -33,7 +33,7 @@ namespace JiltonWeb
                 GridViewRooms.DataSource = seleccionado;
                 GridViewRooms.DataBind();
             }
-
+            this.BindGrid();
             GridView1.DataBind();
 
             if (Session["id"] != null && Session["id"].ToString() == "admin")
@@ -43,6 +43,7 @@ namespace JiltonWeb
                 //    Panel panel = (Panel)row.FindControl("adminViewRoom");
                 //    panel.CssClass = "icono";
                 //}
+                GridView1.Columns[0].Visible = true;
                 adminViewRoom.CssClass = "visible";
                 InsertInterface(sender, e);
 
@@ -55,6 +56,7 @@ namespace JiltonWeb
                 //    Panel panel = (Panel)row.FindControl("adminViewRoom");
                 //    panel.CssClass = "iconoHidden";
                 //}
+                GridView1.Columns[0].Visible = false;
                 adminViewRoom.CssClass = "invisible";
             }
 
@@ -248,6 +250,54 @@ namespace JiltonWeb
             Context.Items.Add("Check", true);
             Server.Transfer("Room.aspx");
         }
+        protected void onSearch(object sender, EventArgs e)
+        {
+            string constr = ConfigurationManager.ConnectionStrings["database"].ConnectionString;
+            string comando = "Select * from room";
+            bool firstWhere = false;
+            if (typeList.SelectedValue != "unselected")
+            {
+                comando = comando + " WHERE type = '" + typeList.SelectedValue + "' ";
+                firstWhere = true;
+            }
 
+            if (RatingsList.SelectedValue != "unselected")
+            {
+                if (!firstWhere)
+                {
+                    comando = comando + " WHERE ratings = " + RatingsList.SelectedValue + " ";
+                }
+                else
+                {
+                    comando = comando + "and ratings = " + RatingsList.SelectedValue + " ";
+                }
+                
+            }
+
+            switch (orderList.SelectedValue){
+                case "Ratings":
+                    comando = comando + " order by ratings ";
+                    break;
+                case "Lowest":
+                    comando = comando + " order by price ";
+                    break;
+                case "Highest":
+                    comando = comando + " order by price DESC ";
+                    break;
+                default:
+                    comando = comando + ' ';
+                    break;
+            }
+            
+            SqlConnection con = new SqlConnection(constr);
+            SqlCommand cmd = new SqlCommand(comando);
+            SqlDataAdapter sda = new SqlDataAdapter();
+            cmd.Connection = con;
+            sda.SelectCommand = cmd;
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            GridView1.DataSource = dt;
+            GridView1.DataBind();
+        }
     }
 }
