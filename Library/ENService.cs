@@ -168,7 +168,7 @@ namespace Library
 		public ENService searchService()
 		{
 			CADService service = new CADService();
-			return service.searchService(this.Id);
+			return service.searchService(this.Descritpion);
 		}
 
 

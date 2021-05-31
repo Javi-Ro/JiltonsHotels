@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using System.Threading;
+using Library;
 
 namespace JiltonWeb
 {
@@ -81,6 +82,11 @@ namespace JiltonWeb
 
         protected void BookButton_Click(object sender, EventArgs e)
         {
+            ENBooking booking = new ENBooking();
+            IntervalDate dates = new IntervalDate(new Date(1, 1, 2021), new Date(3, 1, 2021));  // Fechas deben ser del Entry y Departure date textboxes
+            booking.date = dates;
+            booking.user = (string)Session["id"];
+            Session["bookingInfo"] = booking;
             Response.Redirect("Room.aspx");
             
         }

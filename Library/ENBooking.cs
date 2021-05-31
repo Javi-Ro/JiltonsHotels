@@ -20,28 +20,15 @@ namespace Library
             private set { _id = value; }
         }
 
+        public string user { get; set; }
 
-        private ENUser _user;
-        public ENUser user
-        {
-            get { return _user; }
-            private set { _user = value; }
-        }
+        public IntervalDate date { get; set; }  // Start and end date of the stay on the hote
 
-        
-        private IntervalDate _date; // Start and end date of the stay on the hotel
-        public IntervalDate date
-        {
-            get { return _date; }
-            private set { _date = value; }
-        }
-
-        
         private string _board; // It can have 3 types: OB (No board), HB (Half Board) and FB (Full Board)
         public string board
         {
             get { return _board; }
-            private set 
+            set 
             { 
                 if (board == "OB" || board == "HB" || board == "FB")
                 {
@@ -60,6 +47,14 @@ namespace Library
             get { return _discount; }
             private set { _discount = value; }
         }
+
+        public List<ENService> Services { get; set; }
+
+        public List<ENCar> Cars { get; set; }
+
+        public List<ENPackage> Packages { get; set; }
+
+        public List<ENRoom> Rooms { get; set; }
 
 
         // Booking methods

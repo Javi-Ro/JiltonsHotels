@@ -65,7 +65,7 @@
             </div>
             <div class="BookingRegister">
                 <label class="bookingTitle">BOOKINGS</label>
-                <div class="BookingSelector">
+                <div class="BookingSelector">  <%--- AGREGAR REQUIRED FIELD VALIDATORS A LO DE LAS FECHAS Y PONERLES MISMO GROUP VALIDATOR A TEXT ENTRY-DEP. Y A LOS R.F.VALIDATOR ---%>
                     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 
                     <asp:Label class="BookingLabel" runat="server">ENTRY DATE</asp:Label>

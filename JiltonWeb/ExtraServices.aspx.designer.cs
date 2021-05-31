@@ -150,6 +150,15 @@ namespace JiltonWeb
         protected global::System.Web.UI.WebControls.Label AddingServiceLabel;
 
         /// <summary>
+        /// Control ServiceTypeLabel.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ServiceTypeLabel;
+
+        /// <summary>
         /// Control TextEntry.
         /// </summary>
         /// <remarks>
