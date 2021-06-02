@@ -276,33 +276,6 @@ namespace JiltonWeb
         protected global::System.Web.UI.WebControls.RangeValidator RangeValidatorSingleBed;
 
         /// <summary>
-        /// Control ratingsTB.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ratingsTB;
-
-        /// <summary>
-        /// Control RequiredFieldValidatorRatings.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorRatings;
-
-        /// <summary>
-        /// Control RangeRatings.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RangeValidator RangeRatings;
-
-        /// <summary>
         /// Control imageTB.
         /// </summary>
         /// <remarks>
@@ -409,5 +382,14 @@ namespace JiltonWeb
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button goButton;
+
+        /// <summary>
+        /// Control errorRepeated.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label errorRepeated;
     }
 }

@@ -39,8 +39,9 @@ namespace JiltonWeb
             if (Session["id"] != null && Session["id"].ToString() == "admin")
             {
 
-                GridView1.Columns[0].Visible = true;
+                GridView1.Columns[0].Visible = false;
                 adminViewRoom.CssClass = "visible";
+                roomIDUpdate.Visible = false;
                 InsertInterface(sender, e);
 
             }
@@ -115,6 +116,7 @@ namespace JiltonWeb
             Update.Visible = false;
             Insert.Visible = true;
             error.Visible = false;
+            roomIDUpdate.Visible = false;
             success.Visible = false;
             onlyUpdateID.CssClass = "invisible";
         }
@@ -127,18 +129,16 @@ namespace JiltonWeb
             float precio = float.Parse(priceTB.Text);
             int single = int.Parse(childBedTB.Text);
             int king = int.Parse(kingBedTB.Text);
-            int rating = int.Parse(ratingsTB.Text);
             string imagen = imageTB.Text;
             if (string.IsNullOrEmpty(imageTB.Text))
             {
                 imagen = "assets/room1.jpg";
             }
-            ENRoom room = new ENRoom(id, nameTB.Text, descriptionTB.Text, precio, single, king, TypeTB.SelectedValue, rating, null, imagen);
+            ENRoom room = new ENRoom(id, nameTB.Text, descriptionTB.Text, precio, single, king, TypeTB.SelectedValue, null, imagen);
 
             if (room.update())
             {
-                //Context.Items.Add("Success", DateTB.Text);
-                //Server.Transfer("Restaurant.aspx");
+
                 success.Visible = true;
                 success.Text = "Room updated succesfully";
             }
@@ -146,7 +146,7 @@ namespace JiltonWeb
             {
                 error.Visible = true;
                 error.Text = "Could not update the room " + room.id;
-                //"Could not update room";
+
             }
 
         }
@@ -154,17 +154,17 @@ namespace JiltonWeb
         {
             error.Visible = false;
             success.Visible = false;
+
             float precio = float.Parse(priceTB.Text);
             int single = int.Parse(childBedTB.Text);
             int king = int.Parse(kingBedTB.Text);
-            int rating = int.Parse(ratingsTB.Text);
             string imagen = imageTB.Text;
             if (string.IsNullOrEmpty(imageTB.Text))
             {
                 imagen = "assets/room1.jpg";
             }
             //All the validations have been done with range validators and require field validators
-            ENRoom room = new ENRoom(0, nameTB.Text, descriptionTB.Text, precio,single,king, TypeTB.SelectedValue, rating, null, imagen);
+            ENRoom room = new ENRoom(0, nameTB.Text, descriptionTB.Text, precio,single,king, TypeTB.SelectedValue, null, imagen);
 
             if (room.insertRoom())
             {
@@ -207,6 +207,7 @@ namespace JiltonWeb
         {
             InsertOrUpdate.CssClass = "visible";
             deletePanel.CssClass = "invisible";
+            roomIDUpdate.Visible = true;
             Update.Visible = true;
             Insert.Visible = false;
             error.Visible = false;
@@ -218,57 +219,67 @@ namespace JiltonWeb
             //if (Page.IsValid)
             //{
                
-                DataTable seleccionado = (DataTable)Session["sessionSelected"];
+            DataTable seleccionado = (DataTable)Session["sessionSelected"];
 
-                if (seleccionado == null)
-                {
-                    seleccionado = new DataTable();
-                    DataColumn id = new DataColumn();
-                    id.DataType = System.Type.GetType("System.Single");
-                    id.ColumnName = "id";
-                    
-                    DataColumn title = new DataColumn();
-                    title.DataType = System.Type.GetType("System.String");
-                    title.ColumnName = "title";
-                    DataColumn price = new DataColumn();
-                    price.DataType = System.Type.GetType("System.Single");
-                    price.ColumnName = "price";
-                    seleccionado.Columns.Add(title);
-                    seleccionado.Columns.Add(price);
-                    seleccionado.Columns.Add(id);
-                }
+            if (seleccionado == null)
+            {
+                seleccionado = new DataTable();
+                DataColumn id = new DataColumn();
+                id.DataType = System.Type.GetType("System.Single");
+                id.ColumnName = "id";
+                DataColumn title = new DataColumn();
+                title.DataType = System.Type.GetType("System.String");
+                title.ColumnName = "title";
+                DataColumn price = new DataColumn();
+                price.DataType = System.Type.GetType("System.Single");
+                price.ColumnName = "price";
+                seleccionado.Columns.Add(id);
+                seleccionado.Columns.Add(title);
+                seleccionado.Columns.Add(price);
+                
+            }
 
-                goButton.Visible = true;
-                DataRow dr = seleccionado.NewRow();
+            goButton.Visible = true;
+            DataRow dr = seleccionado.NewRow();
 
-                Button button1 = (Button)sender;
-                GridViewRow gr = (GridViewRow)button1.NamingContainer;
-                bool repeated = false;
+            Button button1 = (Button)sender;
+            GridViewRow gr = (GridViewRow)button1.NamingContainer;
 
+            bool repeated = false;
+            Label idLabel = (Label)gr.FindControl("idLabel");
+            string celda = "inicial";
+
+            if (GridViewRooms.Rows.Count >= 1)
+            {
                 foreach (GridViewRow row in GridViewRooms.Rows)
                 {
-                    if((Label)row.FindControl("id") != null)
-                    {
-                        //if ((((Label)row.FindControl("id")).Text == idLabel.Text))
-                        //{
-                        //    repeated = true;
-                        //}
-                    }
-                    
-                }
-                if(repeated == false)
-                {
-                    Label titulo = (Label)gr.FindControl("Label1");
-                    Label precio = (Label)gr.FindControl("Label9");
-                    dr["title"] = titulo.Text;
-                    dr["price"] = float.Parse(precio.Text);
-                    
-                    seleccionado.Rows.Add(dr);
 
-                    Session["sessionSelected"] = seleccionado;
-                    Context.Items.Add("Check", true);
-                    Response.Redirect("Room.aspx");
-                }    
+                    if (row.Cells[0].Text == idLabel.Text)
+                    {
+                        
+                        repeated = true;
+
+                    }    
+                }
+            }
+        
+            if (repeated == false)
+            {
+                Label titulo = (Label)gr.FindControl("Label1");
+                Label precio = (Label)gr.FindControl("Label9");
+                dr["id"] = int.Parse(idLabel.Text);
+                dr["title"] = titulo.Text;
+                dr["price"] = float.Parse(precio.Text);
+                
+                seleccionado.Rows.Add(dr);
+                Session["sessionSelected"] = seleccionado;
+                Context.Items.Add("Check", true);
+                Response.Redirect("Room.aspx");
+            }
+            else
+            {
+                errorRepeated.Visible = true;
+            }
 
         }
         protected void onSearch(object sender, EventArgs e)
