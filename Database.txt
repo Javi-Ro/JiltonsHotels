@@ -41,7 +41,6 @@ create table room(
 	bookingNumber int constraint FK_room_booking references booking(id),
 	adultBed int not null,
 	childBed int not null,
-	ratings float,
 	imgURL varchar(300),
 	constraint CHK_room check (adultBed >= 0 and adultBed < 3 and childBed >= 0 and childBed < 4 and type in ('single', 'double', 'triple', 'deluxe', 'executive', 'presidential'))
 )
