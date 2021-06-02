@@ -4,13 +4,6 @@
     <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
         <link href="css/room.css?ver=<?php echo rand(563,950)?>" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<%--        <asp:SqlDataSource 
-            id="SqlDataSource1" 
-            runat="server"
-            DataSourceMode="DataReader"
-            ConnectionString="<%$ ConnectionStrings:Database%>"
-            SelectCommand="SELECT * FROM room">
-        </asp:SqlDataSource>--%>
            
         <div class="background" runat="server">
 
@@ -92,7 +85,7 @@
                                     <div class="room">
                                         <div class="row">
                                             <div class="Informacion">
-                                                <asp:Label ID="idLabel" Visible="false" runat="server" Text='<%# Eval("id") %>'></asp:Label>
+                                                <asp:Label ID="idLabel" CssClass="invisible" runat="server" Text='<%# Eval("id") %>'></asp:Label>
                                                 <asp:Label ID="Label1" runat="server" CssClass="titulo" Text='<%# Eval("title") %>'></asp:Label>
                                                 
                                                 <br />

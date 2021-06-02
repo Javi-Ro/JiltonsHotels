@@ -243,13 +243,12 @@ namespace JiltonWeb
 
                 foreach (GridViewRow row in GridViewRooms.Rows)
                 {
-                    if(row.FindControl("id") != null)
+                    if((Label)row.FindControl("id") != null)
                     {
-                        if ((((Label)row.FindControl("id")).Text == idLabel.Text))
-                        {
-
-                            repeated = true;
-                        }
+                        //if ((((Label)row.FindControl("id")).Text == idLabel.Text))
+                        //{
+                        //    repeated = true;
+                        //}
                     }
                     
                 }
