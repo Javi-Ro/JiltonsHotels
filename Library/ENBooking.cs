@@ -17,7 +17,7 @@ namespace Library
         public int ID
         {
             get { return _id; }
-            private set { _id = value; }
+            set { _id = value; }
         }
 
         public string user { get; set; }
@@ -209,6 +209,12 @@ namespace Library
                 return total * (100 - this.discount.percentage) / 100;
             }
             return total;
+        }
+
+        public static int fillId()
+        {
+            CADBooking booking = new CADBooking();
+            return booking.fillId();
         }
     }
 }
