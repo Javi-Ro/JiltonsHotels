@@ -196,7 +196,7 @@ namespace Library
         }
 
         // Auxiliary methods
-        public int calculatePrice(DataTable rooms) // Returns the total cost of the booking (taking in account the possible discount code)
+        public int calculatePrice(DataTable rooms, DataTable services, DataTable packages, DataTable cars) // Returns the total cost of the booking (taking in account the possible discount code)
         {
             int total = 0;
 
@@ -204,6 +204,31 @@ namespace Library
             {
                 total += Int32.Parse(row["price"].ToString());
             }
+
+            if (services != null)
+            {
+                foreach (DataRow row in services.Rows)
+                {
+                    total += Int32.Parse(row["price"].ToString());
+                }
+            }
+
+            if (packages != null)
+            {
+                foreach (DataRow row in packages.Rows)
+                {
+                    total += Int32.Parse(row["price"].ToString());
+                }
+            }
+
+            if(cars != null)
+            {
+                foreach (DataRow row in cars.Rows)
+                {
+                    total += Int32.Parse(row["price"].ToString());
+                }
+            }
+            
             if (this.discount != null)
             {
                 return total * (100 - this.discount.percentage) / 100;

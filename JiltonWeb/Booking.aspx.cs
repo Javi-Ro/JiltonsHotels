@@ -58,7 +58,7 @@ namespace JiltonWeb
                 GridViewPackages.DataBind();
 
                 // Total price
-                TotalPriceLabel.Text = booking.calculatePrice((DataTable)Session["sessionSelected"]).ToString() + " €";
+                TotalPriceLabel.Text = booking.calculatePrice((DataTable)Session["sessionSelected"], (DataTable)Session["bookingServices"], (DataTable)Session["bookingCars"], (DataTable)Session["bookingPackages"]).ToString() + " €";
             }
         }
 
