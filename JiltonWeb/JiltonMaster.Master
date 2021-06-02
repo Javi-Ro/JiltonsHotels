@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="JiltonMaster.master.cs" Inherits="JiltonWeb.JiltonMaster"%>
+﻿<%@ Master Language="C#" AutoEventWireup="true" EnableViewState="true" CodeBehind="JiltonMaster.master.cs" Inherits="JiltonWeb.JiltonMaster"%>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
 
 <!DOCTYPE html>

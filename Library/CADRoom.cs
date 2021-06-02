@@ -47,11 +47,15 @@ public class CADRoom
         try
         {
             SqlConnection c = new SqlConnection(constring);
+            c.Open();
             DataSet virtualSet = new DataSet();
-            SqlDataAdapter adapter = new SqlDataAdapter(
-                "INSERT INTO[dbo].[room]([title],[description],[price],[type],[adultBed],[childBed],[imgURL],[ratings]) VALUES('" + room.title
-                + "', '" + room.description + "', " + room.price + ", '" + room.type + "', " + room.adultBed + ", " + room.childBed + ", '" + room.imageLink +  "', " + room.ratings +")", c);
+            string sql = "INSERT INTO[dbo].[room]([title],[description],[price],[type],[adultBed],[childBed],[imgURL]) VALUES('" + room.title
+                + "', '" + room.description + "', " + room.price + ", '" + room.type + "', " + room.adultBed + ", " + room.childBed + ", '" + room.imageLink + "')";
+            SqlDataAdapter adapter = new SqlDataAdapter("select * from room", c);
             adapter.Fill(virtualSet, "room");
+            adapter.InsertCommand = new SqlCommand(sql, c);
+            adapter.InsertCommand.ExecuteNonQuery();
+        
             return true;
         }
         catch (SqlException ex)
@@ -70,10 +74,14 @@ public class CADRoom
         try
         {
             SqlConnection c = new SqlConnection(constring);
+            c.Open();
             DataSet virtualSet = new DataSet();
-            SqlDataAdapter adapter = new SqlDataAdapter(
-                "DELETE from room where id = " + room.id, c);
+            string sql = "DELETE from room where id = " + room.id;
+            SqlDataAdapter adapter = new SqlDataAdapter("select * from room", c);
             adapter.Fill(virtualSet, "room");
+            adapter.DeleteCommand = new SqlCommand(sql, c);
+            adapter.DeleteCommand.ExecuteNonQuery();
+
             return true;
         }
         catch (SqlException ex)
@@ -95,7 +103,7 @@ public class CADRoom
             DataSet virtualSet = new DataSet();
             SqlDataAdapter adapter = new SqlDataAdapter("UPDATE [dbo].[room] " +
                 "SET title= '" + room.title + "', description='" + room.description + "', price=" + room.price
-                + ", type= '" + room.type + "', adultBed=" + room.adultBed + ", childBed=" + room.childBed + ", ratings=" + room.ratings
+                + ", type= '" + room.type + "', adultBed=" + room.adultBed + ", childBed=" + room.childBed
                 + ", imgURL='" + room.imageLink + "' WHERE id=" + room.id, c);
 
             adapter.Fill(virtualSet, "room");

@@ -39,8 +39,9 @@ namespace JiltonWeb
             if (Session["id"] != null && Session["id"].ToString() == "admin")
             {
 
-                GridView1.Columns[0].Visible = true;
+                GridView1.Columns[0].Visible = false;
                 adminViewRoom.CssClass = "visible";
+                roomIDUpdate.Visible = false;
                 InsertInterface(sender, e);
 
             }
@@ -111,6 +112,7 @@ namespace JiltonWeb
             Update.Visible = false;
             Insert.Visible = true;
             error.Visible = false;
+            roomIDUpdate.Visible = false;
             success.Visible = false;
             onlyUpdateID.CssClass = "invisible";
         }
@@ -123,18 +125,16 @@ namespace JiltonWeb
             float precio = float.Parse(priceTB.Text);
             int single = int.Parse(childBedTB.Text);
             int king = int.Parse(kingBedTB.Text);
-            int rating = int.Parse(ratingsTB.Text);
             string imagen = imageTB.Text;
             if (string.IsNullOrEmpty(imageTB.Text))
             {
                 imagen = "assets/room1.jpg";
             }
-            ENRoom room = new ENRoom(id, nameTB.Text, descriptionTB.Text, precio, single, king, TypeTB.SelectedValue, rating, null, imagen);
+            ENRoom room = new ENRoom(id, nameTB.Text, descriptionTB.Text, precio, single, king, TypeTB.SelectedValue, null, imagen);
 
             if (room.update())
             {
-                //Context.Items.Add("Success", DateTB.Text);
-                //Server.Transfer("Restaurant.aspx");
+
                 success.Visible = true;
                 success.Text = "Room updated succesfully";
             }
@@ -142,7 +142,7 @@ namespace JiltonWeb
             {
                 error.Visible = true;
                 error.Text = "Could not update the room " + room.id;
-                //"Could not update room";
+
             }
 
         }
@@ -150,17 +150,17 @@ namespace JiltonWeb
         {
             error.Visible = false;
             success.Visible = false;
+
             float precio = float.Parse(priceTB.Text);
             int single = int.Parse(childBedTB.Text);
             int king = int.Parse(kingBedTB.Text);
-            int rating = int.Parse(ratingsTB.Text);
             string imagen = imageTB.Text;
             if (string.IsNullOrEmpty(imageTB.Text))
             {
                 imagen = "assets/room1.jpg";
             }
             //All the validations have been done with range validators and require field validators
-            ENRoom room = new ENRoom(0, nameTB.Text, descriptionTB.Text, precio,single,king, TypeTB.SelectedValue, rating, null, imagen);
+            ENRoom room = new ENRoom(0, nameTB.Text, descriptionTB.Text, precio,single,king, TypeTB.SelectedValue, null, imagen);
 
             if (room.insertRoom())
             {
@@ -203,6 +203,7 @@ namespace JiltonWeb
         {
             InsertOrUpdate.CssClass = "visible";
             deletePanel.CssClass = "invisible";
+            roomIDUpdate.Visible = true;
             Update.Visible = true;
             Insert.Visible = false;
             error.Visible = false;
