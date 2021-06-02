@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/JiltonMaster.Master" AutoEventWireup="true" CodeBehind="Booking.aspx.cs" Inherits="JiltonWeb.Booking" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="cssLink" runat="server">
-        <link rel="stylesheet" href="../css/booking.css?ver=<?php echo rand(255,950)?>" />
+        <link rel="stylesheet" href="../css/booking.css?ver=<?php echo rand(295,950)?>" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="MainContainerBooking">

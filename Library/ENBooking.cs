@@ -17,7 +17,7 @@ namespace Library
         public int ID
         {
             get { return _id; }
-            private set { _id = value; }
+            set { _id = value; }
         }
 
         public string user { get; set; }
@@ -198,6 +198,12 @@ namespace Library
         public int calculatePrice() // Returns the total cost of the booking (taking in account the possible discount code)
         {
             return 1000;
+        }
+
+        public static int fillId()
+        {
+            CADBooking booking = new CADBooking();
+            return booking.fillId();
         }
     }
 }
