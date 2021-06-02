@@ -84,6 +84,7 @@ namespace JiltonWeb
         {
             ENBooking booking = new ENBooking();
             IntervalDate dates = new IntervalDate(new Date(1, 1, 2021), new Date(3, 1, 2021));  // Fechas deben ser del Entry y Departure date textboxes
+            booking.ID = ENBooking.fillId();
             booking.date = dates;
             booking.user = (string)Session["id"];
             Session["bookingInfo"] = booking;

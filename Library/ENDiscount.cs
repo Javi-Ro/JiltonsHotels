@@ -19,7 +19,7 @@ namespace Library
         public int percentage
         {
             get { return _percentage; }
-            private set { _percentage = value; }
+            set { _percentage = value; }
         }
 
 
@@ -28,6 +28,10 @@ namespace Library
             this.code = code;
             this.percentage = percentage;
 
+        }
+
+        public ENDiscount()
+        {
         }
 
         public bool createDiscount()
@@ -46,6 +50,18 @@ namespace Library
         {
             CADDiscount p = new CADDiscount();
             return p.updatePercentage(this);
+        }
+
+        public bool getPercentage()
+        {
+            CADDiscount p = new CADDiscount();
+            return p.getPercentage(this);
+        }
+
+        public bool Exists()
+        {
+            CADDiscount p = new CADDiscount();
+            return p.Exists(this);
         }
         /*
         const public ENBooking[] getBookings()

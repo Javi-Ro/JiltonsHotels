@@ -27,34 +27,38 @@ namespace JiltonWeb
             //booking.date = dates; 
             if (!Page.IsPostBack)
             {
+                booking = (ENBooking)Session["bookingInfo"];
+
+                // Prepare the page
+                System.Web.UI.Control c = new System.Web.UI.Control();
+                c = Page.Master.FindControl("RegisterBooking");
+                c.Visible = false;
+
+                EntryDateLabel.Text = booking.date.startDate.ToString();
+                DepartureDateLabel.Text = booking.date.endDate.ToString();
+
                 // Add payment methods
                 PaymentList.Items.Add("Debit/Credit Card");
 
-                // Booking dates
-                //EntryDateLabel.Text = booking.date.startDate.ToString();
-                //DepartureDateLabel.Text = booking.date.endDate.ToString();
-                EntryDateLabel.Text = "-";
-                DepartureDateLabel.Text = "-";
-
                 // Filling grid views of the booking resume
-                d = booking.getServices();
-                GridViewServices.DataSource = d;
-                GridViewServices.DataBind();
-
-                d = booking.getRooms();
-                GridViewRooms.DataSource = d;
+                DataTable t = (DataTable)Session["sessionSelected"];
+                GridViewRooms.DataSource = t;
                 GridViewRooms.DataBind();
 
-                d = booking.getCars();
-                GridViewCars.DataSource = d;
+                DataTable tServices = (DataTable)Session["bookingServices"];
+                GridViewServices.DataSource = tServices;
+                GridViewServices.DataBind();
+
+                DataTable tCars = (DataTable)Session["bookingCars"];
+                GridViewCars.DataSource = tCars;
                 GridViewCars.DataBind();
 
-                d = booking.getPackages();
-                GridViewPackages.DataSource = d;
+                DataTable tPackages = (DataTable)Session["bookingPackages"];
+                GridViewPackages.DataSource = tPackages;
                 GridViewPackages.DataBind();
 
                 // Total price
-                TotalPriceLabel.Text = booking.calculatePrice().ToString() + " €";
+                TotalPriceLabel.Text = booking.calculatePrice((DataTable)Session["sessionSelected"]).ToString() + " €";
             }
         }
 

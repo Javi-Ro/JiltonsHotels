@@ -17,7 +17,7 @@ namespace Library
         public int ID
         {
             get { return _id; }
-            private set { _id = value; }
+            set { _id = value; }
         }
 
         public string user { get; set; }
@@ -157,6 +157,7 @@ namespace Library
         public bool applyDiscount(ENDiscount discount)
         {
             CADBooking booking = new CADBooking();
+            this.discount = discount;
             return booking.applyDiscount(this, discount);
         }
 
@@ -195,9 +196,25 @@ namespace Library
         }
 
         // Auxiliary methods
-        public int calculatePrice() // Returns the total cost of the booking (taking in account the possible discount code)
+        public int calculatePrice(DataTable rooms) // Returns the total cost of the booking (taking in account the possible discount code)
         {
-            return 1000;
+            int total = 0;
+
+            foreach (DataRow row in rooms.Rows)
+            {
+                total += Int32.Parse(row["price"].ToString());
+            }
+            if (this.discount != null)
+            {
+                return total * (100 - this.discount.percentage) / 100;
+            }
+            return total;
+        }
+
+        public static int fillId()
+        {
+            CADBooking booking = new CADBooking();
+            return booking.fillId();
         }
     }
 }

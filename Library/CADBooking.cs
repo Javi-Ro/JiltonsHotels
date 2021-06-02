@@ -440,7 +440,7 @@ namespace Library
                 adapter.Fill(virtualSet, "id");
                 DataTable t = new DataTable();
                 t = virtualSet.Tables["id"];
-                return (int)t.Rows[0][0];
+                return (int)t.Rows[0][0] + 1;
             }
             catch (Exception e)
             {
