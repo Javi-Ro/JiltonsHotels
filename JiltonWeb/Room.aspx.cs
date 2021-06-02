@@ -251,11 +251,13 @@ namespace JiltonWeb
 
                     if (row.Cells[0].Text == idLabel.Text)
                     {
-                        repeated = true;
-           
+                        {
+                            repeated = true;
+
+                        }
+
                     }
-
-
+                    
                 }
             }
         
