@@ -95,6 +95,70 @@ namespace Library
 
             return update;
         }
+
+        public bool getPercentage(ENDiscount en)
+        {
+            bool get = false;
+
+            SqlConnection c = null;
+
+            try
+            {
+                c = new SqlConnection(constring);
+                c.Open();
+
+                SqlCommand command = new SqlCommand("select percentage from [dbo].discount where code = @DATA", c);
+                command.Parameters.AddWithValue("@DATA", en.code);
+
+                SqlDataReader result = command.ExecuteReader();
+
+                result.Read();
+
+                int p = result.GetInt32(0);
+
+                result.Close();
+
+                en.percentage = p;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Get percentage operation has failed. Error: {0}", ex.Message);
+            }
+
+            return get;
+        }
+
+        public bool Exists(ENDiscount en)
+        {
+            bool exists = false;
+            SqlConnection c = null;
+
+            try
+            {
+                c = new SqlConnection(constring);
+                c.Open();
+
+                SqlCommand command = new SqlCommand("select count(*) from [dbo].discount where code = @DATA", c);
+                command.Parameters.AddWithValue("@DATA", en.code);
+
+                SqlDataReader result = command.ExecuteReader();
+
+                result.Read();
+
+                int count = result.GetInt32(0);
+
+                result.Close();
+
+                if (count > 0)
+                    exists = true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("User operation has failed. Error: {0}", ex.Message);
+            }
+
+            return exists;
+        }
         /*
         public ENBooking[] getBookings(ENDiscount discount)
         {

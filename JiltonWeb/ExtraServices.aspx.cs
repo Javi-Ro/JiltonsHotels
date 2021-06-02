@@ -77,12 +77,45 @@ namespace JiltonWeb
                 GridViewPackages.DataBind();*/
 
                 // Total price
-                TotalPriceLabel.Text = booking.calculatePrice().ToString() + " €";
+                TotalPriceLabel.Text = booking.calculatePrice(table).ToString() + " €";
 
 
                 // Staff list
                 StaffList.Items.Add("None");
 
+            }
+
+            if (booking.isDiscounted())
+            {
+                TotalPriceLabel.CssClass = "TotalPriceLabelWithoutDiscount";
+                TotalWithDiscount.Text = booking.calculatePrice((DataTable)Session["sessionSelected"]).ToString() + " €";
+            }
+            else
+            {
+                TotalPriceLabel.CssClass = "TotalPriceLabel";
+                TotalWithDiscount.Text = "";
+            }
+        }
+
+        protected void applyDiscountBooking(object sender, EventArgs e)
+        {
+            string code = discountTextBox.Text;
+
+            ENDiscount disc = new ENDiscount();
+
+            disc.code = code;
+
+            if (disc.Exists())
+            {
+                disc.getPercentage();
+                booking.applyDiscount(disc);
+                TotalWithDiscount.Text = booking.calculatePrice((DataTable)Session["sessionSelected"]).ToString() + " €";
+                Session["bookingInfo"] = booking;
+                TotalPriceLabel.CssClass = "TotalPriceLabelWithoutDiscount";
+            }
+            else
+            {
+                // Error no existe codigo
             }
         }
 

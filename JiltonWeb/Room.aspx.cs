@@ -83,6 +83,10 @@ namespace JiltonWeb
 
         protected void GoButton_Click(object sender, EventArgs e)
         {
+            if (Session["id"] == null)
+            {
+                Response.Redirect("Register.aspx");
+            }
             Response.Redirect("ExtraServices.aspx");
         }
 

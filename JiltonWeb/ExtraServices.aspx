@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/JiltonMaster.Master" AutoEventWireup="true" CodeBehind="ExtraServices.aspx.cs" Inherits="JiltonWeb.ExtraServices" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="cssLink" runat="server">
-    <link rel="stylesheet" href="../css/extraServices.css?ver=<?php echo rand(355,950)?>" />
+    <link rel="stylesheet" href="../css/extraServices.css?ver=<?php echo rand(356,950)?>" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\DBPrueba.mdf;Integrated Security=True" ProviderName="System.Data.SqlClient" SelectCommand="SELECT * FROM [Usuarios]"></asp:SqlDataSource>
@@ -120,14 +120,14 @@
                                 <asp:Label runat="server" Text="CHOOSE THE HOUR" Font-Bold="true" CssClass="HourServices"></asp:Label>
                                 <asp:TextBox ID ="HourTextBox" Width ="80px" Height="20px" style="text-align:center; border-radius:3px; border-width:1px;" runat ="server" Enabled="false" />
                                 <ajaxToolkit:MaskedEditExtender runat="server" CultureDatePlaceholder="" CultureTimePlaceholder="" CultureDecimalPlaceholder="" CultureThousandsPlaceholder="" CultureDateFormat="" CultureCurrencySymbolPlaceholder="" CultureAMPMPlaceholder="" Century="2000" BehaviorID="TextBox1_MaskedEditExtender" TargetControlID="HourTextBox" ID="HourTextBox_MaskedEditExtender" MaskType="Time" Mask="99:00" ClearMaskOnLostFocus="False" UserTimeFormat="None"></ajaxToolkit:MaskedEditExtender>
-                                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Not correct hour introduced" ControlToValidate="HourTextBox" ValidationExpression="^([0-1]?[0-9]|2[0-3]):00$" Display="Dynamic"></asp:RegularExpressionValidator>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ValidationGroup="addServ" ErrorMessage="Not correct hour introduced" ControlToValidate="HourTextBox" ValidationExpression="^([0-1]?[0-9]|2[0-3]):00$" Display="Dynamic"></asp:RegularExpressionValidator>
                             </div>
                             <div class="PanelBlock">
                                 <asp:Label runat="server" Text="CHOOSE YOUR STAFF" Font-Bold="true" CssClass="HourServices"></asp:Label>
                                 <asp:DropDownList ID="StaffList" runat="server" Enabled="false" CssClass="ListStaff"></asp:DropDownList>
                             </div>
                             <div class="PanelBlock">
-                                <asp:Button ID="AddServiceButton" Enabled="false" CssClass="ButtonAddService" runat="server" Text="Add Service" OnClick="AddServiceButton_Click" />
+                                <asp:Button ID="AddServiceButton" Enabled="false" CssClass="ButtonAddService" ValidationGroup="addServ" runat="server" Text="Add Service" OnClick="AddServiceButton_Click" />
                             </div>
                         </div>
                     </asp:Panel>
@@ -203,7 +203,12 @@
                         <div class="TotalPrice">
                             <asp:Label runat="server" Text="Total: " Width="100px" CssClass="LabelTotal"></asp:Label>
                             <asp:Panel runat="server" Width="110px"></asp:Panel>
-                            <asp:Label runat="server" ID="TotalPriceLabel" CssClass="LabelTotal"></asp:Label>
+                            <asp:Label runat="server" ID="TotalPriceLabel"></asp:Label>
+                            <asp:Label runat="server" ID="TotalWithDiscount" CssClass="TotalPriceLabel" ></asp:Label>
+                        </div>
+                        <div class="DiscountText">
+                            <asp:TextBox runat="server" CssClass="discText" ID="discountTextBox" placeholder="Enter discount code"></asp:TextBox>
+                            <asp:Button runat="server" cssClass="discButton" Text="Apply" ID="applyDiscountButton" OnClick="applyDiscountBooking"/>
                         </div>
                         <div class="ButtonTotalDiv">
                             <asp:Button class="ButtonTotal" ID="ContinueButton" runat="server" Text="Continue" OnClick="ContinueButton_Click" />

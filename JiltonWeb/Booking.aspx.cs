@@ -27,6 +27,7 @@ namespace JiltonWeb
             //booking.date = dates; 
             if (!Page.IsPostBack)
             {
+                booking = (ENBooking)Session["bookingInfo"];
                 // Add payment methods
                 PaymentList.Items.Add("Debit/Credit Card");
 
@@ -54,7 +55,7 @@ namespace JiltonWeb
                 GridViewPackages.DataBind();
 
                 // Total price
-                TotalPriceLabel.Text = booking.calculatePrice().ToString() + " €";
+                TotalPriceLabel.Text = booking.calculatePrice((DataTable)Session["sessionSelected"]).ToString() + " €";
             }
         }
 
