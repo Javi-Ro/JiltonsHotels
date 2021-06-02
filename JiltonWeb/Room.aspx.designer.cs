@@ -33,24 +33,6 @@ namespace JiltonWeb
         protected global::System.Web.UI.WebControls.DropDownList typeList;
 
         /// <summary>
-        /// Control RatingsList.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList RatingsList;
-
-        /// <summary>
-        /// Control TB1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TB1;
-
-        /// <summary>
         /// Control Control.
         /// </summary>
         /// <remarks>
@@ -58,6 +40,15 @@ namespace JiltonWeb
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Control;
+
+        /// <summary>
+        /// Control SliderValue.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox SliderValue;
 
         /// <summary>
         /// Control SliderExtender1.
@@ -356,6 +347,7 @@ namespace JiltonWeb
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label error;
 
+        protected global::System.Web.UI.WebControls.Label idLabel;
         /// <summary>
         /// Control deletePanel.
         /// </summary>
@@ -409,5 +401,14 @@ namespace JiltonWeb
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridViewRooms;
+
+        /// <summary>
+        /// Control goButton.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button goButton;
     }
 }
