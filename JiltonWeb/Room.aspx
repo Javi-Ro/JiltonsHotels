@@ -2,7 +2,7 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
 
     <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <link href="css/room.css?ver=<?php echo rand(563,950)?>" rel="stylesheet">
+        <link href="css/room.css?ver=<?php echo rand(564,950)?>" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
            
         <div class="background" runat="server">
@@ -85,7 +85,7 @@
                                     <div class="room">
                                         <div class="row">
                                             <div class="Informacion">
-                                                <asp:Label ID="idLabel" CssClass="invisible" runat="server" Text='<%# Eval("id") %>'></asp:Label>
+                                                <asp:Label ID="idLabel" Visible="true" runat="server" Text='<%# Eval("id") %>'></asp:Label>
                                                 <asp:Label ID="Label1" runat="server" CssClass="titulo" Text='<%# Eval("title") %>'></asp:Label>
                                                 
                                                 <br />
@@ -213,6 +213,7 @@
                             </emptydatatemplate> 
                         
                           <Columns>
+                            <asp:BoundField DataField="id" ItemStyle-Font-Bold="true" />
                             <asp:BoundField DataField="title" ItemStyle-Width="150px"  ItemStyle-Font-Bold="true" />
                             <asp:BoundField ItemStyle-Width="50px" />
                             <asp:BoundField DataField="price" DataFormatString="{0:C}" ItemStyle-Width="80px" />
@@ -225,7 +226,9 @@
                         <asp:Button id="goButton" visible="false" runat="server" Cssclass="searchButton" Text="Go" OnClick="GoButton_Click"/>
                     </div>
                 </div>
+                 <asp:Label ID="errorRepeated" runat="server" CssClass="repeated" Visible="false" Text="You cannot select the same room twice"></asp:Label>
             </div>
+               
            </div>
         </div>
               

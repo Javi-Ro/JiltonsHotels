@@ -214,57 +214,68 @@ namespace JiltonWeb
             //if (Page.IsValid)
             //{
                
-                DataTable seleccionado = (DataTable)Session["sessionSelected"];
+            DataTable seleccionado = (DataTable)Session["sessionSelected"];
 
-                if (seleccionado == null)
-                {
-                    seleccionado = new DataTable();
-                    DataColumn id = new DataColumn();
-                    id.DataType = System.Type.GetType("System.Single");
-                    id.ColumnName = "id";
-                    
-                    DataColumn title = new DataColumn();
-                    title.DataType = System.Type.GetType("System.String");
-                    title.ColumnName = "title";
-                    DataColumn price = new DataColumn();
-                    price.DataType = System.Type.GetType("System.Single");
-                    price.ColumnName = "price";
-                    seleccionado.Columns.Add(title);
-                    seleccionado.Columns.Add(price);
-                    seleccionado.Columns.Add(id);
-                }
+            if (seleccionado == null)
+            {
+                seleccionado = new DataTable();
+                DataColumn id = new DataColumn();
+                id.DataType = System.Type.GetType("System.Single");
+                id.ColumnName = "id";
+                DataColumn title = new DataColumn();
+                title.DataType = System.Type.GetType("System.String");
+                title.ColumnName = "title";
+                DataColumn price = new DataColumn();
+                price.DataType = System.Type.GetType("System.Single");
+                price.ColumnName = "price";
+                seleccionado.Columns.Add(id);
+                seleccionado.Columns.Add(title);
+                seleccionado.Columns.Add(price);
+                
+            }
 
-                goButton.Visible = true;
-                DataRow dr = seleccionado.NewRow();
+            goButton.Visible = true;
+            DataRow dr = seleccionado.NewRow();
 
-                Button button1 = (Button)sender;
-                GridViewRow gr = (GridViewRow)button1.NamingContainer;
-                bool repeated = false;
+            Button button1 = (Button)sender;
+            GridViewRow gr = (GridViewRow)button1.NamingContainer;
 
+            bool repeated = false;
+            Label idLabel = (Label)gr.FindControl("idLabel");
+            string celda = "inicial";
+
+            if (GridViewRooms.Rows.Count >= 1)
+            {
                 foreach (GridViewRow row in GridViewRooms.Rows)
                 {
-                    if((Label)row.FindControl("id") != null)
-                    {
-                        if ((((Label)row.FindControl("id")).Text == idLabel.Text))
-                        {
-                            repeated = true;
-                        }
-                    }
-                    
-                }
-                if(repeated == false)
-                {
-                    Label titulo = (Label)gr.FindControl("Label1");
-                    Label precio = (Label)gr.FindControl("Label9");
-                    dr["title"] = titulo.Text;
-                    dr["price"] = float.Parse(precio.Text);
-                    
-                    seleccionado.Rows.Add(dr);
 
-                    Session["sessionSelected"] = seleccionado;
-                    Context.Items.Add("Check", true);
-                    Response.Redirect("Room.aspx");
-                }    
+                    if (row.Cells[0].Text == idLabel.Text)
+                    {
+                        repeated = true;
+           
+                    }
+
+
+                }
+            }
+        
+            if (repeated == false)
+            {
+                Label titulo = (Label)gr.FindControl("Label1");
+                Label precio = (Label)gr.FindControl("Label9");
+                dr["id"] = int.Parse(idLabel.Text);
+                dr["title"] = titulo.Text;
+                dr["price"] = float.Parse(precio.Text);
+                
+                seleccionado.Rows.Add(dr);
+                Session["sessionSelected"] = seleccionado;
+                Context.Items.Add("Check", true);
+                Response.Redirect("Room.aspx");
+            }
+            else
+            {
+                errorRepeated.Visible = true;
+            }
 
         }
         protected void onSearch(object sender, EventArgs e)
