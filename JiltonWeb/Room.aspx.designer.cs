@@ -347,7 +347,6 @@ namespace JiltonWeb
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label error;
 
-        protected global::System.Web.UI.WebControls.Label idLabel;
         /// <summary>
         /// Control deletePanel.
         /// </summary>
