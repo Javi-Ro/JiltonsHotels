@@ -11,6 +11,7 @@ using System.Data;
 using System.Data.Common;
 using System.Data.SqlTypes;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace JiltonWeb
 {
@@ -59,15 +60,13 @@ namespace JiltonWeb
                 AccordionPanePackages.DataBind();
 
                 // Filling grid views of the booking resume
-                d = booking.getServices();
-                GridViewServices.DataSource = d;
-                GridViewServices.DataBind();
-
-                d = booking.getRooms();
-                //GridViewRooms.DataSource = d;
                 DataTable table = (DataTable)Session["sessionSelected"];
                 GridViewRooms.DataSource = table;
                 GridViewRooms.DataBind();
+
+                /*table = (DataTable)Session["bookingSpa"];
+                GridViewServices.DataSource = table;
+                GridViewServices.DataBind();
 
                 d = booking.getCars();
                 GridViewCars.DataSource = d;
@@ -75,7 +74,7 @@ namespace JiltonWeb
 
                 d = booking.getPackages();
                 GridViewPackages.DataSource = d;
-                GridViewPackages.DataBind();
+                GridViewPackages.DataBind();*/
 
                 // Total price
                 TotalPriceLabel.Text = booking.calculatePrice().ToString() + " €";
@@ -91,26 +90,37 @@ namespace JiltonWeb
         {
             DataTable table = (DataTable)Session["bookingSpa"];
 
-            // Case there is no added service yet
+            // Case there is no added service yet (table has not been created)
             if (table == null)
             {
                 table = new DataTable();
                 DataColumn description = new DataColumn();
                 description.DataType = System.Type.GetType("System.String");
                 description.ColumnName = "description";
+                DataColumn day = new DataColumn();
+                day.DataType = System.Type.GetType("System.DateTime");
+                day.ColumnName = "serviceDay";
                 DataColumn price = new DataColumn();
                 price.DataType = System.Type.GetType("System.Single");
                 price.ColumnName = "price";
+                DataColumn hour = new DataColumn();
+                hour.DataType = System.Type.GetType("System.Int32");
+                hour.ColumnName = "hour";
                 table.Columns.Add(description);
+                table.Columns.Add(day);
+                table.Columns.Add(hour);
                 table.Columns.Add(price);
             }
 
             // Fill a new row with data selected
             DataRow dr = table.NewRow();
             dr[0] = row.Cells[0].Text;
-            dr[1] = float.Parse(row.Cells[1].Text);
-            table.Rows.Add(dr);
+            string cellPrice = row.Cells[1].Text;
+            cellPrice = cellPrice.Remove(cellPrice.Length - 2);
+            dr[3] = float.Parse(cellPrice);
 
+            // By the moment, we only keep the information in case it is finally not added  --> it will be added when button AddService is clicked
+            Session["auxRow"] = dr;
             Session["bookingSpa"] = table;
         }
 
@@ -136,7 +146,7 @@ namespace JiltonWeb
                 StaffList.Enabled = true;
                 AddServiceButton.Enabled = true;
                 AddingServiceLabel.Text = gvRow.Cells[0].Text;
-                StaffList.Items.Clear();   // cuando le doy a spa no se limpia el "staff not available"
+                StaffList.Items.Clear();
             }
 
             if (e.CommandName == "AddSpa")
@@ -155,6 +165,7 @@ namespace JiltonWeb
                 catch (Exception exc)
                 {
                     Console.WriteLine("Spa service adding has failed.Error: {0}", exc.Message);
+                    StaffList.Items.Clear();
                     StaffList.Items.Add("Staff not available");
                     AddServiceButton.Enabled = false;
                 }
@@ -197,13 +208,7 @@ namespace JiltonWeb
             }
             else
             {
-                AddingServiceLabel.Text = "None";
-                ServiceTypeLabel.Text = "-";
-                TextEntry.Enabled = false;
-                ShowEntry.Enabled = false;
-                HourTextBox.Enabled = false;
-                StaffList.Enabled = false;
-                AddServiceButton.Enabled = false;
+                ResetLabels();
                 if (e.CommandName == "AddCar")
                 {
                     // Añadir car a booking
@@ -220,11 +225,45 @@ namespace JiltonWeb
             Response.Redirect("Booking.aspx");
         }
 
+        private void ActualiseGrid(string type)
+        {
+            DataTable table = new DataTable();
+            table = (DataTable)Session[type];
+            GridViewServices.DataSource = table;
+            GridViewServices.DataBind();
+        }
+
+        private void ResetLabels()
+        {
+            AddingServiceLabel.Text = "None";
+            ServiceTypeLabel.Text = "-";
+            TextEntry.Enabled = false;
+            ShowEntry.Enabled = false;
+            HourTextBox.Enabled = false;
+            StaffList.Enabled = false;
+            AddServiceButton.Enabled = false;
+            StaffList.Items.Clear();
+        }
+
         protected void AddServiceButton_Click(object sender, EventArgs e)  // Add SPA,GYM,EXTRA services
         {
-            ENService selectedService = new ENService();
-            selectedService = selectedService.searchService();
-            ((ENBooking)Session["booking"]).addService(selectedService);
+            try
+            {
+                DataRow auxRow = (DataRow)Session["auxRow"];
+                DataTable table = (DataTable)Session["bookingSpa"];
+
+                auxRow[1] = DateTime.ParseExact(TextEntry.Text, "MM/dd/yyyy", CultureInfo.InvariantCulture);   // TextEntry.Text en el debugger sale como cadena vacía.
+                auxRow[2] = int.Parse(HourTextBox.Text.Substring(0, 2));
+
+                table.Rows.Add(auxRow);
+                Session["bookingSpa"] = table;
+                ActualiseGrid("bookingSpa");
+                ResetLabels();
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine("Extra service adding has failed.Error: {0}", exc.Message);
+            }
         }
     }
 }
