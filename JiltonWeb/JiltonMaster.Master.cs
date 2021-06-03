@@ -18,13 +18,6 @@ namespace JiltonWeb
             {
                 EntryCalendar.StartDate = DateTime.Now;
                 DepartureCalendar.StartDate = DateTime.Now;
-                ChildOptions.Items.Add(new ListItem("0", "0"));
-                ChildOptions.Items.Add(new ListItem("1", "1"));
-                ChildOptions.Items.Add(new ListItem("2", "2"));
-                ChildOptions.Items.Add(new ListItem("3", "3"));
-                AdultOptions.Items.Add(new ListItem("0", "0"));
-                AdultOptions.Items.Add(new ListItem("1", "1"));
-                AdultOptions.Items.Add(new ListItem("2", "2"));
             }
 
             if (Session["id"] != null)
@@ -82,14 +75,20 @@ namespace JiltonWeb
 
         protected void BookButton_Click(object sender, EventArgs e)
         {
+            string[] entry = new string[3];
+            entry = TextEntry.Text.Split('/');
+
+            string[] departure = new string[3];
+            departure = TextDeparture.Text.Split('/');
+
             ENBooking booking = new ENBooking();
-            IntervalDate dates = new IntervalDate(new Date(1, 1, 2021), new Date(3, 1, 2021));  // Fechas deben ser del Entry y Departure date textboxes
+            IntervalDate dates = new IntervalDate(new Date(int.Parse(entry[0]), int.Parse(entry[1]), int.Parse(entry[2])), new Date(int.Parse(departure[0]), int.Parse(departure[1]), int.Parse(departure[2])));  // Fechas deben ser del Entry y Departure date textboxes
             booking.ID = ENBooking.fillId();
             booking.date = dates;
             booking.user = (string)Session["id"];
             Session["bookingInfo"] = booking;
             Response.Redirect("Room.aspx");
-            
+
         }
 
         protected void LogOutUser(object sender, EventArgs e)

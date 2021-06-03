@@ -132,6 +132,24 @@ namespace JiltonWeb
         protected global::System.Web.UI.WebControls.Panel RegisterBooking;
 
         /// <summary>
+        /// Control cvtxtStartDate.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator cvtxtStartDate;
+
+        /// <summary>
+        /// Control bookingTitle.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label bookingTitle;
+
+        /// <summary>
         /// Control ScriptManager1.
         /// </summary>
         /// <remarks>
@@ -168,6 +186,15 @@ namespace JiltonWeb
         protected global::AjaxControlToolkit.CalendarExtender EntryCalendar;
 
         /// <summary>
+        /// Control RequiredFieldValidatorEntryDate.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorEntryDate;
+
+        /// <summary>
         /// Control TextDeparture.
         /// </summary>
         /// <remarks>
@@ -195,6 +222,15 @@ namespace JiltonWeb
         protected global::AjaxControlToolkit.CalendarExtender DepartureCalendar;
 
         /// <summary>
+        /// Control RequiredFieldValidatorDeartureDate.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorDeartureDate;
+
+        /// <summary>
         /// Control AdultOptions.
         /// </summary>
         /// <remarks>
@@ -202,6 +238,15 @@ namespace JiltonWeb
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList AdultOptions;
+
+        /// <summary>
+        /// Control RequiredFieldValidatorAdult.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorAdult;
 
         /// <summary>
         /// Control ChildOptions.
@@ -213,6 +258,15 @@ namespace JiltonWeb
         protected global::System.Web.UI.WebControls.DropDownList ChildOptions;
 
         /// <summary>
+        /// Control RequiredFieldValidatorChild.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorChild;
+
+        /// <summary>
         /// Control BookButton.
         /// </summary>
         /// <remarks>
@@ -220,6 +274,15 @@ namespace JiltonWeb
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BookButton;
+
+        /// <summary>
+        /// Control validatorSummary.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary validatorSummary;
 
         /// <summary>
         /// Control ContentPlaceHolder1.

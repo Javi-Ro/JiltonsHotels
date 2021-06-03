@@ -10,13 +10,15 @@ namespace JiltonWeb
 {
     public partial class Restaurant : System.Web.UI.Page
     {
-        DateTime hoy = DateTime.Today.Date;
-        DateTime copia = DateTime.Today.Date;
-        int i = 0;
+        DateTime hoy = new DateTime();
+        DateTime copia = new DateTime();
+        CultureInfo c = new CultureInfo("en-EN");
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            CultureInfo c = new CultureInfo("en-EN");
-            titulo.Text = DateTime.Today.ToString("dddd",c).ToUpper() + "'S MENU";
+            
+            titulo.Text = DateTime.Today.ToString("dddd", c).ToUpper() + "'S MENU";
+
 
             if (Session["id"] != null && Session["id"].ToString() == "admin")
             {
@@ -29,10 +31,34 @@ namespace JiltonWeb
                 AdminBlurryBackground.CssClass = "noAdmin";
             }
 
-            OnToday(sender, e);
+
+            if (!Page.IsPostBack)
+            {
+                Session["dayIter"] = 0;
+                hoy = DateTime.Today.Date;
+                copia = DateTime.Today.Date;
+            }
+
+            if (Session["dayIter"] != null)
+            {
+                if (Int32.Parse(Session["dayIter"].ToString()) == 0)
+                {
+                    OnToday(sender, e);
+                }
+                //else if (Int32.Parse(Session["dayIter"].ToString()) > 0)
+                //{
+                //    OnNext(sender, e);
+                //}
+                //else
+                //{
+                //    OnPrevious(sender, e);
+                //}
+            }
 
 
-            if(Context.Items["Success"] != null)
+
+
+            if (Context.Items["Success"] != null)
             {
                 success.Visible = true;
                 success.Text = "Operation completed succesfully";
@@ -42,11 +68,15 @@ namespace JiltonWeb
                 success.Visible = false;
             }
         }
+
         protected void OnPrevious(object sender, EventArgs e)
         {
-            i--;            
-            copia = copia.AddDays(i);
-            titulo.Text = "MENU OF " + copia.ToString("dd'/'MM'/'yyyy");
+
+            Session["dayIter"] = Int32.Parse(Session["dayIter"].ToString()) - 1;
+            int i = Int32.Parse(Session["dayIter"].ToString());
+            copia = DateTime.Now.AddDays(i);
+            titulo.Text = copia.ToString("dddd", c).ToUpper() + "'S MENU";
+            //titulo.Text = "MENU OF " + copia.ToString("dd'/'MM'/'yyyy");
             ENMenu menu = new ENMenu();
             menu.fecha = copia.ToString("yyyy'/'MM'/'dd");
 
@@ -85,9 +115,11 @@ namespace JiltonWeb
 
         protected void OnNext(object sender, EventArgs e)
         {
-            i++;
-            copia = copia.AddDays(i);        
-            titulo.Text = "MENU OF " + copia.ToString("dd'/'MM'/'yyyy");
+            Session["dayIter"] = Int32.Parse(Session["dayIter"].ToString()) + 1;
+            int i = Int32.Parse(Session["dayIter"].ToString());
+            copia = DateTime.Now.AddDays(i);
+            titulo.Text = copia.ToString("dddd", c).ToUpper() + "'S MENU";
+            //titulo.Text = "MENU OF " + copia.ToString("dd'/'MM'/'yyyy");
             ENMenu menu = new ENMenu();
             menu.fecha = copia.ToString("yyyy'/'MM'/'dd");
 
@@ -120,11 +152,13 @@ namespace JiltonWeb
                 imagen.Visible = true;
                 EndMessage.Text = "Our team is working on this menu. Thank you for your consideration. ";
             }
+
         }
 
         protected void OnToday(object sender, EventArgs e)
         {
-            i = 0;
+            Session["dayIter"] = 0;
+            int i = Int32.Parse(Session["dayIter"].ToString());
             copia = hoy;
             ENMenu menu = new ENMenu();
 

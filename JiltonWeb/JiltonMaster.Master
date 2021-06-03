@@ -6,7 +6,7 @@
 <html>
 <head runat="server">
     <title>Jilton Hotel</title>
-    <link rel="stylesheet" href="../css/master.css?ver=<?php echo rand(357,999)?>" />  
+    <link rel="stylesheet" href="../css/master.css?ver=<?php echo rand(358,999)?>" />  
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
     <asp:ContentPlaceHolder ID="cssLink" runat="server"></asp:ContentPlaceHolder>
@@ -64,31 +64,51 @@
                 </asp:Panel>
             </div>
             <asp:Panel runat="server" class="BookingRegister" ID="RegisterBooking">
-                <label class="bookingTitle">BOOKINGS</label>
+                  <asp:CompareValidator id="cvtxtStartDate" runat="server" 
+                         ControlToCompare="TextEntry" cultureinvariantvalues="true" 
+                         display="Dynamic" enableclientscript="true"  
+                         ControlToValidate="TextDeparture" 
+                         ValidationGroup="DateGroup"
+                         CssClass="ValidatorMaster"
+                         ErrorMessage="Entry date must be earlier than departure date"
+                         type="Date" setfocusonerror="true" Operator="GreaterThan" 
+                         ></asp:CompareValidator>
+                <asp:Label runat="server" class="bookingTitle" id="bookingTitle" Text="BOOKINGS" ></asp:Label>
                 <div class="BookingSelector">  <%--- AGREGAR REQUIRED FIELD VALIDATORS A LO DE LAS FECHAS Y PONERLES MISMO GROUP VALIDATOR A TEXT ENTRY-DEP. Y A LOS R.F.VALIDATOR ---%>
                     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 
                     <asp:Label class="BookingLabel" runat="server">ENTRY DATE</asp:Label>
 
-                    <asp:TextBox ID ="TextEntry" Width ="80px" Height="20px" style="text-align:center; border-radius:3px; border-width:1px; margin-right:2px" ReadOnly="true" runat ="server" />
+                    <asp:TextBox ID ="TextEntry" Width ="80px" Height="20px" style="text-align:center; border-radius:3px; border-width:1px; margin-right:2px" OnKeyPress="return false;" runat ="server" />
                     <asp:ImageButton ID="ShowEntry" Width="18px" Height="18px" ImageAlign="Middle" ImageUrl="assets/Calendar.png" BorderWidth ="1px" BackColor="White" style="border-radius:3px" AlternateText="No Image available" runat="server" />
                     <ajax:CalendarExtender ID="EntryCalendar" PopupButtonID="ShowEntry" runat="server"  TargetControlID="TextEntry" Format="dd/MM/yyyy"> </ajax:CalendarExtender>
-
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidatorEntryDate"  runat="server" ValidationGroup="DateGroup" ControlToValidate="TextEntry" Display="Dynamic"></asp:RequiredFieldValidator>  
                     <asp:Label class="BookingLabel" runat="server">DEPARTURE DATE</asp:Label>
 
-                    <asp:TextBox ID ="TextDeparture" Width ="80px" Height="20px" style="text-align:center; border-radius:3px; border-width:1px; margin-right:2px" ReadOnly="true" runat ="server" />
+                    <asp:TextBox ID ="TextDeparture" Width ="80px" Height="20px" style="text-align:center; border-radius:3px; border-width:1px; margin-right:2px" OnKeyPress="return false;" runat ="server" />
                     <asp:ImageButton ID="ShowDeparture" Width="18px" Height="18px" ImageAlign="Middle" ImageUrl="assets/Calendar.png" BorderWidth ="1px" BackColor="White" style="border-radius:3px" AlternateText="No Image available" runat="server" />
                     <ajax:CalendarExtender ID="DepartureCalendar" PopupButtonID="ShowDeparture" runat="server" TargetControlID="TextDeparture" Format="dd/MM/yyyy"> </ajax:CalendarExtender>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidatorDeartureDate" runat="server" ValidationGroup="DateGroup" ControlToValidate="TextDeparture" Display="Dynamic"></asp:RequiredFieldValidator>  
 
                     <asp:Label class="BookingLabel" runat="server">ADULTS</asp:Label>
                     <asp:DropDownList ID="AdultOptions" CssClass="Desplegables" runat="server">
+                          <asp:ListItem selected="true" Value="">  </asp:ListItem>
+                          <asp:ListItem Value="1"> 1 </asp:ListItem>
+                          <asp:ListItem Value="2"> 2 </asp:ListItem>
+                          <asp:ListItem Value="3"> 3 </asp:ListItem>
                     </asp:DropDownList>
-
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidatorAdult" runat="server" ValidationGroup="DateGroup" ControlToValidate="AdultOptions" Display="Dynamic"></asp:RequiredFieldValidator>  
                     <asp:Label class="BookingLabel" runat="server">CHILDS</asp:Label>
                     <asp:DropDownList ID="ChildOptions" CssClass="Desplegables" runat="server">
+                          <asp:ListItem selected="true" Value="">  </asp:ListItem>
+                          <asp:ListItem Value="0"> 0 </asp:ListItem>
+                          <asp:ListItem Value="1"> 1 </asp:ListItem>
+                          <asp:ListItem Value="2"> 2 </asp:ListItem>
+                          <asp:ListItem Value="3"> 3 </asp:ListItem>
                     </asp:DropDownList>
-
-                    <asp:Button  runat="server" CssClass="BookingButton" ID="BookButton" Text="BOOK" OnClick="BookButton_Click"></asp:Button>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidatorChild" runat="server" ValidationGroup="DateGroup" ControlToValidate="ChildOptions" Display="Dynamic"></asp:RequiredFieldValidator>  
+                    <asp:Button  runat="server" CssClass="BookingButton" ID="BookButton" Text="BOOK" OnClick="BookButton_Click" ValidationGroup="DateGroup" ></asp:Button>
+                    <asp:ValidationSummary id="validatorSummary" CssClass="ValidatorMaster" runat="server" HeaderText="Complete all fields" ValidationGroup="DateGroup"/>
                     <asp:Label CssClass="InformationLabel" runat="server">INFORMATION AND BOOKINGS +34 965 455 123</asp:Label>
                 </div>            
             </asp:Panel>
