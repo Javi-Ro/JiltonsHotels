@@ -19,35 +19,35 @@ namespace Library
         public string LicensePlate
         {
             get { return matricula; }
-            private set { matricula = value; }
+            set { matricula = value; }
         }
 
         public string Brand
         {
             get { return marca; }
-            private set { marca = value; }
+            set { marca = value; }
         }
 
         public string Model
         {
             get { return modelo; }
-            private set { modelo = value; }
+            set { modelo = value; }
         }
 
         public int Price
         {
             get { return precio; }
-            private set { precio = value; }
+            set { precio = value; }
         }
         public string Description
         {
             get { return descripcion; }
-            private set { descripcion = value; }
+            set { descripcion = value; }
         }
         public string imgURL
         {
             get { return imagen; }
-            private set { imagen = value; }
+            set { imagen = value; }
         }
 
         public ENCar()

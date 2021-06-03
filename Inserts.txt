@@ -130,7 +130,7 @@ INSERT INTO [dbo].[room]([title],[description], [price],[type],[adultBed],[child
 
 INSERT INTO [dbo].[room]([title],[description], [price],[type],[adultBed],[childBed],[imgURL]) VALUES('Private Balinese Cabin. Botanical Gardens View. 10 sqm', 'Exclusive cabin perfect for nature lovers', 380, 'single', 1, 0, 'assets/room13.jpg');
 
-INSERT INTO [dbo].[room]([title],[description], [price],[type],[adultBed],[childBed],[ratings],[imgURL]) VALUES('Relaxing Double Room. Gardens & Pool View. 12 sqm', 'Private room in a unique atmosphere', 380, 'double', 1, 0, 'assets/room7.jpg');
+INSERT INTO [dbo].[room]([title],[description], [price],[type],[adultBed],[childBed],[imgURL]) VALUES('Relaxing Double Room. Gardens & Pool View. 12 sqm', 'Private room in a unique atmosphere', 380, 'double', 1, 0, 'assets/room7.jpg');
 
 INSERT INTO [dbo].[room]([title],[description], [price],[type],[adultBed],[childBed],[imgURL]) VALUES('Private cabin. Asian Gardens View. 15 sqm', 'Exclusive room with the best mod cons', 420, 'double', 1, 0,'assets/room5.jpg');
 
