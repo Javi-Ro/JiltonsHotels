@@ -25,6 +25,14 @@ namespace JiltonWeb
                 GridView1.DataBind();
 
             }
+            if (Session["id"] != null && Session["id"].ToString() == "admin")
+            {
+                panelAdmin.CssClass = "admin";
+            }
+            else
+            {
+                panelAdmin.CssClass = "novisibleAdmin";
+            }
         }
         protected void CrearClick(object sender, EventArgs e)
         {
@@ -32,7 +40,7 @@ namespace JiltonWeb
             {
                 ENPackage pack = new ENPackage(int.Parse(IdData.Text), NameDate.Text, DescriptionData.Text, int.Parse(PriceData.Text));
 
-                if (pack.createPackage() == true)
+                if (pack.createPackage() != null)
                 {
                     output.Text = "Pack created successfuly!";
                 }
@@ -59,7 +67,7 @@ namespace JiltonWeb
                 {
                     pack = new ENPackage(int.Parse(IdData.Text), NameDate.Text, DescriptionData.Text, int.Parse(PriceData.Text));
 
-                    if (pack.updateDescPackage() == true && pack.updatePricePackage() == true)
+                    if (pack.updateDescPackage() != null && pack.updatePricePackage() != null)
                     {
                         output.Text = "Pack description and price updated successfuly!";
                     }
@@ -74,7 +82,7 @@ namespace JiltonWeb
                     //This means we only are going to update the description, so we must put 0 on price because "" can int.Parse
                     pack = new ENPackage(int.Parse(IdData.Text), NameDate.Text, DescriptionData.Text, 0);
 
-                    if (pack.updateDescPackage() == true)
+                    if (pack.updateDescPackage() != null)
                     {
                         output.Text = "Pack description updated successfuly!";
                     }
@@ -87,7 +95,7 @@ namespace JiltonWeb
                 {
                     pack = new ENPackage(int.Parse(IdData.Text), NameDate.Text, DescriptionData.Text, int.Parse(PriceData.Text));
 
-                    if (pack.updatePricePackage()==true)
+                    if (pack.updatePricePackage() != null)
                     {
                         output.Text = "Pack price updated successfuly!";
                     }
@@ -110,36 +118,36 @@ namespace JiltonWeb
 
         protected void DeleteClick(object sender, EventArgs e)
         {
-            /*if (IdData.Text != "")
+            if (IdData.Text != "")
             {
                 ENPackage pack;
 
                 //I create this if statement because  price is not needed to delete so there would be empty string, and it cant int.Parse.
                 if (PriceData.Text == "")
                 {
-                    pack = new ENPackage(int.Parse(IdData.Text), NameDate.Text, DescriptionData.Text, DescriptionData.Text);
+                    pack = new ENPackage(int.Parse(IdData.Text), NameDate.Text, DescriptionData.Text, 0);
                 }
                 else
                 {
-                    pack = new ENPackage(LicensePlateData.Text, BrandData.Text, ModelData.Text, int.Parse(PriceData.Text), DescriptionData.Text);
+                    pack = new ENPackage(int.Parse(IdData.Text), NameDate.Text, DescriptionData.Text, int.Parse(PriceData.Text));
                 }
 
 
-                if (car.deleteCar() != null)
+                if (pack.deletePackage() != null)
                 {
 
-                    output.Text = "Deleted car successfuly!";
+                    output.Text = "Deleted pack successfuly!";
                 }
                 else
                 {
-                    output.Text = car.LicensePlate + " couldn't be deleted";
+                    output.Text = pack.id + " couldn't be deleted";
                 }
 
             }
             else
             {
-                output.Text = "Not enough information to delete the car";
-            }*/
+                output.Text = "Not enough information to delete the pack";
+            }
 
         }
     }
