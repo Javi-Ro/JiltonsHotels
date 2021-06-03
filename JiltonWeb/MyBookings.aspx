@@ -1,8 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/JiltonMaster.Master" AutoEventWireup="true" CodeBehind="MyBookings.aspx.cs" Inherits="JiltonWeb.MyBookings" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="cssLink" runat="server">
-    <link href="css/mybookings.css" rel="stylesheet" />
+    
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/mybookings.css?ver=<?php echo rand(151,950)?>" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="MyBookingsBack">

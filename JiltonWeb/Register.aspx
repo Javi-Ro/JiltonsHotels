@@ -97,7 +97,7 @@
                     </div>
 
                     <div class="row">
-                        <asp:Hyperlink ID="GoToLoginFromRegister" runat="server" Width="35%" Text="Already have an account?" NavigateUrl="Login.aspx"/>
+                        <asp:Hyperlink ID="GoToLoginFromRegister" runat="server" Width="35%" Text="Already have an account?" NavigateUrl="Login.aspx" />
                         <asp:Button CssClass="RegisterBttn" Text="Register" runat="server" OnClick="Register_User" ValidationGroup="RegisterInfoGroup"/>
                         <asp:Panel ID="AlreadyExistslbl" runat="server" CssClass="hideAlreadyExistslbl">
                             <asp:Label runat="server" Text="This e-mail or DNI/NIF already exists. <a href='Login.aspx'> Log in page </a>" />

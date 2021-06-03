@@ -1,10 +1,12 @@
 ﻿.MyBookingsBack {
+    padding-bottom: 200px;
     background-image: url(../assets/6.jpg);
     background-position: center;
     background-attachment: fixed;
     background-size: 100% 100%;
     background-repeat: no-repeat;
     min-height: 1000px;
+    
 }
 
 .booking {
@@ -12,12 +14,14 @@
     top: 175px;
     height: 100%;
     text-align: center;
+    height: auto;
+    
 }
 
 .Informacion {
     padding: 3%;
     width: 100%;
-    min-height: 100%;
+    height: auto;
     position: relative;
     display: inline-block;
     border: 2px solid black;
@@ -41,4 +45,8 @@
     margin-left: 35%;
     max-height: 80px;
     background-color: transparent;
+}
+
+.MyBookingsBack {
+    min-height: 1400px;
 }
