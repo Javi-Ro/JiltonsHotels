@@ -201,22 +201,54 @@
                         <hr />
                     </div>
                     <div class="totalBooking">
-                        <div class="TotalPrice">
-                            <asp:Label runat="server" Text="Total: " Width="100px" CssClass="LabelTotal"></asp:Label>
-                            <asp:Panel runat="server" Width="110px"></asp:Panel>
-                            <asp:Label runat="server" ID="TotalPriceLabel"></asp:Label>
-                            <asp:Label runat="server" ID="TotalWithDiscount" CssClass="TotalPriceLabel" ></asp:Label>
-                        </div>
-                        <div class="DiscountText">
-                            <asp:TextBox runat="server" CssClass="discText" ID="discountTextBox" placeholder="Enter discount code"></asp:TextBox>
-                            <asp:Button runat="server" cssClass="discButton" Text="Apply" ID="applyDiscountButton" OnClick="applyDiscountBooking"/>
-                        </div>
-                        <div class="ButtonTotalDiv">
-                            <asp:Button class="ButtonTotal" ID="ContinueButton" runat="server" Text="Continue" OnClick="ContinueButton_Click" />
-                        </div>
+                    <asp:UpdatePanel ID="updatePanelToggle" runat="server" UpdateMode="Conditional">
+                        <ContentTemplate>
+                            <div class="boardSelection">
+                                <%--<asp:RadioButton id="OnlyBreakfast" CssClass="radioBoard" Text=" Only Breakfast: FREE" Checked="True" GroupName="boardSelection" OnClick="clickCheck(this);" runat="server" /><br />
+                                <asp:RadioButton id="HalfBoard" CssClass="radioBoard" value="HB" Text=" Half Board: 19.99 €" GroupName="boardSelection" OnClick="clickCheck(this);" runat="server" /><br />
+                                <asp:RadioButton id="FullBoard" CssClass="radioBoard" value="FB" Text=" Full Board: 39.99 €" GroupName="boardSelection" OnClick="clickCheck(this);" runat="server" /><br />--%>
+                            
+                                        <asp:RadioButton id="OnlyBreakfast" AutoPostBack="true" CssClass="radioBoard" Text=" Only Breakfast: FREE" Checked="True" GroupName="boardSelection" OnCheckedChanged="applyOB" runat="server" /><br />
+                                        <asp:RadioButton id="HalfBoard" AutoPostBack="true" CssClass="radioBoard" value="HB" Text=" Half Board: 59.99 €" GroupName="boardSelection" OnCheckedChanged="applyHB" runat="server" /><br />
+                                        <asp:RadioButton id="FullBoard" AutoPostBack="true" CssClass="radioBoard" value="FB" Text=" Full Board: 89.99 €" GroupName="boardSelection" OnCheckedChanged="applyFB" runat="server" /><br />
+                            </div>
+                            <div class="TotalPrice">
+                                <asp:Label runat="server" Text="Total: " Width="100px" CssClass="LabelTotal"></asp:Label>
+                                <asp:Panel runat="server" Width="110px"></asp:Panel>
+                                <asp:Label runat="server" ID="TotalPriceLabel"></asp:Label>
+                                <asp:Label runat="server" ID="TotalWithDiscount" CssClass="TotalPriceLabel" ></asp:Label>
+                            </div>
+                            <div class="DiscountText">
+                                <asp:TextBox runat="server" CssClass="discText" ID="discountTextBox" placeholder="Enter discount code"></asp:TextBox>
+                                <asp:Button runat="server" cssClass="discButton" Text="Apply" ID="applyDiscountButton" OnClick="applyDiscountBooking"/>
+                            </div>
+                            <div class="ButtonTotalDiv">
+                                <asp:Button class="ButtonTotal" ID="ContinueButton" runat="server" Text="Continue" OnClick="ContinueButton_Click" />
+                            </div>
+                        </ContentTemplate>
+                        <Triggers>
+                            <asp:AsyncPostBackTrigger ControlID="OnlyBreakfast" />
+                            <asp:AsyncPostBackTrigger ControlID="HalfBoard" />
+                            <asp:AsyncPostBackTrigger ControlID="FullBoard" />
+                        </Triggers>
+                    </asp:UpdatePanel>
                     </div>
                 </div>
             </aside>
         </div>
     </div>
+    <script type="text/javascript">
+        var total = parseFloat(document.getElementById("<%=TotalPriceLabel.ClientID %>").textContent.slice(0, -1));
+        function clickCheck(radio) {
+            if (radio.value == "HB") {
+                document.getElementById("<%=TotalPriceLabel.ClientID %>").innerHTML = total + 19.99 + " €";
+            }
+            else if (radio.value == "FB") {
+                document.getElementById("<%=TotalPriceLabel.ClientID %>").innerHTML = total + 39.99 + " €";
+            }
+            else {
+                document.getElementById("<%=TotalPriceLabel.ClientID %>").innerHTML = total + " €";
+            }
+        }
+    </script>
 </asp:Content>

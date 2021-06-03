@@ -303,7 +303,47 @@ namespace JiltonWeb
         protected global::System.Web.UI.WebControls.GridView GridViewPackages;
 
         /// <summary>
+<<<<<<< HEAD
         /// Control TotalPriceLabel.
+=======
+        /// updatePanelToggle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel updatePanelToggle;
+
+        /// <summary>
+        /// OnlyBreakfast control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton OnlyBreakfast;
+
+        /// <summary>
+        /// HalfBoard control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton HalfBoard;
+
+        /// <summary>
+        /// FullBoard control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton FullBoard;
+
+        /// <summary>
+        /// TotalPriceLabel control.
+>>>>>>> c0a8316c7134bb9659095ca7e9ec6815e99f7e30
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.

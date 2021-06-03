@@ -2,7 +2,7 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
 
     <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <link href="css/restaurant.css?ver=<?php echo rand(555,950)?>" rel="stylesheet">
+        <link href="css/restaurant.css?ver=<?php echo rand(556,950)?>" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <asp:Panel runat="server" ID="backgroundR" >
