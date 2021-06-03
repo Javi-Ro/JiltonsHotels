@@ -35,7 +35,7 @@ namespace Library
 
         public override string ToString()
         {
-            return day + "-" + month + "-" + year;
+            return day + "/" + month + "/" + year;
         }
     }
 

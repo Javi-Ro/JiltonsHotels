@@ -49,9 +49,7 @@ namespace JiltonWeb
             {
                 Response.Redirect("Login.aspx");
             }
-
-            if (Session["id"] != null && true)//book.ExistBooking())
-            {
+            else { 
                 Response.Redirect("Room.aspx");
             }
 
