@@ -51,13 +51,13 @@ namespace Library
 
         }
 
-        public bool createPackage()
+        public DataSet createPackage()
         {
             CADPackage p = new CADPackage();
             return p.createPackage(this);
         }
 
-        public bool deletePackage()
+        public DataSet deletePackage()
         {
             CADPackage p = new CADPackage();
             return p.deletePackage(this);
@@ -68,13 +68,13 @@ namespace Library
             CADPackage p = new CADPackage();
             return p.searchPackage(this);
         }
-        public bool updatePricePackage()
+        public DataSet updatePricePackage()
         {
             CADPackage p = new CADPackage();
             return p.updatePricePackage(this);
         }
 
-        public bool updateDescPackage()
+        public DataSet updateDescPackage()
         {
             CADPackage p = new CADPackage();
             return p.updateDescPackage(this);

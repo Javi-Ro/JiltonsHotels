@@ -11,7 +11,7 @@ namespace JiltonWeb
 {
 
 
-    public partial class ExtraServices
+    public partial class ExtraPayments
     {
 
         /// <summary>
@@ -42,103 +42,13 @@ namespace JiltonWeb
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource3;
 
         /// <summary>
-        /// Control ServicesAccordion.
+        /// Control Gridcoche.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::AjaxControlToolkit.Accordion ServicesAccordion;
-
-        /// <summary>
-        /// Control AccordionPane1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::AjaxControlToolkit.AccordionPane AccordionPane1;
-
-        /// <summary>
-        /// Control AccordionPaneSpa.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView AccordionPaneSpa;
-
-        /// <summary>
-        /// Control AccordionPane3.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::AjaxControlToolkit.AccordionPane AccordionPane3;
-
-        /// <summary>
-        /// Control AccordionPaneGym.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView AccordionPaneGym;
-
-        /// <summary>
-        /// Control AccordionPane4.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::AjaxControlToolkit.AccordionPane AccordionPane4;
-
-        /// <summary>
-        /// Control AccordionPaneCars.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView AccordionPaneCars;
-
-        /// <summary>
-        /// Control AccordionPane2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::AjaxControlToolkit.AccordionPane AccordionPane2;
-
-        /// <summary>
-        /// Control AccordionPaneExtra.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView AccordionPaneExtra;
-
-        /// <summary>
-        /// Control AccordionPane5.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::AjaxControlToolkit.AccordionPane AccordionPane5;
-
-        /// <summary>
-        /// Control AccordionPanePackages.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView AccordionPanePackages;
+        protected global::System.Web.UI.WebControls.GridView Gridcoche;
 
         /// <summary>
         /// Control AddingServiceLabel.
@@ -303,47 +213,7 @@ namespace JiltonWeb
         protected global::System.Web.UI.WebControls.GridView GridViewPackages;
 
         /// <summary>
-<<<<<<< HEAD
         /// Control TotalPriceLabel.
-=======
-        /// updatePanelToggle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel updatePanelToggle;
-
-        /// <summary>
-        /// OnlyBreakfast control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton OnlyBreakfast;
-
-        /// <summary>
-        /// HalfBoard control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton HalfBoard;
-
-        /// <summary>
-        /// FullBoard control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton FullBoard;
-
-        /// <summary>
-        /// TotalPriceLabel control.
->>>>>>> c0a8316c7134bb9659095ca7e9ec6815e99f7e30
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
@@ -359,24 +229,6 @@ namespace JiltonWeb
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label TotalWithDiscount;
-
-        /// <summary>
-        /// Control discountTextBox.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox discountTextBox;
-
-        /// <summary>
-        /// Control applyDiscountButton.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button applyDiscountButton;
 
         /// <summary>
         /// Control ContinueButton.

@@ -14,7 +14,7 @@ using System.Globalization;
 
 namespace JiltonWeb
 {
-    public partial class ExtraServices : System.Web.UI.Page
+    public partial class ExtraPayments : System.Web.UI.Page
     {
         ENService service = new ENService();
         ENBooking booking = new ENBooking();
@@ -24,43 +24,17 @@ namespace JiltonWeb
 
         protected void Page_Load(object sender, EventArgs e)
         {
-          
+
             if (!Page.IsPostBack)
             {
                 booking = (ENBooking)Session["bookingInfo"];
-
-                booking.board = "OB";
-
-                Session["bookingInfo"] = booking;
 
                 // Booking dates
                 EntryDateLabel.Text = booking.date.startDate.ToString();
                 DepartureDateLabel.Text = booking.date.endDate.ToString();
 
                 // Filling grid views of the accordion panes
-                d = service.listAllSpa();
-                AccordionPaneSpa.DataSource = d;
-                AccordionPaneSpa.DataBind();
-
-                d = service.listAllGym();
-                AccordionPaneGym.DataSource = d;
-                AccordionPaneGym.DataBind();
-
-                d = service.listMoreServices();
-                AccordionPaneExtra.DataSource = d;
-                AccordionPaneExtra.DataBind();
-
-                d = car.listAllCars();
-                AccordionPaneCars.DataSource = d;
-                AccordionPaneCars.DataBind();
-
-                d = car.listAllCars();
-                AccordionPaneCars.DataSource = d;
-                AccordionPaneCars.DataBind();
-
-                d = package.listAllPackages();
-                AccordionPanePackages.DataSource = d;
-                AccordionPanePackages.DataBind();
+               
 
                 // Filling grid views of the booking resume
                 DataTable tableRooms = (DataTable)Session["sessionSelected"];
@@ -71,16 +45,16 @@ namespace JiltonWeb
                 GridViewServices.DataSource = tableServices;
                 GridViewServices.DataBind();
 
-                DataTable tableCars = (DataTable)Session["bookingCars"];
-                GridViewCars.DataSource = tableCars;
-                GridViewCars.DataBind();
+                DataTable tableCars = (DataTable)Session["bookingCar"];
+                Gridcoche.DataSource = tableCars;
+                Gridcoche.DataBind();
 
                 DataTable tablePackages = (DataTable)Session["bookingPackages"];
                 GridViewPackages.DataSource = tablePackages;
                 GridViewPackages.DataBind();
 
                 // Total price
-                TotalPriceLabel.Text = booking.calculatePrice(tableRooms, tableServices, tablePackages, tableCars).ToString("F") + " €";
+                TotalPriceLabel.Text = booking.calculatePrice(tableRooms, tableServices, tablePackages, tableCars).ToString() + " €";
 
 
                 // Staff list
@@ -91,7 +65,7 @@ namespace JiltonWeb
             if (booking.isDiscounted())
             {
                 TotalPriceLabel.CssClass = "TotalPriceLabelWithoutDiscount";
-                TotalWithDiscount.Text = booking.calculatePrice((DataTable)Session["sessionSelected"], (DataTable)Session["bookingServices"], (DataTable)Session["bookingCars"], (DataTable)Session["bookingPackages"]).ToString("F") + " €";
+                TotalWithDiscount.Text = booking.calculatePrice((DataTable)Session["sessionSelected"], (DataTable)Session["bookingServices"], (DataTable)Session["bookingCars"], (DataTable)Session["bookingPackages"]).ToString() + " €";
             }
             else
             {
@@ -100,28 +74,6 @@ namespace JiltonWeb
             }
         }
 
-        protected void applyDiscountBooking(object sender, EventArgs e)
-        {
-            string code = discountTextBox.Text;
-
-            ENDiscount disc = new ENDiscount();
-
-            disc.code = code;
-
-            if (disc.Exists())
-            {
-                disc.getPercentage();
-                booking = (ENBooking)Session["bookingInfo"];
-                booking.applyDiscount(disc);
-                TotalWithDiscount.Text = booking.calculatePrice((DataTable)Session["sessionSelected"], (DataTable)Session["bookingServices"], (DataTable)Session["bookingCars"], (DataTable)Session["bookingPackages"]).ToString("F") + " €";
-                Session["bookingInfo"] = booking;
-                TotalPriceLabel.CssClass = "TotalPriceLabelWithoutDiscount";
-            }
-            else
-            {
-                // Error no existe codigo
-            }
-        }
 
         private void AddServices_Grid(GridViewRow row)
         {
@@ -233,8 +185,8 @@ namespace JiltonWeb
         {
             DataTable table = (DataTable)Session[command];
             if (command == "sessionSelected")
-            {   
-                if(table.Rows.Count != 1)
+            {
+                if (table.Rows.Count != 1)
                 {
                     table.Rows.Remove(table.Rows[index]);
                     Session[command] = table;
@@ -251,7 +203,7 @@ namespace JiltonWeb
                 Session[command] = table;
                 ActualiseGrid(command);
             }
-            TotalPriceLabel.Text = booking.calculatePrice((DataTable)Session["sessionSelected"], (DataTable)Session["bookingServices"], (DataTable)Session["bookingCars"], (DataTable)Session["bookingPackages"]).ToString("F") + " €";
+            TotalPriceLabel.Text = booking.calculatePrice((DataTable)Session["sessionSelected"], (DataTable)Session["bookingServices"], (DataTable)Session["bookingCars"], (DataTable)Session["bookingPackages"]).ToString() + " €";
 
         }
 
@@ -349,13 +301,13 @@ namespace JiltonWeb
             {
                 ResetLabels();
                 AddCars_Grid(gvRow);
-                TotalPriceLabel.Text = booking.calculatePrice((DataTable)Session["sessionSelected"], (DataTable)Session["bookingServices"], (DataTable)Session["bookingCars"], (DataTable)Session["bookingPackages"]).ToString("F") + " €";
+                TotalPriceLabel.Text = booking.calculatePrice((DataTable)Session["sessionSelected"], (DataTable)Session["bookingServices"], (DataTable)Session["bookingCars"], (DataTable)Session["bookingPackages"]).ToString() + " €";
             }
             else if (e.CommandName == "AddPackage")
             {
                 ResetLabels();
                 AddPackages_Grid(gvRow);
-                TotalPriceLabel.Text = booking.calculatePrice((DataTable)Session["sessionSelected"], (DataTable)Session["bookingServices"], (DataTable)Session["bookingCars"], (DataTable)Session["bookingPackages"]).ToString("F") + " €";
+                TotalPriceLabel.Text = booking.calculatePrice((DataTable)Session["sessionSelected"], (DataTable)Session["bookingServices"], (DataTable)Session["bookingCars"], (DataTable)Session["bookingPackages"]).ToString() + " €";
             }
             else { }
         }
@@ -420,75 +372,12 @@ namespace JiltonWeb
                 table.Rows.Add(auxRow);
                 Session["bookingServices"] = table;
                 ActualiseGrid("bookingServices");
-                TotalPriceLabel.Text = booking.calculatePrice((DataTable)Session["sessionSelected"], (DataTable)Session["bookingServices"], (DataTable)Session["bookingCars"], (DataTable)Session["bookingPackages"]).ToString("F") + " €";
+                TotalPriceLabel.Text = booking.calculatePrice((DataTable)Session["sessionSelected"], (DataTable)Session["bookingServices"], (DataTable)Session["bookingCars"], (DataTable)Session["bookingPackages"]).ToString() + " €";
                 ResetLabels();
             }
             catch (Exception exc)
             {
                 Console.WriteLine("Extra service adding has failed.Error: {0}", exc.Message);
-            }
-        }
-
-        protected void applyOB(object sender, EventArgs e)
-        {
-            booking = (ENBooking)Session["bookingInfo"];
-
-            booking.board = "OB";
-
-            Session["bookingInfo"] = booking;
-
-            if (booking.isDiscounted())
-            {
-                TotalPriceLabel.CssClass = "TotalPriceLabelWithoutDiscount";
-                TotalWithDiscount.Text = booking.calculatePrice((DataTable)Session["sessionSelected"], (DataTable)Session["bookingServices"], (DataTable)Session["bookingCars"], (DataTable)Session["bookingPackages"]).ToString("F") + " €";
-            }
-            else
-            {
-                TotalPriceLabel.CssClass = "TotalPriceLabel";
-                TotalPriceLabel.Text = booking.calculatePrice((DataTable)Session["sessionSelected"], (DataTable)Session["bookingServices"], (DataTable)Session["bookingCars"], (DataTable)Session["bookingPackages"]).ToString("F") + " €";
-                TotalWithDiscount.Text = "";
-            }
-        }
-
-        protected void applyHB(object sender, EventArgs e)
-        {
-            booking = (ENBooking)Session["bookingInfo"];
-
-            booking.board = "HB";
-
-            Session["bookingInfo"] = booking;
-
-            if (booking.isDiscounted())
-            {
-                TotalPriceLabel.CssClass = "TotalPriceLabelWithoutDiscount";
-                TotalWithDiscount.Text = booking.calculatePrice((DataTable)Session["sessionSelected"], (DataTable)Session["bookingServices"], (DataTable)Session["bookingCars"], (DataTable)Session["bookingPackages"]).ToString("F") + " €";
-            }
-            else
-            {
-                TotalPriceLabel.CssClass = "TotalPriceLabel";
-                TotalPriceLabel.Text = booking.calculatePrice((DataTable)Session["sessionSelected"], (DataTable)Session["bookingServices"], (DataTable)Session["bookingCars"], (DataTable)Session["bookingPackages"]).ToString("F") + " €";
-                TotalWithDiscount.Text = "";
-            }
-        }
-
-        protected void applyFB(object sender, EventArgs e)
-        {
-            booking = (ENBooking)Session["bookingInfo"];
-
-            booking.board = "FB";
-
-            Session["bookingInfo"] = booking;
-
-            if (booking.isDiscounted())
-            {
-                TotalPriceLabel.CssClass = "TotalPriceLabelWithoutDiscount";
-                TotalWithDiscount.Text = booking.calculatePrice((DataTable)Session["sessionSelected"], (DataTable)Session["bookingServices"], (DataTable)Session["bookingCars"], (DataTable)Session["bookingPackages"]).ToString("F") + " €";
-            }
-            else
-            {
-                TotalPriceLabel.CssClass = "TotalPriceLabel";
-                TotalPriceLabel.Text = booking.calculatePrice((DataTable)Session["sessionSelected"], (DataTable)Session["bookingServices"], (DataTable)Session["bookingCars"], (DataTable)Session["bookingPackages"]).ToString("F") + " €";
-                TotalWithDiscount.Text = "";
             }
         }
     }

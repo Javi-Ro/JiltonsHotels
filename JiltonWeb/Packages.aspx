@@ -58,8 +58,8 @@
         </a>-->
         
      
-
-    <div class="admin">
+    <asp:Panel runat="server" ID="panelAdmin">
+        <div class="admin">
             <div class="entradas">
                 <div class = "labels">
                      <asp:Label runat="server" CssClass="letrasadmin" > Id: </asp:Label>
@@ -87,7 +87,6 @@
 
                 <p> To create a new pack you MUST insert all the information. To update an existing one, you have to put the ID of the one you want to edit and its new price or/and description. To delete, just put the ID.</p>
               </div>
-
-
         </div>
+    </asp:Panel>
 </asp:Content>

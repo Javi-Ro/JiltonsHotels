@@ -43,42 +43,6 @@ namespace Library
 
         public DataSet deleteCar(ENCar en)
         {
-            /*
-                //We make a counter before the delete in order to know if we have deleted an existing car or not
-                string msgCount = "Select count FROM [dbo].[car] WHERE licenseplate = '" + en.LicensePlate + "'";
-                string msg = "DELETE FROM [dbo].[car] WHERE licenseplate = '" + en.LicensePlate + "'";
-
-                SqlCommand contador = new SqlCommand(msgCount, conection);
-                SqlCommand busqueda = new SqlCommand(msg, conection);
-
-                SqlDataReader dr = contador.ExecuteReader();
-                dr.Read();
-                int contadorInicial = dr.GetInt32(0);
-
-                if (contadorInicial == 1)
-                {
-                    busqueda.ExecuteNonQuery();
-                    dr = contador.ExecuteReader();
-                    dr.Read();
-                    //Se ha borrado
-                    if (dr.GetInt32(0) == 0)
-                    {
-                        delete = true;
-                    }
-                    else
-                    {
-                        delete = false;
-                    }
-
-                }
-                else
-                {
-                    delete = false;
-                }
-
-                conection.Close();
-            }*/
-
 
             try
             {

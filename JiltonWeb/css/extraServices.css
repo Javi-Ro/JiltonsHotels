@@ -265,6 +265,7 @@
 .TotalPrice {
     display: flex;
     flex-flow: row wrap;
+    margin-top: 10px;
 }
 
 .ButtonTotalDiv {
@@ -339,4 +340,10 @@
     color: white;
     width: 25%;
     cursor: pointer;
+}
+
+.radioBoard {
+    letter-spacing: 2px;
+    padding-right: 5px;
+    font-size: 18px;
 }
