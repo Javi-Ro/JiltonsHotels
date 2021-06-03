@@ -30,7 +30,7 @@ namespace Library
             get { return _board; }
             set 
             { 
-                if (board == "OB" || board == "HB" || board == "FB")
+                if (value == "OB" || value == "HB" || value == "FB")
                 {
                     _board = value;
                 }
@@ -196,9 +196,9 @@ namespace Library
         }
 
         // Auxiliary methods
-        public int calculatePrice(DataTable rooms, DataTable services, DataTable packages, DataTable cars) // Returns the total cost of the booking (taking in account the possible discount code)
+        public double calculatePrice(DataTable rooms, DataTable services, DataTable packages, DataTable cars) // Returns the total cost of the booking (taking in account the possible discount code)
         {
-            int total = 0;
+            double total = 0;
 
             foreach (DataRow row in rooms.Rows)
             {
@@ -227,6 +227,18 @@ namespace Library
                 {
                     total += Int32.Parse(row["price"].ToString());
                 }
+            }
+
+            switch (this.board)
+            {
+                case "HB":
+                    total += 59.99;
+                    break;
+                case "FB":
+                    total += 89.99;
+                    break;
+                default:
+                    break;
             }
             
             if (this.discount != null)

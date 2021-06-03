@@ -1,67 +1,75 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/JiltonMaster.Master" AutoEventWireup="true" CodeBehind="ExtraPayments.aspx.cs" Inherits="JiltonWeb.ExtraPayments" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="cssLink" runat="server">
-    <link rel="stylesheet" href="../css/ExtraPayments.css?ver=<?php echo rand(295,950)?>" />
+    <link rel="stylesheet" href="../css/extraServices.css?ver=<?php echo rand(15,950)?>" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\DBPrueba.mdf;Integrated Security=True" ProviderName="System.Data.SqlClient" SelectCommand="SELECT * FROM [Usuarios]"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\DBPrueba.mdf;Integrated Security=True" ProviderName="System.Data.SqlClient" SelectCommand="SELECT id FROM [Usuarios]"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\DBPrueba.mdf;Integrated Security=True" ProviderName="System.Data.SqlClient" SelectCommand="SELECT nif FROM [Usuarios]"></asp:SqlDataSource>
     <div class="MainContainerBooking">
         <div class="CenteredContainer">
             <div class="BorderMainBlock">
-            <div class="MainBlock">
-                <div class="HeaderBlock">
-                    <h1 class="PaymentLabel">Payment Information</h1>
-                </div>
-                <div class="MethodContainer">
-                    <asp:Label runat="server" CssClass="PaymentMethodLabel">Payment Method</asp:Label>
-                    <asp:DropDownList ID="PaymentList" CssClass="PaymentMethodOption" runat="server"></asp:DropDownList>
-                </div>
-                <div class="CardImages">
-                    <asp:Image runat="server" CssClass="cardImg" ID="VisaCard" src="../assets/VisaCard.png"/>
-                    <asp:Image runat="server" CssClass="cardImg" ID="MasterCard" src="../assets/MasterCard.png"/>
-                    <asp:Image runat="server" CssClass="cardImg" ID="AmexCard" src="../assets/AmexCard.png"/>
-                </div>
-                <div class="PaymentForm">
-                    <div class="Block">
-                        <asp:TextBox id="CardNumber" CssClass="PaymentTextBox" placeholder="Card Number*" runat="server" MaxLength="16"  AutoPostBack="True"></asp:TextBox>
-                        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                            <Triggers>
-                                <asp:AsyncPostBackTrigger ControlID="CardNumber" EventName="TextChanged" />
-                            </Triggers>
-                        </asp:UpdatePanel>
-                        <ajaxToolkit:MaskedEditExtender ID="CardNumber_MaskedEditExtender" runat="server" BehaviorID="CardNumber_MaskedEditExtender" Century="2000" CultureAMPMPlaceholder="" CultureCurrencySymbolPlaceholder="" CultureDateFormat="" CultureDatePlaceholder="" CultureDecimalPlaceholder="" CultureThousandsPlaceholder="" CultureTimePlaceholder="" Mask='9999 9999 9999 9999' TargetControlID="CardNumber" MaskType="Number" />
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidatorCardNumber" CssClass="Validator" runat="server" ErrorMessage="Card number is required" ControlToValidate="CardNumber" Display="Dynamic"></asp:RequiredFieldValidator>
-                        <asp:RegularExpressionValidator ID="RegularExpressionValidatorCardVisa" CssClass="Validator" runat="server" ErrorMessage="Invalid Card Number" ValidationExpression="^(?:4[0-9]{12}(?:[0-9]{3})?|(?:5[1-5][0-9]{2}|222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)[0-9]{12}|3[47][0-9]{13})$" ControlToValidate="CardNumber" Display="Dynamic"></asp:RegularExpressionValidator>
-                        
+                <div class="MainBlock">
+                    <div class="HeaderBlock">
+                        <h1 class="ExtraServicesLabel">COMPLETE YOUR STAY WITH OUR SERVICES</h1>
                     </div>
-                    <div class="Block">
-                        <asp:TextBox id="ExpirationDate" CssClass="PaymentTextBox" placeholder="Expiration Date* (mm/yyyy)" runat="server" AutoPostBack="True"></asp:TextBox>
-                        <asp:UpdatePanel ID="UpdatePanel2" runat="server">
-                            <Triggers>
-                                <asp:AsyncPostBackTrigger ControlID="ExpirationDate" EventName="TextChanged" />
-                            </Triggers>
-                        </asp:UpdatePanel>
-                        <ajaxToolkit:MaskedEditExtender runat="server" CultureDatePlaceholder="" CultureTimePlaceholder="" CultureDecimalPlaceholder="" CultureThousandsPlaceholder="" CultureDateFormat="" CultureCurrencySymbolPlaceholder="" CultureAMPMPlaceholder="" Century="2000" BehaviorID="ExpirationDate_MaskedEditExtender" TargetControlID="ExpirationDate" ID="ExpirationDate_MaskedEditExtender" Mask="99\/9999" MaskType="Date"></ajaxToolkit:MaskedEditExtender>
-                        <asp:RegularExpressionValidator ID="RegularExpressionValidatorDate" CssClass="Validator" runat="server" ErrorMessage="Invalid Expiration date" ValidationExpression="\d{2}/\d{4}" ControlToValidate="ExpirationDate" Display="Dynamic"></asp:RegularExpressionValidator>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidatorDate" CssClass="Validator" runat="server" ErrorMessage="Expiration date is required" ControlToValidate="ExpirationDate" Display="Dynamic"></asp:RequiredFieldValidator>
+
+                    <div class="ServicesContainer">
+                        <div class="centeredAccordion">
+                           
+                                
+                            <asp:GridView ID="Gridcoche" CssClass="car" OnRowCommand="GridView_ButtonCommand" RowStyle-HorizontalAlign="Center" Font-Underline="false" runat="server" Font-Size="15px" ForeColor="#F3E7E7" GridLines="Horizontal" AutoGenerateColumns="false" CellSpacing="40" ShowHeader="false" CellPadding="7">
+                                <Columns>
+
+                                    <asp:BoundField DataField="brand" ItemStyle-Width="90px"  />
+                                    <asp:BoundField DataField="model" ItemStyle-Width="90px" />
+                                    <asp:BoundField DataField="price" ItemStyle-Width="90px" ItemStyle-CssClass="text"  DataFormatString="{0:C}" />
+
+                                </Columns>
+                            </asp:GridView>
+                            
+                                
+                        </div>
                     </div>
-                    <div class="Block">
-                        <asp:TextBox id="CVV" CssClass="PaymentTextBox" placeholder="CVV*" runat="server" MaxLength="3" Type="password" ></asp:TextBox>
-                        <asp:RegularExpressionValidator ID="RegularExpressionValidatorCVV" CssClass="Validator" runat="server" ErrorMessage="Invalid CVV code" ValidationExpression="\d{3}" ControlToValidate="CVV" Display="Dynamic"></asp:RegularExpressionValidator>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidatorCVV" CssClass="Validator" runat="server" ErrorMessage="CVV is required" ControlToValidate="CVV"></asp:RequiredFieldValidator>
+
+                    <asp:Panel runat="server" Visible="True" CssClass="AddServicePanel">
+                        <div class="PaddingPanel">
+                            <div class="PanelBlock">
+                                <asp:Label runat="server" Text="SELECTED SERVICE" Font-Bold="true" CssClass="LabelAddingService"></asp:Label>
+                                <asp:Label runat="server" ID="AddingServiceLabel" CssClass="LabelAddingService" Text="None" Font-Italic="True"></asp:Label>
+                            </div>
+                            <div class="PanelBlock">
+                                <asp:Label runat="server" Text="TYPE OF SERVICE" Font-Bold="true" CssClass="LabelAddingService"></asp:Label>
+                                <asp:Label runat="server" ID="ServiceTypeLabel" CssClass="LabelAddingService" Text="-" Font-Italic="True"></asp:Label>
+                            </div>
+                            <div class="PanelBlock">
+                                <asp:Label runat="server" Text="CHOOSE THE DATE" Font-Bold="true" CssClass="LabelAddingService"></asp:Label>
+                                <asp:TextBox Enabled="false" ID ="TextEntry" Width ="100px" OnKeyPress="return false;" AutoComplete="off" style="text-align:center; border-radius:3px; border-width:1px; margin-right:2px; padding:4px 10px 4px 10px;" ReadOnly="false" runat ="server" />
+                                <ajaxToolkit:CalendarExtender ID="EntryCalendar" PopupButtonID="EntryCalendar" runat="server"  TargetControlID="TextEntry" Format="dd/MM/yyyy" ></ajaxToolkit:CalendarExtender>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ValidationGroup="SelectedServiceForm" runat="server" ErrorMessage="Date field is required" CssClass="Validator" Display="Dynamic" ControlToValidate="TextEntry"></asp:RequiredFieldValidator>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator2" ValidationGroup="SelectedServiceForm" runat="server" ErrorMessage="Not correct hour introduced" Display="Dynamic" ValidationExpression="^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d$" CssClass="Validator" ControlToValidate="TextEntry"></asp:RegularExpressionValidator>
+                            </div>
+                            <div class="PanelBlock">
+                                <asp:Label runat="server" Text="CHOOSE THE HOUR" Font-Bold="true" CssClass="HourServices"></asp:Label>
+                                <asp:TextBox ID ="HourTextBox" Width ="100px" style="text-align:center; border-radius:3px; border-width:1px; padding: 4px 10px 4px 10px;" runat ="server" Enabled="false" />
+                                <ajaxToolkit:MaskedEditExtender runat="server" CultureDatePlaceholder="" CultureTimePlaceholder="" CultureDecimalPlaceholder="" CultureThousandsPlaceholder="" CultureDateFormat="" CultureCurrencySymbolPlaceholder="" CultureAMPMPlaceholder="" Century="2000" BehaviorID="TextBox1_MaskedEditExtender" TargetControlID="HourTextBox" ID="HourTextBox_MaskedEditExtender" MaskType="Time" Mask="99:00" ClearMaskOnLostFocus="False" UserTimeFormat="None"></ajaxToolkit:MaskedEditExtender>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" ValidationGroup="SelectedServiceForm" CssClass="Validator" SelectedServiceForm="SelectedServiceForm" runat="server" ErrorMessage="Not correct hour introduced" ControlToValidate="HourTextBox" ValidationExpression="^([0-1]?[0-9]|2[0-3]):00$" Display="Dynamic"></asp:RegularExpressionValidator>
+                            </div>
+                            <div class="PanelBlock">
+                                <asp:Label runat="server" Text="CHOOSE YOUR STAFF" Font-Bold="true" CssClass="HourServices"></asp:Label>
+                                <asp:DropDownList ID="StaffList" runat="server" Enabled="false" CssClass="ListStaff"></asp:DropDownList>
+                            </div>
+                            <div class="PanelBlock">
+                                <asp:Button ID="AddServiceButton" Enabled="false" CssClass="ButtonAddService" ValidationGroup="addServ" runat="server" Text="Add Service" OnClick="AddServiceButton_Click" />
+                            </div>
+                        </div>
+                    </asp:Panel>
+                    <div class="MainButtonTotalDiv">
+                            <asp:Button class="MainButtonTotal" ID="Button1" runat="server" Text="Continue" OnClick="ContinueButton_Click" />
                     </div>
-                    <div class="Block">
-                        <asp:TextBox id="TitularName" CssClass="PaymentTextBox" placeholder="Titular Name*" runat="server"></asp:TextBox>
-                        <asp:UpdatePanel ID="UpdatePanel4" runat="server">
-                            <Triggers>
-                                <asp:AsyncPostBackTrigger ControlID="TitularName" EventName="TextChanged" />
-                            </Triggers>
-                        </asp:UpdatePanel>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidatorTitularName" CssClass="Validator" runat="server" ErrorMessage="Titular name is required" ControlToValidate="TitularName"></asp:RequiredFieldValidator>
-                    </div>
-                    
                 </div>
-                <asp:Button runat="server" CssClass="PaymentButton" ID="PayNowButton" Text="PAY NOW" />
             </div>
-            </div>
+
             <aside class="BookingResume">
                 <div class="MainBlock">
                     <div class="HeaderBlock">
@@ -88,7 +96,7 @@
                             <asp:BoundField DataField="title" ItemStyle-Width="150px"  ItemStyle-Font-Bold="true" />
                             <asp:BoundField ItemStyle-Width="50px" />
                             <asp:BoundField DataField="price" DataFormatString="{0:C}" ItemStyle-Width="80px" />
-                            <asp:ButtonField Text="Delete" ButtonType="Link" ControlStyle-CssClass="GridButton"></asp:ButtonField>
+                            <asp:ButtonField Text="Delete" ButtonType="Link" ControlStyle-CssClass="GridButton" CommandName="sessionSelected"></asp:ButtonField>
                         </Columns>
                     </asp:GridView>
                     <asp:GridView ID="GridViewServices" CssClass="grid" runat="server" ForeColor="#333333" GridLines="None" AutoGenerateColumns="false" CellSpacing="8" ShowHeader="False" Width="100%" RowStyle-HorizontalAlign="Left"
@@ -98,7 +106,7 @@
                             <asp:BoundField DataField="description" ItemStyle-Width="150px"  ItemStyle-Font-Bold="true" />
                             <asp:BoundField DataField="serviceDay" DataFormatString="{0:M}" ItemStyle-Font-Italic="true" ItemStyle-Width="50px" />
                             <asp:BoundField DataField="price" DataFormatString="{0:C}" ItemStyle-Width="80px" />
-                            <asp:ButtonField Text="Delete" ButtonType="Link" ControlStyle-CssClass="GridButton"></asp:ButtonField>
+                            <asp:ButtonField Text="Delete" ButtonType="Link" ControlStyle-CssClass="GridButton" CommandName="bookingServices"></asp:ButtonField>
                         </Columns>
                     </asp:GridView>
                     <asp:GridView ID="GridViewCars" CssClass="grid" runat="server" ForeColor="#333333" GridLines="None" AutoGenerateColumns="false" CellSpacing="8" ShowHeader="False" Width="100%" RowStyle-HorizontalAlign="Left"
@@ -108,7 +116,7 @@
                             <asp:BoundField DataField="brand" ItemStyle-Width="150px"  ItemStyle-Font-Bold="true" />
                             <asp:BoundField DataField="model" ItemStyle-Width="50px" ItemStyle-Font-Italic="true" />
                             <asp:BoundField DataField="price" DataFormatString="{0:C}" ItemStyle-Width="80px" />
-                            <asp:ButtonField Text="Delete" ButtonType="Link" ControlStyle-CssClass="GridButton"></asp:ButtonField>
+                            <asp:ButtonField Text="Delete" ButtonType="Link" ControlStyle-CssClass="GridButton" CommandName="bookingCars"></asp:ButtonField>
                         </Columns>
                     </asp:GridView>
                     <asp:GridView ID="GridViewPackages" CssClass="grid" runat="server" ForeColor="#333333" GridLines="None" AutoGenerateColumns="false" CellSpacing="8" ShowHeader="False" Width="100%" RowStyle-HorizontalAlign="Left"
@@ -118,16 +126,23 @@
                             <asp:BoundField DataField="name" ItemStyle-Width="150px"  ItemStyle-Font-Bold="true" />
                             <asp:BoundField ItemStyle-Width="50px" />
                             <asp:BoundField DataField="price" DataFormatString="{0:C}" ItemStyle-Width="80px" />
-                            <asp:ButtonField Text="Delete" ButtonType="Link" ControlStyle-CssClass="GridButton"></asp:ButtonField>
+                            <asp:ButtonField Text="Delete" ButtonType="Link" ControlStyle-CssClass="GridButton" CommandName="bookingPackages"></asp:ButtonField>
                         </Columns>
                     </asp:GridView>
                     <div class="separator">
                         <hr />
                     </div>
-                    <div class="TotalPrice">
-                        <asp:Label runat="server" Text="Total: " Width="100px" CssClass="LabelTotal"></asp:Label>
-                        <asp:Panel runat="server" Width="110px"></asp:Panel>
-                        <asp:Label runat="server" ID="TotalPriceLabel" CssClass="LabelTotal"></asp:Label>
+                    <div class="totalBooking">
+                        <div class="TotalPrice">
+                            <asp:Label runat="server" Text="Total: " Width="100px" CssClass="LabelTotal"></asp:Label>
+                            <asp:Panel runat="server" Width="110px"></asp:Panel>
+                            <asp:Label runat="server" ID="TotalPriceLabel"></asp:Label>
+                            <asp:Label runat="server" ID="TotalWithDiscount" CssClass="TotalPriceLabel" ></asp:Label>
+                        </div>
+                        
+                        <div class="ButtonTotalDiv">
+                            <asp:Button class="ButtonTotal" ID="ContinueButton" runat="server" Text="Continue" OnClick="ContinueButton_Click" />
+                        </div>
                     </div>
                 </div>
             </aside>
