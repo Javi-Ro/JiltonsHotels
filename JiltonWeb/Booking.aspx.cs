@@ -65,6 +65,8 @@ namespace JiltonWeb
         protected void OnPayNow_Click(object sender, EventArgs e)
         {
             ENBooking booking = (ENBooking)Session["bookingInfo"];
+
+            booking.Price = booking.calculatePrice((DataTable)Session["sessionSelected"], (DataTable)Session["bookingServices"], (DataTable)Session["bookingCars"], (DataTable)Session["bookingPackages"]);
             booking.createBooking();
 
             DataTable table = (DataTable)Session["sessionSelected"];
@@ -107,6 +109,7 @@ namespace JiltonWeb
                     booking.addPackage(package);
                 }
             }
+            Response.Redirect("ThanksForBuy.aspx");
         }
 
         private void RemoveElement(int index, string command)

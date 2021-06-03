@@ -48,6 +48,8 @@ namespace Library
             set { _discount = value; }
         }
 
+        public double Price { get; set; }
+
         public List<ENService> Services { get; set; }
 
         public List<ENCar> Cars { get; set; }
