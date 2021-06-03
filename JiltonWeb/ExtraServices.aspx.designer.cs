@@ -303,9 +303,7 @@ namespace JiltonWeb
         protected global::System.Web.UI.WebControls.GridView GridViewPackages;
 
         /// <summary>
-<<<<<<< HEAD
         /// Control TotalPriceLabel.
-=======
         /// updatePanelToggle control.
         /// </summary>
         /// <remarks>
