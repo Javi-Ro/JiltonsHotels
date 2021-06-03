@@ -469,7 +469,7 @@ namespace Library
             catch (Exception e)
             {
                 Console.WriteLine("Id filling had failed.Error: {0}", e.Message);
-                return -1;
+                return 1;
             }
         }
     }

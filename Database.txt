@@ -29,6 +29,7 @@ create table booking(
 	date_out date not null,
 	userID varchar(9) not null constraint FK_booking_user references uuser(id),
 	discount varchar(20) constraint FK_booking_discount references discount(code),
+	price numeric(18,2) null,
 	constraint CHK_booking check (board in ('OB', 'HB', 'FB'))
 )
 
