@@ -11,287 +11,259 @@ namespace JiltonWeb
 {
 
 
-    public partial class JiltonMaster
+    public partial class ExtraPayments
     {
 
         /// <summary>
-        /// cssLink control.
+        /// PaymentList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder cssLink;
+        protected global::System.Web.UI.WebControls.DropDownList PaymentList;
 
         /// <summary>
-        /// form1 control.
+        /// VisaCard control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Image VisaCard;
 
         /// <summary>
-        /// MainMenu control.
+        /// MasterCard control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Menu MainMenu;
+        protected global::System.Web.UI.WebControls.Image MasterCard;
 
         /// <summary>
-        /// RegisterContainer control.
+        /// AmexCard control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel RegisterContainer;
+        protected global::System.Web.UI.WebControls.Image AmexCard;
 
         /// <summary>
-        /// RegisterButton control.
+        /// CardNumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button RegisterButton;
+        protected global::System.Web.UI.WebControls.TextBox CardNumber;
 
         /// <summary>
-        /// LoginButton control.
+        /// UpdatePanel1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button LoginButton;
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
 
         /// <summary>
-        /// UserContainer control.
+        /// CardNumber_MaskedEditExtender control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel UserContainer;
+        protected global::AjaxControlToolkit.MaskedEditExtender CardNumber_MaskedEditExtender;
 
         /// <summary>
-        /// dropdownUser control.
+        /// RequiredFieldValidatorCardNumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel dropdownUser;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorCardNumber;
 
         /// <summary>
-        /// UserButton control.
+        /// RegularExpressionValidatorCardVisa control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button UserButton;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidatorCardVisa;
 
         /// <summary>
-        /// MyProfile control.
+        /// ExpirationDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button MyProfile;
+        protected global::System.Web.UI.WebControls.TextBox ExpirationDate;
 
         /// <summary>
-        /// MyBookings control.
+        /// UpdatePanel2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button MyBookings;
+        protected global::System.Web.UI.UpdatePanel UpdatePanel2;
 
         /// <summary>
-        /// LogOutButton control.
+        /// ExpirationDate_MaskedEditExtender control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button LogOutButton;
+        protected global::AjaxControlToolkit.MaskedEditExtender ExpirationDate_MaskedEditExtender;
 
         /// <summary>
-        /// RegisterBooking control.
+        /// RegularExpressionValidatorDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel RegisterBooking;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidatorDate;
 
         /// <summary>
-        /// Control cvtxtStartDate.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator cvtxtStartDate;
-
-        /// <summary>
-        /// Control bookingTitle.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label bookingTitle;
-
-        /// <summary>
-        /// Control ScriptManager1.
+        /// RequiredFieldValidatorDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorDate;
 
         /// <summary>
-        /// TextEntry control.
+        /// CVV control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextEntry;
+        protected global::System.Web.UI.WebControls.TextBox CVV;
 
         /// <summary>
-        /// ShowEntry control.
+        /// RegularExpressionValidatorCVV control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ShowEntry;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidatorCVV;
 
         /// <summary>
-        /// EntryCalendar control.
+        /// RequiredFieldValidatorCVV control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.CalendarExtender EntryCalendar;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorCVV;
 
         /// <summary>
-        /// TextDeparture control.
-        /// Control RequiredFieldValidatorEntryDate.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorEntryDate;
-
-        /// <summary>
-        /// Control TextDeparture.
+        /// TitularName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextDeparture;
+        protected global::System.Web.UI.WebControls.TextBox TitularName;
 
         /// <summary>
-        /// ShowDeparture control.
+        /// UpdatePanel4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ShowDeparture;
+        protected global::System.Web.UI.UpdatePanel UpdatePanel4;
 
         /// <summary>
-        /// DepartureCalendar control.
+        /// RequiredFieldValidatorTitularName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.CalendarExtender DepartureCalendar;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorTitularName;
 
         /// <summary>
-        /// Control RequiredFieldValidatorDeartureDate.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorDeartureDate;
-
-        /// <summary>
-        /// Control AdultOptions.
+        /// PayNowButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList AdultOptions;
+        protected global::System.Web.UI.WebControls.Button PayNowButton;
 
         /// <summary>
-        /// Control RequiredFieldValidatorAdult.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorAdult;
-
-        /// <summary>
-        /// Control ChildOptions.
+        /// EntryDateLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ChildOptions;
+        protected global::System.Web.UI.WebControls.Label EntryDateLabel;
 
         /// <summary>
-        /// Control RequiredFieldValidatorChild.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorChild;
-
-        /// <summary>
-        /// Control BookButton.
+        /// DepartureDateLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BookButton;
+        protected global::System.Web.UI.WebControls.Label DepartureDateLabel;
 
         /// <summary>
-        /// Control validatorSummary.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ValidationSummary validatorSummary;
-
-        /// <summary>
-        /// Control ContentPlaceHolder1.
+        /// GridViewRooms control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.GridView GridViewRooms;
+
+        /// <summary>
+        /// GridViewServices control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridViewServices;
+
+        /// <summary>
+        /// GridViewCars control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridViewCars;
+
+        /// <summary>
+        /// GridViewPackages control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridViewPackages;
+
+        /// <summary>
+        /// TotalPriceLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label TotalPriceLabel;
     }
 }
