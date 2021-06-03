@@ -1,0 +1,44 @@
+﻿.MyBookingsBack {
+    background-image: url(../assets/6.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    min-height: 1000px;
+}
+
+.booking {
+    position: relative;
+    top: 175px;
+    height: 100%;
+    text-align: center;
+}
+
+.Informacion {
+    padding: 3%;
+    width: 100%;
+    min-height: 100%;
+    position: relative;
+    display: inline-block;
+    border: 2px solid black;
+    float: left;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.field {
+    font-family: 'Karla', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.grid {
+    border: hidden;
+    /*height: 3700px;*/
+    width: 30%;
+    margin-left: 35%;
+    max-height: 80px;
+    background-color: transparent;
+}

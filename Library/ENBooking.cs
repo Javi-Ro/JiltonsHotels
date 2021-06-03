@@ -197,6 +197,12 @@ namespace Library
             return booking.getCars(this);
         }
 
+        public DataSet getByID(string id)
+        {
+            CADBooking booking = new CADBooking();
+            return booking.getByID(this, id);
+        }
+
         // Auxiliary methods
         public double calculatePrice(DataTable rooms, DataTable services, DataTable packages, DataTable cars) // Returns the total cost of the booking (taking in account the possible discount code)
         {

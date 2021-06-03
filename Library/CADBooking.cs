@@ -219,6 +219,23 @@ namespace Library
             }
         }
 
+        public DataSet getByID(ENBooking booking, string id)
+        {
+            try
+            {
+                SqlConnection c = new SqlConnection(constring);
+                DataSet virtualSet = new DataSet();
+                SqlDataAdapter adapter = new SqlDataAdapter("select board, price, CONVERT(varchar, date_in, 103) date_in, CONVERT(varchar, date_out, 103) date_out from booking where userID='" + id + "'", c);
+                adapter.Fill(virtualSet, "bookings");
+                return virtualSet;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Services listing had failed.Error: {0}", e.Message);
+                return null;
+            }
+        }
+
         public bool addService(ENBooking booking, ENService service)
         {
             try

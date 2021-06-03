@@ -132,25 +132,25 @@ namespace JiltonWeb
         protected global::System.Web.UI.WebControls.Panel RegisterBooking;
 
         /// <summary>
-        /// Control cvtxtStartDate.
+        /// cvtxtStartDate control.
         /// </summary>
         /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CompareValidator cvtxtStartDate;
 
         /// <summary>
-        /// Control bookingTitle.
+        /// bookingTitle control.
         /// </summary>
         /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label bookingTitle;
 
         /// <summary>
-        /// Control ScriptManager1.
+        /// ScriptManager1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
@@ -186,17 +186,16 @@ namespace JiltonWeb
         protected global::AjaxControlToolkit.CalendarExtender EntryCalendar;
 
         /// <summary>
-        /// TextDeparture control.
-        /// Control RequiredFieldValidatorEntryDate.
+        /// RequiredFieldValidatorEntryDate control.
         /// </summary>
         /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorEntryDate;
 
         /// <summary>
-        /// Control TextDeparture.
+        /// TextDeparture control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
@@ -223,16 +222,16 @@ namespace JiltonWeb
         protected global::AjaxControlToolkit.CalendarExtender DepartureCalendar;
 
         /// <summary>
-        /// Control RequiredFieldValidatorDeartureDate.
+        /// RequiredFieldValidatorDeartureDate control.
         /// </summary>
         /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorDeartureDate;
 
         /// <summary>
-        /// Control AdultOptions.
+        /// AdultOptions control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
@@ -241,16 +240,16 @@ namespace JiltonWeb
         protected global::System.Web.UI.WebControls.DropDownList AdultOptions;
 
         /// <summary>
-        /// Control RequiredFieldValidatorAdult.
+        /// RequiredFieldValidatorAdult control.
         /// </summary>
         /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorAdult;
 
         /// <summary>
-        /// Control ChildOptions.
+        /// ChildOptions control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
@@ -259,16 +258,16 @@ namespace JiltonWeb
         protected global::System.Web.UI.WebControls.DropDownList ChildOptions;
 
         /// <summary>
-        /// Control RequiredFieldValidatorChild.
+        /// RequiredFieldValidatorChild control.
         /// </summary>
         /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorChild;
 
         /// <summary>
-        /// Control BookButton.
+        /// BookButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
@@ -277,16 +276,16 @@ namespace JiltonWeb
         protected global::System.Web.UI.WebControls.Button BookButton;
 
         /// <summary>
-        /// Control validatorSummary.
+        /// validatorSummary control.
         /// </summary>
         /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ValidationSummary validatorSummary;
 
         /// <summary>
-        /// Control ContentPlaceHolder1.
+        /// ContentPlaceHolder1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
