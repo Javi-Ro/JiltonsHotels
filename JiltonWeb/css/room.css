@@ -221,10 +221,11 @@
 }
 
 .add {
-    position: relative;
+    position: absolute;
     display: inline-block;
     right: 40%;
-    margin-top: 25%;
+    margin-top: 20%;
+
 }
 
 .addButton {
@@ -236,7 +237,6 @@
     border-radius: 3px;
     font-weight: bold;
     font-size: 14px;
-    transition: .5s ease all;
 }
 
     .addButton:hover {

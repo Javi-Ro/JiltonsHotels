@@ -20,6 +20,14 @@ namespace JiltonWeb
                 DepartureCalendar.StartDate = DateTime.Now;
             }
 
+            if (Session["bookingInfo"] != null)
+            {
+                TextEntry.Text = ((ENBooking)Session["bookingInfo"]).date.startDate.ToString();
+                TextDeparture.Text = ((ENBooking)Session["bookingInfo"]).date.endDate.ToString();
+                AdultOptions.SelectedValue = Session["adult"].ToString();
+                ChildOptions.SelectedValue = Session["child"].ToString();
+            }
+
             if (Session["id"] != null)
             {
                 RegisterContainer.Visible = false;
@@ -87,6 +95,8 @@ namespace JiltonWeb
             booking.date = dates;
             booking.user = (string)Session["id"];
             Session["bookingInfo"] = booking;
+            Session["adult"] = AdultOptions.SelectedValue;
+            Session["child"] = ChildOptions.SelectedValue;
             Response.Redirect("Room.aspx");
 
         }
