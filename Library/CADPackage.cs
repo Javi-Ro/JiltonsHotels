@@ -17,63 +17,44 @@ namespace Library
             constring = ConfigurationManager.ConnectionStrings["Database"].ConnectionString;
         }
 
-        public bool createPackage(ENPackage pack)
+        public DataSet createPackage(ENPackage pack)
         {
-            bool ok = false;
+           
+
             try
             {
-                SqlConnection con = null;
-                con = new SqlConnection(constring);
-                con.Open();
-
-                string cadena;
-                cadena = "Insert INTO package (id, name, description, price) VALUES ('" + pack.id + "','" + pack.name + "','" + pack.description + "','" + pack.price + ")";
-                SqlCommand com = new SqlCommand(cadena, con);
-                com.ExecuteNonQuery();
-                ok = true;
-            }
-            catch (SqlException e)
-            {
-                ok = false;
-                Console.WriteLine("User operation has failed.Error: {0}", e.Message);
+                SqlConnection c = new SqlConnection(constring);
+                DataSet virtualSet = new DataSet();
+                SqlDataAdapter adapter = new SqlDataAdapter("Insert INTO package (id, name, description, price) VALUES (" + 
+                                                                pack.id + ",'" + pack.name + "','" + pack.description + "'," + pack.price + ")", c);
+                adapter.Fill(virtualSet, "pack");
+                return virtualSet;
             }
             catch (Exception e)
             {
-                ok = false;
-                Console.WriteLine("User operation has failed.Error: {0}", e.Message);
+                Console.WriteLine("Pack creation has failed.Error: {0}", e.Message);
+                return null;
             }
-
-            return ok;
         }
 
-        public bool deletePackage(ENPackage pack)
+        public DataSet deletePackage(ENPackage pack)
         {
 
-            bool ok = true;
+           
+
             try
             {
-                SqlConnection con = null;
-                con = new SqlConnection(constring);
-                con.Open();
-
-                string cadena = "DELETE FROM package WHERE id = '" + pack.id + "'";
-                SqlCommand com = new SqlCommand(cadena, con);
-                com.ExecuteNonQuery();
-                ok = true;
-                con.Close();
-            }
-            catch (SqlException e)
-            {
-                ok = false;
-                Console.WriteLine("User operation has failed.Error: {0}", e.Message);
+                SqlConnection c = new SqlConnection(constring);
+                DataSet virtualSet = new DataSet();
+                SqlDataAdapter adapter = new SqlDataAdapter("DELETE FROM [dbo].[package] WHERE id = " + pack.id , c);
+                adapter.Fill(virtualSet, "pack");
+                return virtualSet;
             }
             catch (Exception e)
             {
-                ok = false;
-                Console.WriteLine("User operation has failed.Error: {0}", e.Message);
+                Console.WriteLine("Car delete has failed.Error: {0}", e.Message);
+                return null;
             }
-
-            return ok;
 
         }
 
@@ -83,7 +64,7 @@ namespace Library
             {
                 SqlConnection c = new SqlConnection(constring);
                 DataSet virtualSet = new DataSet();
-                SqlDataAdapter adapter = new SqlDataAdapter("SELECT FROM [dbo].[package] WHERE id = '" + pack.id + "'", c);
+                SqlDataAdapter adapter = new SqlDataAdapter("SELECT FROM [dbo].[package] WHERE id = " + pack.id , c);
                 adapter.Fill(virtualSet, "package");
                 return virtualSet;
             }
@@ -118,62 +99,43 @@ namespace Library
 
             return found;*/
         }
-        public bool updatePricePackage(ENPackage pack)
+        public DataSet updatePricePackage(ENPackage pack)
         {
-            bool ok = false;
+            
+
             try
             {
-                SqlConnection con = null;
-                con = new SqlConnection(constring);
-                con.Open();
-
-                string cadena = "UPDATE package WHERE id= '" + pack.id + "' SET price= '" + pack.price + "'";
-                SqlCommand com = new SqlCommand(cadena, con);
-                com.ExecuteNonQuery();
-                con.Close();
-                ok = true;
-            }
-            catch (SqlException e)
-            {
-                ok = false;
-                Console.WriteLine("User operation has failed.Error: {0}", e.Message);
+                SqlConnection c = new SqlConnection(constring);
+                DataSet virtualSet = new DataSet();
+                SqlDataAdapter adapter = new SqlDataAdapter("UPDATE [dbo].[package] SET price= " + pack.price + " WHERE id= " + pack.id, c);
+                adapter.Fill(virtualSet, "pack");
+                return virtualSet;
             }
             catch (Exception e)
             {
-                ok = false;
-                Console.WriteLine("User operation has failed.Error: {0}", e.Message);
+                Console.WriteLine("Pack delete has failed.Error: {0}", e.Message);
+                return null;
             }
 
-            return ok;
-           
         }
 
-        public bool updateDescPackage(ENPackage pack)
+        public DataSet updateDescPackage(ENPackage pack)
         {
-            bool ok = true;
+            
+
             try
             {
-                SqlConnection con = null;
-                con = new SqlConnection(constring);
-                con.Open();
-
-                string cadena = "UPDATE package WHERE id= '" + pack.id + "' SET description= '" + pack.description + "'";
-                SqlCommand com = new SqlCommand(cadena, con);
-                com.ExecuteNonQuery();
-                con.Close();
-            }
-            catch (SqlException e)
-            {
-                ok = false;
-                Console.WriteLine("User operation has failed.Error: {0}", e.Message);
+                SqlConnection c = new SqlConnection(constring);
+                DataSet virtualSet = new DataSet();
+                SqlDataAdapter adapter = new SqlDataAdapter("UPDATE [dbo].[package] SET description= '" + pack.description + "'WHERE id = " + pack.id, c);
+                adapter.Fill(virtualSet, "pack");
+                return virtualSet;
             }
             catch (Exception e)
             {
-                ok = false;
-                Console.WriteLine("User operation has failed.Error: {0}", e.Message);
+                Console.WriteLine("Pack delete has failed.Error: {0}", e.Message);
+                return null;
             }
-
-            return ok;
 
         }
 
