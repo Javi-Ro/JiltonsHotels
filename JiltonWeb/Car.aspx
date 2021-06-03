@@ -12,7 +12,7 @@
        <div class="car">
 
    
-            <asp:GridView ID="GridView1" CssClass="car" RowStyle-HorizontalAlign="Center" Font-Underline="false" runat="server" Font-Size="15px" ForeColor="#F3E7E7" GridLines="Horizontal" AutoGenerateColumns="false" CellSpacing="40" ShowHeader="false" CellPadding="7">
+            <asp:GridView ID="GridView1" CssClass="car" OnRowCommand="GridView_ButtonCommand" RowStyle-HorizontalAlign="Center" Font-Underline="false" runat="server" Font-Size="15px" ForeColor="#F3E7E7" GridLines="Horizontal" AutoGenerateColumns="false" CellSpacing="40" ShowHeader="false" CellPadding="7">
                 <Columns>
 
                     <asp:ImageField DataImageUrlField ="imgURL" ControlStyle-Height="355px" ControlStyle-Width="455px"  />
@@ -22,8 +22,6 @@
                     <asp:BoundField DataField="description" ItemStyle-Width="400px" />
 
                     <asp:BoundField DataField="price" ItemStyle-Width="90px" ItemStyle-CssClass="text"  DataFormatString="{0:C}" />
-
-
 
                     <asp:ButtonField Text="RESERVE NOW" ItemStyle-Width="240px"  ControlStyle-CssClass="boton2" ButtonType="Button" />
                 </Columns>
