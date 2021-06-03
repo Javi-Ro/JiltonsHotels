@@ -221,10 +221,10 @@
 }
 
 .add {
-    position: relative;
+    position: absolute;
     display: inline-block;
     right: 40%;
-    margin-top: 25%;
+    margin-top: 180px;
 }
 
 .addButton {
