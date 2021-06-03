@@ -131,7 +131,7 @@ namespace Library
             try
             {
                 SqlConnection con = new SqlConnection(constring);
-                SqlDataAdapter adapter = new SqlDataAdapter("SELECT description,price FROM servicio where type!='spa' and type!='gym'", con);
+                SqlDataAdapter adapter = new SqlDataAdapter("SELECT id,description,price FROM servicio where type!='spa' and type!='gym'", con);
                 adapter.Fill(aux, "servicio");
                 return aux;
             }
@@ -153,7 +153,7 @@ namespace Library
             try
             {
                 SqlConnection con = new SqlConnection(constring);
-                SqlDataAdapter adapter = new SqlDataAdapter("SELECT description, price, imgURL FROM servicio WHERE type='gym' ", con);
+                SqlDataAdapter adapter = new SqlDataAdapter("SELECT id,description, price, imgURL FROM servicio WHERE type='gym' ", con);
                 adapter.Fill(aux, "servicio1");
                 return aux;
             }
@@ -175,7 +175,7 @@ namespace Library
             try
             {
                 SqlConnection con = new SqlConnection(constring);
-                SqlDataAdapter adapter = new SqlDataAdapter("SELECT description, price, imgURL FROM servicio WHERE type='spa' ", con);
+                SqlDataAdapter adapter = new SqlDataAdapter("SELECT id,description, price, imgURL FROM servicio WHERE type='spa' ", con);
                 adapter.Fill(aux, "servicioo");
                 return aux;
             }

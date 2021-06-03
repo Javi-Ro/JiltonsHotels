@@ -8,6 +8,7 @@ using System.Data.Common;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using System.Configuration;
+using System.Globalization;
 
 namespace Library
 {
@@ -32,7 +33,8 @@ namespace Library
                 DataTable t = new DataTable();
                 t = virtualSet.Tables["booking"];
                 DataRow dr = t.NewRow();
-                dr[0] = booking.ID; dr[1] = booking.board; dr[2] = booking.date.startDate; dr[3] = booking.date.endDate; dr[4] = booking.user; dr[5] = booking.discount;
+                dr[0] = booking.ID; dr[1] = booking.board; dr[2] = DateTime.ParseExact(booking.date.startDate.ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture); 
+                dr[3] = DateTime.ParseExact(booking.date.endDate.ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture); dr[4] = booking.user; dr[5] = booking.discount;
                 t.Rows.Add(dr);
                 SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
                 adapter.Update(virtualSet, "booking");

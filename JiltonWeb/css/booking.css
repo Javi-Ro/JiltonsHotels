@@ -2,6 +2,7 @@
     background: #e6e2e7;
     display: flex;
     justify-content: center;
+    min-height: 650px;
     height: auto;
 }
 

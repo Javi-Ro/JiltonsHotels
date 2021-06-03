@@ -78,7 +78,6 @@ namespace JiltonWeb
                 // Total price
                 TotalPriceLabel.Text = booking.calculatePrice(tableRooms, tableServices, tablePackages, tableCars).ToString() + " €";
 
-
                 // Staff list
                 StaffList.Items.Add("None");
 
@@ -142,6 +141,10 @@ namespace JiltonWeb
                 DataColumn type = new DataColumn();
                 type.DataType = System.Type.GetType("System.String");
                 type.ColumnName = "type";
+                DataColumn id = new DataColumn();
+                id.DataType = System.Type.GetType("System.Int32");
+                id.ColumnName = "id";
+                table.Columns.Add(id);
                 table.Columns.Add(description);
                 table.Columns.Add(day);
                 table.Columns.Add(hour);
@@ -151,10 +154,11 @@ namespace JiltonWeb
 
             // Fill a new row with data selected
             DataRow dr = table.NewRow();
-            dr[0] = row.Cells[0].Text;
-            string cellPrice = row.Cells[1].Text;
+            dr[1] = row.Cells[1].Text;
+            string cellPrice = row.Cells[2].Text;
             cellPrice = cellPrice.Remove(cellPrice.Length - 2);
-            dr[3] = float.Parse(cellPrice);
+            dr[4] = float.Parse(cellPrice);
+            dr[0] = int.Parse(row.Cells[0].Text);
 
             // By the moment, we only keep the information in case it is finally not added  --> it will be added when button AddService is clicked
             Session["auxRow"] = dr;
@@ -177,6 +181,10 @@ namespace JiltonWeb
                 DataColumn price = new DataColumn();
                 price.DataType = System.Type.GetType("System.Single");
                 price.ColumnName = "price";
+                DataColumn id = new DataColumn();
+                id.DataType = System.Type.GetType("System.String");
+                id.ColumnName = "id";
+                table.Columns.Add(id);
                 table.Columns.Add(brand);
                 table.Columns.Add(model);
                 table.Columns.Add(price);
@@ -186,9 +194,10 @@ namespace JiltonWeb
             DataRow dr = table.NewRow();
             dr[0] = row.Cells[0].Text;
             dr[1] = row.Cells[1].Text;
-            string cellPrice = row.Cells[2].Text;
+            dr[2] = row.Cells[2].Text;
+            string cellPrice = row.Cells[3].Text;
             cellPrice = cellPrice.Remove(cellPrice.Length - 2);
-            dr[2] = float.Parse(cellPrice);
+            dr[3] = float.Parse(cellPrice);
 
             // Add the new row to the grid
             table.Rows.Add(dr);
@@ -209,16 +218,21 @@ namespace JiltonWeb
                 DataColumn price = new DataColumn();
                 price.DataType = System.Type.GetType("System.Single");
                 price.ColumnName = "price";
+                DataColumn id = new DataColumn();
+                id.DataType = System.Type.GetType("System.Int32");
+                id.ColumnName = "id";
+                table.Columns.Add(id);
                 table.Columns.Add(name);
                 table.Columns.Add(price);
             }
 
             // Fill a new row with data selected
             DataRow dr = table.NewRow();
-            dr[0] = row.Cells[0].Text;
-            string cellPrice = row.Cells[1].Text;
+            dr[0] = int.Parse(row.Cells[0].Text);
+            dr[1] = row.Cells[1].Text;
+            string cellPrice = row.Cells[2].Text;
             cellPrice = cellPrice.Remove(cellPrice.Length - 2);
-            dr[1] = float.Parse(cellPrice);
+            dr[2] = float.Parse(cellPrice);
 
             // Add the new row to the grid
             table.Rows.Add(dr);
@@ -274,7 +288,7 @@ namespace JiltonWeb
                 HourTextBox.Enabled = true;
                 StaffList.Enabled = true;
                 AddServiceButton.Enabled = true;
-                AddingServiceLabel.Text = gvRow.Cells[0].Text;
+                AddingServiceLabel.Text = gvRow.Cells[1].Text;
                 StaffList.Items.Clear();
             }
 
@@ -409,8 +423,8 @@ namespace JiltonWeb
                 DataRow auxRow = (DataRow)Session["auxRow"];
                 DataTable table = (DataTable)Session["bookingServices"];
 
-                auxRow[1] = DateTime.ParseExact(TextEntry.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
-                auxRow[2] = int.Parse(HourTextBox.Text.Substring(0, 2));
+                auxRow[2] = DateTime.ParseExact(TextEntry.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                auxRow[3] = int.Parse(HourTextBox.Text.Substring(0, 2));
                 auxRow["type"] = AddingServiceLabel.Text;
 
                 table.Rows.Add(auxRow);

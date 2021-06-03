@@ -28,7 +28,8 @@
                                          <asp:GridView ID="AccordionPaneSpa" CssClass="grid" runat="server" ForeColor="#333333" GridLines="None" AutoGenerateColumns="false" CellSpacing="8" ShowHeader="False" Width="100%" RowStyle-HorizontalAlign="Left"
                                             OnRowCommand="GridView_ButtonCommand">
                                             <Columns>
-                                                <asp:BoundField DataField="description" ItemStyle-Width="500px"  ItemStyle-Font-Bold="true" />
+                                                <asp:BoundField DataField="id" ItemStyle-Width="20px" ItemStyle-Font-Bold="true" />
+                                                <asp:BoundField DataField="description" ItemStyle-Width="500px" ItemStyle-Font-Bold="true" />
                                                 <asp:BoundField DataField="price" DataFormatString="{0:C}" ItemStyle-Width="80px" />
                                                 <asp:ButtonField Text="ADD" ButtonType="Link" ControlStyle-CssClass="GridButton" CommandName="AddSpa" ></asp:ButtonField>
                                             </Columns>
@@ -43,6 +44,7 @@
                                          <asp:GridView ID="AccordionPaneGym" CssClass="grid" runat="server" ForeColor="#333333" GridLines="None" AutoGenerateColumns="false" CellSpacing="8" ShowHeader="False" Width="100%" RowStyle-HorizontalAlign="Left"
                                             OnRowCommand="GridView_ButtonCommand">
                                             <Columns>
+                                                <asp:BoundField DataField="id" ItemStyle-Width="20px" ItemStyle-Font-Bold="true" />
                                                 <asp:BoundField DataField="description" ItemStyle-Width="500px"  ItemStyle-Font-Bold="true" />
                                                 <asp:BoundField DataField="price" DataFormatString="{0:C}" ItemStyle-Width="80px" />
                                                 <asp:ButtonField Text="ADD" ButtonType="Link" ControlStyle-CssClass="GridButton" CommandName="AddGym"></asp:ButtonField>
@@ -58,6 +60,7 @@
                                          <asp:GridView ID="AccordionPaneCars" CssClass="grid" runat="server" ForeColor="#333333" GridLines="None" AutoGenerateColumns="false" CellSpacing="8" ShowHeader="False" Width="100%" RowStyle-HorizontalAlign="Left"
                                             OnRowCommand="GridView_ButtonCommand">
                                             <Columns>
+                                                <asp:BoundField DataField="licensePlate" ItemStyle-Width="20px" ItemStyle-Font-Bold="true" />
                                                 <asp:BoundField DataField="brand" ItemStyle-Width="250px"  ItemStyle-Font-Bold="true" />
                                                 <asp:BoundField DataField="model" ItemStyle-Width="250px"  ItemStyle-Font-Italic="true" />
                                                 <asp:BoundField DataField="price" DataFormatString="{0:C}" ItemStyle-Width="120px" />
@@ -74,6 +77,7 @@
                                          <asp:GridView ID="AccordionPaneExtra" CssClass="grid" runat="server" ForeColor="#333333" GridLines="None" AutoGenerateColumns="false" CellSpacing="8" ShowHeader="False" Width="100%" RowStyle-HorizontalAlign="Left"
                                             OnRowCommand="GridView_ButtonCommand">
                                             <Columns>
+                                                <asp:BoundField DataField="id" ItemStyle-Width="20px" ItemStyle-Font-Bold="true" />
                                                 <asp:BoundField DataField="description" ItemStyle-Width="500px"  ItemStyle-Font-Bold="true" />
                                                 <asp:BoundField DataField="price" DataFormatString="{0:C}" ItemStyle-Width="80px" />
                                                 <asp:ButtonField Text="ADD" ButtonType="Link" ControlStyle-CssClass="GridButton" CommandName="AddExtra"></asp:ButtonField>
@@ -89,6 +93,7 @@
                                          <asp:GridView ID="AccordionPanePackages" CssClass="grid" runat="server" ForeColor="#333333" GridLines="None" AutoGenerateColumns="false" CellSpacing="8" ShowHeader="False" Width="100%" RowStyle-HorizontalAlign="Left"
                                             OnRowCommand="GridView_ButtonCommand">
                                             <Columns>
+                                                <asp:BoundField DataField="id" ItemStyle-Width="20px" ItemStyle-Font-Bold="true" />
                                                 <asp:BoundField DataField="name" ItemStyle-Width="500px"  ItemStyle-Font-Bold="true" />
                                                 <asp:BoundField DataField="price" DataFormatString="{0:C}" ItemStyle-Width="80px" />
                                                 <asp:ButtonField Text="ADD" ButtonType="Link" ControlStyle-CssClass="GridButton" CommandName="AddPackage"></asp:ButtonField>

@@ -35,7 +35,16 @@ namespace Library
 
         public override string ToString()
         {
-            return day + "-" + month + "-" + year;
+            string date= day + "/" + month + "/" + year;
+            if (day < 10)
+            {
+                date = date.Insert(0, "0");
+            }
+            if (month < 10)
+            {
+                date = date.Insert(3, "0");
+            }
+            return date;
         }
     }
 
