@@ -23,10 +23,16 @@ namespace JiltonWeb
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //booking.ID = 1;
-            //booking.date = dates; 
             if (!Page.IsPostBack)
             {
+                if (Session["id"] == null)
+                {
+                    Response.Redirect("Register.aspx");
+                }
+                if (Session["bookingInfo"] == null)
+                {
+                    Response.Redirect("MainPage.aspx");
+                }
                 booking = (ENBooking)Session["bookingInfo"];
 
                 // Prepare the page

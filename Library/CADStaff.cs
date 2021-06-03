@@ -98,9 +98,13 @@ namespace Library
                 SqlConnection c = new SqlConnection(constring);
                 DataSet virtualSet = new DataSet();
                 SqlDataAdapter adapter;
-                if (en.Type == "extra")
+                if (en.Type == "extraExc")
                 {
-                    adapter = new SqlDataAdapter("SELECT email FROM staff WHERE type = 'teacher' or type = 'guide'", c);
+                    adapter = new SqlDataAdapter("SELECT email FROM staff WHERE type = 'guide'", c);
+                }
+                else if (en.Type == "extraKind")
+                {
+                    adapter = new SqlDataAdapter("SELECT email FROM staff WHERE type = 'teacher'", c);
                 }
                 else
                 {

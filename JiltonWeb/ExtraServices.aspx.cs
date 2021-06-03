@@ -27,6 +27,15 @@ namespace JiltonWeb
           
             if (!Page.IsPostBack)
             {
+                if (Session["id"] == null)
+                {
+                    Response.Redirect("Register.aspx");
+                }
+                if(Session["bookingInfo"] == null)
+                {
+                    Response.Redirect("MainPage.aspx");
+                }
+
                 booking = (ENBooking)Session["bookingInfo"];
 
                 booking.board = "OB";
@@ -85,6 +94,9 @@ namespace JiltonWeb
                 // Staff list
                 StaffList.Items.Add("None");
 
+                // Auxiliary
+                EntryCalendar.StartDate = DateTime.ParseExact(EntryDateLabel.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                EntryCalendar.EndDate = DateTime.ParseExact(DepartureDateLabel.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
             }
 
             if (booking.isDiscounted())
@@ -257,7 +269,7 @@ namespace JiltonWeb
                 }
                 else
                 {
-                    // --------------------------------> PONER QUE SALGA ALGO DE ERROR
+
                 }
             }
             else
@@ -345,7 +357,14 @@ namespace JiltonWeb
                 ServiceTypeLabel.Text = "Extra";
                 try
                 {
-                    listStaff = staff.FilterByType("extra");  // Si servicio es kindergarten o excursion, sale staff de ambos
+                    if (AddingServiceLabel.Text.Substring(0, 12) == "Kindergarten")
+                    {
+                        listStaff = staff.FilterByType("extraKind");
+                    }
+                    else
+                    {
+                        listStaff = staff.FilterByType("extraExc");
+                    }
                     foreach (string name in listStaff)
                     {
                         StaffList.Items.Add(name);

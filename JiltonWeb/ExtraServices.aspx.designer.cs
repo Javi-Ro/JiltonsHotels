@@ -303,8 +303,7 @@ namespace JiltonWeb
         protected global::System.Web.UI.WebControls.GridView GridViewPackages;
 
         /// <summary>
-        /// Control TotalPriceLabel.
-        /// updatePanelToggle control.
+        /// Control updatePanelToggle.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
@@ -313,7 +312,7 @@ namespace JiltonWeb
         protected global::System.Web.UI.UpdatePanel updatePanelToggle;
 
         /// <summary>
-        /// OnlyBreakfast control.
+        /// Control OnlyBreakfast.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
@@ -322,7 +321,7 @@ namespace JiltonWeb
         protected global::System.Web.UI.WebControls.RadioButton OnlyBreakfast;
 
         /// <summary>
-        /// HalfBoard control.
+        /// Control HalfBoard.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
@@ -331,7 +330,7 @@ namespace JiltonWeb
         protected global::System.Web.UI.WebControls.RadioButton HalfBoard;
 
         /// <summary>
-        /// FullBoard control.
+        /// Control FullBoard.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.

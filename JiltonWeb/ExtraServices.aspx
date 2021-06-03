@@ -209,13 +209,12 @@
                     <asp:UpdatePanel ID="updatePanelToggle" runat="server" UpdateMode="Conditional">
                         <ContentTemplate>
                             <div class="boardSelection">
-                                <%--<asp:RadioButton id="OnlyBreakfast" CssClass="radioBoard" Text=" Only Breakfast: FREE" Checked="True" GroupName="boardSelection" OnClick="clickCheck(this);" runat="server" /><br />
-                                <asp:RadioButton id="HalfBoard" CssClass="radioBoard" value="HB" Text=" Half Board: 19.99 €" GroupName="boardSelection" OnClick="clickCheck(this);" runat="server" /><br />
-                                <asp:RadioButton id="FullBoard" CssClass="radioBoard" value="FB" Text=" Full Board: 39.99 €" GroupName="boardSelection" OnClick="clickCheck(this);" runat="server" /><br />--%>
-                            
-                                        <asp:RadioButton id="OnlyBreakfast" AutoPostBack="true" CssClass="radioBoard" Text=" Only Breakfast: FREE" Checked="True" GroupName="boardSelection" OnCheckedChanged="applyOB" runat="server" /><br />
-                                        <asp:RadioButton id="HalfBoard" AutoPostBack="true" CssClass="radioBoard" value="HB" Text=" Half Board: 59.99 €" GroupName="boardSelection" OnCheckedChanged="applyHB" runat="server" /><br />
-                                        <asp:RadioButton id="FullBoard" AutoPostBack="true" CssClass="radioBoard" value="FB" Text=" Full Board: 89.99 €" GroupName="boardSelection" OnCheckedChanged="applyFB" runat="server" /><br />
+                                <asp:RadioButton id="OnlyBreakfast" AutoPostBack="true" CssClass="radioBoard" Text=" Only Breakfast: FREE" Checked="True" GroupName="boardSelection" OnCheckedChanged="applyOB" runat="server" /><br />
+                                <asp:RadioButton id="HalfBoard" AutoPostBack="true" CssClass="radioBoard" value="HB" Text=" Half Board: 59.99 €" GroupName="boardSelection" OnCheckedChanged="applyHB" runat="server" /><br />
+                                <asp:RadioButton id="FullBoard" AutoPostBack="true" CssClass="radioBoard" value="FB" Text=" Full Board: 89.99 €" GroupName="boardSelection" OnCheckedChanged="applyFB" runat="server" /><br />
+                            </div>
+                            <div class="separator">
+                                <hr />
                             </div>
                             <div class="TotalPrice">
                                 <asp:Label runat="server" Text="Total: " Width="100px" CssClass="LabelTotal"></asp:Label>
@@ -242,18 +241,4 @@
             </aside>
         </div>
     </div>
-    <script type="text/javascript">
-        var total = parseFloat(document.getElementById("<%=TotalPriceLabel.ClientID %>").textContent.slice(0, -1));
-        function clickCheck(radio) {
-            if (radio.value == "HB") {
-                document.getElementById("<%=TotalPriceLabel.ClientID %>").innerHTML = total + 19.99 + " €";
-            }
-            else if (radio.value == "FB") {
-                document.getElementById("<%=TotalPriceLabel.ClientID %>").innerHTML = total + 39.99 + " €";
-            }
-            else {
-                document.getElementById("<%=TotalPriceLabel.ClientID %>").innerHTML = total + " €";
-            }
-        }
-    </script>
 </asp:Content>

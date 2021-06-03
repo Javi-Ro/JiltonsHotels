@@ -1,4 +1,14 @@
-﻿.MainContainerBooking {
+﻿@keyframes opacity {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.MainContainerBooking {
     background: #e6e2e7;
     display: flex;
     justify-content: center;
@@ -16,6 +26,7 @@
 /* MAIN CONTAINER */
 
 .BorderMainBlock {
+    animation: 1.6s ease-out 0s 1 opacity;
     border: 1px solid #C3C6CA;
     border-radius: 4px;
     width: 65%;
@@ -24,7 +35,7 @@
     margin-bottom: 20px;
     max-height: 600px;
 }
-.MainBlock{
+.MainBlock {
     display: flex;
     flex-flow: column wrap;
     margin: 20px 20px;
