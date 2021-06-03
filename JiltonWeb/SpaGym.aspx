@@ -15,9 +15,10 @@
             </div>  
             <br />
  
-            <asp:GridView ID="GridView1" Font-Bold="true" Font-Underline="false" runat="server" Font-Size="18px" ForeColor="#F3E7E7" GridLines="None" AutoGenerateColumns="false" CellSpacing="14" ShowHeader="false">
+            <asp:GridView ID="GridView1" Font-Bold="true" Font-Underline="false" runat="server" Font-Size="18px" ForeColor="#F3E7E7" GridLines="None" AutoGenerateColumns="false" CellSpacing="14" ShowHeader="false" OnRowCommand="Button_Reserve">
                 <Columns>
                     <asp:ImageField DataImageUrlField="imgURL" ControlStyle-BorderStyle="Inset" ControlStyle-Height="600px" ControlStyle-Width="600px"></asp:ImageField>
+                    <asp:BoundField DataField="id" />
                     <asp:BoundField DataField="description" />
                     <asp:ButtonField Text="RESERVE" ControlStyle-CssClass="botonya" ControlStyle-BorderColor="#400040" ButtonType="Button" />
                 </Columns>
@@ -31,9 +32,10 @@
             </div>
             <br />
 
-            <asp:GridView ID="GridView2" runat="server"  Font-Size="18px" Font-Bold="true" ForeColor="#000000" GridLines="None" AutoGenerateColumns="false" CellSpacing="12" ShowHeader="false">
+            <asp:GridView ID="GridView2" runat="server"  Font-Size="18px" Font-Bold="true" ForeColor="#000000" GridLines="None" AutoGenerateColumns="false" CellSpacing="12" ShowHeader="false" OnRowCommand="Button_Reserve">
                 <Columns>
                     <asp:ImageField DataImageUrlField="imgURL" ControlStyle-BorderStyle="Inset" ControlStyle-Height="600px" ControlStyle-Width="600px"></asp:ImageField>
+                    <asp:BoundField DataField="id" />
                     <asp:BoundField DataField="description" />
                     <asp:ButtonField Text="RESERVE" ControlStyle-CssClass="botonya" ControlStyle-BorderColor="#400040" ButtonType="Button"/>
                 </Columns>

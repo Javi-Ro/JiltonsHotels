@@ -39,6 +39,54 @@ namespace JiltonWeb
             }
         }
 
+        protected void Button_Reserve(object sender, GridViewCommandEventArgs e) 
+         {
+             ENService en = new ENService(); 
+             int index = Convert.ToInt32(e.CommandArgument);
+             GridViewRow gvRow = ((GridView)sender).Rows[index];
+             en.Id = int.Parse(gvRow.Cells[1].Text);
+             Session["reserSpa"] = en;
+             //ENBooking book = new ENBooking();
+
+            /*DataTable table = (DataTable)Session["reserSpa"];
+            table = new DataTable();
+            DataColumn id = new DataColumn();
+            id.DataType = System.Type.GetType("System.String");
+            id.ColumnName = "id";
+            DataColumn description = new DataColumn();
+            description.DataType = System.Type.GetType("System.String");
+            description.ColumnName = "description";
+            DataColumn price = new DataColumn();
+            price.DataType = System.Type.GetType("System.Single");
+            price.ColumnName = "price";
+            table.Columns.Add(id);
+            table.Columns.Add(description);
+            table.Columns.Add(price);
+
+            DataRow dr = table.NewRow();
+            dr[0] = gvRow.Cells[1].Text;
+            dr[1] = gvRow.Cells[2].Text;
+            string cellPrice = gvRow.Cells[3].Text;
+            cellPrice = cellPrice.Remove(cellPrice.Length - 2);
+            dr[2] = float.Parse(cellPrice);
+
+            table.Rows.Add(dr);
+            Session["reserSpa"] = table;*/
+
+            if (Session["id"] == null)
+             { //not logged, mandar a login
+                 Response.Redirect("Login.aspx");
+             }
+             else if(Session["id"] != null  )
+             { //logged y no tiene booking, mandar a room
+                 Response.Redirect("Room.aspx");
+             }
+             /*else if(Session["id"] != null  )
+             { //logged y tiene booking, mandar a pasarela pago
+                 Response.Redirect("ExtraPayments.aspx");
+             }*/
+         }
+
         protected void Crear(object sender, EventArgs e)
         {
             if(name.Text != "" && maxp.Text != "" && type.Text == "excursion" && id.Text != "" && descr.Text != "" && price.Text != "" && image.Text != "")
