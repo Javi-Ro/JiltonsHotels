@@ -50,31 +50,11 @@ namespace JiltonWeb
                 Response.Redirect("Login.aspx");
             }
 
-            ENBooking book = new ENBooking();
-
-            if (Session["id"] != null && book.ExistBooking())
+            if (Session["id"] != null && true)//book.ExistBooking())
             {
                 Response.Redirect("Room.aspx");
             }
-            else
-            {
-                //Página de pago
-                Response.Redirect("PasarelaPago.aspx");
-            }
 
-            ENCar car = new ENCar();
-            int index = Convert.ToInt32(e.CommandArgument);
-            GridViewRow gvRow = ((GridView)sender).Rows[index];
-            //La 0 es la foto
-            car.LicensePlate = gvRow.Cells[1].Text;
-            car.Brand = gvRow.Cells[2].Text;
-            car.Model = gvRow.Cells[3].Text;
-            car.Description = gvRow.Cells[4].Text;
-            car.Price = int.Parse(gvRow.Cells[5].Text);
-            Session["carGridViewBoton"] = car;
-
-
-          
         }
 
             protected void CrearClick(object sender, EventArgs e)
