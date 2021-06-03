@@ -34,6 +34,8 @@ namespace JiltonWeb
                 panelAdmin.CssClass = "novisibleAdmin";
             }
         }
+
+      
         protected void CrearClick(object sender, EventArgs e)
         {
             if (IdData.Text != "" && NameDate.Text != "" && PriceData.Text != "" && DescriptionData.Text != "")

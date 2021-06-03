@@ -48,6 +48,8 @@
     transition: .5s ease all;
 }
 
+
+
 .overlay {
     position: absolute;
     top: 0;
@@ -61,8 +63,13 @@
     background-color: ghostwhite;
 }
 
-.pack:hover .overlay {
-    opacity: 0.85;
+
+.advice{
+    font-size: 20px;
+    color: black;
+    font-weight: 900;
+    background-color: rgba(254, 254, 254, 0.75);
+    padding: 20px;
 }
 
 .text {
@@ -140,4 +147,8 @@
 .labels {
     display: flex;
     flex-flow: column wrap;
+}
+
+.novisibleAdmin {
+    display: none;
 }
