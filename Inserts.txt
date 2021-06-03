@@ -233,11 +233,11 @@ Insert into servicio (id, description, price, imgURL, type) VALUES (3,'Massages 
 Insert into servicio (id, description, price, imgURL, type) VALUES (4,'Anti-stress treatments - Treatments for the people who really need to disconect from the world', 80, 'assets/masajes.png', 'spa');
 Insert into servicio (id, description, price, imgURL, type) VALUES (5,'Olympic pool - The olympic pool with one of the best quality certificates', 17, 'assets/gympool.jpg', 'gym');
 Insert into servicio (id, description, price, imgURL, type) VALUES (6,'Gymnasium - Machines and staff will make you so easy to get in shape', 15, 'assets/gimnasiopesas.jpg', 'gym');
-Insert into servicio (id, description, price, imgURL, type) VALUES (7,'Excursion - Everest Tour - Enjoy the most popular and extravagant tour ever. An experience you will never forget for sure!', 20, 'assets/excursion_1.jpg', 'excursion');
-Insert into servicio (id, description, price, imgURL, type) VALUES (8,'Excursion - Canarias Tour - Visit the flamboyant island at a discount price just during this summer. Give it a try', 10, 'assets/excursion_2.jpg', 'excursion');
-Insert into servicio (id, description, price, imgURL, type) VALUES (9,'Excursion - Callosa Tour - Have you ever been in to Callosa? This lovely city in the Mediterranean will make you hallucinate. ', 32, 'assets/excursion_3.jpg', 'excursion');
+Insert into servicio (id, description, price, imgURL, type) VALUES (7,'Excursion - Everest Tour - Enjoy the most popular and extravagant tour ever. An experience you will never forget for sure!', 20, everest, 15 'assets/excursion_1.jpg', 'excursion');
+Insert into servicio (id, description, price, imgURL, type) VALUES (8,'Excursion - Canarias Tour - Visit the flamboyant island at a discount price just during this summer. Give it a try', 10, canarias, 29 'assets/excursion_2.jpg', 'excursion');
+Insert into servicio (id, description, price, imgURL, type) VALUES (9,'Excursion - Callosa Tour - Have you ever been in to Callosa? This lovely city in the Mediterranean will make you hallucinate. ', 32, callosa, 55 'assets/excursion_3.jpg', 'excursion');
 Insert into servicio (id, description, price, imgURL, type) VALUES (10,'Kindergarten - Rodriguez Kids - How many times have you wondered if your kids are realy beeing correctly raised? Here it is the ideal place', 26, 'assets/kindergarten_1.jpg', 'kindergarten');
 Insert into servicio (id, description, price, imgURL, type) VALUES (11,'Kindergarten - The MadaNinos - A kindergarten technology and innovation place at the same time', 9, 'assets/kindergarten_2.jpg', 'kindergarten');
 Insert into servicio (id, description, price, imgURL, type) VALUES (12,'Kindergarten - DSGZone - We have hired the most prestigious babysitter in order to take care of your babys. We have never been so proud of having this quality kindergarten', 32, 'assets/kindergarten_3.jpg', 'kindergarten');
 
--- END SPA & GYM INSERTS --
+-- END SPA & GYM INSERTS & EXTRA SERVICES--
