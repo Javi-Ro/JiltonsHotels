@@ -42,7 +42,20 @@ namespace JiltonWeb
 
         }
 
-        protected void CrearClick(object sender, EventArgs e)
+        protected virtual void GridView_ButtonCommand(object sender, GridViewCommandEventArgs e)
+        {
+
+            if (Session["id"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
+            else { 
+                Response.Redirect("Room.aspx");
+            }
+
+        }
+
+            protected void CrearClick(object sender, EventArgs e)
         {
             if(LicensePlateData.Text != "" && BrandData.Text != "" && ModelData.Text != "" && PriceData.Text != "" && DescriptionData.Text != "" && imgURL.Text != "")
             {

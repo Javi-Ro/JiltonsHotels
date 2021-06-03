@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/JiltonMaster.Master" AutoEventWireup="true" CodeBehind="Car.aspx.cs" Inherits="JiltonWeb.Car" %>
 <asp:Content ID="TitleForm" ContentPlaceHolderID="cssLink" runat="server">
-        <link rel="stylesheet" href="../css/car.css?ver=<?php echo rand(153,999)?>" />
+        <link rel="stylesheet" href="../css/car.css?ver=<?php echo rand(157,999)?>" />
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -8,11 +8,18 @@
 
     <div class ="carfondo">
 
+        <div class="info">
+
+            <p> The book of the car must be doing while you are booking the room and other services.
+                If not, you will have to do it in reception once you arrive to Jilton Hotels!
+            </p>
+
+        </div>
 
        <div class="car">
 
    
-            <asp:GridView ID="GridView1" CssClass="car" RowStyle-HorizontalAlign="Center" Font-Underline="false" runat="server" Font-Size="15px" ForeColor="#F3E7E7" GridLines="Horizontal" AutoGenerateColumns="false" CellSpacing="40" ShowHeader="false" CellPadding="7">
+            <asp:GridView ID="GridView1" CssClass="car" OnRowCommand="GridView_ButtonCommand" RowStyle-HorizontalAlign="Center" Font-Underline="false" runat="server" Font-Size="15px" ForeColor="#F3E7E7" GridLines="Horizontal" AutoGenerateColumns="false" CellSpacing="40" ShowHeader="false" CellPadding="7">
                 <Columns>
 
                     <asp:ImageField DataImageUrlField ="imgURL" ControlStyle-Height="355px" ControlStyle-Width="455px"  />
@@ -23,9 +30,7 @@
 
                     <asp:BoundField DataField="price" ItemStyle-Width="90px" ItemStyle-CssClass="text"  DataFormatString="{0:C}" />
 
-
-
-                    <asp:ButtonField Text="RESERVE NOW" ItemStyle-Width="240px"  ControlStyle-CssClass="boton2" ButtonType="Button" />
+                    <asp:ButtonField Text="RESERVE WHILE BOOKING" ItemStyle-Width="240px"  ControlStyle-CssClass="boton2" ButtonType="Button" />
                 </Columns>
 
             </asp:GridView> 

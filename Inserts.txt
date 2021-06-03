@@ -1,5 +1,5 @@
 -- RESTAURANT INSERTS --
-INSERT INTO [dbo].[Restaurant]([dailyMenu], [appetizers],[mains], [desserts],[price]) VALUES('2021-05-23', 'Trout tartare
+INSERT INTO [dbo].[Restaurant]([dailyMenu], [appetizers],[mains], [desserts],[price]) VALUES('2021-06-1', 'Trout tartare
 
 Suquet of red prawns and red mullet
 
@@ -11,7 +11,7 @@ Rhubarb with lychee and roses.', 'Golden Opulence Sundae.
 
 Black beer meringue', 185);
 
-INSERT INTO [dbo].[Restaurant]([dailyMenu], [appetizers],[mains], [desserts],[price]) VALUES('2021-05-24', 'Solid mojito
+INSERT INTO [dbo].[Restaurant]([dailyMenu], [appetizers],[mains], [desserts],[price]) VALUES('2021-06-2', 'Solid mojito
 
 Cod foam with honey, Orange and olive salad
 
@@ -23,7 +23,7 @@ Sea ​​bream marinated in Japanese soybeans and cooked Yakitori style with sm
 
 Sorbet and creamy chocolate, brownie and caramelized cocoa grue', 210);
 
-INSERT INTO [dbo].[Restaurant]([dailyMenu], [appetizers],[mains], [desserts],[price]) VALUES('2021-05-25', 'Grilled octopus covered in ink sauce
+INSERT INTO [dbo].[Restaurant]([dailyMenu], [appetizers],[mains], [desserts],[price]) VALUES('2021-06-3', 'Grilled octopus covered in ink sauce
 
 Green gazpacho with peppers, clams, cucumber and passion fruit
 
@@ -35,7 +35,7 @@ Sea fruits and algae salad, plankton and shrimp consommé', 'Golden Opulence Sun
 
 Cactus with lime, tequila and green leaves', 190);
 
-INSERT INTO [dbo].[Restaurant]([dailyMenu], [appetizers],[mains], [desserts],[price])VALUES('2021-05-26', 'Native Oysters & Almus White Caviar
+INSERT INTO [dbo].[Restaurant]([dailyMenu], [appetizers],[mains], [desserts],[price])VALUES('2021-06-6', 'Native Oysters & Almus White Caviar
 
 Slow-cooked Duck Egg, Iberico Ham, Spring White Truffle
 
@@ -48,7 +48,7 @@ Braised Beef Cheeks with Potato Mousseline', 'Golden Opulence Sundae.
 Dark chocolate cylinder and smoked hazelnut praline', 250);
 
 
-INSERT INTO [dbo].[Restaurant]([dailyMenu], [appetizers],[mains], [desserts],[price])VALUES('2021-05-27', 'Steamed prawn with seafood foam
+INSERT INTO [dbo].[Restaurant]([dailyMenu], [appetizers],[mains], [desserts],[price])VALUES('2021-06-4', 'Steamed prawn with seafood foam
 
 Slow-cooked Duck Egg, Iberico Ham, Spring White Truffle
 
@@ -61,7 +61,7 @@ roasted Wagyu with anise, soy and ginger, apple cider and black garlic.', 'Golde
 Cupcake with frozen and roasted fruits and vegetables, toasted almond meringue.', 175);
 
 
-INSERT INTO [dbo].[Restaurant]([dailyMenu], [appetizers],[mains], [desserts],[price]) VALUES('2021-05-28', 'Red Apple and bacon strudel
+INSERT INTO [dbo].[Restaurant]([dailyMenu], [appetizers],[mains], [desserts],[price]) VALUES('2021-06-5', 'Red Apple and bacon strudel
 
 Suquet of red prawns and red mullet
 
@@ -73,7 +73,7 @@ Apple and celery nectar, pea puree, seaweed and rosemary ice cream and aerated m
 
 Yogurt with citrus and raspberry', 175);
 
-INSERT INTO [dbo].[Restaurant]([dailyMenu], [appetizers],[mains], [desserts],[price]) VALUES('2021-05-29', 'Trout tartare
+INSERT INTO [dbo].[Restaurant]([dailyMenu], [appetizers],[mains], [desserts],[price]) VALUES('2021-06-7', 'Trout tartare
 
 Suquet of red prawns and red mullet
 
@@ -84,6 +84,68 @@ Green rice with arugula and manchego cheese
 Rhubarb with lychee and roses', 'Golden Opulence Sundae.
 
 Black beer meringue', 180);
+
+INSERT INTO [dbo].[Restaurant]([dailyMenu], [appetizers],[mains], [desserts],[price]) VALUES('2021-06-8', 'Trout tartare
+
+Suquet of red prawns and red mullet
+
+White asparagus with cod tripe', 'Marinated salmon with orange blossom and orange flowers
+
+Green rice with arugula and manchego cheese
+
+Rhubarb with lychee and roses.', 'Golden Opulence Sundae.
+
+Black beer meringue', 185);
+
+INSERT INTO [dbo].[Restaurant]([dailyMenu], [appetizers],[mains], [desserts],[price]) VALUES('2021-06-9', 'Solid mojito
+
+Cod foam with honey, Orange and olive salad
+
+Cream of rice pudding and toffee', 'Suffolded moray stuffed with estuary sea bass belly
+
+Wagyu and glazed eel ravioli
+
+Sea ​​bream marinated in Japanese soybeans and cooked Yakitori style with smoked ​​sauce', 'Golden Opulence Sundae
+
+Sorbet and creamy chocolate, brownie and caramelized cocoa grue', 210);
+
+INSERT INTO [dbo].[Restaurant]([dailyMenu], [appetizers],[mains], [desserts],[price]) VALUES('2021-06-10', 'Grilled octopus covered in ink sauce
+
+Green gazpacho with peppers, clams, cucumber and passion fruit
+
+Cream of rice pudding and toffee', 'Salmon with rice milk, almond milk tofu, pickled lychees and black rice vinegar jelly
+
+Coconut turmeric spiral roasted and pearl calamari crunch
+
+Sea fruits and algae salad, plankton and shrimp consommé', 'Golden Opulence Sundae
+
+Cactus with lime, tequila and green leaves', 190);
+
+INSERT INTO [dbo].[Restaurant]([dailyMenu], [appetizers],[mains], [desserts],[price])VALUES('2021-06-11', 'Native Oysters & Almus White Caviar
+
+Slow-cooked Duck Egg, Iberico Ham, Spring White Truffle
+
+Confit Foie Gras, Smoked Eel, Granny Smith Apple', 'Saffron Risotto, Carabineros Prawns, Gold leaf
+
+Wagyu Beef with Fermented Celeriac and Silver leaf (Served on Dry Ice)
+
+Braised Beef Cheeks with Potato Mousseline', 'Golden Opulence Sundae.
+
+Dark chocolate cylinder and smoked hazelnut praline', 250);
+
+
+INSERT INTO [dbo].[Restaurant]([dailyMenu], [appetizers],[mains], [desserts],[price])VALUES('2021-06-12', 'Steamed prawn with seafood foam
+
+Slow-cooked Duck Egg, Iberico Ham, Spring White Truffle
+
+Foie gras, pepper ice cream and dried fruit cake', 'Tartar-marine ceviche, crunchy trotters, celery and apple
+
+Mushroom and truffle false risotto, cauliflower marrow, field and sea asparagus.
+
+roasted Wagyu with anise, soy and ginger, apple cider and black garlic.', 'Golden Opulence Sundae.
+
+Cupcake with frozen and roasted fruits and vegetables, toasted almond meringue.', 175);
+
 
 -- END OF RESTAURANT INSERTS --
 
@@ -130,7 +192,7 @@ INSERT INTO [dbo].[room]([title],[description], [price],[type],[adultBed],[child
 
 INSERT INTO [dbo].[room]([title],[description], [price],[type],[adultBed],[childBed],[imgURL]) VALUES('Private Balinese Cabin. Botanical Gardens View. 10 sqm', 'Exclusive cabin perfect for nature lovers', 380, 'single', 1, 0, 'assets/room13.jpg');
 
-INSERT INTO [dbo].[room]([title],[description], [price],[type],[adultBed],[childBed],[ratings],[imgURL]) VALUES('Relaxing Double Room. Gardens & Pool View. 12 sqm', 'Private room in a unique atmosphere', 380, 'double', 1, 0, 'assets/room7.jpg');
+INSERT INTO [dbo].[room]([title],[description], [price],[type],[adultBed],[childBed],[imgURL]) VALUES('Relaxing Double Room. Gardens & Pool View. 12 sqm', 'Private room in a unique atmosphere', 380, 'double', 1, 0, 'assets/room7.jpg');
 
 INSERT INTO [dbo].[room]([title],[description], [price],[type],[adultBed],[childBed],[imgURL]) VALUES('Private cabin. Asian Gardens View. 15 sqm', 'Exclusive room with the best mod cons', 420, 'double', 1, 0,'assets/room5.jpg');
 

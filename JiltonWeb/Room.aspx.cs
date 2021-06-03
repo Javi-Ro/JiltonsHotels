@@ -23,8 +23,8 @@ namespace JiltonWeb
             {
                 
             }
-
-            if(Session["sessionSelected"] != null)
+            errorRepeated.Visible = false;
+            if (Session["sessionSelected"] != null)
             {
                 DataTable seleccionado = (DataTable)Session["sessionSelected"];
                 goButton.Visible = true;

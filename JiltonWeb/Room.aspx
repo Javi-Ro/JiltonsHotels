@@ -2,7 +2,7 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
 
     <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <link href="css/room.css?ver=<?php echo rand(564,950)?>" rel="stylesheet">
+        <link href="css/room.css?ver=<?php echo rand(565,950)?>" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
            
         <div class="background" runat="server">
@@ -75,7 +75,7 @@
                     
                             <emptydatatemplate>
                                 <asp:Label runat="server" CssClass="textWhenEmpty" Text = "No rooms with these characteristics were found. Try to apply different filters. Sorry for the inconvenience"></asp:Label>
-                                <asp:Image id="imagen" runat="server" ImageUrl="assets/jiltonLogo2.png" width="250px" style="position:absolute; top:7%; left:50%; transform:translateX(-50%);"/>
+                                <asp:Image id="imagen" runat="server" ImageUrl="assets/jiltonLogo2.png" width="250px" style="position:absolute; top:80px; left:50%; transform:translateX(-50%);"/>
                             </emptydatatemplate> 
                          <Columns >
   
