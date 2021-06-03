@@ -34,7 +34,11 @@ namespace Library
                 t = virtualSet.Tables["booking"];
                 DataRow dr = t.NewRow();
                 dr[0] = booking.ID; dr[1] = booking.board; dr[2] = DateTime.ParseExact(booking.date.startDate.ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture); 
-                dr[3] = DateTime.ParseExact(booking.date.endDate.ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture); dr[4] = booking.user; dr[5] = booking.discount;
+                dr[3] = DateTime.ParseExact(booking.date.endDate.ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture); dr[4] = booking.user; 
+                if (booking.discount != null)
+                {
+                    dr[5] = booking.discount.code;
+                }
                 t.Rows.Add(dr);
                 SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
                 adapter.Update(virtualSet, "booking");

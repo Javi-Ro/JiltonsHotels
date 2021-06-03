@@ -65,7 +65,6 @@ namespace JiltonWeb
         protected void OnPayNow_Click(object sender, EventArgs e)
         {
             ENBooking booking = (ENBooking)Session["bookingInfo"];
-            booking.board = "HB";   //  --------------------------------------------> QUITAR
             booking.createBooking();
 
             DataTable table = (DataTable)Session["sessionSelected"];

@@ -206,5 +206,25 @@ namespace Library
                 return null;
             }
         }
+
+        public string GetNIF(ENUser user)
+        {
+            try
+            {
+                SqlConnection c = new SqlConnection(constring);
+                DataSet data = new DataSet();
+                SqlCommand cmd = new SqlCommand("select id from [dbo].uuser where email = '" + user.Email + "'", c);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(data, "userInfo");
+                DataTable table = new DataTable();
+                table = data.Tables["userInfo"];
+                return (string)table.Rows[0]["id"];
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Getting user information has failed. Error: {0}", e.Message);
+                return null;
+            }
+        }
     }
 }

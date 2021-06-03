@@ -111,7 +111,8 @@ namespace JiltonWeb
             {
                 disc.getPercentage();
                 booking = (ENBooking)Session["bookingInfo"];
-                booking.applyDiscount(disc);
+                booking.discount = disc;
+                //booking.applyDiscount(disc);
                 TotalWithDiscount.Text = booking.calculatePrice((DataTable)Session["sessionSelected"], (DataTable)Session["bookingServices"], (DataTable)Session["bookingCars"], (DataTable)Session["bookingPackages"]).ToString("F") + " €";
                 Session["bookingInfo"] = booking;
                 TotalPriceLabel.CssClass = "TotalPriceLabelWithoutDiscount";

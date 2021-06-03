@@ -94,5 +94,12 @@ namespace Library
 
 			return cad.GetUserInfo(this);
 		}
+
+		public string GetNIF()
+        {
+			CADUser cad = new CADUser();
+
+			return cad.GetNIF(this);
+        }
 	}
 }

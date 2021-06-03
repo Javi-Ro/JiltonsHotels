@@ -7,6 +7,10 @@ using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using System.Threading;
 using Library;
+using System.Data.SqlClient;
+using System.Data;
+using System.Data.Common;
+using System.Data.SqlTypes;
 
 namespace JiltonWeb
 {
@@ -93,7 +97,9 @@ namespace JiltonWeb
             IntervalDate dates = new IntervalDate(new Date(int.Parse(entry[0]), int.Parse(entry[1]), int.Parse(entry[2])), new Date(int.Parse(departure[0]), int.Parse(departure[1]), int.Parse(departure[2])));  // Fechas deben ser del Entry y Departure date textboxes
             booking.ID = ENBooking.fillId();
             booking.date = dates;
-            booking.user = (string)Session["id"];
+            ENUser user = new ENUser();
+            user.Email = (string)Session["id"];
+            booking.user = user.GetNIF();
             Session["bookingInfo"] = booking;
             Session["adult"] = AdultOptions.SelectedValue;
             Session["child"] = ChildOptions.SelectedValue;

@@ -45,7 +45,7 @@ namespace Library
         public ENDiscount discount
         {
             get { return _discount; }
-            private set { _discount = value; }
+            set { _discount = value; }
         }
 
         public List<ENService> Services { get; set; }
