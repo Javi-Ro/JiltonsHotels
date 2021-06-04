@@ -20,13 +20,18 @@ public class CADRoom
         constring = ConfigurationManager.ConnectionStrings["Database"].ConnectionString;
     }
 
+    /// <summary>
+    /// function to show all rooms
+    /// </summary>
+    /// <param name="room"></param>
+    /// <returns>DataSet with all the rooms </returns>
     public DataSet showAll(ENRoom room)
     {
         DataSet virtualSet = new DataSet();
         try
         {
             SqlConnection conn = new SqlConnection(constring);
-            SqlDataAdapter adapter = new SqlDataAdapter("SELECT * from room", conn);
+            SqlDataAdapter adapter = new SqlDataAdapter("SELECT * from room where bookingNumber is null", conn);
             adapter.Fill(virtualSet, "room");
             return virtualSet;
         }
@@ -41,6 +46,11 @@ public class CADRoom
         return virtualSet;
     }
 
+    /// <summary>
+    /// function to insert 
+    /// </summary>
+    /// <param name="room"></param>
+    /// <returns>wether it was inserted or not</returns>
     public bool Insert(ENRoom room)
     {
 
@@ -52,7 +62,7 @@ public class CADRoom
             string sql = "INSERT INTO[dbo].[room]([title],[description],[price],[type],[adultBed],[childBed],[imgURL]) VALUES('" + room.title
                 + "', '" + room.description + "', " + room.price + ", '" + room.type + "', " + room.adultBed + ", " + room.childBed + ", '" + room.imageLink + "')";
             SqlDataAdapter adapter = new SqlDataAdapter("select * from room", c);
-            adapter.Fill(virtualSet, "room");
+            adapter.Fill(virtualSet, "room");           //disconnected environment 
             adapter.InsertCommand = new SqlCommand(sql, c);
             adapter.InsertCommand.ExecuteNonQuery();
         
@@ -69,6 +79,11 @@ public class CADRoom
         return false;
     }
 
+    /// <summary>
+    /// function to delete a room
+    /// </summary>
+    /// <param name="room"></param>
+    /// <returns>wether if was deleted or not </returns>
     public bool delete(ENRoom room)
     {
         try
@@ -95,6 +110,11 @@ public class CADRoom
         return false;
     }
 
+    /// <summary>
+    /// function to update the room
+    /// </summary>
+    /// <param name="room"></param>
+    /// <returns>wether if was updated or not </returns>
     public bool update(ENRoom room)
     {
         try
@@ -120,6 +140,11 @@ public class CADRoom
         return false;
     }
 
+    /// <summary>
+    /// function  to search an specific room to know if it is in the database or not 
+    /// </summary>
+    /// <param name="room"> room wich id will be searched </param>
+    /// <returns> true if it is found; false otherwise </returns>
     public bool searchRoom(ENRoom room)
     {
         try
@@ -143,18 +168,5 @@ public class CADRoom
             return false;
         }
     }
-
-    public bool UpdateNotAvailable(ENRoom room)
-    {
-        //sets a room not available when the user books a room
-        return true;
-    }
-
-    public bool UpdateAvailable(ENRoom room)
-    {
-        //sets a room available when the booking ends or when the user cancels the booking
-        return true;
-    }
-
 
 }

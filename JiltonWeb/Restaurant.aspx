@@ -6,7 +6,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <asp:Panel runat="server" ID="backgroundR" >
-
             <div class="Menu">
                   <asp:Button runat="server" class="MenuButton" onclick="OnPrevious" id="PreviousButton" Text="PREVIOUS MENU"/>
             </div>
@@ -21,13 +20,11 @@
 
                 <div class="plainBackground">
                    <div class ="RestaurantTitle" runat="server">
-                       <asp:label ID="titulo" runat="server">                    
-                       </asp:label>
+                       <asp:label ID="titulo" runat="server"> </asp:label>
                    </div>
-                    <br />
-                    <asp:Image id="imagen" runat="server" ImageUrl="assets/jiltonLogo2.png" width="290px" visible="false" style="position:absolute; left:50%; transform:translateX(-50%);"/>
-                      
-                                     
+                   <br />
+                   <asp:Image id="imagen" runat="server" ImageUrl="assets/jiltonLogo2.png" width="290px" visible="false" style="position:absolute; left:50%; transform:translateX(-50%);"/>
+                                   
                     <div class ="subTitle" runat="server">
                        <asp:label runat="server" ID="meal1"> APPETIZERS </asp:label>
                    </div>
@@ -105,13 +102,8 @@
                     </asp:Panel>
 
                     <asp:Label visible="false" runat="server" ID="success" CssClass="SuccessLabel"> </asp:Label>
-                    <asp:Label visible="false" runat="server" ID="Error" CssClass="ErrorLabel"> </asp:Label>      
-               
-                    
+                    <asp:Label visible="false" runat="server" ID="Error" CssClass="ErrorLabel"> </asp:Label>       
                 </div>
             </asp:Panel>
-
-
-           </asp:Panel>
-           
-    </asp:Content>
+        </asp:Panel>
+</asp:Content>

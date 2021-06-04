@@ -32,12 +32,14 @@ public class ENMenu
 
     private string _fecha;
 
-    public string fecha     //will act as an identificator in the database
+    public string fecha     //will act as an id in the database
     {
         get { return _fecha; }
         set { _fecha = value; }
     }
-
+    /// <summary>
+    /// default constructor
+    /// </summary>
 	public ENMenu()
 	{
         price = 0;
@@ -47,6 +49,14 @@ public class ENMenu
         fecha = DateTime.Today.ToString("d");
     }
 
+    /// <summary>
+    /// copy constructor
+    /// </summary>
+    /// <param name="main"></param>
+    /// <param name="dessert"></param>
+    /// <param name="appetizers"></param>
+    /// <param name="price"></param>
+    /// <param name="fecha"></param>
     public ENMenu(string main, string dessert, string appetizers, float price, string fecha)
     {
         this.main = main;
@@ -56,6 +66,10 @@ public class ENMenu
         this.fecha = fecha;
     }
 
+    /// <summary>
+    /// function to show a menu
+    /// </summary>
+    /// <returns></returns>
     public bool showMenu()
     {
         CADMenu menu = new CADMenu();
@@ -63,6 +77,10 @@ public class ENMenu
         return show;
     }
 
+    /// <summary>
+    /// function to create a menu
+    /// </summary>
+    /// <returns>returns wether a menu was created or not </returns>
     public bool create()
     {
         CADMenu menu = new CADMenu();
@@ -79,6 +97,10 @@ public class ENMenu
         }
     }
 
+    /// <summary>
+    /// function to update a menu
+    /// </summary>
+    /// <returns>returns wether a menu was updated or not </returns>
     public bool update()
     {
         CADMenu menu = new CADMenu();
@@ -101,6 +123,11 @@ public class ENMenu
         }
     }
 
+
+    /// <summary>
+    /// function to delete a menu
+    /// </summary>
+    /// <returns>returns wether a menu was deleted or not </returns>
     public bool delete()
     {
         CADMenu menu = new CADMenu();

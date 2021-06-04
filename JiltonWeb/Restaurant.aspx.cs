@@ -14,13 +14,18 @@ namespace JiltonWeb
         DateTime copia = new DateTime();
         CultureInfo c = new CultureInfo("en-EN");
 
+        /// <summary>
+        /// Page load where the date is checked 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
             
             titulo.Text = DateTime.Today.ToString("dddd", c).ToUpper() + "'S MENU";
 
 
-            if (Session["id"] != null && Session["id"].ToString() == "admin")
+            if (Session["id"] != null && Session["id"].ToString() == "admin")       //panel to access administrator view
             {
                 backgroundR.CssClass = "AdminbackgroundR";
                 AdminBlurryBackground.CssClass = "AdminBlurryBackground";
@@ -32,7 +37,7 @@ namespace JiltonWeb
             }
 
 
-            if (!Page.IsPostBack)
+            if (!Page.IsPostBack)           
             {
                 Session["dayIter"] = 0;
                 hoy = DateTime.Today.Date;
@@ -41,22 +46,11 @@ namespace JiltonWeb
 
             if (Session["dayIter"] != null)
             {
-                if (Int32.Parse(Session["dayIter"].ToString()) == 0)
+                if (Int32.Parse(Session["dayIter"].ToString()) == 0)    //reset 
                 {
                     OnToday(sender, e);
                 }
-                //else if (Int32.Parse(Session["dayIter"].ToString()) > 0)
-                //{
-                //    OnNext(sender, e);
-                //}
-                //else
-                //{
-                //    OnPrevious(sender, e);
-                //}
             }
-
-
-
 
             if (Context.Items["Success"] != null)
             {
@@ -69,14 +63,19 @@ namespace JiltonWeb
             }
         }
 
+        /// <summary>
+        /// Handler to show the previous day menu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
         protected void OnPrevious(object sender, EventArgs e)
         {
 
-            Session["dayIter"] = Int32.Parse(Session["dayIter"].ToString()) - 1;
+            Session["dayIter"] = Int32.Parse(Session["dayIter"].ToString()) - 1;    //substract one day with AddDays function
             int i = Int32.Parse(Session["dayIter"].ToString());
             copia = DateTime.Now.AddDays(i);
             titulo.Text = copia.ToString("dddd", c).ToUpper() + "'S MENU";
-            //titulo.Text = "MENU OF " + copia.ToString("dd'/'MM'/'yyyy");
             ENMenu menu = new ENMenu();
             menu.fecha = copia.ToString("yyyy'/'MM'/'dd");
 
@@ -113,6 +112,11 @@ namespace JiltonWeb
 
         }
 
+        /// <summary>
+        /// handler to show next day's menu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void OnNext(object sender, EventArgs e)
         {
             Session["dayIter"] = Int32.Parse(Session["dayIter"].ToString()) + 1;
@@ -155,6 +159,11 @@ namespace JiltonWeb
 
         }
 
+        /// <summary>
+        /// handler to show today's menu, which is the default menu shown
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void OnToday(object sender, EventArgs e)
         {
             Session["dayIter"] = 0;
@@ -196,6 +205,11 @@ namespace JiltonWeb
 
         }
 
+        /// <summary>
+        /// Handler to create menu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void OnCreate(object sender, EventArgs e)
         {
             success.Visible = false;
@@ -221,6 +235,11 @@ namespace JiltonWeb
 
         }
 
+        /// <summary>
+        /// handler to update menu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void OnUpdate(object sender, EventArgs e)
         {
             success.Visible = false;
@@ -246,6 +265,11 @@ namespace JiltonWeb
             
         }
 
+        /// <summary>
+        /// handler to delete menu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void OnDelete(object sender, EventArgs e)
         {
             
@@ -272,6 +296,11 @@ namespace JiltonWeb
             }
     }
 
+        /// <summary>
+        /// handler for showing the delete menu for administrators
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void DeletePage(object sender, EventArgs e)
         {
             DateTB.Text = String.Empty;
@@ -281,6 +310,11 @@ namespace JiltonWeb
             Error.Visible = false;
         }
 
+        /// <summary>
+        /// handler for showing the update menu for administrators
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void UpdatePage(object sender, EventArgs e)
         {
             DateTB.Text = String.Empty;
@@ -297,6 +331,11 @@ namespace JiltonWeb
             Error.Visible = false;
         }
 
+        /// <summary>
+        /// handler for showing the insert menu for administrators
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void InsertPage(object sender, EventArgs e)
         {
             DateTB.Text = String.Empty;

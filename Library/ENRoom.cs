@@ -7,8 +7,14 @@ using System.Threading.Tasks;
 
 namespace Library
 {
+    /// <summary>
+    /// Class to represent business entitity room
+    /// </summary>
     public class ENRoom
     {
+        /// <summary>
+        /// integer value that will be auto-incremented in the database
+        /// </summary>
         private int _id;
 
         public int id {
@@ -37,7 +43,7 @@ namespace Library
             get { return _price; }
             set { _price = value; }
         }
-
+        //number of king size beds
         private int _adultBed;
 
         public int adultBed
@@ -69,6 +75,7 @@ namespace Library
             set { _booking = value; }
         }
 
+        //string that is the path to the image
         private string _imageLink;
 
         public string imageLink
@@ -76,17 +83,32 @@ namespace Library
             get { return _imageLink; }
             set { _imageLink = value; }
         }
+        /// <summary>
+        /// default constructor
+        /// </summary>
         public ENRoom()
         {
             id = 0;
             title = "Confort room";
             description = "Comfort room suitable for all kinds of families";
             booking = null;
-            price = 60;
+            price = 390;
             type = "Single";
             imageLink = "assets/room1.jpg";
         }
 
+        /// <summary>
+        /// copy constructor 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="title"></param>
+        /// <param name="description"></param>
+        /// <param name="price"></param>
+        /// <param name="childBed"></param>
+        /// <param name="adultBed"></param>
+        /// <param name="type"></param>
+        /// <param name="booking"></param>
+        /// <param name="imagen"></param>
         public ENRoom(int id,string title,string description, float price, int childBed,  int adultBed, string type,ENBooking booking, string imagen)
         {
             this.id = id;
@@ -100,12 +122,20 @@ namespace Library
             this.imageLink = imagen;
         }
 
+        /// <summary>
+        /// Function to show all available rooms
+        /// </summary>
+        /// <returns>DataSet with all the rooms</returns>
         public DataSet showAll()
         {
             CADRoom room = new CADRoom();
             return room.showAll(this);
         }
 
+        /// <summary>
+        /// Function to insert a room
+        /// </summary>
+        /// <returns>returns wether it was created or not </returns>
         public bool insertRoom()
         {
             CADRoom room = new CADRoom();
@@ -113,6 +143,10 @@ namespace Library
             return create;
         }
 
+        /// <summary>
+        /// Function to update a room
+        /// </summary>
+        /// <returns>returns wether it was updated or not </returns>
         public bool update()
         {
             CADRoom room = new CADRoom();
@@ -138,7 +172,10 @@ namespace Library
                 return false;
             }
         }
-
+        /// <summary>
+        /// Function to delete a room
+        /// </summary>
+        /// <returns>returns wether it was delete or not </returns>
         public bool delete()
         {
             CADRoom room = new CADRoom();
@@ -155,22 +192,6 @@ namespace Library
                 return false;
             }
         }
-
-        //public bool setNotAvailable()
-        //{
-        //    this.available = false;
-        //    CADRoom room = new CADRoom();
-        //    bool show = room.UpdateNotAvailable(this);
-        //    return show;
-        //}
-
-        //public bool setAvailableAgain()
-        //{
-        //    this.available = true;
-        //    CADRoom room = new CADRoom();
-        //    bool show = room.UpdateAvailable(this);
-        //    return show;
-        //}
 
     }
 }
