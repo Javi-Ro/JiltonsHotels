@@ -91,8 +91,8 @@ ROSA:
 JAVI:
   - Developed classes: ENBooking, CADBooking
   - Developed pages: MainPage.aspx, JiltonMaster.master, ExtraServices.aspx, Booking.aspx
-  - Collaborations: Car.aspx (Css interface), Staff.aspx (Css interface), SpaGym.aspx (Css interface), ThanksForBuy.aspx (Css interface)
-  - Extra features: Design of the database, Database translation to SQL
+  - Collaborations: Car.aspx (Css interface and GridView implementation), Staff.aspx (Css interface), SpaGym.aspx (Css interface and GridView implementation), ThanksForBuy.aspx (Css interface)
+  - Extra features: Design of the database, Database translation to SQL, Coordination and distribution of the tasks.
   
 MARIO:
   - Developed classes: ENCar, CADCar, ENStaff, CADStaff
