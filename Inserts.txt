@@ -152,6 +152,7 @@ Cupcake with frozen and roasted fruits and vegetables, toasted almond meringue.'
 -- ADMIN USER --
 
 insert into [dbo].[uuser]([id], [password], [name], [birthday], [email], [address]) values('admin', 'admin', 'admin', '1900/01/01', 'admin', 'admin');
+insert into [dbo].[uuser]([id], [password], [name], [birthday], [email], [address]) values('user1', 'user1', 'user1', '1988/05/01', 'user1@gmail.com', 'C/User1');
 
 -- END ADMIN USER --
 -- CAR INSERTS --
@@ -241,3 +242,11 @@ Insert into servicio (id, description, price, imgURL, type) VALUES (11,'Kinderga
 Insert into servicio (id, description, price, imgURL, type) VALUES (12,'Kindergarten - DSGZone - We have hired the most prestigious babysitter in order to take care of your babys. We have never been so proud of having this quality kindergarten', 32, 'assets/kindergarten_3.jpg', 'kindergarten');
 
 -- END SPA & GYM INSERTS & EXTRA SERVICES--
+
+-- PACKAGE INSERT --
+
+insert into package values (1, 'Adventure Pack', 'Feel the adrenaline rushing through the skin and the revolutions at a thousand per hour. It is the feeling you have when the monotonous routine of day to day gives way to activities of adventure and excitement. In this box is the opportunity by land, sea and air to experience emotions on the surface. The time for the most intrepid has arrived!', 'assets/AVENTURA.jpg', 735);
+
+insert into package values (2, 'Supercar Pack', 'Are you strong emotions? Our sports car driving experiences will give you hair like spikes! Treat yourself and get the best of gifts: driving a car on a circuit! Discover the best gift for car lovers and drive true asphalt legends on motor racing circuits and on the road. What are you waiting for to get behind the wheel of a Ferrari, Porsche or Lamborghini?', 'assets/cars.jpg', 1250);
+
+insert into package values (3, 'Couples Pack', 'For a couple, traveling together will always be a very important part of their relationship, since it awakens an illusion in them, from the mere fact of making the preparations, it renews them, motivates them, makes their soul happy, fills them with expectations. Try now the package we have delicately prepared for you!', 'assets/couple.jpg', 550);
