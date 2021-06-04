@@ -74,8 +74,15 @@ Once the user has been correctly registered on the website, he/she will gain acc
   - We decided to not implement the part related to the ENComments class for simplicity.
   - The possible improvement "Watch the location of the hotel with Google Maps" has been implemented on the page About.aspx.
 
-### TASKS DISTRIBUTION ###
+### DIFFICULTIES ###
+  - The distribution of the tasks was difficult at the beggining of the project since has to be so clear what things were related with what other things, in order to not have problems of compatibility or dependency problems between the codes of all the members.
 
+### INSTRUCTIONS TO TEST THE WEBSITE ###
+To test our website is needed to have the last version of the ASP.NET Ajax Control Toolkit. If there were any problems with the database attached in the project, the database also can be created using the .txt files Inserts.txt and Database.txt (Inserts.txt has no inserts for bookings, this inserts will be created when testing the bookings part of the website project)
+
+In the database had been created 3 users, 2 client users and 1 additionally user with adminstrator privileges to access to the protected panels on which new information can be added to the database. To log in with one client account you can enter with the credentials "alberto@gmail.com" and password "Prueab12", and to log in with the administrator account you can enter with "admin" and password "admin".
+
+### TASKS DISTRIBUTION ###
 ILYAN:
   - Developed classes: ENUser, CADUser
   - Developed pages: Register.aspx, Login.aspx, MyProfiile.aspx, MyBookings.aspx
@@ -111,3 +118,6 @@ MADANI:
   - Developed pages: Package.aspx, About.aspx
   - Collaborations: -
   - Extra features: Design of the database
+  
+### AUXILIARY FOLDER ###
+The auxiliary folder (called "Auxiliary") contains the files Presentacion.pptx (class presentation of the project), Inserts.txt, Database.txt and UpdatedDatabase.pdf (EER scheme of the database)
