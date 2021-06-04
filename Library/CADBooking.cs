@@ -236,7 +236,7 @@ namespace Library
             }
         }
 
-        public bool addService(ENBooking booking, ENService service)
+        public bool addService(ENBooking booking, DataRow service)
         {
             try
             {
@@ -247,7 +247,7 @@ namespace Library
                 DataTable t = new DataTable();
                 t = virtualSet.Tables["booking"];
                 DataRow dr = t.NewRow();
-                dr[0] = booking.ID; dr[1] = service.Id;
+                dr[0] = booking.ID; dr[1] = service["id"]; dr[2] = service["serviceDay"]; dr[3] = service["hour"]; dr[4] = service["staff"];
                 t.Rows.Add(dr);
                 SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
                 adapter.Update(virtualSet, "booking");
@@ -294,7 +294,7 @@ namespace Library
                 DataTable t = new DataTable();
                 t = virtualSet.Tables["booking"];
                 DataRow dr = t.NewRow();
-                dr[0] = booking.ID; dr[1] = package.id;
+                dr[1] = booking.ID; dr[0] = package.id;
                 t.Rows.Add(dr);
                 SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
                 adapter.Update(virtualSet, "booking");
@@ -398,7 +398,7 @@ namespace Library
             {
                 SqlConnection c = new SqlConnection(constring);
                 DataSet virtualSet = new DataSet();
-                SqlDataAdapter adapter = new SqlDataAdapter("select * from car where licensePlate = " + car.LicensePlate, c);
+                SqlDataAdapter adapter = new SqlDataAdapter("select * from car where licensePlate = '" + car.LicensePlate + "'", c);
                 adapter.Fill(virtualSet, "booking");
                 DataTable t = new DataTable();
                 t = virtualSet.Tables["booking"];

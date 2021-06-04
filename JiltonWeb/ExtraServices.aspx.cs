@@ -161,12 +161,16 @@ namespace JiltonWeb
                 DataColumn id = new DataColumn();
                 id.DataType = System.Type.GetType("System.Int32");
                 id.ColumnName = "id";
+                DataColumn staff = new DataColumn();
+                staff.DataType = System.Type.GetType("System.String");
+                staff.ColumnName = "staff";
                 table.Columns.Add(id);
                 table.Columns.Add(description);
                 table.Columns.Add(day);
                 table.Columns.Add(hour);
                 table.Columns.Add(price);
                 table.Columns.Add(type);
+                table.Columns.Add(staff);
             }
 
             // Fill a new row with data selected
@@ -176,6 +180,7 @@ namespace JiltonWeb
             cellPrice = cellPrice.Remove(cellPrice.Length - 2);
             dr[4] = float.Parse(cellPrice);
             dr[0] = int.Parse(row.Cells[0].Text);
+            dr[6] = StaffList.SelectedItem.Text;
 
             // By the moment, we only keep the information in case it is finally not added  --> it will be added when button AddService is clicked
             Session["auxRow"] = dr;
@@ -253,6 +258,7 @@ namespace JiltonWeb
 
             // Add the new row to the grid
             table.Rows.Add(dr);
+            Session["bookingPackages"] = table;
             ActualiseGrid("bookingPackages");
         }
 
