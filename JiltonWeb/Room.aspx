@@ -152,10 +152,10 @@
 
                                         <asp:label runat="server" width="35%"> Number of king beds </asp:label><asp:textbox id ="kingBedTB" height="30px" runat ="server" />
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorKingBed" CssClass="Validator" runat="server" ValidationGroup="RoomGroup" ErrorMessage="This field is required" ControlToValidate="kingBedTB" Display="Dynamic"></asp:RequiredFieldValidator>  
-                                        <asp:RangeValidator ID="RangeValidatorKingBed" CssClass="ValidatorRange" ValidationGroup="RoomGroup" MinimumValue="0" MaximumValue="3" Type="Integer" Text="Integer between 0 and 3" ControlToValidate="kingBedTB" Display="Dynamic" runat="server"></asp:RangeValidator>                            
+                                        <asp:RangeValidator ID="RangeValidatorKingBed" CssClass="ValidatorRange" ValidationGroup="RoomGroup" MinimumValue="0" MaximumValue="2" Type="Integer" Text="Integer between 0 and 2" ControlToValidate="kingBedTB" Display="Dynamic" runat="server"></asp:RangeValidator>                            
                                         <asp:label runat="server" width="35%"> Number of single beds </asp:label><asp:textbox id ="childBedTB" height="30px" runat ="server" />
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidatorSingleBed" CssClass="Validator" runat="server" ValidationGroup="RoomGroup" ErrorMessage="This field is required" ControlToValidate="childBedTB" Display="Dynamic"></asp:RequiredFieldValidator>  
-                                        <asp:RangeValidator ID="RangeValidatorSingleBed" CssClass="ValidatorRange" ValidationGroup="RoomGroup" MinimumValue="0" MaximumValue="4" Type="Integer" Text="Integer between 0 and 4" ControlToValidate="childBedTB" Display="Dynamic" runat="server"></asp:RangeValidator>                           
+                                        <asp:RangeValidator ID="RangeValidatorSingleBed" CssClass="ValidatorRange" ValidationGroup="RoomGroup" MinimumValue="0" MaximumValue="3" Type="Integer" Text="Integer between 0 and 3" ControlToValidate="childBedTB" Display="Dynamic" runat="server"></asp:RangeValidator>                           
                              
                                         <asp:label runat="server" width="35%"> Image URL </asp:label><asp:textbox id ="imageTB" Text="assets/room1.jpg" height="30px" runat ="server" />
                                         <div class="Create">

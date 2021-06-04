@@ -8,6 +8,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Threading;
 
 namespace JiltonWeb
 {
@@ -185,6 +186,8 @@ namespace JiltonWeb
 
             }
 
+            Thread.Sleep(500);
+            Server.Transfer("Room.aspx");
         }
 
         /// <summary>
@@ -219,7 +222,10 @@ namespace JiltonWeb
                 error.Visible = true;
                 error.Text = "Could not insert room ";
             }
-            
+
+            Thread.Sleep(500);
+            Server.Transfer("Room.aspx");
+
         }
        /// <summary>
        /// Handler to do the delete
@@ -249,6 +255,9 @@ namespace JiltonWeb
                     error.Text = "Could not delete room " + room.id;
                 }
             }
+
+            Thread.Sleep(500);
+            Server.Transfer("Room.aspx");
         }
 
         /// <summary>
