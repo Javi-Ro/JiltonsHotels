@@ -1,0 +1,147 @@
+create table restaurant(
+	dailyMenu date constraint PK_restaurant PRIMARY KEY,
+	appetizers varchar(300) not null,
+	mains varchar(300) not null,
+	desserts varchar(200) not null,
+	price int not null,
+)
+
+create table uuser(
+	id varchar(9) constraint PK_user PRIMARY KEY,
+	password varchar(100) not null,
+	name varchar(100) not null,
+	birthday date not null,
+	email varchar(40) unique not null,
+	address varchar(150)
+)
+
+create table discount(
+	code varchar(20) constraint PK_discount PRIMARY KEY,
+	percentage int not null,
+	constraint CHK_discount check (percentage > 0 and percentage <= 100)
+)
+
+
+create table booking(
+	id int constraint PK_booking primary key,
+	board varchar(2) not null,
+	date_in date not null,
+	date_out date not null,
+	userID varchar(9) not null constraint FK_booking_user references uuser(id),
+	discount varchar(20) constraint FK_booking_discount references discount(code),
+	price numeric(18,2) null,
+	constraint CHK_booking check (board in ('OB', 'HB', 'FB'))
+)
+
+create table room(
+	id int IDENTITY(1,1) PRIMARY KEY,
+	title varchar(100) not null,
+	description varchar(250) not null,
+	price int not null,
+	type varchar(20) not null,
+	bookingNumber int constraint FK_room_booking references booking(id),
+	adultBed int not null,
+	childBed int not null,
+	imgURL varchar(300),
+	constraint CHK_room check (adultBed >= 0 and adultBed < 3 and childBed >= 0 and childBed < 4 and type in ('single', 'double', 'triple', 'deluxe', 'executive', 'presidential'))
+)
+
+
+
+
+create table package(
+	id int constraint PK_package PRIMARY KEY,
+	name varchar(50) not null,
+	description varchar(300) not null,
+	imgURL varchar(300),
+	price int not null
+)
+
+
+create table car(
+	licensePlate varchar(8) constraint PK_car PRIMARY KEY, /* licensePlate format -> (9999 ZZZ) */
+	brand varchar(50) not null,
+	model varchar(100) not null,
+	description varchar(400) not null,
+	imgURL varchar(300),
+	bookingNumber int constraint FK_car_booking references booking(id),
+	price int not null
+)
+
+
+
+
+create table servicio(
+	id int constraint PK_service PRIMARY KEY,
+	description varchar(400) not null,
+	price int not null,
+	name varchar(50),
+	maxPeople int,
+	imgURL varchar(300),
+	type varchar(20) not null,
+	constraint CHK_service check (type in ('excursion', 'gym', 'spa', 'kindergarten') and (
+												(name is null and maxPeople is null and type in ('gym', 'spa', 'kindergarten')) 
+												or 
+												(name is not null and maxPeople is not null and type = 'excursion'))))
+
+
+create table staff(
+	email varchar(30) constraint PK_staff PRIMARY KEY,
+	name varchar(60) not null,
+	type varchar(20) not null,
+	description varchar(999) not null,
+	imgURL varchar(300),
+	constraint CHK_staff check (type in ('massagist', 'teacher', 'guide', 'trainer'))
+)
+
+
+create table comment(
+	id int constraint PK_comment PRIMARY KEY,
+	text varchar(300),
+	bookingNumber int unique not null constraint FK_comment_booking references booking(id)
+)
+
+
+
+
+
+create table event(
+	code int constraint PK_event PRIMARY KEY,
+	name varchar(100) not null,
+	description varchar(400) not null,
+	price int not null,
+	eventDay date unique,
+)
+
+--- RELATIONS ---
+
+create table bookPackage(
+	idPackage int constraint FK_bookpackage_package references package(id),
+	idBooking int constraint FK_bookpackage_booking references booking(id),
+	constraint PK_bookpackage primary key(idPackage, idBooking)
+)
+
+
+create table bookEvent(
+	userID varchar(9) constraint FK_bookevent_user references uuser(id),
+	eventCode int constraint FK_bookevent_event references event(code),
+	constraint PK_bookevent primary key(userID, eventCode)
+)
+
+
+create table bookService(
+	bookingID int constraint FK_bookservice_booking references booking(id),
+	serviceID int constraint FK_bookservice_service references servicio(id),
+	constraint PK_bookservice primary key(bookingID, serviceID),
+	serviceDay date not null,
+	hora int not null,
+	selectedStaff varchar(30) not null constraint FK_bookservice_staff references staff(email),
+	constraint CHK_bookservice check (hora >= 0 and hora <= 23)
+)
+
+
+create table createPackage(
+	packageID int constraint FK_createpackage_package references package(id),
+	serviceID int constraint FK_createpackage_service references servicio(id),
+	constraint PK_createpackage primary key(packageID, serviceID),
+)
