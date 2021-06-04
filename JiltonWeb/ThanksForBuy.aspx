@@ -27,7 +27,7 @@
                 <br />
                 
                 <br />
-                <h3 class="war">A 5% of the money you spent on our services will be delivered to companies to help war refugees in Siria.</h3>                
+                <h3 class="war">A 5% of the money you spent on our services will be delivered to companies to help war refugees in Syria.</h3>                
                 <br />
                 <br />
                 <div class="but">

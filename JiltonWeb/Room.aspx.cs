@@ -16,15 +16,17 @@ namespace JiltonWeb
         ENRoom room = new ENRoom();
         DataSet datos = new DataSet();
         private String constring = ConfigurationManager.ConnectionStrings["Database"].ToString();
+
+        /// <summary>
+        /// Page load
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            if (!IsPostBack)
-            {
-                
-            }
             errorRepeated.Visible = false;
-            if (Session["sessionSelected"] != null)
+            if (Session["sessionSelected"] != null)     //to control the grid view of selected rooms
             {
                 DataTable seleccionado = (DataTable)Session["sessionSelected"];
                 goButton.Visible = true;
@@ -36,28 +38,30 @@ namespace JiltonWeb
             GridView1.DataBind();
             GridViewRooms.DataBind();
 
-            if (Session["id"] != null && Session["id"].ToString() == "admin")
+            if (Session["id"] != null && Session["id"].ToString() == "admin")   //administrator view 
             {
 
                 GridView1.Columns[0].Visible = false;
                 adminViewRoom.CssClass = "visible";
                 roomIDUpdate.Visible = false;
-                InsertInterface(sender, e);
+                InsertInterface(sender, e);                 //we go directly to the insert view
 
             }
             else
             {
-
                 GridView1.Columns[0].Visible = false;
                 adminViewRoom.CssClass = "invisible";
             }
 
         }
 
-        private void BindGrid()
+        /// <summary>
+        /// personalized version of DataBind()
+        /// </summary>
+        private void BindGrid()    
         {
-            string comando = "select * from room ";
-            if(Session["filters"] != null)
+            string comando = "select * from room where bookingNumber is null ";
+            if(Session["filters"] != null)          //to keep selected filters
             {
                 comando = Session["filters"].ToString();
             }
@@ -72,26 +76,26 @@ namespace JiltonWeb
             GridView1.DataSource = dt;
             GridView1.DataBind();
         }
-        protected void Button1_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// Function to send the selected rooms to booking or register
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void GoButton_Click(object sender, EventArgs e)
         {
             if (Session["id"] == null)
             {
-                Response.Redirect("Register.aspx");
+                Response.Redirect("Register.aspx");     //if the user is unknown, they are sent to the register page
             }
             Response.Redirect("ExtraServices.aspx");
         }
 
-
+        /// <summary>
+        /// Handler to control pagination. It is triggered when the index of the page changes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void gridview_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             GridView1.PageIndex = e.NewPageIndex;
@@ -99,16 +103,11 @@ namespace JiltonWeb
 
         }
 
-        protected void DeleteInterface(object sender, EventArgs e)
-        {
-            InsertOrUpdate.CssClass = "invisible";
-            deletePanel.CssClass = "visible";
-            onlyUpdateID.CssClass = "invisible";
-            error.Visible = false;
-            success.Visible = false;
-
-        }
-
+        /// <summary>
+        /// Function to show all the buttons necessary to make an insert
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void InsertInterface(object sender, EventArgs e)
         {
             InsertOrUpdate.CssClass = "visible";
@@ -121,6 +120,43 @@ namespace JiltonWeb
             onlyUpdateID.CssClass = "invisible";
         }
 
+        /// <summary>
+        /// function to show all the buttons necessary to make a delete
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void DeleteInterface(object sender, EventArgs e)
+        {
+            InsertOrUpdate.CssClass = "invisible";
+            deletePanel.CssClass = "visible";
+            onlyUpdateID.CssClass = "invisible";
+            error.Visible = false;
+            success.Visible = false;
+
+        }
+
+        /// <summary>
+        /// Function to show all the buttons necessary to make an update
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void UpdateInterface(object sender, EventArgs e)
+        {
+            InsertOrUpdate.CssClass = "visible";
+            deletePanel.CssClass = "invisible";
+            roomIDUpdate.Visible = true;
+            Update.Visible = true;
+            Insert.Visible = false;
+            error.Visible = false;
+            success.Visible = false;
+            onlyUpdateID.CssClass = "visible";
+        }
+
+        /// <summary>
+        /// Handler to do the update
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void onUpdate(object sender, EventArgs e)
         {
             error.Visible = false;
@@ -132,7 +168,7 @@ namespace JiltonWeb
             string imagen = imageTB.Text;
             if (string.IsNullOrEmpty(imageTB.Text))
             {
-                imagen = "assets/room1.jpg";
+                imagen = "assets/room1.jpg";        //default image
             }
             ENRoom room = new ENRoom(id, nameTB.Text, descriptionTB.Text, precio, single, king, TypeTB.SelectedValue, null, imagen);
 
@@ -150,6 +186,12 @@ namespace JiltonWeb
             }
 
         }
+
+        /// <summary>
+        /// Handler to do the insert
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void onInsert(object sender, EventArgs e)
         {
             error.Visible = false;
@@ -179,6 +221,11 @@ namespace JiltonWeb
             }
             
         }
+       /// <summary>
+       /// Handler to do the delete
+       /// </summary>
+       /// <param name="sender"></param>
+       /// <param name="e"></param>
         protected void onDelete(object sender,EventArgs e)
         { 
             ENRoom room = new ENRoom();
@@ -203,25 +250,18 @@ namespace JiltonWeb
                 }
             }
         }
-        protected void UpdateInterface(object sender, EventArgs e)
-        {
-            InsertOrUpdate.CssClass = "visible";
-            deletePanel.CssClass = "invisible";
-            roomIDUpdate.Visible = true;
-            Update.Visible = true;
-            Insert.Visible = false;
-            error.Visible = false;
-            success.Visible = false;
-            onlyUpdateID.CssClass = "visible";
-        }
+
+        /// <summary>
+        /// Handler of the button to add a room to the selected rooms
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void addButton(object sender, EventArgs e)
         {
-            //if (Page.IsValid)
-            //{
                
             DataTable seleccionado = (DataTable)Session["sessionSelected"];
 
-            if (seleccionado == null)
+            if (seleccionado == null)       //we create a table and we insert columns id, title and price
             {
                 seleccionado = new DataTable();
                 DataColumn id = new DataColumn();
@@ -247,9 +287,8 @@ namespace JiltonWeb
 
             bool repeated = false;
             Label idLabel = (Label)gr.FindControl("idLabel");
-            string celda = "inicial";
 
-            if (GridViewRooms.Rows.Count >= 1)
+            if (GridViewRooms.Rows.Count >= 1)          //if the table has more than zero rows, we control that the new room is not already selected
             {
                 foreach (GridViewRow row in GridViewRooms.Rows)
                 {
@@ -263,7 +302,7 @@ namespace JiltonWeb
                 }
             }
         
-            if (repeated == false)
+            if (repeated == false)      //if it is not repeated, we insert the new row
             {
                 Label titulo = (Label)gr.FindControl("Label1");
                 Label precio = (Label)gr.FindControl("Label9");
@@ -282,27 +321,26 @@ namespace JiltonWeb
             }
 
         }
+
+        /// <summary>
+        /// Handler to apply the search filters
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void onSearch(object sender, EventArgs e)
         {
             string constr = ConfigurationManager.ConnectionStrings["database"].ConnectionString;
-            string comando = "Select * from room";
-            bool firstWhere = false;
-            if (typeList.SelectedValue != "unselected")
-            {
-                comando = comando + " WHERE type = '" + typeList.SelectedValue + "' ";
-                firstWhere = true;
-            }
+            string comando = "Select * from room where bookingNumber is null ";
 
-            if (firstWhere == true)
+            if (typeList.SelectedValue != "unselected")         //drop down list with types
             {
-                comando = comando + " AND price <= " + Control.Text;
-            }
-            else
-            {
-                comando = comando + " WHERE price <= " + Control.Text;
+                comando = comando + "and type = '" + typeList.SelectedValue + "' ";
 
             }
-            switch (orderList.SelectedValue){
+
+            comando = comando + "and price <= " + Control.Text;
+
+            switch (orderList.SelectedValue){       //drop down list with the order 
                 case "Lowest":
                     comando = comando + " order by price ";
                     break;
@@ -313,7 +351,6 @@ namespace JiltonWeb
                     comando = comando + ' ';
                     break;
             }
-
 
             Session["filters"] = comando;
             SqlConnection con = new SqlConnection(constr);

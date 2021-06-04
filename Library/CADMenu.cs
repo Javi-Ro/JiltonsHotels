@@ -12,6 +12,11 @@ public class CADMenu
         constring = ConfigurationManager.ConnectionStrings["Database"].ConnectionString;
     }
 
+    /// <summary>
+    /// function to show the menu
+    /// </summary>
+    /// <param name="menu"></param>
+    /// <returns> if the menu was properly shown </returns>
     public bool showMenu(ENMenu menu)
     {
         bool leer = false;
@@ -56,6 +61,11 @@ public class CADMenu
         return leer;
     }
 
+    /// <summary>
+    /// functon to create menu
+    /// </summary>
+    /// <param name="menu"></param>
+    /// <returns>wether the menu was created or not </returns>
     public bool create(ENMenu menu)
     {
         SqlConnection conn = null;
@@ -88,52 +98,19 @@ public class CADMenu
 
     }
 
+    /// <summary>
+    /// functon to update menu
+    /// </summary>
+    /// <param name="menu"></param>
+    /// <returns>wether the menu was updated or not </returns>
     public bool update(ENMenu menu)
     {
         DateTime aux = Convert.ToDateTime(menu.fecha);
         SqlConnection conn = null;
-        String comando = "Update [dbo].[Restaurant] SET";
-        bool coma = false;
+
         bool update = false;
-        if (!String.IsNullOrEmpty(menu.appetizers))
-        {
-            comando = comando + " appetizers='" + menu.appetizers +"'";
-        }
-        if(!String.IsNullOrEmpty(menu.appetizers) && (!String.IsNullOrEmpty(menu.main) || !String.IsNullOrEmpty(menu.dessert) || menu.price != 0)){
-            comando = comando + ",";
-            coma = true;
-        }
-
-        if (!String.IsNullOrEmpty(menu.main))
-        {
-            comando = comando + " mains='" + menu.main + "'";
-            coma = false;
-        }
-        if (!coma && (!String.IsNullOrEmpty(menu.appetizers) || !String.IsNullOrEmpty(menu.main)) && (!String.IsNullOrEmpty(menu.dessert) || menu.price != 0))
-        {
-            comando = comando + ",";
-            coma = true;
-        }
-        
-        if (!String.IsNullOrEmpty(menu.dessert))
-        {
-            comando = comando + " desserts='" + menu.dessert + "'";
-            coma = false;
-        }
-
-        if (!coma && (!String.IsNullOrEmpty(menu.appetizers) || !String.IsNullOrEmpty(menu.main) || !String.IsNullOrEmpty(menu.dessert)) && menu.price != 0)
-        {
-            comando = comando + ",";
-            coma = true;
-        }
-
-        if (menu.price != 0)
-        {
-            comando = comando + " price=" + menu.price.ToString();
-        }
-
-        comando = comando + " WHERE dailyMenu = @aux";
-
+        String comando = "Update [dbo].[Restaurant] SET appetizers = '" + menu.appetizers + "', " +
+            "mains='" + menu.main + "', desserts='" + menu.dessert + "', " + " price=" + menu.price.ToString() + " WHERE dailyMenu = @aux";
 
         try
         {
@@ -162,6 +139,12 @@ public class CADMenu
 
     }
 
+
+    /// <summary>
+    /// functon to delete menu
+    /// </summary>
+    /// <param name="menu"></param>
+    /// <returns>wether the menu was deleted or not </returns>
     public bool delete(ENMenu menu)
     {
         
