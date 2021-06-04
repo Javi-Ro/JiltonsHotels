@@ -68,45 +68,44 @@ Once the user has been correctly registered on the website, he/she will gain acc
   - The restaurant service will be treated separately from the previous services since is not possible from the web to make reservations, and everyone which enters on the site can see the menu.
   - The scheme of the Database is on the main directory.
 
-### CLARIFICATIONS ###
-  - In order to book a room you have to be registered on the website.
-  - You can only make reservations for the extra services (car leasing, gym...) if you are a registered user and you have previously booked a room (the restaurant is treated apart).
-  - Extra services which will be offered on the web are going to be: Car leasing, Gym, Spa, Guided trips,Kids’ activities, and childcare service. 
-  - The restaurant service will be treated separately from the previous services since is not possible from the web to make reservations, and everyone which enters on the site can see the menu.
-  - The scheme of the Database is on the main directory.
+# --- Development of the project ---- #
 
 ### CHANGES RESPECT THE PROPOSAL ###
   - We decided to not implement the part related to the ENComments class for simplicity.
   - The possible improvement "Watch the location of the hotel with Google Maps" has been implemented on the page About.aspx.
 
-
-### DEVELOPMENT OF THE PROJECT ###
+### TASKS DISTRIBUTION ###
 
 ILYAN:
   - Developed classes: ENUser, CADUser
   - Developed pages: Register.aspx, Login.aspx, MyProfiile.aspx, MyBookings.aspx
-  - Collaborations: Room.aspx, JiltonMaster.master, ExtraServices.aspx (Discounts part), ThanksForBuy.aspx (Css interface)
+  - Collaborations: Room.aspx, JiltonMaster.master (Register and Login bar), ExtraServices.aspx (Discounts part), ThanksForBuy.aspx (Css interface)
   - Extra features: Implementation of the administrator panel, Design of the database, Database translation to SQL
+  
 ROSA: 
   - Developed classes: ENRoom, CADRoom
   - Developed pages: Room.aspx, Restaurant.aspx
   - Collaborations: JiltonMaster.master (Dates of the Booking bar)
   - Extra features: Design of the database, Database translation to SQL
+  
 JAVI:
   - Developed classes: ENBooking, CADBooking
   - Developed pages: MainPage.aspx, JiltonMaster.master, ExtraServices.aspx, Booking.aspx
   - Collaborations: Car.aspx (Css interface), Staff.aspx (Css interface), SpaGym.aspx (Css interface), ThanksForBuy.aspx (Css interface)
   - Extra features: Design of the database, Database translation to SQL
+  
 MARIO:
   - Developed classes: ENCar, CADCar, ENStaff, CADStaff
   - Developed pages: Car.aspx, Staff.aspx
   - Collaborations: Package.aspx (Html structure and Css interface), About.aspx (Css interface)
   - Extra features: Design of the database
+  
 ADRIÁN:
   - Developed classes: ENService, CADService
   - Developed pages: SpaGym.aspx, ThanksForBuy.aspx
   - Collaborations: -
   - Extra features: Design of the database
+  
 MADANI:
   - Developed classes: ENDiscount, CADDiscount, ENPackage, CADPackage
   - Developed pages: Package.aspx, About.aspx
