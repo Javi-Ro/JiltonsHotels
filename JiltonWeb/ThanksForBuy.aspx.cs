@@ -11,11 +11,13 @@ namespace JiltonWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*if(!Page.IsPostBack)
+            if(!Page.IsPostBack)
             {
-                System.Threading.Thread.Sleep(5000);
-                Response.Redirect("MainPage.aspx");
-            }*/
+                if (Session["id"] == null)
+                {
+                    Response.Redirect("Login.aspx");
+                }
+            }
             
         }
 

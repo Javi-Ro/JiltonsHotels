@@ -18,11 +18,12 @@
 }
 
 .but{
-   align-content:center;
+   width: 100%;
+   display: flex;
+   justify-content:center;
 }
 
 .botonya {
-    margin-left :300px;    
     color: floralwhite;
     font-weight: bold;
     font-size: 24px;
