@@ -23,158 +23,201 @@ namespace JiltonWeb
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Page.IsPostBack)
+            try
             {
-                if (Session["id"] == null)
+                if (!Page.IsPostBack)
                 {
-                    Response.Redirect("Register.aspx");
+                    if (Session["id"] == null)
+                    {
+                        Response.Redirect("Register.aspx");
+                    }
+                    if (Session["bookingInfo"] == null)
+                    {
+                        Response.Redirect("MainPage.aspx");
+                    }
+                    booking = (ENBooking)Session["bookingInfo"];
+
+                    // Prepare the page
+                    System.Web.UI.Control c = new System.Web.UI.Control();
+                    c = Page.Master.FindControl("RegisterBooking");
+                    c.Visible = false;
+
+                    EntryDateLabel.Text = booking.date.startDate.ToString();
+                    DepartureDateLabel.Text = booking.date.endDate.ToString();
+
+                    // Add payment methods
+                    PaymentList.Items.Add("Debit/Credit Card");
+
+                    // Filling grid views of the booking resume
+                    DataTable t = (DataTable)Session["sessionSelected"];
+                    GridViewRooms.DataSource = t;
+                    GridViewRooms.DataBind();
+
+                    DataTable tServices = (DataTable)Session["bookingServices"];
+                    GridViewServices.DataSource = tServices;
+                    GridViewServices.DataBind();
+
+                    DataTable tCars = (DataTable)Session["bookingCars"];
+                    GridViewCars.DataSource = tCars;
+                    GridViewCars.DataBind();
+
+                    DataTable tPackages = (DataTable)Session["bookingPackages"];
+                    GridViewPackages.DataSource = tPackages;
+                    GridViewPackages.DataBind();
+
+                    // Total price
+                    TotalPriceLabel.Text = booking.calculatePrice((DataTable)Session["sessionSelected"], (DataTable)Session["bookingServices"], (DataTable)Session["bookingCars"], (DataTable)Session["bookingPackages"]).ToString("F") + " €";
                 }
-                if (Session["bookingInfo"] == null)
-                {
-                    Response.Redirect("MainPage.aspx");
-                }
-                booking = (ENBooking)Session["bookingInfo"];
-
-                // Prepare the page
-                System.Web.UI.Control c = new System.Web.UI.Control();
-                c = Page.Master.FindControl("RegisterBooking");
-                c.Visible = false;
-
-                EntryDateLabel.Text = booking.date.startDate.ToString();
-                DepartureDateLabel.Text = booking.date.endDate.ToString();
-
-                // Add payment methods
-                PaymentList.Items.Add("Debit/Credit Card");
-
-                // Filling grid views of the booking resume
-                DataTable t = (DataTable)Session["sessionSelected"];
-                GridViewRooms.DataSource = t;
-                GridViewRooms.DataBind();
-
-                DataTable tServices = (DataTable)Session["bookingServices"];
-                GridViewServices.DataSource = tServices;
-                GridViewServices.DataBind();
-
-                DataTable tCars = (DataTable)Session["bookingCars"];
-                GridViewCars.DataSource = tCars;
-                GridViewCars.DataBind();
-
-                DataTable tPackages = (DataTable)Session["bookingPackages"];
-                GridViewPackages.DataSource = tPackages;
-                GridViewPackages.DataBind();
-
-                // Total price
-                TotalPriceLabel.Text = booking.calculatePrice((DataTable)Session["sessionSelected"], (DataTable)Session["bookingServices"], (DataTable)Session["bookingCars"], (DataTable)Session["bookingPackages"]).ToString("F") + " €";
             }
+            catch(Exception exc) 
+            {
+                Console.WriteLine("Exception has occurred.Error: {0}", exc.Message);
+            }
+
         }
 
         protected void OnPayNow_Click(object sender, EventArgs e)
         {
-            ENBooking booking = (ENBooking)Session["bookingInfo"];
-
-            booking.Price = booking.calculatePrice((DataTable)Session["sessionSelected"], (DataTable)Session["bookingServices"], (DataTable)Session["bookingCars"], (DataTable)Session["bookingPackages"]);
-            booking.createBooking();
-
-            DataTable table = (DataTable)Session["sessionSelected"];
-            foreach (DataRow dr in table.Rows)
+            try
             {
-                ENRoom room = new ENRoom();
-                room.id = (int)(float)dr["id"];
-                booking.addRoom(room);
-            }
+                ENBooking booking = (ENBooking)Session["bookingInfo"];
 
-            table = (DataTable)Session["bookingServices"];
-            if (table != null)
-            {
+                booking.Price = booking.calculatePrice((DataTable)Session["sessionSelected"], (DataTable)Session["bookingServices"], (DataTable)Session["bookingCars"], (DataTable)Session["bookingPackages"]);
+                booking.createBooking();
+
+                DataTable table = (DataTable)Session["sessionSelected"];
                 foreach (DataRow dr in table.Rows)
                 {
-                    booking.addService(dr);
+                    ENRoom room = new ENRoom();
+                    room.id = (int)(float)dr["id"];
+                    booking.addRoom(room);
                 }
-            }
 
-            table = (DataTable)Session["bookingCars"];
-            if (table != null)
-            {
-                foreach (DataRow dr in table.Rows)
+                table = (DataTable)Session["bookingServices"];
+                if (table != null)
                 {
-                    ENCar car = new ENCar();
-                    car.LicensePlate = (string)dr["id"];
-                    booking.addCar(car);
+                    foreach (DataRow dr in table.Rows)
+                    {
+                        booking.addService(dr);
+                    }
                 }
-            }
 
-            table = (DataTable)Session["bookingPackages"];
-            if (table != null)
-            {
-                foreach (DataRow dr in table.Rows)
+                table = (DataTable)Session["bookingCars"];
+                if (table != null)
                 {
-                    ENPackage package = new ENPackage();
-                    package.id = (int)dr["id"];
-                    booking.addPackage(package);
+                    foreach (DataRow dr in table.Rows)
+                    {
+                        ENCar car = new ENCar();
+                        car.LicensePlate = (string)dr["id"];
+                        booking.addCar(car);
+                    }
                 }
+
+                table = (DataTable)Session["bookingPackages"];
+                if (table != null)
+                {
+                    foreach (DataRow dr in table.Rows)
+                    {
+                        ENPackage package = new ENPackage();
+                        package.id = (int)dr["id"];
+                        booking.addPackage(package);
+                    }
+                }
+                Session.Remove("bookingServices");
+                Session.Remove("sessionSelected");
+                Session.Remove("bookingCars");
+                Session.Remove("bookingPackages");
+                Session.Remove("bookingInfo");
+
+                Response.Redirect("ThanksForBuy.aspx");
             }
-            Response.Redirect("ThanksForBuy.aspx");
+            catch (Exception exc)
+            {
+                Console.WriteLine("Exception has occurred.Error: {0}", exc.Message);
+            }
+           
         }
 
-        private void RemoveElement(int index, string command)
+        private void RemoveElement(int index, string command)  // Method to remove elements from booking resume
         {
-            DataTable table = (DataTable)Session[command];
-            if (command == "sessionSelected")
+            try
             {
-                if (table.Rows.Count != 1)
+                DataTable table = (DataTable)Session[command];
+                if (command == "sessionSelected")
+                {
+                    if (table.Rows.Count != 1)
+                    {
+                        table.Rows.Remove(table.Rows[index]);
+                        Session[command] = table;
+                        ActualiseGrid(command);
+                    }
+                    else
+                    {
+                    }
+                }
+                else
                 {
                     table.Rows.Remove(table.Rows[index]);
                     Session[command] = table;
                     ActualiseGrid(command);
                 }
-                else
-                {
-                }
+                TotalPriceLabel.Text = booking.calculatePrice((DataTable)Session["sessionSelected"], (DataTable)Session["bookingServices"], (DataTable)Session["bookingCars"], (DataTable)Session["bookingPackages"]).ToString() + " €";
             }
-            else
+            catch (Exception exc)
             {
-                table.Rows.Remove(table.Rows[index]);
-                Session[command] = table;
-                ActualiseGrid(command);
+                Console.WriteLine("Exception has occurred.Error: {0}", exc.Message);
             }
-            TotalPriceLabel.Text = booking.calculatePrice((DataTable)Session["sessionSelected"], (DataTable)Session["bookingServices"], (DataTable)Session["bookingCars"], (DataTable)Session["bookingPackages"]).ToString() + " €";
-
         }
 
-        private void ActualiseGrid(string type)
+        private void ActualiseGrid(string type)  // Actualise grids from booking resume after a change
         {
-            DataTable table = new DataTable();
-            table = (DataTable)Session[type];
-            if (type == "bookingServices")
+            try
             {
-                GridViewServices.DataSource = table;
-                GridViewServices.DataBind();
+                DataTable table = new DataTable();
+                table = (DataTable)Session[type];
+                if (type == "bookingServices")
+                {
+                    GridViewServices.DataSource = table;
+                    GridViewServices.DataBind();
+                }
+                else if (type == "bookingCars")
+                {
+                    GridViewCars.DataSource = table;
+                    GridViewCars.DataBind();
+                }
+                else if (type == "sessionSelected")
+                {
+                    GridViewRooms.DataSource = table;
+                    GridViewRooms.DataBind();
+                }
+                else
+                {
+                    GridViewPackages.DataSource = table;
+                    GridViewPackages.DataBind();
+                }
             }
-            else if (type == "bookingCars")
+            catch (Exception exc)
             {
-                GridViewCars.DataSource = table;
-                GridViewCars.DataBind();
+                Console.WriteLine("Exception has occurred.Error: {0}", exc.Message);
             }
-            else if (type == "sessionSelected")
-            {
-                GridViewRooms.DataSource = table;
-                GridViewRooms.DataBind();
-            }
-            else
-            {
-                GridViewPackages.DataSource = table;
-                GridViewPackages.DataBind();
-            }
+            
         }
 
         protected virtual void GridView_ButtonCommand(object sender, GridViewCommandEventArgs e)
         {
-            ENStaff staff = new ENStaff();
-            List<string> listStaff = new List<string>();
+            try
+            {
+                ENStaff staff = new ENStaff();
+                List<string> listStaff = new List<string>();
 
-            // Code to obtain the row of the GridView selected
-            int index = Convert.ToInt32(e.CommandArgument);
-            RemoveElement(index, e.CommandName);
+                // Code to obtain the row of the GridView selected
+                int index = Convert.ToInt32(e.CommandArgument);
+                RemoveElement(index, e.CommandName);
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine("Exception has occurred.Error: {0}", exc.Message);
+            }
         }
     }
 }
