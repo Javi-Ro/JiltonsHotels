@@ -121,3 +121,6 @@ MADANI:
   
 ### AUXILIARY FOLDER ###
 The auxiliary folder (called "Auxiliary") contains the files Presentacion.pptx (class presentation of the project), Inserts.txt, Database.txt and UpdatedDatabase.pdf (EER scheme of the database)
+
+### ENTREGAFINAL.ZIP ###
+As this file was so large a drive folder was created. The link is : https://drive.google.com/drive/folders/1dqHe805Pq7S6xEAnOHQjCgXAuIFQWuWM?usp=sharing
