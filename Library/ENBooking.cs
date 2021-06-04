@@ -124,7 +124,7 @@ namespace Library
             return booking.getServices(this);
         }
 
-        public bool addService(ENService service)
+        public bool addService(DataRow service)
         {
             CADBooking booking = new CADBooking();
             return booking.addService(this, service);

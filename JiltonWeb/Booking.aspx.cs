@@ -88,9 +88,7 @@ namespace JiltonWeb
             {
                 foreach (DataRow dr in table.Rows)
                 {
-                    ENService service = new ENService();
-                    service.Id = (int)dr["id"];
-                    booking.addService(service);
+                    booking.addService(dr);
                 }
             }
 
